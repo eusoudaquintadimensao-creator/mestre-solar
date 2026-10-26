@@ -1,0 +1,241 @@
+[
+{
+"id": "catolico",
+"nome": "Catholic",
+"gatilhos": [
+"sou catolico",
+"sou catolica",
+"perfil catolico",
+"i m a catholic",
+"catholic profile"
+],
+"intro": "You come from a 2,000-year tradition of saints, mystics and martyrs. Nothing here asks you to abandon your faith. The invitation is to live the faith with an awakened conscience, as the Church itself teaches.",
+"chaves": [
+"The Catechism, in paragraphs 1776 to 1778, calls consciousness the most secret and sacred nucleus of man, where he is alone with God.",
+"Cardinal Newman, in 1875, wrote that if he had to toast, he would toast conscience first and the pope afterwards.",
+"St. Augustine: Don't go outside, go back inside yourself; in the inner man dwells truth.",
+"Matthew 23:9: Do not call anyone your father on earth, for one is your Father, the heavenly One.",
+"Matthew 23:23: Jesus criticizes those who pay the tenth of the mint and forget justice, mercy, and faith.",
+"On Indulgence Day in 2000, John Paul II apologized for the violence used in the service of truth. Admitting one's mistake is also Catholic.",
+"Pope Francis wrote in 2018 that saying no to abuse is saying no to all forms of clericalism.",
+"The great Catholic mystics, Teresa of Avila, John of the Cross, Master Eckhart, sought God within the soul.",
+"Luke 17:21: The kingdom of God is within you.",
+"1 John 4:18: There is no fear in love, but perfect love throws out fear."
+],
+"perguntas": [
+"If your conscience and a human order disagree, what does the Catechism say you should follow?",
+"Do you feel closer to God because you love him or because you are afraid of making mistakes?",
+"How would you know if you were wrong about something you learned as a child?",
+"What would the saints you admire do in the face of an abuse of power in the Church?"
+]
+},
+{
+"id": "evangelico",
+"nome": "Evangelical",
+"gatilhos": [
+"sou evangelico",
+"sou evangelica",
+"sou crente",
+"sou protestante",
+"perfil evangelico",
+"i m an evangelical",
+"i m a believer",
+"i m a protestant",
+"evangelical character"
+],
+"intro": "Their tradition was born of a courageous protest: Luther, in 1517, against the commerce of faith. The principle of the Reformation is that every person can read and examine Scripture. The invitation here is to honor that principle.",
+"chaves": [
+"Acts 17:11: the Beroeans were noble, examining the Scriptures daily as to whether these things were so.",
+"Matthew 6:24: No one can serve both God and Money.",
+"Matthew 7:15 and 16: \"Beware of false prophets, for by their fruits you will know them\".",
+"Matthew 6:5 and 6: When you pray, go into your room and pray to your Father in secret, not to be seen.",
+"The whole of Matthew 23 is Jesus confronting religious leaders who tie heavy burdens on the shoulders of others.",
+"1 Timothy 6:10: The love of money is a root of all sorts of injurious things.",
+"John 4:21-24: neither in this mountain nor in Jerusalem; true worshipers will worship in spirit and truth.",
+"Luke 17:21: The kingdom of God is within you.",
+"John 8:32: And ye shall know the truth, and the truth shall make you free.",
+"1 John 4:18: perfect love throws out fear.",
+"2 Corinthians 9:7: Let each one do just as he has resolved in his heart, not grudgingly or under compulsion."
+],
+"perguntas": [
+"Does God need money?",
+"If Jesus walked into your church today, what would he praise and what would he question?",
+"Can you disagree with your pastor without being called a rebel?",
+"How would you know if I was wrong?",
+"Does your faith make you freer or more afraid?"
+]
+},
+{
+"id": "espirita",
+"nome": "Spiritist",
+"gatilhos": [
+"sou espirita",
+"sou kardecista",
+"perfil espirita",
+"i m a spirit",
+"i m a cardiac surgeon",
+"profile of the spirit"
+],
+"intro": "Spiritualism, codified by Allan Kardec beginning in 1857, set out to unite faith and reason. That is precisely the spirit of the Portal: to examine, compare and not accept anything solely on the authority of the speaker.",
+"chaves": [
+"Kardec wrote in The Gospel According to Spiritism, chapter nineteen: Unshakable faith is only that which can face reason face to face, in all ages of mankind.",
+"In chapter twenty-six of the same book: Give freely what you have received freely. Serious mediumship is free.",
+"Kardec recommended subjecting all mediumistic communication to the screening of reason; a spirit is not infallible because it is spirit.",
+"Be wary of those who charge for healing, spiritual consultation, or messages from beyond.",
+"The case of John of God showed that a famous healer can be an abuser; no spiritual treatment requires intimacy or secrecy.",
+"Without charity there is no salvation, was Kardec's motto: the criterion is the fruit, not the phenomenon.",
+"Luke 17:21: The kingdom of God is within you.",
+"To scientific claims, such as proven reincarnation, apply the same reasoning: What is belief and what is proof?"
+],
+"perguntas": [
+"Would you accept a mediumistic message that contradicts reason?",
+"What would you do if you discovered that an admired medium was charging or manipulating?",
+"How do you differentiate a spiritual experience from a group suggestion?"
+]
+},
+{
+"id": "outra",
+"nome": "Another Religion",
+"gatilhos": [
+"sou de outra religiao",
+"sou umbandista",
+"sou do candomble",
+"sou budista",
+"sou judeu",
+"sou judia",
+"sou muculmano",
+"sou muculmana",
+"perfil outra religiao",
+"i m from a different religion",
+"i m a band player",
+"i m from candomble",
+"i m a buddhist",
+"i m jewish",
+"",
+"profile other religion"
+],
+"intro": "Every tradition has its wisdom and its human deviations. What it says here about manipulation applies to any group, and what it says about inwardness appears in all traditions.",
+"chaves": [
+"The Buddha, in the Kalama Sutta, taught not to accept something just by tradition or authority, but by examining it leads to good.",
+"The Upanishads say: you are that. The sacred is at the core of every being.",
+"The Tao Te Ching: he who knows others is intelligent; he who knows himself is enlightened.",
+"In all traditions, the warning sign is the same: fear, guilt, money as proof of faith and a leader who cannot be questioned.",
+"Religious freedom is a right, including the right to change one's religion or to have none.",
+"The golden rule appears in almost every religion: Do not do to another what you do not want for yourself."
+],
+"perguntas": [
+"What of your tradition have you lived by experience, and what have you only learned by hearing?",
+"Can you question your leaders without fear?",
+"What does your tradition say about the inside of the human being?"
+]
+},
+{
+"id": "duvida",
+"nome": "No religion or in doubt",
+"gatilhos": [
+"nao tenho religiao",
+"sou ateu",
+"sou ateia",
+"sou agnostico",
+"sou agnostica",
+"estou em duvida",
+"sem religiao",
+"perfil sem religiao",
+"i have no religion",
+"i m an atheist",
+"i m an agnostic",
+"i doubt it",
+"without religion",
+"profile without religion"
+],
+"intro": "By the 2022 Census, nine-tenths of three percent of Brazilians declare themselves to be without religion. You can seek meaning, silence and depth without any institution. Honest doubt is a noble beginning.",
+"chaves": [
+"Socrates: A life without examination is not worth living.",
+"Epistemology is asking, how do I know what I know? It applies to faith and it applies to unbelief.",
+"Feynman: The first principle is not to fool yourself, and you're the easiest person to fool.",
+"Spirituality without religion can be presence, ethics, contemplation of nature and the cosmos.",
+"Carl Sagan: We are a way for the cosmos to know itself.",
+"Watch out for the other Matrix: swapping a religious dogma for an alternative guru, party, or conspiracy theory.",
+"Einstein wrote that the most beautiful thing we can experience is the mysterious."
+],
+"perguntas": [
+"What do you still not know and would like to investigate without haste?",
+"How would you know if your disbelief is also inherited?",
+"What is sacred to you, even without God?"
+]
+},
+{
+"id": "ferido",
+"nome": "Hurt former believer",
+"gatilhos": [
+"sai da igreja",
+"fui ferido na igreja",
+"fui ferida na igreja",
+"ex fiel",
+"machucado pela igreja",
+"perfil ferido",
+"get out of the church",
+"i was wounded in the church",
+"ex-faithful",
+"wounded by the church",
+"wounded profile"
+],
+"intro": "If you have been hurt in a religious environment, your pain is real and deserves attention. You don't have to decide now what to believe. The first step is to restore your confidence, calmly.",
+"chaves": [
+"What happened to you was not your fault. Manipulation works on good people precisely because they trust.",
+"Guilt, fear of hell, and anxiety can continue even after you leave. It has a name, religious trauma, and it has a treatment.",
+"Look for a psychologist, preferably one who respects your story. Ex-member support groups also help.",
+"If the pain gets too much, call 188, CVV, anytime, free of charge.",
+"You don't have to hate faith to be healed, nor do you have to return to it to have peace. Both choices are yours.",
+"Re-learn to listen to your body: the discomfort you felt inside was information.",
+"1 John 4:18, if it still makes sense to you: perfect love throws out fear. A love that hurts is not perfect.",
+"Rebuild little by little: an outsider friend, a hobby, a place where you can be you."
+],
+"perguntas": [
+"When did you first sense that something was wrong, and why couldn't you tell?",
+"What part of you was kept waiting to come back to life?",
+"What do you need today to feel secure?"
+]
+},
+{
+"id": "familia",
+"nome": "I want to help someone in my family",
+"gatilhos": [
+"quero ajudar minha familia",
+"ajudar minha mae",
+"minha mae e fanatica",
+"meu pai e fanatico",
+"como ajudar minha mae",
+"como ajudar meu pai",
+"ajudar alguem fanatico",
+"familiar fanatico",
+"perfil familia",
+"i want to help my family",
+"help my mother",
+"my mother and fanatic",
+"my father is a fanatic",
+"how can i help my mother",
+"how to help my father",
+"helping a fanatic",
+"family fanatic",
+"family profile"
+],
+"intro": "Helping someone you love to think more freely requires patience, respect, and love. The goal is not to win an argument, nor to take away the person's faith; it is to make room for them to think for themselves.",
+"chaves": [
+"Ask instead of attacking. The Socratic method and the so-called street epistemology uses questions like, how did you come to this certainty?",
+"Truly listen. People change when they feel understood, not humiliated.",
+"Never ridicule her faith. It confirms what the group says, that whoever is outside is the enemy.",
+"Plant seeds, don't harvest arguments. A good question can work for months.",
+"Talk about the values you share: love, family, honesty, care with money.",
+"Keep the door open. When you leave a manipulative group, you need a safe place to come back.",
+"If there is financial abuse, violence, or neglect of medical treatment, seek professional help and, if necessary, the authorities.",
+"What NOT to do: Humiliate, give ultimatums, send lewd videos, use fear and guilt. That's the same technique you want to fight."
+],
+"perguntas": [
+"Mother, what gives you more peace in your faith?",
+"If someone from another church was as sure as you are, how would you know which one is right?",
+"Would God need money to love you?",
+"What would you do if you found out that a leader you trust made a mistake?"
+]
+}
+]

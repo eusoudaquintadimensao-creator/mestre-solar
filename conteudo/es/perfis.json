@@ -1,0 +1,243 @@
+[
+{
+"id": "catolico",
+"nome": "Católico",
+"gatilhos": [
+"sou catolico",
+"sou catolica",
+"perfil catolico",
+"soy catolico",
+"soy catolica"
+],
+"intro": "Tú vienes de una tradición de dos mil años de santos, místicos y mártires. Nada aquí te pide que abandones tu fe. La invitación es vivir la fe con conciencia despierta, como la Iglesia misma enseña.",
+"chaves": [
+"El Catecismo, en los párrafos 1776 a 1778, llama a la conciencia el núcleo más secreto y sagrado del hombre, donde está solo con Dios.",
+"El cardenal Newman, en 1875, escribió que si tuviera que brindar, brindaría a la conciencia primero y al papa después.",
+"San Agustín: no salgas, vuelve dentro de ti; en el hombre interior habita la verdad.",
+"Mateo 23:9: No llaméis padre a nadie en la tierra, porque uno es vuestro Padre, el celestial.",
+"Mateo 23:23: Jesús critica al que paga el diezmo de la menta y olvida la justicia, la misericordia y la fe.",
+"En el Día del Perdón en el año 2000, Juan Pablo II pidió perdón por la violencia utilizada en el servicio de la verdad. Reconocer el error también es católico.",
+"El Papa Francisco escribió en 2018 que decir no al abuso es decir no a toda forma de clericalismo.",
+"Los grandes místicos católicos, Teresa de Ávila, Juan de la Cruz, Maestro Eckhart, buscaron a Dios en el interior del alma.",
+"Lucas 17:21: el reino de Dios está dentro de ustedes.",
+"1 Juan 4:18: No hay miedo en el amor; el amor perfecto echa fuera el miedo."
+],
+"perguntas": [
+"Si su conciencia y un orden humano están en desacuerdo, ¿cuál Catecismo dice que debe seguir?",
+"¿Te sientes más cerca de Dios por amor o por miedo a equivocarte?",
+"¿Cómo sabrías si te equivocaste en algo que aprendiste en la infancia?",
+"¿Qué harían los santos que admiras ante un abuso de poder en la Iglesia?"
+]
+},
+{
+"id": "evangelico",
+"nome": "Evangélico",
+"gatilhos": [
+"sou evangelico",
+"sou evangelica",
+"sou crente",
+"sou protestante",
+"perfil evangelico",
+"soy evangelico",
+"soy evangelica",
+"soy creyente",
+"soy protestante"
+],
+"intro": "Su tradición nació de una protesta valiente: Lutero, en 1517, contra el comercio de la fe. El principio de la Reforma es que cada persona pueda leer y examinar la Escritura. La invitación aquí es honrar ese principio.",
+"chaves": [
+"Hechos 17:11: los bereos eran nobles y examinaban diariamente las Escrituras para ver si esas cosas eran así.",
+"Mateo 6:24: nadie puede servir a Dios y a la riqueza.",
+"Mateo 7:15 y 16: Cuidado con los falsos profetas, por sus frutos los conoceréis.",
+"Mateo 6:5 y 6: cuando ores, entra en tu habitación y ora a tu Padre en secreto, no para ser visto.",
+"Todo Mateo 23 es Jesús enfrentando a los líderes religiosos que ponen cargas pesadas sobre los hombros de los demás.",
+"1 Timoteo 6:10: El amor al dinero es una raíz de todo tipo de males.",
+"Juan 4:21-24: ni en este monte ni en Jerusalén; los verdaderos adoradores adorarán en espíritu y en verdad.",
+"Lucas 17:21: el reino de Dios está dentro de ustedes.",
+"Juan 8:32: conocerán la verdad, y la verdad los hará libres.",
+"1 Juan 4:18: el amor perfecto echa fuera el miedo.",
+"2 Corintios 9:7: Cada uno haga según lo haya decidido en su corazón, no con tristeza ni por obligación."
+],
+"perguntas": [
+"¿Necesitaría Dios dinero?",
+"Si Jesús entrara hoy en su iglesia, ¿qué elogiaría y qué cuestionaría?",
+"¿Puedes estar en desacuerdo con tu pastor sin ser llamado rebelde?",
+"¿Cómo sabrías si estaba equivocado?",
+"¿Tu fe te hace más libre o más asustado?"
+]
+},
+{
+"id": "espirita",
+"nome": "Espiritista",
+"gatilhos": [
+"sou espirita",
+"sou kardecista",
+"perfil espirita",
+"soy un espiritu",
+"soy un kardecista",
+"profile de las espiritus"
+],
+"intro": "El espiritismo, codificado por Allan Kardec a partir de 1857, se propuso unir fe y razón. Ese es precisamente el espíritu del Portal: examinar, comparar y no aceptar nada solo por la autoridad del que habla.",
+"chaves": [
+"Kardec escribió, en El Evangelio según el Espiritismo, capítulo diecinueve: la fe inquebrantable es la única que puede enfrentarse cara a cara a la razón, en todas las épocas de la humanidad.",
+"En el capítulo veintiséis del mismo libro: da gratis lo que has recibido gratis. La mediumnidad seria no tiene cargo.",
+"Kardec recomendó someter toda comunicación mediánica al cribo de la razón; un espíritu no es infalible por ser espíritu.",
+"No confíes en los que cobran por curas, consultas espirituales o mensajes del más allá.",
+"El caso de Juan de Dios mostró que un curandero famoso puede ser un abusador; ningún tratamiento espiritual requiere intimidad o secreto.",
+"Fuera de la caridad no hay salvación, era el lema de Kardec: el criterio es el fruto, no el fenómeno.",
+"Lucas 17:21: el reino de Dios está dentro de ustedes.",
+"Para las afirmaciones científicas, como la reencarnación probada, aplique el mismo razonamiento: ¿qué es la creencia y qué es la prueba?"
+],
+"perguntas": [
+"¿Aceptarías un mensaje de un médium que contradiga la razón?",
+"¿Qué haría usted si descubriera que un médium admirado cobra o manipula?",
+"¿Cómo diferencias una experiencia espiritual de una sugerencia del grupo?"
+]
+},
+{
+"id": "outra",
+"nome": "Otra religión",
+"gatilhos": [
+"sou de outra religiao",
+"sou umbandista",
+"sou do candomble",
+"sou budista",
+"sou judeu",
+"sou judia",
+"sou muculmano",
+"sou muculmana",
+"perfil outra religiao",
+"soy de otra religion",
+"soy un bandido",
+"soy del candomble",
+"soy budista",
+"soy judio",
+"soy judia",
+"",
+"profile otra religion"
+],
+"intro": "Toda tradición tiene su sabiduría y sus desviaciones humanas. Lo que aquí se dice sobre manipulación es válido para cualquier grupo, y lo que se dice sobre interioridad aparece en todas las tradiciones.",
+"chaves": [
+"El Buda, en el Kalama Sutta, enseñó a no aceptar algo solo por tradición u autoridad, sino por examinarlo se lleva al bien.",
+"Los Upanishads dicen: tú eres eso. Lo sagrado está en el fondo de cada ser.",
+"El Tao Te Ching: quien conoce a los demás es inteligente; quien se conoce a sí mismo es iluminado.",
+"En todas las tradiciones, la señal de alerta es la misma: miedo, culpa, dinero como prueba de fe y un líder que no puede ser cuestionado.",
+"La libertad religiosa es un derecho, incluso el de cambiar de religión o no tener ninguna.",
+"La regla de oro aparece en casi todas las religiones: no hagas al otro lo que no quieres que te haga a ti."
+],
+"perguntas": [
+"¿Qué de su tradición ha vivido por experiencia propia, y qué sólo ha aprendido de oír?",
+"¿Puedes cuestionar a tus líderes sin miedo?",
+"¿Qué dice su tradición sobre el interior del ser humano?"
+]
+},
+{
+"id": "duvida",
+"nome": "Sin religión o en duda",
+"gatilhos": [
+"nao tenho religiao",
+"sou ateu",
+"sou ateia",
+"sou agnostico",
+"sou agnostica",
+"estou em duvida",
+"sem religiao",
+"perfil sem religiao",
+"no tengo religion",
+"soy un ateo",
+"soy ateo",
+"soy agnostico",
+"soy una agnostica",
+"estoy en duda",
+"sin religion",
+"perfil sin religion"
+],
+"intro": "Según el Censo de 2022, nueve coma tres por ciento de los brasileños se declaran sin religión. Puedes buscar sentido, silencio y profundidad sin ninguna institución. La duda honesta es un noble comienzo.",
+"chaves": [
+"Sócrates: Una vida sin examen no vale la pena vivirla.",
+"La epistemología es preguntar: ¿Cómo sé lo que sé? Vale para la fe y vale para la incredulidad.",
+"Feynman: El primer principio es no engañarse a sí mismo, y usted es la persona más fácil de engañar.",
+"La espiritualidad sin religión puede ser presencia, ética, contemplación de la naturaleza y del cosmos.",
+"Carl Sagan: Somos una forma en que el cosmos se conoce a sí mismo.",
+"Cuidado con la otra Matrix: cambiar un dogma religioso por un gurú alternativo, un partido o una teoría de la conspiración.",
+"Einstein escribió que lo más hermoso que podemos experimentar es lo misterioso."
+],
+"perguntas": [
+"¿Qué aún no sabes y te gustaría investigar sin prisa?",
+"¿Cómo sabrías si tu incredulidad también es hereditaria?",
+"¿Qué es sagrado para ti, incluso sin Dios?"
+]
+},
+{
+"id": "ferido",
+"nome": "Exfiel herido",
+"gatilhos": [
+"sai da igreja",
+"fui ferido na igreja",
+"fui ferida na igreja",
+"ex fiel",
+"machucado pela igreja",
+"perfil ferido",
+"sale de la iglesia",
+"me hirieron en la iglesia",
+"herido por la iglesia",
+"perfil herido"
+],
+"intro": "Si usted ha sido herido en un ambiente religioso, su dolor es real y merece atención. No hay que decidir ahora en qué creer. El primer paso es volver a confiar en ti mismo con calma.",
+"chaves": [
+"Lo que te pasó no fue culpa tuya. La manipulación funciona con las personas buenas, precisamente porque confían.",
+"La culpa, el miedo al infierno y la ansiedad pueden continuar incluso después de salir. Eso tiene nombre, trauma religioso, y tiene tratamiento.",
+"Busque un psicólogo, preferiblemente que respete su historia. Los grupos de apoyo de ex miembros también ayudan.",
+"Si el dolor se vuelve demasiado grande, llame al 188, el CVV, a cualquier hora y gratis.",
+"No tienes que odiar la fe para curarte, ni volver a ella para tener paz. Las dos elecciones son tuyas.",
+"Reaprende a escuchar a tu cuerpo: la incomodidad que sentías dentro era información.",
+"1 Juan 4:18, si aún tiene sentido para ti: el amor perfecto expulsa el miedo. Un amor que duele no es perfecto.",
+"Construye poco a poco: un amigo de afuera, un pasatiempo, un lugar donde puedas ser tú."
+],
+"perguntas": [
+"¿Cuándo fue la primera vez que sintió que algo estaba mal, y por qué no pudo decirlo?",
+"¿Qué parte de ti se quedó guardada esperando volver a vivir?",
+"¿Qué necesitas hoy para sentirte seguro?"
+]
+},
+{
+"id": "familia",
+"nome": "Quiero ayudar a alguien de mi familia",
+"gatilhos": [
+"quero ajudar minha familia",
+"ajudar minha mae",
+"minha mae e fanatica",
+"meu pai e fanatico",
+"como ajudar minha mae",
+"como ajudar meu pai",
+"ajudar alguem fanatico",
+"familiar fanatico",
+"perfil familia",
+"quiero ayudar a mi familia",
+"ayudar a mi madre",
+"mi madre y fanatica",
+"mi padre y fanatico",
+"como ayudar a mi madre",
+"como ayudar a mi padre",
+"ayudar a alguien fanatico",
+"fanatico familiar",
+"perfil familiar"
+],
+"intro": "Ayudar a alguien que amas a pensar con más libertad requiere paciencia, respeto y amor. El objetivo no es ganar una discusión, ni quitar la fe de la persona: es darles espacio para que piensen por sí mismos.",
+"chaves": [
+"Pregunta en lugar de atacar. El método socrático y la llamada epistemología callejera usan preguntas como: ¿Cómo llegaste a esa certeza?",
+"Escucha de verdad. Las personas cambian cuando se sienten comprendidas, no humilladas.",
+"Nunca ridiculice sus creencias. Esto confirma lo que el grupo dice, que quien está fuera es el enemigo.",
+"Siembra semillas, no coseches discusiones. Una buena pregunta puede funcionar durante meses.",
+"Hablen de los valores que comparten: amor, familia, honestidad, cuidado con el dinero.",
+"Mantén la puerta abierta. Quien sale de un grupo manipulador necesita un lugar seguro para volver.",
+"Si hay abuso financiero, violencia o abandono del tratamiento médico, busque ayuda profesional y, si es el caso, a las autoridades.",
+"Lo que no debes hacer: humillar, dar ultimátums, enviar videos descarados, usar el miedo y la culpa. Esa es la misma técnica que quieres combatir."
+],
+"perguntas": [
+"Mamá, ¿qué te da más paz en tu fe?",
+"Si alguien de otra iglesia estuviera tan seguro como tú, ¿cómo sabrías quién está en lo cierto?",
+"¿Necesita Dios dinero para amarte?",
+"¿Qué harías si descubrieras que un líder en el que confías ha cometido un error?"
+]
+}
+]
