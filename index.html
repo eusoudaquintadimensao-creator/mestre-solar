@@ -11,15 +11,30 @@
 <meta name="apple-mobile-web-app-title" content="Mestre Solar">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icons/icon-192.png">
-<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180.png">
 <style>:root{--ouro:#f1c75b;--ouro2:#b8860b;--txt:#efe8d6;--suave:#a99f86;--vidro:rgba(22,17,30,.72);--borda:rgba(241,199,91,.22);--sol:min(45vw,330px)}*{box-sizing:border-box}html,body{margin:0;height:100%;background:#07050d;color:var(--txt);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-tap-highlight-color:transparent}body{overflow:hidden}#ceu{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block}.app{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;height:100vh;height:100dvh;max-width:860px;margin:0 auto;padding:env(safe-area-inset-top,0px) 0 0}.topo{display:flex;align-items:center;justify-content:space-between;padding:10px 14px 0}.marca h1{margin:0;font-size:19px;letter-spacing:.32em;font-weight:700;color:#fff6dc;text-shadow:0 0 18px rgba(241,199,91,.35)}.marca p{margin:0;font-size:12px;letter-spacing:.2em;color:var(--ouro);text-transform:uppercase}.icone{background:var(--vidro);border:1px solid var(--borda);color:var(--txt);border-radius:50%;width:42px;height:42px;font-size:18px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.icone:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #fff3c4;outline-offset:2px}.palco{flex:0 0 auto;display:flex;justify-content:center;padding:6px 0 2px;transition:height .4s}.sol{position:relative;width:var(--sol);height:var(--sol);cursor:pointer;border:0;background:none;padding:0;border-radius:50%;transition:width .4s,height .4s}.sol i{position:absolute;inset:0;background:center/contain no-repeat;border-radius:50%}.sol .img{mix-blend-mode:screen;filter:drop-shadow(0 0 24px rgba(255,160,40,.45));animation:gira 30s linear infinite;animation-play-state:paused}.sol .aura{transform:scale(1.18);opacity:0;filter:blur(18px) saturate(1.4);mix-blend-mode:screen;transition:opacity .6s}body.falando .sol .img{animation-play-state:running;animation-duration:9s}body.falando .sol .aura{opacity:.85;animation:pulsa 1.6s ease-in-out infinite}body.compacto .palco .sol{--sol:min(24vw,140px);width:var(--sol);height:var(--sol)}@keyframes gira{to{transform:rotate(-360deg)}}@keyframes pulsa{0%,100%{transform:scale(1.12);opacity:.55}50%{transform:scale(1.3);opacity:.95}}.conversa{flex:1 1 auto;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(240,192,90,.35) transparent;-webkit-mask-image:linear-gradient(transparent,#000 18px);mask-image:linear-gradient(transparent,#000 18px);padding:8px 14px 12px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth;list-style:none;margin:0}.msg{max-width:88%;padding:11px 14px;border-radius:16px;white-space:pre-wrap;word-wrap:break-word;background:var(--vidro);border:1px solid var(--borda);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}.msg.eu{align-self:flex-end;background:rgba(184,134,11,.25);border-color:rgba(241,199,91,.35)}.msg.mestre{align-self:flex-start}.msg a{color:var(--ouro);display:inline-block;margin-top:6px;word-break:break-word}.selo{display:inline-block;font-size:11px;letter-spacing:.06em;padding:1px 8px;border-radius:9px;margin-bottom:6px;background:rgba(241,199,91,.14);color:var(--ouro);border:1px solid var(--borda)}.selo.wiki{background:rgba(120,170,255,.14);color:#a9c7ff;border-color:rgba(120,170,255,.3)}.selo.ia{background:rgba(190,120,255,.14);color:#d9b3ff;border-color:rgba(190,120,255,.3)}.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}.chip{background:rgba(241,199,91,.1);color:#f6e3ae;border:1px solid rgba(241,199,91,.4);border-radius:16px;padding:6px 12px;font:inherit;font-size:13.5px;cursor:pointer}.chip:hover{background:rgba(241,199,91,.22)}.acoes{display:flex;gap:4px;margin-top:6px;justify-content:flex-end}.acoes button{background:none;border:0;color:var(--suave);font-size:15px;cursor:pointer;padding:4px 7px;border-radius:8px}.acoes button[aria-pressed=true]{color:var(--ouro)}.entrada{display:flex;gap:8px;align-items:center;padding:8px 12px;flex:0 0 auto}.entrada input{flex:1;min-width:0;background:var(--vidro);border:1px solid var(--borda);color:var(--txt);border-radius:24px;padding:13px 16px;font:inherit}.mic{width:58px;height:58px;border-radius:50%;border:0;cursor:pointer;font-size:24px;background:radial-gradient(circle at 35% 30%,#ffe7a0,#e1a52c 55%,#9a6a0c);box-shadow:0 0 22px rgba(241,199,91,.4);color:#1a1205}.mic.ouvindo{animation:pulsa2 1s ease-in-out infinite}@keyframes pulsa2{50%{box-shadow:0 0 0 12px rgba(241,199,91,.18),0 0 30px rgba(241,199,91,.7)}}.enviar{width:46px;height:46px;border-radius:50%;border:1px solid var(--borda);background:var(--vidro);color:var(--ouro);font-size:18px;cursor:pointer}.nota{font-size:12px;color:var(--suave);text-align:center;min-height:16px;margin:0 12px}.abas{display:flex;gap:4px;overflow-x:auto;padding:6px 10px max(12px,env(safe-area-inset-bottom,0px));flex:0 0 auto;scrollbar-width:none}.abas::-webkit-scrollbar{display:none}.aba{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-height:48px;background:none;border:1px solid transparent;color:var(--suave);font:inherit;font-size:11.5px;padding:6px 9px;border-radius:12px;cursor:pointer;min-width:64px}.aba b{font-size:19px;font-weight:400}.aba:hover,.aba[aria-expanded=true]{color:var(--ouro);border-color:var(--borda);background:var(--vidro)}.folha{position:fixed;inset:0;z-index:20;display:flex;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.55)}.folha[hidden]{display:none}.folha>div{width:100%;max-width:760px;max-height:84vh;overflow-y:auto;background:#120d18;border:1px solid var(--borda);border-radius:20px 20px 0 0;padding:18px 16px max(24px,calc(env(safe-area-inset-bottom,0px) + 16px));box-shadow:0 -10px 40px rgba(0,0,0,.6)}.folha h2{margin:0 0 12px;font-size:18px;color:var(--ouro);display:flex;justify-content:space-between;align-items:center}.folha h2 button{background:none;border:0;color:var(--suave);font-size:24px;cursor:pointer}.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.cartao{text-align:left;background:linear-gradient(160deg,rgba(241,199,91,.12),rgba(255,255,255,.02));border:1px solid var(--borda);color:var(--txt);border-radius:14px;padding:12px;font:inherit;cursor:pointer;min-height:76px}.cartao b{display:block;font-size:22px}.cartao span{font-size:14px}.cartao small{display:block;color:var(--suave);font-size:12px}.lista-top{display:flex;flex-direction:column;gap:6px}.lista-top button{text-align:left;background:rgba(255,255,255,.03);border:1px solid var(--borda);color:var(--txt);border-radius:10px;padding:10px 12px;font:inherit;cursor:pointer}.lista-top h3{margin:10px 0 2px;font-size:13px;color:var(--ouro);letter-spacing:.08em;text-transform:uppercase}.botao{background:linear-gradient(#e7b84a,#b8860b);color:#1a1205;border:0;border-radius:22px;padding:11px 18px;font:700 15px system-ui,sans-serif;cursor:pointer}.botao2{background:none;border:1px solid var(--borda);color:var(--txt);border-radius:20px;padding:9px 15px;font:inherit;cursor:pointer}.linha{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}.barra{height:10px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden;margin:8px 0}.barra i{display:block;height:100%;background:linear-gradient(90deg,#b8860b,#ffd76a);width:0;transition:width .4s}.passos{display:flex;gap:6px;margin:6px 0 12px}.passos span{flex:1;text-align:center;font-size:12px;padding:4px 0;border-radius:8px;border:1px solid var(--borda);color:var(--suave)}.passos span.feito{background:rgba(241,199,91,.25);color:#fff1c6}.passos span.atual{border-color:var(--ouro);color:var(--ouro)}.pequeno{font-size:12.5px;color:var(--suave)}.campo{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--borda);color:var(--txt);border-radius:12px;padding:11px 13px;font:inherit}.portal{position:fixed;inset:0;z-index:40;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:12px;padding:24px 22px max(24px,calc(env(safe-area-inset-bottom,0px) + 16px));text-align:center;overflow-y:auto;background:radial-gradient(circle at 50% 25%,#1d1306,#07050d 55%,#000 100%)}.portal>:first-child{margin-top:auto}.portal>:last-child{margin-bottom:auto}.portal[hidden]{display:none}.portal .sol{--sol:min(34vw,150px,18vh);flex:none;opacity:.55;filter:saturate(.7)}.portal h2{margin:4px 0 0;color:var(--ouro);font-size:23px;letter-spacing:.02em}.portal .corpo{display:flex;flex-direction:column;gap:9px;max-width:440px}.portal p{margin:0;line-height:1.55}.portal .peq{font-size:12px;color:var(--suave);max-width:420px;margin-top:4px}.portal .botao{min-height:44px}.portal .msgp{min-height:1.3em;color:var(--ouro)}.ia-msg{font-size:13px;color:#d9b3ff}@media (min-width:900px){:root{--sol:min(26vw,300px)}.app{max-width:980px}.msg{max-width:74%}}@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.sol .img{animation-duration:90s!important}body.falando .sol .aura{animation:none;opacity:.6}.mic.ouvindo{animation:none}}.so-leitor{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}*{scrollbar-width:thin;scrollbar-color:rgba(240,192,90,.35) transparent}</style>
+<style>
+/* Botão "Instalar" (sol realista) + aviso de instalação. Bloco independente. */
+.topo-bts{display:flex;align-items:center;gap:6px;flex:none}
+.instalar{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-width:46px;height:50px;padding:2px 4px;background:none;border:0;color:var(--ouro);font:600 10.5px/1 system-ui,sans-serif;letter-spacing:.02em;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.instalar[hidden]{display:none}
+.instalar img{width:32px;height:32px;border-radius:50%;box-shadow:0 0 12px 2px rgba(255,170,40,.55);animation:inst-brilho 3.2s ease-in-out infinite}
+.instalar:active img{transform:scale(.92)}
+@keyframes inst-brilho{50%{box-shadow:0 0 20px 5px rgba(255,180,50,.8)}}
+@media (prefers-reduced-motion:reduce){.instalar img{animation:none}}
+@media (max-width:400px){.topo{gap:6px}.topo .marca{min-width:0}.topo .marca h1{letter-spacing:.2em;font-size:17px;white-space:nowrap}.topo .marca h1,.topo .marca p{overflow:hidden;text-overflow:ellipsis}.topo .marca p{letter-spacing:.07em;font-size:10.5px;white-space:nowrap}}
+.inst-topo{display:flex;gap:12px;align-items:center;margin-bottom:8px}.inst-topo img{border-radius:14px;flex:none}.inst-topo p{margin:0}
+.inst-passos{margin:6px 0 10px;padding-left:22px;line-height:1.6}.inst-passos li{margin:4px 0}.inst-passos b{color:var(--ouro)}
+.inst-toast{position:fixed;left:12px;right:12px;margin:0 auto;top:72px;z-index:15;display:flex;align-items:center;gap:10px;max-width:440px;background:#120d18;border:1px solid var(--borda);border-radius:16px;padding:8px 10px 8px 12px;box-shadow:0 8px 30px rgba(0,0,0,.6);font-size:14px}
+.inst-toast img{width:28px;height:28px;border-radius:50%;flex:none}.inst-toast span{flex:1;line-height:1.3}.inst-toast .botao{flex:none}.inst-toast .botao{min-height:36px;padding:7px 14px;font-size:14px}.inst-toast .x{background:none;border:0;color:var(--suave);font-size:20px;cursor:pointer;padding:4px}
+</style>
 </head>
 <body>
 <canvas id="ceu" aria-hidden="true"></canvas>
 <div class="app">
   <header class="topo">
     <div class="marca"><h1>MESTRE SOLAR</h1><p>Portal do Conhecimento</p></div>
-    <div><button class="icone" id="b-som" type="button" aria-label="Desligar a voz" aria-pressed="false">🔊</button>
+    <div class="topo-bts"><button class="instalar" id="b-instalar" type="button" hidden aria-label="Instalar o app Mestre Solar na tela inicial"><img src="icons/icon-192.png" alt="" width="30" height="30"><span>Instalar</span></button><button class="icone" id="b-som" type="button" aria-label="Desligar a voz" aria-pressed="false">🔊</button>
     <button class="icone" id="b-ajustes" type="button" aria-label="Ajustes">⚙️</button></div>
   </header>
   <div class="palco"><button class="sol" id="sol" type="button" aria-label="Sol do Mestre Solar: toque para falar comigo"><i class="aura"></i><i class="img"></i></button></div>
@@ -70,6 +85,7 @@
   <p id="principio">O Mestre Solar não serve a sistema nenhum, nem religioso nem anti-religioso. Serve à verdade: o que é comprovado, ele afirma; o que é crença, ele atribui; o que ninguém sabe, ele admite.</p>
   <p class="pequeno">Selos: ✅ Comprovado · 📜 Tradição · 🔭 Hipótese · ❓ Desconhecido · ⚠️ Mito. Depois de qualquer resposta, pergunte "qual a fonte?".</p></div></div>
 
+<div class="folha" id="f-instalar" hidden><div role="dialog" aria-modal="true" aria-labelledby="t-inst"><h2><span id="t-inst">Instalar o Mestre Solar</span><button type="button" data-fecha aria-label="Fechar">×</button></h2><div class="inst-topo"><img src="icons/icon-192.png" alt="" width="56" height="56"><p class="pequeno" id="inst-intro"></p></div><ol class="inst-passos" id="inst-passos"></ol><p class="pequeno" id="inst-nota"></p><div class="linha"><button class="botao" type="button" data-fecha>Entendi</button></div></div></div>
 <div class="portal" id="portal" role="dialog" aria-modal="true" aria-labelledby="portal-tit" aria-describedby="portal-corpo" hidden>
   <button class="sol" id="portal-sol" type="button" aria-label="Ouvir o aviso do Portal"><i class="aura"></i><i class="img"></i></button>
   <h2 id="portal-tit">Você está diante de um Portal</h2>
@@ -123,6 +139,83 @@ var hit=function(k){try{fetch(B+k,{cache:"no-store",credentials:"omit",referrerP
 hit("visitas");
 var b=document.getElementById("portal-entrar");
 if(b)b.addEventListener("click",function(){hit("portal")},{once:true});
+}catch(e){}}();
+</script>
+<script>
+/* Botão "Instalar" com o sol: instala o app na tela inicial / no computador.
+   Chrome, Edge, Samsung Internet (Android e computador): usa o pedido de instalação do navegador (beforeinstallprompt).
+   iPhone/iPad, Safari do Mac, Firefox e apps com navegador embutido: mostra os passos certos para o aparelho. */
+!function(){try{
+var $=function(i){return document.getElementById(i)};
+var bt=$("b-instalar"),fo=$("f-instalar");if(!bt||!fo)return;
+var pedido=null,instalado=false;
+var mm=function(q){try{return window.matchMedia&&matchMedia(q).matches}catch(e){return false}};
+var jaApp=function(){return instalado||navigator.standalone===true||mm("(display-mode: standalone)")||mm("(display-mode: fullscreen)")||mm("(display-mode: minimal-ui)")||mm("(display-mode: window-controls-overlay)")};
+var ua=navigator.userAgent||"";
+var ios=/iPhone|iPad|iPod/.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1);
+var android=/Android/.test(ua);
+var firefox=/Firefox\/|FxiOS/.test(ua);
+var samsung=/SamsungBrowser/.test(ua);
+var edge=/Edg(e|A|iOS)?\//.test(ua);
+var embutido=/FBAN|FBAV|FB_IAB|Instagram|Line\/|Twitter|TikTok|; wv\)|GSA\//.test(ua);
+var safariMac=!ios&&/Macintosh/.test(ua)&&/Safari\//.test(ua)&&!/Chrome|Chromium|CriOS|Edg|OPR|Firefox|SamsungBrowser/.test(ua);
+var verSafari=parseInt((ua.match(/Version\/(\d+)/)||[])[1]||"0",10);
+var plataforma=function(){
+ if(ios)return firefox?"ios-firefox":/CriOS|EdgiOS|OPiOS|GSA\//.test(ua)?"ios-outro":embutido?"ios-embutido":"ios-safari";
+ if(embutido&&android)return "android-embutido";
+ if(firefox)return android?"android-firefox":"pc-firefox";
+ if(safariMac)return verSafari>=17?"mac-safari":"mac-safari-antigo";
+ if(samsung)return "android-samsung";
+ if(android)return "android-chrome";
+ return "pc-chrome";
+};
+var TXT={
+ "ios-safari":["No iPhone e no iPad a instalação é feita pelo próprio Safari, em 3 toques:",["Toque em <b>Compartilhar</b> (o quadrado com a setinha ⬆️), na barra de baixo ou no alto da tela.","Role a lista e toque em <b>Adicionar à Tela de Início</b>.","Confirme em <b>Adicionar</b>, no canto de cima. O sol do Mestre Solar aparece na sua tela."],"Se não achar a opção, toque em <b>Editar Ações</b>, no fim da lista, e ative <b>Adicionar à Tela de Início</b>."],
+ "ios-outro":["No iPhone e no iPad, o app é instalado pelo menu Compartilhar:",["Toque em <b>Compartilhar</b> ⬆️ (no Chrome, fica ao lado do endereço; ou no menu ⋯).","Toque em <b>Adicionar à Tela de Início</b>.","Confirme em <b>Adicionar</b>."],"Se a opção não aparecer, abra este endereço no <b>Safari</b> e siga os mesmos passos."],
+ "ios-firefox":["No Firefox do iPhone:",["Toque no menu <b>☰</b> e depois em <b>Compartilhar</b> ⬆️.","Toque em <b>Adicionar à Tela de Início</b>.","Confirme em <b>Adicionar</b>."],"Se a opção não aparecer, abra este endereço no <b>Safari</b> e siga os mesmos passos."],
+ "ios-embutido":["Você abriu o link dentro de outro aplicativo, e ele não deixa instalar. Faça assim:",["Toque no menu <b>⋯</b> e escolha <b>Abrir no Safari</b> (ou <b>Abrir no navegador</b>).","No Safari, toque em <b>Compartilhar</b> ⬆️.","Toque em <b>Adicionar à Tela de Início</b> e depois em <b>Adicionar</b>."],""],
+ "mac-safari":["No Safari do Mac, o Mestre Solar vira um app no Dock:",["No menu do alto, clique em <b>Arquivo</b>.","Clique em <b>Adicionar ao Dock…</b>","Clique em <b>Adicionar</b>. O sol aparece no Dock e no Launchpad."],"Também dá pelo botão <b>Compartilhar</b> ⬆️ → <b>Adicionar ao Dock</b>."],
+ "mac-safari-antigo":["O Safari do seu Mac é anterior à versão 17 e ainda não instala apps da web.",["Atualize o macOS (Safari 17 ou mais novo) e use <b>Arquivo → Adicionar ao Dock</b>,","ou abra este endereço no <b>Chrome</b> ou no <b>Edge</b> e toque no sol de novo."],""],
+ "android-firefox":["No Firefox do Android:",["Toque no menu <b>⋮</b> (três pontinhos).","Toque em <b>Instalar</b> (em algumas versões: <b>Adicionar à tela inicial</b>).","Confirme em <b>Adicionar</b>."],"O Firefox não permite que o próprio app abra a instalação; por isso ela é feita pelo menu. No Chrome é um toque só."],
+ "pc-firefox":["O Firefox para computador não instala apps da web como o Chrome e o Edge.",["Abra este endereço no <b>Chrome</b> ou no <b>Edge</b>.","Clique no sol <b>Instalar</b> de novo: a instalação acontece na hora."],"Você também pode salvar o endereço nos favoritos do Firefox."],
+ "android-embutido":["Você abriu o link dentro de outro aplicativo, e ele não deixa instalar. Faça assim:",["Toque no menu <b>⋮</b> e escolha <b>Abrir no Chrome</b> (ou <b>Abrir no navegador</b>).","No Chrome, toque no sol <b>Instalar</b> de novo."],""],
+ "android-samsung":["No Samsung Internet:",["Toque no menu <b>☰</b>, na barra de baixo.","Toque em <b>Adicionar página a</b> → <b>Tela inicial</b> (ou no ícone ⬇️ ao lado do endereço).","Confirme em <b>Adicionar</b>."],""],
+ "android-chrome":["O navegador ainda está preparando a instalação. Se nada aparecer em alguns segundos:",["Toque no menu <b>⋮</b> (três pontinhos), no alto.","Toque em <b>Instalar app</b> (ou <b>Adicionar à tela inicial</b>).","Confirme em <b>Instalar</b>."],"Se já instalou, procure o sol do Mestre Solar entre os seus aplicativos."],
+ "pc-chrome":["O navegador ainda está preparando a instalação. Se nada aparecer em alguns segundos:",["No Chrome: clique no ícone de instalar ⊕ na barra de endereço, ou no menu <b>⋮</b> → <b>Transmitir, salvar e compartilhar</b> → <b>Instalar página como app</b>.","No Edge: menu <b>⋯</b> → <b>Aplicativos</b> → <b>Instalar este site como um aplicativo</b>.","Confirme em <b>Instalar</b>."],"Se já instalou, procure o Mestre Solar entre os seus aplicativos."]
+};
+var mostrarPassos=function(){
+ var k=plataforma(),t=TXT[k]||TXT["pc-chrome"];
+ $("inst-intro").innerHTML=t[0];
+ $("inst-passos").innerHTML=t[1].map(function(x){return "<li>"+x+"</li>"}).join("");
+ $("inst-nota").innerHTML=t[2]||"";fo.setAttribute("data-plataforma",k);
+ fo.hidden=false;var f=fo.querySelector("[data-fecha]");f&&f.focus();
+};
+fo.addEventListener("click",function(e){if(e.target===fo||e.target.hasAttribute("data-fecha"))fo.hidden=true});
+var atualizar=function(){bt.hidden=jaApp()};
+var instalar=function(){
+ tirarToast();
+ if(pedido){var p=pedido;pedido=null;
+  try{p.prompt();p.userChoice&&p.userChoice.then(function(r){window.__instalarEscolha=r&&r.outcome;if(r&&r.outcome==="accepted"){instalado=true;atualizar()}}).catch(function(){})}catch(e){mostrarPassos()}
+  return;}
+ mostrarPassos();
+};
+bt.addEventListener("click",instalar);
+window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();pedido=e;window.__instalarPronto=true;atualizar()});
+window.addEventListener("appinstalled",function(){instalado=true;pedido=null;fo.hidden=true;tirarToast();atualizar()});
+try{matchMedia("(display-mode: standalone)").addEventListener("change",atualizar)}catch(e){}
+atualizar();
+/* Convite discreto, uma única vez, logo depois de atravessar o portal. */
+var toast=null,CH="ms-instalar-oferecido";
+var tirarToast=function(){if(toast){toast.remove();toast=null}};
+var oferecer=function(){
+ try{if(jaApp()||localStorage.getItem(CH))return;if(!pedido&&!ios&&!safariMac)return;localStorage.setItem(CH,"1")}catch(e){return}
+ toast=document.createElement("div");toast.className="inst-toast";toast.setAttribute("role","status");
+ toast.innerHTML='<img src="icons/icon-192.png" alt=""><span>Leve o Mestre Solar para a sua tela inicial</span><button class="botao" type="button">Instalar</button><button class="x" type="button" aria-label="Agora não">×</button>';
+ toast.querySelector(".botao").addEventListener("click",instalar);toast.querySelector(".x").addEventListener("click",tirarToast);
+ document.body.appendChild(toast);setTimeout(tirarToast,15000);
+};
+var be=$("portal-entrar");if(be)be.addEventListener("click",function(){setTimeout(oferecer,9000)},{once:true});
+window.MestreSolarInstalar={plataforma:plataforma,instalar:instalar,pronto:function(){return !!pedido},passos:mostrarPassos};
 }catch(e){}}();
 </script>
 </body>

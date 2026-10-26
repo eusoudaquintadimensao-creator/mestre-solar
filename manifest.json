@@ -1,8 +1,10 @@
 {
-  "name": "Mestre Solar · Portal do Conhecimento",
+  "id": "./",
+  "name": "Mestre Solar",
   "short_name": "Mestre Solar",
-  "description": "Mistérios, sabedoria e a verdade calculada, com voz.",
+  "description": "Mestre Solar · Portal do Conhecimento: mistérios, sabedoria e a verdade calculada, com voz.",
   "lang": "pt-BR",
+  "dir": "ltr",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -10,7 +12,8 @@
   "background_color": "#07050d",
   "theme_color": "#07050d",
   "icons": [
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }
