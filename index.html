@@ -672,11 +672,12 @@ function aplicaVoz(quem){try{var conf=W.MESTRE_SOLAR_CONFIG;if(!conf||!conf.voz)
   conf.voz.tom=0.95;conf.voz.velocidade=0.82}}catch(e){}}
 function restauraVoz(){try{var conf=W.MESTRE_SOLAR_CONFIG;if(conf&&conf.voz&&vozBak){conf.voz.vozesPreferidas=vozBak.pref;conf.voz.vozesEvitar=vozBak.ev;conf.voz.tom=vozBak.tom;conf.voz.velocidade=vozBak.vel}}catch(e){}}
 function fala(quem,texto,cb){if(!texto){cb&&cb();return}
- setLegenda(quem,texto);aplicaVoz(quem);
+ var falado=String(texto).replace(/^(?:Águia Primordial|Aguia Primordial|Aurora|Mestre Solar)\s*:\s*/i,"");
+ setLegenda(quem,falado);aplicaVoz(quem);
  var m=MS();if(!m){cb&&cb();return}
  try{if(m.ligarVoz)m.ligarVoz()}catch(e){}
- try{var li=m.render(nomeQuem(quem)+": "+texto,[]);if(li)li.setAttribute("data-sol-quem",quem)}catch(e){}
- var ok=false;try{ok=m.falar(texto,function(){restauraVoz();limpaLegenda();cb&&cb()})}catch(e){ok=false}
+ try{var li=m.render(nomeQuem(quem)+": "+falado,[]);if(li){li.setAttribute("data-sol-quem",quem);li.setAttribute("data-sol-falado",falado)}}catch(e){}
+ var ok=false;try{ok=m.falar(falado,function(){restauraVoz();limpaLegenda();cb&&cb()})}catch(e){ok=false}
  if(!ok){restauraVoz();limpaLegenda();setTimeout(function(){cb&&cb()},200)}}
 function falaSeq(itens,i,cb){i=i||0;if(i>=itens.length){cb&&cb();return}
  var it=itens[i];if(!it||!it.t)return falaSeq(itens,i+1,cb);
@@ -913,32 +914,47 @@ function montaCaminhosUI(id,tema,voz){var lista=caminhosDe(id);if(!lista.length)
 function aposLicaoCaminhos(tema){quando(function(){var id=ultLicao||(W.MSX&&MSX.id&&MSX.id(tema));if(id){ultLicao=id;salvaCfg({ultimoTema:tema});montaCaminhosUI(id,tema,true)}})}
 
 /* ---------- Modo Investigação — Núcleo da Verdade ---------- */
-function seloDeLicao(nv){var m={"Comprovado":"verdadeiro","Tradição":"tradicao","Hipótese":"duvidoso","Desconhecido":"desconhecido","Mito":"falso"};
- var n=SOL_DATA&&SOL_DATA.nucleo&&SOL_DATA.nucleo.rotulos||{};
- if(!nv||!nv.length)return{key:"desconhecido",band:(n.desconhecido||"❓"),conf:LANG==="en"?"low":LANG==="es"?"baja":"baixa"};
- var k=m[nv[0]]||"desconhecido";var conf=nv.indexOf("Comprovado")>=0?(LANG==="en"?"high":"alta"):(nv.length>1?(LANG==="en"?"medium":LANG==="es"?"media":"média"):(LANG==="en"?"medium":"média"));
- return{key:k,band:n[k]||"❓",conf:conf}}
-function cardOffline(tema,hits){var n=SOL_DATA.nucleo||{},rot=n.rotulos||{},secs=n.secoes||[];
- var best=hits&&hits[0],band=seloDeLicao(best&&best.selosRaw),sub=[];
- var txt="";txt+="🔍 "+(secs[0]||"Veredito")+"\n"+band.band+" — "+(best?best.tema:tema)+". "+T("Confiança")+": "+band.conf+".\n\n";
+function seloDeLicao(nv){var n=SOL_DATA&&SOL_DATA.nucleo&&SOL_DATA.nucleo.rotulos||{};
+ var map={"Comprovado":"verdadeiro","Proven":"verdadeiro","Comprobado":"verdadeiro","Tradição":"tradicao","Tradition":"tradicao","Tradición":"tradicao","Hipótese":"duvidoso","Hypothesis":"duvidoso","Hipótesis":"duvidoso","Desconhecido":"desconhecido","Unknown":"desconhecido","Desconocido":"desconhecido","Mito":"falso","Myth":"falso"};
+ if(!nv||!nv.length)return{key:"desconhecido",band:(n.desconhecido||"❓ Desconhecido"),conf:LANG==="en"?"low":LANG==="es"?"baja":"baixa"};
+ var keys=nv.map(function(x){return map[x]||map[String(x).replace(/^[^A-Za-zÀ-ÿ]+/,"")]||null}).filter(Boolean);
+ var order=["verdadeiro","tradicao","duvidoso","falso","desconhecido"];
+ var key=order.find(function(k){return keys.indexOf(k)>=0})||"desconhecido";
+ var conf=keys.indexOf("verdadeiro")>=0?(LANG==="en"?"high":LANG==="es"?"alta":"alta"):(keys.length>1?(LANG==="en"?"medium":LANG==="es"?"media":"média"):(LANG==="en"?"medium":LANG==="es"?"media":"média"));
+ return{key:key,band:n[key]||"❓",conf:conf}}
+function enrichHits(hits){return(hits||[]).map(function(h){
+  var id=h.id||(W.MSX&&MSX.id&&MSX.id(h.tema))||null;h.id=id;
+  if(id&&QUIZ_DATA&&QUIZ_DATA[id]){var raw=QUIZ_DATA[id].selos||[];h.selosRaw=raw.slice();
+   h.selos=raw.map(function(x){return({Comprovado:"✅",Proven:"✅",Comprobado:"✅","Tradição":"📜",Tradition:"📜",Tradición:"📜","Hipótese":"🔭",Hypothesis:"🔭",Hipótesis:"🔭",Desconhecido:"❓",Unknown:"❓",Desconocido:"❓",Mito:"⚠️",Myth:"⚠️"})[x]||x})}
+  return h}).filter(function(h){return h&&h.tema})}
+var ALIAS_INV={"mkultra":"teorias da conspiracao illuminati manipulacao propaganda","mk ultra":"teorias da conspiracao illuminati manipulacao","mind control":"manipulacao propaganda fabricacao do consentimento","controle da mente":"manipulacao propaganda fabricacao do consentimento","pouso na lua":"teorias da conspiracao","moon landing":"teorias da conspiracao","bilderberg":"teorias da conspiracao elite secreta","nova ordem mundial":"teorias da conspiracao illuminati","nwo":"teorias da conspiracao illuminati","vaticano":"caixa de pandora igreja crimes","concilio de niceia":"concilio de niceia niceia trindade","concílio de niceia":"concilio de niceia niceia trindade","nicaea":"concilio de niceia trindade","trindade":"trindade niceia constantino"};
+function buscaInvestiga(tema){var q=String(tema||""),n=norm(q),extra="";
+ Object.keys(ALIAS_INV).forEach(function(k){if(n.indexOf(norm(k))>=0)extra+=" "+ALIAS_INV[k]});
+ var hits=[];
+ if(mBusca){hits=mBusca(q,potencia?12:8)||[];if(extra){var more=mBusca(q+" "+extra,12)||[];more.forEach(function(h){if(!hits.some(function(x){return x.tema===h.tema}))hits.push(h)})}}
+ hits.sort(function(a,b){return(b.score||0)-(a.score||0)});
+ return enrichHits(hits).slice(0,potencia?10:6)}
+function cardOffline(tema,hits){var n=SOL_DATA.nucleo||{},secs=n.secoes||[];
+ hits=enrichHits(hits);var best=hits&&hits[0],band=seloDeLicao(best&&best.selosRaw);
+ var vereditoTxt=best?(band.band+" — "+best.tema):(band.band+" — "+tema+" ("+T("ainda sem lição direta no Portal")+")");
+ var txt="🔍 "+(secs[0]||"Veredito")+"\n"+vereditoTxt+". "+T("Confiança")+": "+band.conf+".\n\n";
  txt+="2) "+(secs[1]||"A favor")+"\n";
- (hits||[]).slice(0,potencia?5:3).forEach(function(h){txt+="• "+h.tema+" ("+(h.selos||[]).join(" ")+")\n"});
- if(!hits||!hits.length)txt+="• "+(n.sem_base||"")+"\n";
+ if(hits&&hits.length)hits.slice(0,potencia?5:3).forEach(function(h){txt+="• "+h.tema+" ("+(h.selos||[]).join(" ")+")\n"});
+ else txt+="• "+(n.sem_base||T("Sem lição direta na base; use fontes primárias e a Wikipédia."))+"\n";
  txt+="\n3) "+(secs[2]||"Contra")+"\n• "+T("Compare com fontes primárias e o selo ⚠️ quando houver mito.")+"\n";
  txt+="\n4) "+(secs[3]||"Quem afirma")+"\n• "+T("Cada lição do Portal mostra fontes; abra-as e veja quem escreveu e o contexto.")+"\n";
  txt+="\n5) "+(secs[4]||"Não se sabe")+"\n• "+T("Onde o selo é ❓ ou 🔭, a certeza ainda não fechou.")+"\n";
  txt+="\n6) "+(secs[5]||"Conferir")+"\n• "+T("Abra as fontes da lição, confira o documento original, e diga mostrar fontes.")+"\n";
- txt+="\n7) "+(secs[6]||"Lições")+"\n";
- (hits||[]).slice(0,potencia?8:4).forEach(function(h){txt+="• "+h.tema+(h.id?" (?l="+h.id+")":"")+"\n"});
- return{texto:txt,veredito:best?best.tema:tema,bandeira:band.band,confianca:band.conf,id:best&&best.id}}
+ if(hits&&hits.length){txt+="\n7) "+(secs[6]||"Lições do Portal")+"\n";hits.slice(0,potencia?8:5).forEach(function(h){txt+="• "+h.tema+(h.id?"  →  ?l="+h.id:"")+"\n"})}
+ return{texto:txt,veredito:best?best.tema:tema,bandeira:band.band,confianca:band.conf,id:best&&best.id,hits:hits}}
+
 function investigar(tema,idHint){if(bloqueado(tema)){bloquearFala();return}
  investigaTema=tema;fase="investiga";
  var usaIA=!!(cfg().net),usaWiki=true;
  if(potencia)progStart(usaWiki,usaIA);else{D.body.classList.remove("sol-potencia")}
  fala("guia",preenche((SOL_DATA.nucleo&&SOL_DATA.nucleo.lendo)||"…",{tema:tema}),function(){
-  var hits=mBusca?mBusca(tema,potencia?10:5):[];
+  var hits=buscaInvestiga(tema);
   if(potencia)progMark("portal",true);
-  (hits||[]).forEach(function(h){if(h.id&&QUIZ_DATA[h.id]){h.selos=(QUIZ_DATA[h.id].selos||[]).map(function(x){return({Comprovado:"✅",Proven:"✅",Comprobado:"✅","Tradição":"📜",Tradition:"📜",Tradición:"📜","Hipótese":"🔭",Hypothesis:"🔭",Hipótesis:"🔭",Desconhecido:"❓",Unknown:"❓",Desconocido:"❓",Mito:"⚠️",Myth:"⚠️"})[x]||x});h.selosRaw=QUIZ_DATA[h.id].selos}});
   /* camada 2: aprofundar texts */
   if(potencia){var deep=0;(hits||[]).slice(0,5).forEach(function(){deep++});progMark("aprofundar",deep>0,deep?1:0)}
   if(potencia)progMark("nucleo",true);
@@ -946,7 +962,14 @@ function investigar(tema,idHint){if(bloqueado(tema)){bloquearFala();return}
    if(potencia){if(usaWiki)progMark("wiki",true);}
    function mostra(card,ext){if(potencia)progMark("cadeia",true);
     var tag=ext?((SOL_DATA.falas.conexao&&SOL_DATA.falas.conexao.rotulo)||"🌐"):"";
-    var m=MS();var li=m&&m.render((tag?tag+"\n\n":"")+card.texto+(wikiTxt?"\n\n📚 Wikipédia: "+wikiTxt.slice(0,400):""),[]);if(li){li.classList.add("sol-investiga");if(ext)li.classList.add("sol-ext")}
+    var licTxt=""; if(card.hits&&card.hits.length){licTxt="\n\n7) "+((SOL_DATA.nucleo&&SOL_DATA.nucleo.secoes&&SOL_DATA.nucleo.secoes[6])||"Lições do Portal")+"\n";card.hits.slice(0,6).forEach(function(h){licTxt+="• "+h.tema+(h.id?"  →  ?l="+h.id:"")+"\n"})}
+    else if(ext&&hits&&hits.length){licTxt="\n\n7) "+((SOL_DATA.nucleo&&SOL_DATA.nucleo.secoes&&SOL_DATA.nucleo.secoes[6])||"Lições do Portal")+"\n";hits.slice(0,6).forEach(function(h){licTxt+="• "+h.tema+(h.id?"  →  ?l="+h.id:"")+"\n"})}
+    var corpo=(tag?tag+"\n\n":"")+card.texto+(wikiTxt?"\n\n📚 Wikipédia: "+wikiTxt.slice(0,400):"");
+    if(licTxt&&corpo.indexOf("?l=")<0&&!/\n7\)/.test(corpo))corpo+=licTxt;
+    /* strip empty "7) ..." heading with no bullets */
+    corpo=corpo.replace(/\n7\)[^\n]*\n(?!•)/g,"\n");
+    var m=MS();var li=m&&m.render(corpo,[]);if(li){li.classList.add("sol-investiga");if(ext)li.classList.add("sol-ext");
+     var hs=card.hits&&card.hits.length?card.hits:hits;if(hs&&hs.length){var lb=el("div","sol-licoes");hs.slice(0,6).forEach(function(h){if(!h.id)return;var b=el("button","botao2 peq","📖 "+h.tema);b.type="button";b.addEventListener("click",function(){if(MS().abrirPorId)MS().abrirPorId(h.id)});lb.appendChild(b)});li.appendChild(lb)}}
     var n=SOL_DATA.nucleo||{};
     fala("guia",preenche(n.veredito_fala||card.bandeira,{bandeira:card.bandeira,veredito:card.veredito,confianca:card.confianca}),function(){
      var id=idHint||card.id||(hits[0]&&hits[0].id);if(id){ultLicao=id;montaCaminhosUI(id,tema,true)}
@@ -963,7 +986,7 @@ function investigar(tema,idHint){if(bloqueado(tema)){bloquearFala();return}
     chamarIANucleo(tema,ctx,function(txt){
      if(potencia)progMark("ia",true,1);
      if(!txt||txt==="__block__"){if(txt==="__block__")bloquearFala();else mostra(card,false);return}
-     var ver=txt.split("\n")[0]||tema;mostra({texto:txt,veredito:ver.slice(0,120),bandeira:"🔍",confianca:potencia?(LANG==="en"?"high":"alta"):(LANG==="en"?"medium":"média"),id:hits[0]&&hits[0].id},true)})}
+     var ver=txt.split("\n")[0]||tema;var band=seloDeLicao(hits[0]&&hits[0].selosRaw);mostra({texto:txt,veredito:(hits[0]&&hits[0].tema)||ver.slice(0,120),bandeira:band.band||"🔍",confianca:band.conf||(potencia?(LANG==="en"?"high":"alta"):(LANG==="en"?"medium":"média")),id:hits[0]&&hits[0].id,hits:hits},true)})}
    else{if(potencia)progMark("ia","skip");mostra(card,false)}
   }
   /* Wikipédia opcional */
@@ -1109,7 +1132,8 @@ function ligaWake(){var ph=wakePhrase();if(!ph||wakeOn)return;var SR=W.SpeechRec
 function paraWake(){wakeOn=false;try{wakeRec&&wakeRec.stop()}catch(e){}}
 W.addEventListener("jarvis:sol",function(){paraWake();if(cfg().wake!=="off")ligaWake()});
 /* ---------- API pública + hooks ---------- */
-W.SOL={cmd:cmd,despertar:despertar,investigar:investigar,pronto:function(){return!!SOL_DATA},cfg:cfg,setBusca:setBusca,bloqueado:bloqueado,filtroMsg:filtroMsg,ligaAnalyser:ligaAnalyser,caminhos:caminhosDe,potencia:function(){return potencia},setPotencia:function(v,silent){if(!!v!==potencia)togglePotencia(silent);else if(v){potencia=true;var c=ls(KS)||{};c.potencia=true;ls(KS,c)}}};
+W.SOL={cmd:cmd,despertar:despertar,investigar:investigar,pronto:function(){return!!SOL_DATA},cfg:cfg,setBusca:setBusca,bloqueado:bloqueado,filtroMsg:filtroMsg,ligaAnalyser:ligaAnalyser,caminhos:caminhosDe,potencia:function(){return potencia},setPotencia:function(v,silent){if(!!v!==potencia)togglePotencia(silent);else if(v){potencia=true;var c=ls(KS)||{};c.potencia=true;ls(KS,c)}},progStart:progStart,progMark:progMark,progEnd:progEnd,progPct:progPct};
+function _solWire(){if(MS()&&MS().buscar)setBusca(function(q,lim){return MS().buscar(q,lim)});else setTimeout(_solWire,300)}_solWire();
 loadTrilha();
 function inicio(){carrega(0);montaOndas();quando(function(){montaAjustes();aplicaVisual();if(cfg().wake!=="off")ligaWake();montaBotaoInvestiga()});
  var _camBusy=false;W.addEventListener("jarvis:tema",function(e){if(_camBusy||fase==="investiga")return;var tema=e.detail&&e.detail.tema;quando(function(){var id=W.MSX&&MSX.id&&MSX.id(tema);if(id){ultLicao=id;salvaCfg({ultimoTema:tema});setTimeout(function(){if(_camBusy)return;_camBusy=true;try{montaCaminhosUI(id,tema,false)}finally{setTimeout(function(){_camBusy=false},800)}},500)}})});
@@ -1117,8 +1141,6 @@ function inicio(){carrega(0);montaOndas();quando(function(){montaAjustes();aplic
  /* click do Sol: hook no index.html chama SOL.despertar */}
 D.readyState==="loading"?D.addEventListener("DOMContentLoaded",inicio):inicio();
 }();
-
-function _solWire(){if(window.MestreSolar&&MestreSolar.buscar){window.SOL&&SOL.setBusca(function(q,lim){return MestreSolar.buscar(q,lim)})}else setTimeout(_solWire,300)}_solWire();
 
 </script>
 </body>
