@@ -128,6 +128,7 @@ body.sol-potencia .sol-ondas{opacity:calc(0.4 + var(--sol-p,0)*0.6)}
 </head>
 <body>
 <script src="conteudo/ms-legenda.js"></script>
+<script src="conteudo/ms-aberturas.js"></script>
 
 <canvas id="ceu" aria-hidden="true"></canvas>
 <div class="app">
@@ -835,16 +836,22 @@ var __solIntroFeita=false;
 function __solEntradaModo(){var c=cfg();var v=c.entradaMusica;if(!v){v=(c.introEpica===false?"off":"rock")}if(v!=="rock"&&v!=="epica"&&v!=="off")v="rock";return v}
 function __solPlayIntroThen(next){var modo=__solEntradaModo();if(modo==="off"||__solIntroFeita){next();return}
  __solIntroFeita=true;try{var base=(typeof M==="string"&&M)?M:((window.MestreSolar&&MestreSolar.conteudo&&MestreSolar.conteudo().base)||"conteudo/");if(base.slice(-1)!=="/")base+="/";var file=modo==="rock"?"audio-sigma/intro-rock.mp3":"audio-sigma/intro-epica.mp3";var ax=new Audio(base+file);ax.volume=0.90;var done=false,fire=function(){if(done)return;done=true;try{next()}catch(e){}};ax.addEventListener("error",fire);var pr=ax.play();if(pr&&pr.catch)pr.catch(fire);/* rock: voz ~1.2s no descanso; épica: ~4.2s no duck */setTimeout(fire,modo==="rock"?1200:4200)}catch(e){next()}}
-function despertar(){quando(function(){ativo=true;marcaDia();var c=cfg(),seq=[];
- var d=linha("intencoes.despertar")||(LANG==="en"?"Solar systems online.":LANG==="es"?"Sistemas solares activos.":"Sistemas solares ativos.");
- seq.push({q:"mestre",t:d});
- if(!c.viuSol){seq.push({q:"mestre",t:linha("intencoes.primeira_vez")||""});salvaCfg({viuSol:true})}
- if(c.guia!=="mestre")seq.push({q:"guia",t:linha("intencoes.apresenta")||""});
- if(!c.nome)seq.push({q:"guia",t:linha("intencoes.pergunta_nome")||""});
- else if(c.ultimoTema)seq.push({q:"guia",t:linha("intencoes.retorno")||""});
- else seq.push({q:"guia",t:linha("intencoes.comoesta")||""});
- seq=seq.filter(function(x){return x.t});
- __solPlayIntroThen(function(){falaSeq(seq,0,function(){fase="pos_despertar";if(cfg().micApos)abreMic()})})})}
+function despertar(){quando(function(){ativo=true;marcaDia();
+ function _seg(d){var c=cfg(),seq=[];
+  if(LANG!=="pt"&&d){try{d=MSI.t(d)}catch(e){}}
+  seq.push({q:"mestre",t:d});
+  if(!c.viuSol){seq.push({q:"mestre",t:linha("intencoes.primeira_vez")||""});salvaCfg({viuSol:true})}
+  if(c.guia!=="mestre")seq.push({q:"guia",t:linha("intencoes.apresenta")||""});
+  if(!c.nome)seq.push({q:"guia",t:linha("intencoes.pergunta_nome")||""});
+  else if(c.ultimoTema)seq.push({q:"guia",t:linha("intencoes.retorno")||""});
+  else seq.push({q:"guia",t:linha("intencoes.comoesta")||""});
+  seq=seq.filter(function(x){return x.t});
+  __solPlayIntroThen(function(){falaSeq(seq,0,function(){fase="pos_despertar";if(cfg().micApos)abreMic()})})}
+ var fallback=linha("intencoes.despertar")||(LANG==="en"?"Solar systems online.":LANG==="es"?"Sistemas solares activos.":"Sistemas solares ativos.");
+ if(window.MSAberturas&&MSAberturas.pick){
+  MSAberturas.pick(function(ab){ _seg((ab&&ab.texto)||fallback); });
+ }else _seg(fallback);
+})}
 function abreMic(){try{var mic=D.getElementById("mic");mic&&mic.click()}catch(e){}}
 function aposHumor(h){var k=h==="bem"?"humor_bem":h==="mal"?"humor_mal":"humor_neutro";
  falaSeq([{q:"guia",t:linha("intencoes."+k)},{q:"guia",t:linha("intencoes.escolher_tema")}],0,function(){fase="tema";if(cfg().micApos)abreMic()})}
@@ -1298,7 +1305,7 @@ W.addEventListener("jarvis:sol",function(){paraWake();if(cfg().wake!=="off")liga
 W.SOL={cmd:cmd,despertar:despertar,investigar:investigar,pronto:function(){return!!SOL_DATA},cfg:cfg,setBusca:setBusca,bloqueado:bloqueado,filtroMsg:filtroMsg,ligaAnalyser:ligaAnalyser,caminhos:caminhosDe,potencia:function(){return potencia},setPotencia:function(v,silent){if(!!v!==potencia)togglePotencia(silent);else if(v){potencia=true;var c=ls(KS)||{};c.potencia=true;ls(KS,c)}},progStart:progStart,progMark:progMark,progEnd:progEnd,progPct:progPct};
 function _solWire(){if(MS()&&MS().buscar)setBusca(function(q,lim){return MS().buscar(q,lim)});else setTimeout(_solWire,300)}_solWire();
 loadTrilha();
-function inicio(){carrega(0);montaOndas();quando(function(){montaAjustes();aplicaVisual();if(cfg().wake!=="off")ligaWake();montaBotaoInvestiga()});
+function inicio(){carrega(0);montaOndas();try{window.MSAberturas&&MSAberturas.load(function(){})}catch(e){}quando(function(){montaAjustes();aplicaVisual();if(cfg().wake!=="off")ligaWake();montaBotaoInvestiga()});
  var _camBusy=false;W.addEventListener("jarvis:tema",function(e){if(_camBusy||fase==="investiga")return;var tema=e.detail&&e.detail.tema;quando(function(){var id=W.MSX&&MSX.id&&MSX.id(tema);if(id){ultLicao=id;salvaCfg({ultimoTema:tema});setTimeout(function(){if(_camBusy)return;_camBusy=true;try{montaCaminhosUI(id,tema,false)}finally{setTimeout(function(){_camBusy=false},800)}},500)}})});
  /* sol click override via capture */
  /* click do Sol: hook no index.html chama SOL.despertar */}

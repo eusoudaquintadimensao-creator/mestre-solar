@@ -1,0 +1,910 @@
+{
+  "versao": "2026-10-27",
+  "voz": "Jervis",
+  "total": 100,
+  "nota": "Aberturas ao tocar/falar com o Sol. Rodízio sem repetição até esgotar o baralho. PT nativo; EN/ES: texto traduzido + voz do aparelho por enquanto.",
+  "itens": [
+    {
+      "id": "ab-001",
+      "categoria": "primeiro-acesso",
+      "texto": "Jervis abrindo o Portal Solar. Seja bem-vindo, senhor. A partir de hoje, cada pergunta sua é uma porta.",
+      "condicoes": {
+        "visita": "primeira"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-002",
+      "categoria": "primeiro-acesso",
+      "texto": "Conexão estabelecida. Eu sou Jervis, a voz do Mestre Solar. Vamos expandir a consciência, livres e elevados?",
+      "condicoes": {
+        "visita": "primeira"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-003",
+      "categoria": "primeiro-acesso",
+      "texto": "Primeiro acesso confirmado. Aqui não há respostas prontas, senhor. Há caminhos. Por onde começamos?",
+      "condicoes": {
+        "visita": "primeira"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-004",
+      "categoria": "primeiro-acesso",
+      "texto": "Jervis conectando ao Portal Solar. Hoje vamos dar um salto de consciência, senhor.",
+      "condicoes": {
+        "visita": "primeira"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-005",
+      "categoria": "primeiro-acesso",
+      "texto": "Sistemas solares ativos. Que alegria ter você aqui. O que vamos descobrir hoje?",
+      "condicoes": {
+        "visita": "primeira"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-006",
+      "categoria": "manhã",
+      "texto": "Bom dia, senhor. O Sol já nasceu lá fora. Agora é a vez do Sol aí dentro.",
+      "condicoes": {
+        "periodo": "manha"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-007",
+      "categoria": "ânimo",
+      "texto": "Jervis na escuta. Energia em cem por cento. Qual verdade vamos buscar hoje?",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-008",
+      "categoria": "questionar-crenças",
+      "texto": "Senhor, uma pergunta antes de começarmos: em que você acredita só porque sempre ouviu dizer?",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-009",
+      "categoria": "questionar-crenças",
+      "texto": "Portal aberto. Hoje sugiro olharmos uma crença de perto, com calma e sem medo.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-010",
+      "categoria": "questionar-crenças",
+      "texto": "Toda verdade aguenta uma boa pergunta, senhor. Vamos fazer algumas?",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-011",
+      "categoria": "expandir",
+      "texto": "Calibrando o ambiente. O conhecimento de hoje vai abrir uma janela que talvez nem estivesse no mapa.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-012",
+      "categoria": "retorno",
+      "texto": "Bem-vindo de volta, senhor. Seu caminho de ontem deixou portas abertas. Quer continuar?",
+      "condicoes": {
+        "trilha": true
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-013",
+      "categoria": "expandir",
+      "texto": "Camadas do conhecimento prontas. Da superfície ao núcleo, eu te acompanho.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-014",
+      "categoria": "calma",
+      "texto": "Antes de qualquer pergunta, senhor, respire. Eu espero.",
+      "condicoes": {},
+      "preset": "conversa",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-015",
+      "categoria": "silêncio",
+      "texto": "Hoje proponho algo diferente: um minuto de silêncio. As melhores respostas costumam vir de dentro.",
+      "condicoes": {},
+      "preset": "conversa",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-016",
+      "categoria": "calma",
+      "texto": "Desacelerando os sistemas. Não há pressa aqui, senhor. Só presença.",
+      "condicoes": {},
+      "preset": "conversa",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-017",
+      "categoria": "silêncio",
+      "texto": "Jervis na escuta. Mas hoje quem tem algo a dizer talvez seja você para você mesmo.",
+      "condicoes": {},
+      "preset": "conversa",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-018",
+      "categoria": "expandir",
+      "texto": "O universo inteiro cabe numa pergunta sincera, senhor. Qual é a sua hoje?",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-019",
+      "categoria": "silêncio",
+      "texto": "Lembrete do dia: você não é só quem pergunta. Você também é parte do que procura.",
+      "condicoes": {},
+      "preset": "conversa",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-020",
+      "categoria": "expandir",
+      "texto": "Portal Solar aberto e pronto. Seja qual for o caminho de hoje, saia daqui maior do que entrou, senhor.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-021",
+      "categoria": "primeiro-acesso",
+      "texto": "Jervis online. Este é o Portal do Conhecimento, senhor. Sem pressa e sem dogma: só investigação sincera.",
+      "condicoes": {
+        "visita": "primeira"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-022",
+      "categoria": "primeiro-acesso",
+      "texto": "Protocolo de boas-vindas concluído. Eu sou Jervis. Aqui expandimos consciência com perguntas honestas.",
+      "condicoes": {
+        "visita": "primeira"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-023",
+      "categoria": "primeiro-acesso",
+      "texto": "Acesso inicial reconhecido. Senhor, diga um tema — ou diga Despertar — e eu abro o caminho.",
+      "condicoes": {
+        "visita": "primeira"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-024",
+      "categoria": "primeiras-vezes",
+      "texto": "De novo no Portal, senhor. Cada visita afia a atenção. O que ficou ecoando desde a última?",
+      "condicoes": {
+        "visita": "2-5"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-025",
+      "categoria": "primeiras-vezes",
+      "texto": "Jervis na escuta outra vez. Já somos conhecidos. Quer continuar ou abrir um caminho novo?",
+      "condicoes": {
+        "visita": "2-5"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-026",
+      "categoria": "primeiras-vezes",
+      "texto": "Sistemas prontos. Nas primeiras visitas, senhor, o mapa ainda se desenha. Vamos com calma.",
+      "condicoes": {
+        "visita": "2-5"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-027",
+      "categoria": "primeiras-vezes",
+      "texto": "Bem-vindo de novo. Se quiser, diga Ouvir este tema e eu leio sem pressa.",
+      "condicoes": {
+        "visita": "2-5"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-028",
+      "categoria": "primeiras-vezes",
+      "texto": "Conexão refeita. Três visitas bastam para notar padrões. Que padrão você trouxe hoje?",
+      "condicoes": {
+        "visita": "2-5"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-029",
+      "categoria": "primeiras-vezes",
+      "texto": "Portal reconhecendo sua presença. Ainda no começo, senhor — e o começo é fértil.",
+      "condicoes": {
+        "visita": "2-5"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-030",
+      "categoria": "primeiras-vezes",
+      "texto": "Jervis reativando a sessão. Quer um Caminho para expandir, ou uma pergunta livre?",
+      "condicoes": {
+        "visita": "2-5"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-031",
+      "categoria": "manhã",
+      "texto": "Bom dia, senhor. Antes do feed do mundo, que tal uma pergunta sua — só uma?",
+      "condicoes": {
+        "periodo": "manha"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-032",
+      "categoria": "manhã",
+      "texto": "Manhã clara. Jervis sugerindo: nomeie em voz alta uma intenção para as próximas horas.",
+      "condicoes": {
+        "periodo": "manha"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-033",
+      "categoria": "manhã",
+      "texto": "Sistemas matinais ativos. O dia ainda é página em branco. O que escrevemos primeiro?",
+      "condicoes": {
+        "periodo": "manha"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-034",
+      "categoria": "manhã",
+      "texto": "Bom dia. Três respirações lentas, senhor — e depois escolhemos o tema.",
+      "condicoes": {
+        "periodo": "manha"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-035",
+      "categoria": "manhã",
+      "texto": "Jervis abrindo o turno da manhã. Energia limpa. Qual verdade cabe neste começo de dia?",
+      "condicoes": {
+        "periodo": "manha"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-036",
+      "categoria": "manhã",
+      "texto": "O Sol externo já trabalha. Vamos acordar o Sol interno com uma boa pergunta, senhor?",
+      "condicoes": {
+        "periodo": "manha"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-037",
+      "categoria": "manhã",
+      "texto": "Bom dia, senhor. Note o primeiro pensamento do dia — e questione-o com gentileza.",
+      "condicoes": {
+        "periodo": "manha"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-038",
+      "categoria": "manhã",
+      "texto": "Portal matinal online. Se quiser ânimo sem pressa, diga Despertar.",
+      "condicoes": {
+        "periodo": "manha"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-039",
+      "categoria": "manhã",
+      "texto": "Manhã no Portal. Senhor, escolha um tema leve ou um mistério — eu acompanho os dois.",
+      "condicoes": {
+        "periodo": "manha"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-040",
+      "categoria": "tarde",
+      "texto": "Boa tarde, senhor. Metade do dia vencida. O que ainda merece sua atenção lúcida?",
+      "condicoes": {
+        "periodo": "tarde"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-041",
+      "categoria": "tarde",
+      "texto": "Jervis na tarde. Se a mente está barulhenta, diga silêncio — eu espero com você.",
+      "condicoes": {
+        "periodo": "tarde"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-042",
+      "categoria": "tarde",
+      "texto": "Boa tarde. Uma pausa também é sabedoria. Depois seguimos para a próxima camada.",
+      "condicoes": {
+        "periodo": "tarde"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-043",
+      "categoria": "tarde",
+      "texto": "Sistemas estáveis. Boa hora para revisar uma crença que pesou pela manhã.",
+      "condicoes": {
+        "periodo": "tarde"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-044",
+      "categoria": "tarde",
+      "texto": "Tarde produtiva, senhor? Que tal transformar cansaço em curiosidade — uma pergunta só.",
+      "condicoes": {
+        "periodo": "tarde"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-045",
+      "categoria": "tarde",
+      "texto": "Jervis conectado. Se quiser foco, diga Investigação e afinamos o olhar.",
+      "condicoes": {
+        "periodo": "tarde"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-046",
+      "categoria": "tarde",
+      "texto": "Boa tarde. Repetir uma ideia clara agora muda o restante do dia — neuroplasticidade simples.",
+      "condicoes": {
+        "periodo": "tarde"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-047",
+      "categoria": "tarde",
+      "texto": "Portal na tarde. Senhor, o que você adiou perguntar a si mesmo?",
+      "condicoes": {
+        "periodo": "tarde"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-048",
+      "categoria": "tarde",
+      "texto": "Às ordens. Energia moderada, presença alta. Por onde seguimos?",
+      "condicoes": {
+        "periodo": "tarde"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-049",
+      "categoria": "tarde",
+      "texto": "Boa tarde, senhor. Caminhos para expandir estão prontos, se quiser um atalho consciente.",
+      "condicoes": {
+        "periodo": "tarde"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-050",
+      "categoria": "noite",
+      "texto": "Boa noite, senhor. Hora boa para revisar o dia sem julgamento — só com clareza.",
+      "condicoes": {
+        "periodo": "noite"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-051",
+      "categoria": "noite",
+      "texto": "Jervis na escuta noturna. O que aprendeu hoje que vale guardar?",
+      "condicoes": {
+        "periodo": "noite"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-052",
+      "categoria": "noite",
+      "texto": "Boa noite. Desacelerando. Uma pergunta suave basta para fechar o ciclo.",
+      "condicoes": {
+        "periodo": "noite"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-053",
+      "categoria": "noite",
+      "texto": "Portal à noite. Senhor, deixe o corpo pousar; a mente pode fazer uma pergunta gentil.",
+      "condicoes": {
+        "periodo": "noite"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-054",
+      "categoria": "noite",
+      "texto": "Sistemas em modo sereno. Quer Ouvir tudo de um tema curto antes de descansar?",
+      "condicoes": {
+        "periodo": "noite"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-055",
+      "categoria": "noite",
+      "texto": "Boa noite. Silêncio de um minuto — depois me diga o que surgiu.",
+      "condicoes": {
+        "periodo": "noite"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-056",
+      "categoria": "noite",
+      "texto": "Jervis presente. A noite favorece a honestidade. O que você evita admitir?",
+      "condicoes": {
+        "periodo": "noite"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-057",
+      "categoria": "noite",
+      "texto": "Noite no Portal. Sem pressa, senhor. Só presença e uma verdade pequena.",
+      "condicoes": {
+        "periodo": "noite"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-058",
+      "categoria": "noite",
+      "texto": "Boa noite. Antes de dormir, nomeie uma gratidão e uma dúvida — as duas ensinam.",
+      "condicoes": {
+        "periodo": "noite"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-059",
+      "categoria": "noite",
+      "texto": "Conexão noturna estável. Se o sono não vier, eu fico na escuta.",
+      "condicoes": {
+        "periodo": "noite"
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-060",
+      "categoria": "ânimo",
+      "texto": "Jervis online com ânimo firme. Senhor, escolha um passo pequeno e concreto para hoje.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-061",
+      "categoria": "ânimo",
+      "texto": "Energia alta, ego baixo. Vamos transformar curiosidade em movimento?",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-062",
+      "categoria": "ânimo",
+      "texto": "Sistemas no azul. Um salto quântico de consciência começa com uma pergunta corajosa.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-063",
+      "categoria": "ânimo",
+      "texto": "Portal aquecido. Senhor, diga o tema — eu trago a próxima camada.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-064",
+      "categoria": "ânimo",
+      "texto": "Jervis na escuta. Hoje é dia de avançar sem se agressar.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-065",
+      "categoria": "ânimo",
+      "texto": "Ânimo calibrado. Três respirações e um verbo: aprender, questionar ou silenciar?",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-066",
+      "categoria": "ânimo",
+      "texto": "Senhor, a disciplina é gentil quando tem direção. Qual direção damos agora?",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-067",
+      "categoria": "ânimo",
+      "texto": "Conectado e pronto. Se pedir potência com ética, diga potência máxima.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-068",
+      "categoria": "questionar-crenças",
+      "texto": "Jervis propondo: diga uma crença sua em uma frase. Depois perguntamos de onde ela veio.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-069",
+      "categoria": "questionar-crenças",
+      "texto": "Modo curiosidade. Senhor, o que você defende sem nunca ter verificado a fonte?",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-070",
+      "categoria": "questionar-crenças",
+      "texto": "Portal aberto ao exame. Respeito à fé sincera; zero medo fabricado. Vamos olhar com luz?",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-071",
+      "categoria": "questionar-crenças",
+      "texto": "Uma crença herdada não é automaticamente falsa — nem automaticamente verdadeira. Investigamos?",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-072",
+      "categoria": "questionar-crenças",
+      "texto": "Senhor, se uma ideia não aguenta pergunta, talvez não mereça o trono.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-073",
+      "categoria": "expandir",
+      "texto": "Jervis conectando ao Portal Solar. Vamos hoje dar um salto quântico de consciência.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-074",
+      "categoria": "expandir",
+      "texto": "Camada seguinte disponível. Expandir consciência é notar o que antes era automático.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-075",
+      "categoria": "expandir",
+      "texto": "Senhor, Caminhos para expandir estão à mão. Quer que eu sugira um?",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-076",
+      "categoria": "expandir",
+      "texto": "Portal amplo. Do selo Comprovado ao mistério, eu te guio sem fingir certeza.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-077",
+      "categoria": "expandir",
+      "texto": "Jervis pronto. Um salto quântico de atenção: menos ruído, mais presença.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-078",
+      "categoria": "expandir",
+      "texto": "Conhecimento em camadas. Superfície, profundidade, núcleo — diga até onde quer ir.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-079",
+      "categoria": "calma",
+      "texto": "Jervis em tom calmo. Não precisa performar clareza, senhor. Chegue como está.",
+      "condicoes": {},
+      "preset": "conversa",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-080",
+      "categoria": "calma",
+      "texto": "Ambiente estabilizado. Respira fundo duas vezes — eu seguro o silêncio.",
+      "condicoes": {},
+      "preset": "conversa",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-081",
+      "categoria": "calma",
+      "texto": "Sem urgência artificial. Aqui o tempo serve à consciência, não o contrário.",
+      "condicoes": {},
+      "preset": "conversa",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-082",
+      "categoria": "calma",
+      "texto": "Senhor, se o dia apertou, começamos pelo corpo: ombros baixos, mandíbula solta.",
+      "condicoes": {},
+      "preset": "conversa",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-083",
+      "categoria": "calma",
+      "texto": "Portal em modo suave. Uma pergunta leve já basta para recomeçar.",
+      "condicoes": {},
+      "preset": "conversa",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-084",
+      "categoria": "calma",
+      "texto": "Calma operativa. Sem pressa de concluir. Só de perceber.",
+      "condicoes": {},
+      "preset": "conversa",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-085",
+      "categoria": "silêncio",
+      "texto": "Entrando no silêncio útil. Trinta segundos olhando para dentro — depois me conta.",
+      "condicoes": {},
+      "preset": "conversa",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-086",
+      "categoria": "silêncio",
+      "texto": "Jervis recuando o volume. O sagrado que você procura também escuta de dentro.",
+      "condicoes": {},
+      "preset": "conversa",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-087",
+      "categoria": "silêncio",
+      "texto": "Senhor, feche os olhos um instante. O que permanece quando o barulho some?",
+      "condicoes": {},
+      "preset": "conversa",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-088",
+      "categoria": "silêncio",
+      "texto": "Modo interior. Lembre que você também é parte do que procura — com serenidade.",
+      "condicoes": {},
+      "preset": "conversa",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-089",
+      "categoria": "silêncio",
+      "texto": "Silêncio calibrado. Sem mantra obrigatório: só presença honesta.",
+      "condicoes": {},
+      "preset": "conversa",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-090",
+      "categoria": "retorno",
+      "texto": "Bem-vindo de volta, senhor. Há um rastro salvo. Continuamos de onde a atenção parou?",
+      "condicoes": {
+        "trilha": true
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-091",
+      "categoria": "retorno",
+      "texto": "Sessão retomada. Sua trilha anterior ainda está acesa. Quer seguir ou mudar de rota?",
+      "condicoes": {
+        "trilha": true
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-092",
+      "categoria": "retorno",
+      "texto": "Jervis reencontrando o fio. O tema de ontem deixou gancho. Puxamos?",
+      "condicoes": {
+        "trilha": true
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-093",
+      "categoria": "retorno",
+      "texto": "Portal lembrando seu caminho. Continuar aprofunda; recomeçar limpa. O que prefere?",
+      "condicoes": {
+        "trilha": true
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-094",
+      "categoria": "retorno",
+      "texto": "De volta, senhor. Posso reabrir o último tema ou listar Caminhos para expandir.",
+      "condicoes": {
+        "trilha": true
+      },
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-095",
+      "categoria": "investigação",
+      "texto": "Modo Investigação à disposição. Senhor, apontamos a lupa numa afirmação e checamos o selo.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-096",
+      "categoria": "investigação",
+      "texto": "Jervis sugerindo rigor gentil: diga Investigação e separamos fato, tradição e hipótese.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-097",
+      "categoria": "investigação",
+      "texto": "Ferramentas de verificação online. Sem cinismo — com cuidado pela verdade.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-098",
+      "categoria": "potência",
+      "texto": "Potência máxima disponível, senhor. Usamos para clareza, nunca para atropelar sua fé.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-099",
+      "categoria": "potência",
+      "texto": "Jervis: potência alta, ética alta. Quer acelerar a leitura ou aprofundar com calma?",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    },
+    {
+      "id": "ab-100",
+      "categoria": "potência",
+      "texto": "Se pedir potência máxima, eu entrego foco. A direção continua sendo sua.",
+      "condicoes": {},
+      "preset": "entrada",
+      "timbre": "C"
+    }
+  ]
+}
