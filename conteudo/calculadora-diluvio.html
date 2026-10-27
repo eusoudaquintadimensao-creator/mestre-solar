@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Calculadora do Dilúvio — Mestre Solar</title>
+<style>
+:root{--bg:#0c0b10;--panel:#16131c;--txt:#e8e4dc;--muted:#9a9488;--line:#2a2633;--accent:#9aa0a6;--ok:#7dcea0;--bad:#e98a8a;--warn:#e0c36a}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.45 system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--txt);padding:16px;padding-bottom:48px}
+h1{font-size:1.25rem;margin:0 0 6px;font-weight:700;letter-spacing:.02em}
+h2{font-size:1rem;margin:18px 0 8px;color:var(--accent)}
+p.lead{color:var(--muted);margin:0 0 14px;font-size:13px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.bar button,.lang button{background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:8px 12px;cursor:pointer}
+.lang button.on{border-color:var(--accent);color:#fff}
+.grid{display:grid;gap:10px}
+@media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+input{width:100%;background:#0a090e;border:1px solid var(--line);border-radius:10px;color:var(--txt);padding:10px 12px;font-size:15px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.out{font-variant-numeric:tabular-nums}
+.out div{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid var(--line);font-size:13px}
+.out div:last-child{border:0}
+.k{color:var(--muted)}
+.v{font-weight:600;text-align:right}
+.formula{font-family:ui-monospace,monospace;font-size:11px;color:var(--muted);margin-top:8px;white-space:pre-wrap}
+.verdict{margin-top:10px;padding:10px;border-radius:10px;background:#1a181f;border:1px solid var(--line);font-size:13px}
+.bad{color:var(--bad)}.ok{color:var(--ok)}.warn{color:var(--warn)}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="lang bar" id="langs">
+  <button type="button" data-l="pt" class="on">PT</button>
+  <button type="button" data-l="en">EN</button>
+  <button type="button" data-l="es">ES</button>
+</div>
+<h1 id="t-title">Calculadora do Dilúvio</h1>
+<p class="lead" id="t-lead">Ferramenta offline do Mestre Solar. Hipóteses declaradas. Não zomba da fé: traduz afirmações físicas em aritmética.</p>
+<div class="grid">
+  <div class="card">
+    <h2 id="t-in">Entradas</h2>
+    <label id="l-h"><span id="t-h">Altura-alvo de água (m)</span>
+      <input id="h" type="number" step="any" value="8855.855"/></label>
+    <label><span id="t-days">Dias de chuva</span>
+      <input id="days" type="number" step="any" value="40"/></label>
+    <label><span id="t-cubit">Côvado (m)</span>
+      <input id="cubit" type="number" step="any" value="0.457"/></label>
+    <label><span id="t-area">Área da Terra (km²)</span>
+      <input id="area" type="number" step="any" value="510000000"/></label>
+    <label><span id="t-ocean">Volume dos oceanos (km³)</span>
+      <input id="ocean" type="number" step="any" value="1335000000"/></label>
+    <label><span id="t-spec">Nº de espécies (vertebrados)</span>
+      <input id="spec" type="number" step="1" value="37400"/></label>
+    <label><span id="t-pairs">Pares por espécie (1=casal; 7=sete pares)</span>
+      <input id="pairs" type="number" step="1" value="1"/></label>
+    <label><span id="t-clean">Fração “limpos” com 7 pares (0–1)</span>
+      <input id="clean" type="number" step="any" value="0.1"/></label>
+    <label><span id="t-food">Comida kg/animal/dia</span>
+      <input id="food" type="number" step="any" value="0.5"/></label>
+    <label><span id="t-kang">Distância canguru (km)</span>
+      <input id="kang" type="number" step="any" value="12000"/></label>
+    <label><span id="t-ks">Velocidade média canguru (km/h)</span>
+      <input id="ks" type="number" step="any" value="5"/></label>
+  </div>
+  <div class="card out" id="out"></div>
+</div>
+<p class="formula" id="forms"></p>
+<p class="verdict" id="verdict"></p>
+<p class="lead" id="t-foot"><a href="../index.html">← Voltar ao Portal</a> · Águia Primordial é a voz publicada; Jervis pausado.</p>
+<script>
+const I18N={
+pt:{title:"Calculadora do Dilúvio",lead:"Ferramenta offline do Mestre Solar. Hipóteses declaradas. Não zomba da fé: traduz afirmações físicas em aritmética.",inn:"Entradas",h:"Altura-alvo de água (m) — padrão Everest+15 côvados",days:"Dias de chuva",cubit:"Côvado (m)",area:"Área da Terra (km²)",ocean:"Volume dos oceanos (km³)",spec:"Nº de espécies (vertebrados)",pairs:"Pares base por espécie",clean:"Fração “limpos” com 7 pares (0–1)",food:"Comida kg/animal/dia",kang:"Distância canguru (km)",ks:"Velocidade média canguru (km/h)",
+o_v:"Volume de água V",o_vs:"V / oceanos",o_rain:"Chuva média",o_vsrec:"vs ~75 mm/h (dia recorde ~1800 mm)",o_Q:"Calor latente Q",o_dT:"ΔT se só na atmosfera",o_ark:"Volume arca (300×50×30 côvados)",o_per:"m³ brutos / animal",o_anim:"Indivíduos (aprox.)",o_food:"Comida t/ano",o_water:"Água L/dia (0,2 L/animal)",o_man:"Esterco kg/dia (0,3 kg/animal)",o_work:"Segundos/animal/dia se 8 pessoas × 16 h",o_kang:"Tempo viagem canguru (dias contínuos)",
+forms:"Fórmulas:\nV = A_km² × (H_m/1000)  [km³]\nrain_mm/h = (H_m/dias)×1000/24\nm = V×1e12 kg;  Q = m×2.26e6 J;  ΔT ≈ Q/(5.15e18×1004)\nArca: L,W,H = 300,50,30 × côvado; Vol = LWH\nAnimais ≈ (1-f)×S×2×pares + f×S×14\nTrabalho ≈ 8×16×3600 / animais  [s/animal/dia]",
+verd:s=>`Veredito automático (ordem de grandeza): água ${s.water} · chuva ${s.rain} · calor ${s.heat} · logística ${s.log}. Dilúvio global literal como física: não se sustenta. Fé narrativa/local: outro registro — ver lições do tema.`
+},
+en:{title:"Flood Calculator",lead:"Offline Mestre Solar tool. Stated assumptions. No mockery of faith: turns physical claims into arithmetic.",inn:"Inputs",h:"Target water height (m) — default Everest+15 cubits",days:"Days of rain",cubit:"Cubit (m)",area:"Earth area (km²)",ocean:"Ocean volume (km³)",spec:"Number of species (vertebrates)",pairs:"Base pairs per species",clean:"Fraction “clean” with 7 pairs (0–1)",food:"Food kg/animal/day",kang:"Kangaroo distance (km)",ks:"Kangaroo mean speed (km/h)",
+o_v:"Water volume V",o_vs:"V / oceans",o_rain:"Mean rainfall",o_vsrec:"vs ~75 mm/h (record day ~1800 mm)",o_Q:"Latent heat Q",o_dT:"ΔT if atmosphere only",o_ark:"Ark volume (300×50×30 cubits)",o_per:"gross m³ / animal",o_anim:"Individuals (approx.)",o_food:"Food t/year",o_water:"Water L/day (0.2 L/animal)",o_man:"Manure kg/day (0.3 kg/animal)",o_work:"Seconds/animal/day if 8 people × 16 h",o_kang:"Kangaroo travel time (continuous days)",
+forms:"Formulas:\nV = A_km² × (H_m/1000)  [km³]\nrain_mm/h = (H_m/days)×1000/24\nm = V×1e12 kg;  Q = m×2.26e6 J;  ΔT ≈ Q/(5.15e18×1004)\nArk: L,W,H = 300,50,30 × cubit; Vol = LWH\nAnimals ≈ (1-f)×S×2×pairs + f×S×14\nWork ≈ 8×16×3600 / animals  [s/animal/day]",
+verd:s=>`Automatic verdict (order of magnitude): water ${s.water} · rain ${s.rain} · heat ${s.heat} · logistics ${s.log}. Literal global flood as physics: does not hold. Narrative/local faith reading: see theme lessons.`
+},
+es:{title:"Calculadora del diluvio",lead:"Herramienta offline del Mestre Solar. Hipótesis declaradas. Sin burla: traduce afirmaciones físicas en aritmética.",inn:"Entradas",h:"Altura objetivo de agua (m) — Everest+15 codos",days:"Días de lluvia",cubit:"Codo (m)",area:"Área de la Tierra (km²)",ocean:"Volumen de océanos (km³)",spec:"Nº de especies (vertebrados)",pairs:"Parejas base por especie",clean:"Fracción “limpios” con 7 parejas (0–1)",food:"Comida kg/animal/día",kang:"Distancia canguro (km)",ks:"Velocidad media canguro (km/h)",
+o_v:"Volumen de agua V",o_vs:"V / océanos",o_rain:"Lluvia media",o_vsrec:"vs ~75 mm/h (día récord ~1800 mm)",o_Q:"Calor latente Q",o_dT:"ΔT si solo atmósfera",o_ark:"Volumen arca (300×50×30 codos)",o_per:"m³ brutos / animal",o_anim:"Individuos (aprox.)",o_food:"Comida t/año",o_water:"Agua L/día (0,2 L/animal)",o_man:"Estiércol kg/día (0,3 kg/animal)",o_work:"Segundos/animal/día si 8 personas × 16 h",o_kang:"Tiempo viaje canguro (días continuos)",
+forms:"Fórmulas:\nV = A_km² × (H_m/1000)  [km³]\nrain_mm/h = (H_m/dias)×1000/24\nm = V×1e12 kg;  Q = m×2.26e6 J;  ΔT ≈ Q/(5.15e18×1004)\nArca: L,W,H = 300,50,30 × codo; Vol = LWH\nAnimales ≈ (1-f)×S×2×pares + f×S×14\nTrabajo ≈ 8×16×3600 / animales  [s/animal/día]",
+verd:s=>`Veredicto automático: agua ${s.water} · lluvia ${s.rain} · calor ${s.heat} · logística ${s.log}. Diluvio global literal como física: no se sostiene. Lectura narrativa/local: ver lecciones del tema.`
+}};
+let lang='pt';
+function n(id){return parseFloat(document.getElementById(id).value)||0}
+function sci(x){if(!isFinite(x))return '—'; const a=Math.abs(x); if(a!==0&&(a>=1e5||a<1e-2))return x.toExponential(3); return (Math.round(x*1000)/1000).toLocaleString(lang==='pt'||lang==='es'?'pt-BR': 'en-US')}
+function mark(ok){return ok?'❌':'✅'} // for flood claims: mismatch is expected → show as fail badge text below
+function calc(){
+  const H=n('h'), days=Math.max(n('days'),1e-9), cubit=n('cubit'), A=n('area'), ocean=n('ocean');
+  const S=Math.max(n('spec'),0), pairs=Math.max(n('pairs'),0), f=Math.min(Math.max(n('clean'),0),1), food=n('food');
+  const V=A*(H/1000);
+  const rain_m_day=H/days, rain_mm_h=rain_m_day*1000/24;
+  const m=V*1e12, Q=m*2.26e6, dT=Q/(5.15e18*1004);
+  const L=300*cubit,W=50*cubit,Hh=30*cubit, Vol=L*W*Hh;
+  const unclean=(1-f)*S, clean=f*S;
+  const animals=unclean*2*Math.max(pairs,1)+clean*14;
+  const food_t=animals*food*365/1000;
+  const water=animals*0.2, manure=animals*0.3;
+  const work= animals>0 ? (8*16*3600)/animals : Infinity;
+  const kangDays=n('kang')/Math.max(n('ks'),1e-9)/24;
+  const T=I18N[lang];
+  const row=(k,v)=>`<div><span class="k">${k}</span><span class="v">${v}</span></div>`;
+  document.getElementById('out').innerHTML =
+    `<h2>${lang==='en'?'Outputs':lang==='es'?'Salidas':'Saídas'}</h2>`+
+    row(T.o_v, sci(V)+' km³')+
+    row(T.o_vs, sci(V/Math.max(ocean,1e-9))+'×')+
+    row(T.o_rain, sci(rain_mm_h)+' mm/h')+
+    row(T.o_vsrec, sci(rain_mm_h/75)+'×')+
+    row(T.o_Q, sci(Q)+' J')+
+    row(T.o_dT, sci(dT)+' K')+
+    row(T.o_ark, sci(Vol)+' m³')+
+    row(T.o_anim, sci(animals))+
+    row(T.o_per, animals?sci(Vol/animals)+' m³':'—')+
+    row(T.o_food, sci(food_t)+' t')+
+    row(T.o_water, sci(water)+' L')+
+    row(T.o_man, sci(manure)+' kg')+
+    row(T.o_work, sci(work)+' s')+
+    row(T.o_kang, sci(kangDays)+' d');
+  document.getElementById('forms').textContent=T.forms;
+  const s={
+    water: V>ocean?'❌':'✅',
+    rain: rain_mm_h>200?'❌':'✅',
+    heat: dT>100?'❌':'✅',
+    log: work<60?'❌':'⚠️'
+  };
+  document.getElementById('verdict').innerHTML=T.verd(s);
+}
+function applyLang(){
+  const T=I18N[lang];
+  document.getElementById('t-title').textContent=T.title;
+  document.getElementById('t-lead').textContent=T.lead;
+  document.querySelector('#t-in')&&(document.querySelectorAll('h2')[0].textContent=T.inn);
+  document.getElementById('t-h').textContent=T.h;
+  document.getElementById('t-days').textContent=T.days;
+  document.getElementById('t-cubit').textContent=T.cubit;
+  document.getElementById('t-area').textContent=T.area;
+  document.getElementById('t-ocean').textContent=T.ocean;
+  document.getElementById('t-spec').textContent=T.spec;
+  document.getElementById('t-pairs').textContent=T.pairs;
+  document.getElementById('t-clean').textContent=T.clean;
+  document.getElementById('t-food').textContent=T.food;
+  document.getElementById('t-kang').textContent=T.kang;
+  document.getElementById('t-ks').textContent=T.ks;
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===lang));
+  calc();
+}
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{lang=b.dataset.l;applyLang()});
+['h','days','cubit','area','ocean','spec','pairs','clean','food','kang','ks'].forEach(id=>{
+  document.getElementById(id).addEventListener('input',calc);
+});
+applyLang();
+</script>
+</body>
+</html>

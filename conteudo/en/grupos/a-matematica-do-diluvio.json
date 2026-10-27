@@ -1,0 +1,181 @@
+[
+  {
+    "grupo": "The mathematics of the flood",
+    "tema": "What the flood story claims (Genesis 6–9)",
+    "palavras": [
+      "flood",
+      "genesis 6",
+      "noah's ark",
+      "mathematics of the flood",
+      "flood story"
+    ],
+    "resposta": "Genesis 6–9 narrates a judgment by water: Earth filled with violence; Noah builds an ark; animals enter; it rains forty days; waters prevail a hundred fifty days; they cover “all the high mountains”; the ark rests; a new beginning with covenant and rainbow. The text speaks of fifteen cubits above the mountains (Gen 7:20), fountains of the great deep and windows of heaven. This theme does not mock faith: it asks, with public math and evidence, whether a literal global physical flood holds.",
+    "aprofundar": "Details used in the following calculations: cubit ≈ 45.7 cm; Everest 8,849 m; 40 days of rain; ~150 days prevailing; about a year in the narrative until exit; ark 300×50×30 cubits; eight people; animals in pairs and, in places, seven pairs of clean animals. Internal tensions (40 vs 150 days; one pair vs seven) match interwoven sources (J/P). Practice: read Gen 6–9 once and mark what is number, dialogue, or theology.",
+    "camada3": "To contemplate: a community may keep a sacred story as a moral mirror—justice, violence, restart—without needing every cubic meter to be meteorology. The Portal separates respect for spiritual search from testable physical claims.",
+    "fontes": [
+      "https://en.wikipedia.org/wiki/Genesis_flood_narrative"
+    ],
+    "nivelVerdade": [
+      "Tradition",
+      "Research"
+    ]
+  },
+  {
+    "grupo": "The mathematics of the flood",
+    "tema": "Where would the water to cover Everest come from?",
+    "palavras": [
+      "flood water volume",
+      "everest flood",
+      "cover the mountains",
+      "15 cubits"
+    ],
+    "resposta": "To cover Everest plus fifteen cubits, the water height is about 8,856 m. In a simplified uniform shell over Earth's whole surface (≈5.1×10⁸ km²), the extra volume is on the order of 4.5×10⁹ km³—about 3.4× all ocean water and hundreds of thousands of times atmospheric water. There is no known reservoir for that water, nor a physical place for it to go afterward.",
+    "aprofundar": "Formula: V≈A×H with H=8849+15×0.457 m. Declared simplification: we do not model every valley; the order of magnitude already exceeds surface and atmospheric stocks. “Fountains of the deep” at that scale bring lethal heat and volume. Offline calculator: conteudo/calculadora-diluvio.html.",
+    "camada3": "To contemplate: when numbers leave Earth's real scale, the issue is category. Theological miracle and planetary hydrology are different kinds of claim.",
+    "fontes": [
+      "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+      "https://en.wikipedia.org/wiki/Mount_Everest"
+    ],
+    "nivelVerdade": [
+      "Proven",
+      "Research"
+    ]
+  },
+  {
+    "grupo": "The mathematics of the flood",
+    "tema": "Forty days of rain and condensation heat",
+    "palavras": [
+      "flood rain rate",
+      "latent heat flood",
+      "mm per hour flood"
+    ],
+    "resposta": "If ~8,856 m fell in 40 days, the average rate would be ~221 m/day ≈ 9,200 mm/h worldwide. World 24-hour rainfall records are near ~1,800 mm/day—orders of magnitude lower. Condensing ~4.5×10²¹ kg of water releases latent heat Q=m·L_v ≈10²⁸ J. Put into the atmosphere alone, that implies a ΔT of millions of kelvin—absurd for life.",
+    "aprofundar": "Even spreading Q across all ocean mass yields a devastating global thermal jump. The problem is energy as well as source. See the calculator for formulas.",
+    "camada3": "To contemplate: physics is not the enemy of the sacred; it refuses to pretend. A cleansing symbol may remain; literal global meteorology does not.",
+    "fontes": [
+      "https://en.wikipedia.org/wiki/Latent_heat"
+    ],
+    "nivelVerdade": [
+      "Proven"
+    ]
+  },
+  {
+    "grupo": "The mathematics of the flood",
+    "tema": "The ark: wood, space, food, manure, and eight people",
+    "palavras": [
+      "ark size",
+      "noah ark dimensions",
+      "animals on the ark",
+      "wyoming ark"
+    ],
+    "resposta": "With a 45.7 cm cubit, the ark is ~137×23×14 m (~43,000 m³ gross). The largest well-documented wooden ship (Wyoming schooner, ~100 m hull) already flexed and leaked. Counting only modern vertebrates (~37,000 species) with one pair, plus seven pairs for a “clean” fraction, yields tens of thousands of individuals—still without insects. Food, fresh water, manure, and ammonia with “one window” (Gen 6:16) and eight caretakers do not add up.",
+    "aprofundar": "Orders of magnitude: ~0.5 kg food/animal/day → hundreds of tonnes/year. Task rates per person become impossible. Adjust species and rations in the calculator.",
+    "camada3": "To contemplate: a story may teach obedience and care without being a shipyard manual.",
+    "fontes": [
+      "https://en.wikipedia.org/wiki/Wyoming_(schooner)"
+    ],
+    "nivelVerdade": [
+      "Proven",
+      "Research"
+    ]
+  },
+  {
+    "grupo": "The mathematics of the flood",
+    "tema": "How would the kangaroo reach the ark—and return only to Australia?",
+    "palavras": [
+      "kangaroo flood",
+      "koala ark",
+      "biogeography flood"
+    ],
+    "resposta": "Kangaroos and koalas live in Australia; sloths in South America; penguins and polar bears at the poles. Reaching the Near East means thousands of kilometers and oceans. Koalas need eucalyptus. Afterward, marsupials would have to return and remain only in Australia—opposite of the record. Two individuals per species imply a genetic bottleneck not seen as a single global funnel ~4,350 years ago.",
+    "aprofundar": "Even miraculous rafting fails on diet, travel time, and repopulation. The calculator estimates a hypothetical overland travel time to show the premise’s absurdity.",
+    "camada3": "To contemplate: respecting the map of life is honesty before mystery, not an attack on Noah as symbol.",
+    "fontes": [
+      "https://en.wikipedia.org/wiki/Biogeography",
+      "https://en.wikipedia.org/wiki/Population_bottleneck"
+    ],
+    "nivelVerdade": [
+      "Proven"
+    ]
+  },
+  {
+    "grupo": "The mathematics of the flood",
+    "tema": "Chronology, civilizations, and what Earth recorded",
+    "palavras": [
+      "ussher flood",
+      "civilizations flood",
+      "ice cores flood"
+    ],
+    "resposta": "Ussher-style chronologies place the flood near 2348 BCE. Egypt’s Old Kingdom, Sumer, the Indus, and China show continuity—no global hiatus. Ice cores with >100 kyr of annual layers, varves, tree rings, and reefs lack a single recent global flood bed. Eight people repopulating Earth to known historical numbers needs impossible demography and would erase observed genetic diversity.",
+    "aprofundar": "A recent global flood predicts global mud, synchronous extinction, a genetic funnel, civilizational collapse. That pattern is not what we see. Regional floods are.",
+    "camada3": "To contemplate: humans remember water trauma because floods destroy real cities. The question is scale: valley or whole planet?",
+    "fontes": [
+      "https://en.wikipedia.org/wiki/Ussher_chronology",
+      "https://en.wikipedia.org/wiki/Ice_core"
+    ],
+    "nivelVerdade": [
+      "Proven",
+      "Research"
+    ]
+  },
+  {
+    "grupo": "The mathematics of the flood",
+    "tema": "What matches: local floods and Near Eastern myths",
+    "palavras": [
+      "gilgamesh flood",
+      "atrahasis",
+      "ziusudra",
+      "local flood"
+    ],
+    "resposta": "Flood deposits at sites such as Shuruppak/Ur (~2900 BCE) and Euphrates floods are real local catastrophes. Atrahasis, Gilgamesh XI, and Ziusudra tell boat-and-water stories older than Genesis’s final form. Inside Gen 6–9, traditions mix (40 vs 150 days; one pair vs seven): J/P literary stitching. The Black Sea hypothesis remains debated.",
+    "aprofundar": "Reading Genesis beside Gilgamesh XI situates the text in a Near Eastern family of narratives. Many theologians accept that and still pray with the text.",
+    "camada3": "To contemplate: sometimes spiritual truth travels inside a boat story like a seed inside fruit. The fruit may be regional; the seed, ethical.",
+    "fontes": [
+      "https://en.wikipedia.org/wiki/Gilgamesh_flood_myth",
+      "https://en.wikipedia.org/wiki/Atra-Hasis"
+    ],
+    "nivelVerdade": [
+      "Research",
+      "Tradition",
+      "Proven"
+    ]
+  },
+  {
+    "grupo": "The mathematics of the flood",
+    "tema": "Mestre Solar’s opinion: honest verdict",
+    "palavras": [
+      "flood verdict",
+      "was the flood real",
+      "mestre solar flood opinion"
+    ],
+    "resposta": "Portal verdict: water volume ❌; rain and latent heat ❌; fountains of the deep ❌; pressure/oxygen and salinity ❌; ark structure and logistics ❌; biogeography and pair genetics ❌; Ussher chronology vs civilizations and layered geology ❌. Local Mesopotamian floods ✅; Atrahasis/Gilgamesh/Ziusudra parallels ✅; J/P stitching ✅; Black Sea ⚠️. Overall: a literal global flood as physical reportage of Genesis 6–9 does not hold. That does not license mocking believers: many read it as theological narrative about violence, covenant, and restart, echoing real floods and older myths. Lying about Earth’s physics does not strengthen faith; honesty does.",
+    "aprofundar": "Open the Flood Calculator (conteudo/calculadora-diluvio.html), vary height, rain days, and species, and watch the formulas. If your faith is literalist, this will sting—and the Portal prefers true discomfort to false comfort.",
+    "camada3": "To contemplate: the courage to say “it doesn’t match” can be as spiritual as the courage to wait for a miracle.",
+    "fontes": [
+      "https://en.wikipedia.org/wiki/Genesis_flood_narrative"
+    ],
+    "nivelVerdade": [
+      "Proven",
+      "Research",
+      "Opinion"
+    ]
+  },
+  {
+    "grupo": "The mathematics of the flood",
+    "tema": "Flood calculator (offline tool)",
+    "palavras": [
+      "flood calculator",
+      "ark calculator",
+      "noah calculator"
+    ],
+    "resposta": "The app includes an offline Flood Calculator in the Portal’s gray-gold theme: conteudo/calculadora-diluvio.html. Choose target height (default Everest+15 cubits), rain days, cubit, species/pairs, and food per animal. It returns water volume vs oceans, mm/h vs record, heat and ΔT, ark volume per animal, food/water/manure per day, workload, and hypothetical kangaroo travel time. Formulas shown. Labels PT/EN/ES.",
+    "aprofundar": "The calculator neither “proves God” nor “destroys God.” It turns physical claims into arithmetic. Águia Primordial remains the Portal voice; this new theme has no dedicated Águia recording yet—device voice may read until audio exists.",
+    "camada3": "To contemplate: measuring is a form of respect for reality.",
+    "fontes": [
+      "conteudo/calculadora-diluvio.html"
+    ],
+    "nivelVerdade": [
+      "Proven"
+    ]
+  }
+]

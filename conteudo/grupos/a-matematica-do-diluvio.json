@@ -1,0 +1,240 @@
+[
+  {
+    "grupo": "A matemática do dilúvio",
+    "tema": "O que a história do dilúvio afirma (Gênesis 6–9)",
+    "palavras": [
+      "diluvio",
+      "dilúvio",
+      "genesis 6",
+      "gênesis 6",
+      "arca de noe",
+      "arca de noé",
+      "matematica do diluvio",
+      "matemática do dilúvio",
+      "historia do diluvio"
+    ],
+    "resposta": "Gênesis 6–9 narra um juízo por água: a Terra se enche de violência; Noé constrói uma arca; entram animais; chove quarenta dias; as águas prevalecem cento e cinquenta dias; cobrem “todos os montes altos”; a arca pousa; sai um novo começo com aliança e arco-íris. O texto fala em cobrir as montanhas com quinze côvados acima (Gn 7:20), em fontes do grande abismo e comportas do céu. Este tema não zomba da fé: pergunta, com matemática e evidências públicas, se a leitura literal de um dilúvio global físico se sustenta.",
+    "aprofundar": "Detalhes usados nos cálculos seguintes: côvado ≈ 45,7 cm; Everest 8.849 m; chuva 40 dias; prevalência ~150 dias; cerca de um ano no relato até a saída; arca 300×50×30 côvados; oito pessoas; animais em casais e, em trechos, sete casais dos limpos. Há tensões internas no texto (40 vs 150 dias; um casal vs sete) típicas de fontes entrelaçadas (J/P). Prática: leia Gn 6–9 de uma vez e anote o que é número, o que é diálogo e o que é teologia.",
+    "camada3": "Para contemplar: uma comunidade pode guardar um relato sagrado como espelho moral — justiça, violência, recomeço — sem precisar que cada metro cúbico seja meteorologia. O Portal separa respeito pela busca espiritual de afirmações físicas testáveis.",
+    "fontes": [
+      "https://pt.wikipedia.org/wiki/Dil%C3%BAvio",
+      "https://pt.wikipedia.org/wiki/Arca_de_No%C3%A9",
+      "https://en.wikipedia.org/wiki/Genesis_flood_narrative",
+      "https://www.biblegateway.com/passage/?search=Genesis+6-9&version=ARC"
+    ],
+    "nivelVerdade": [
+      "Tradição",
+      "Pesquisa"
+    ]
+  },
+  {
+    "grupo": "A matemática do dilúvio",
+    "tema": "De onde viria a água para cobrir o Everest?",
+    "palavras": [
+      "agua do diluvio",
+      "água do dilúvio",
+      "everest diluvio",
+      "volume de agua diluvio",
+      "cobrir as montanhas",
+      "quinze covados",
+      "15 côvados"
+    ],
+    "resposta": "Para cobrir o Everest com mais quinze côvados, a altura de água seria cerca de 8.856 m. Num modelo simplificado de casca uniforme sobre toda a superfície da Terra (área ≈ 5,1×10⁸ km²), o volume extra fica na ordem de 4,5×10⁹ km³ — cerca de 3,4 vezes toda a água dos oceanos (~1,335×10⁹ km³) e centenas de milhares de vezes a água da atmosfera (~1,3×10⁴ km³). Não existe reservatório conhecido para essa água, nem destino físico para ela depois.",
+    "aprofundar": "Fórmula usada: V ≈ A × H, com H = 8849 + 15×0,457 metros, convertida em km. Simplificação declarada: não modelamos cada vale; mesmo assim a ordem de grandeza já explode qualquer estoque superficial ou atmosférico. “Fontes do abismo” na escala necessária trariam calor e volume incompatíveis com sobrevivência. Calculadora do dilúvio: abra conteudo/calculadora-diluvio.html (offline) ou diga “calculadora do dilúvio”.",
+    "camada3": "Para contemplar: quando os números saem da escala da Terra real, o problema não é “falta de milagre” — é categoria. Milagre teológico e hidrologia planetária não são o mesmo tipo de afirmação.",
+    "fontes": [
+      "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+      "https://www.usgs.gov/special-topics/water-science-school/science/how-much-water-there-earth",
+      "https://en.wikipedia.org/wiki/Mount_Everest",
+      "https://en.wikipedia.org/wiki/World_meteorological_organization",
+      "https://pt.wikipedia.org/wiki/Dil%C3%BAvio",
+      "https://pt.wikipedia.org/wiki/Arca_de_No%C3%A9",
+      "https://en.wikipedia.org/wiki/Genesis_flood_narrative"
+    ],
+    "nivelVerdade": [
+      "Comprovado",
+      "Pesquisa"
+    ]
+  },
+  {
+    "grupo": "A matemática do dilúvio",
+    "tema": "A chuva de 40 dias e o calor da condensação",
+    "palavras": [
+      "chuva do diluvio",
+      "quarenta dias de chuva",
+      "calor latente diluvio",
+      "mm por hora diluvio",
+      "condensacao"
+    ],
+    "resposta": "Se a coluna de ~8.856 m caísse em 40 dias, a taxa média seria ~221 m/dia, ou seja ~9.200 mm/h contínuos no planeta inteiro. Recordes mundiais de chuva em 24 h ficam perto de ~1.800 mm no dia — ordens de magnitude abaixo. Condensar a massa de água equivalente (~4,5×10²¹ kg) libera calor latente Q = m·L_v (L_v≈2,26×10⁶ J/kg) na casa de 10²⁸ J. Despejado só na atmosfera, isso implica um ΔT de milhões de kelvin — fisicamente absurdo para vida.",
+    "aprofundar": "Mesmo espalhando Q por toda a massa dos oceanos, o salto térmico global ainda seria catastrófico. Ou seja: o problema não é só “de onde veio a água”, é também a energia. Qualquer mecanismo que coloque essa água no ar como vapor e depois a condense cozinha o clima. Ver fórmulas no RESUMO e na calculadora offline.",
+    "camada3": "Para contemplar: a física não é inimiga do sagrado; ela só se recusa a fingir. Um símbolo de limpeza pelo dilúvio pode permanecer; a meteorologia literal global não.",
+    "fontes": [
+      "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+      "https://www.usgs.gov/special-topics/water-science-school/science/how-much-water-there-earth",
+      "https://en.wikipedia.org/wiki/Mount_Everest",
+      "https://en.wikipedia.org/wiki/World_meteorological_organization"
+    ],
+    "nivelVerdade": [
+      "Comprovado"
+    ]
+  },
+  {
+    "grupo": "A matemática do dilúvio",
+    "tema": "A arca: madeira, espaço, comida, esterco e oito pessoas",
+    "palavras": [
+      "arca de noe tamanho",
+      "dimensoes da arca",
+      "animais na arca",
+      "comida na arca",
+      "wyoming arca",
+      "trabalho na arca"
+    ],
+    "resposta": "Com côvado de 45,7 cm, a arca mede ~137×23×14 m (~43.000 m³ brutos). O maior navio de madeira bem documentado (schooner Wyoming, casco ~100 m) já sofria flexão e vazamentos: há limite estrutural para madeira contínua nessa escala. Somando só vertebrados atuais (ordem de ~37.000 espécies) com um casal, e sete casais para uma fração “limpa”, chegamos a dezenas de milhares de indivíduos — ainda sem insetos. Comida, água fresca, esterco e amônia numa “janela” (Gn 6:16) e oito cuidadores não fecham a conta.",
+    "aprofundar": "Ordens de grandeza usadas no Portal: ~0,5 kg de comida/animal/dia → centenas de toneladas por ano; água e esterco na casa de dezenas de milhares de litros/kg por dia conforme a hipótese de população. Dividir tarefas por oito pessoas gera cadência impossível (segundos por animal). Isso é logística, não deboche. Ajustável na calculadora (espécies, pares, kg/dia).",
+    "camada3": "Para contemplar: engenharia humana tem milagres de criatividade — e também tem tensões, fadiga da madeira e química do ar. Um relato pode ensinar obediência e cuidado sem ser manual de estaleiro.",
+    "fontes": [
+      "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+      "https://www.usgs.gov/special-topics/water-science-school/science/how-much-water-there-earth",
+      "https://en.wikipedia.org/wiki/Mount_Everest",
+      "https://en.wikipedia.org/wiki/World_meteorological_organization",
+      "https://en.wikipedia.org/wiki/Wyoming_(schooner)",
+      "https://en.wikipedia.org/wiki/Species#Numbers_of_species"
+    ],
+    "nivelVerdade": [
+      "Comprovado",
+      "Pesquisa"
+    ]
+  },
+  {
+    "grupo": "A matemática do dilúvio",
+    "tema": "Como o canguru chegaria à arca — e voltaria só para a Austrália?",
+    "palavras": [
+      "canguru diluvio",
+      "koala arca",
+      "biogeografia diluvio",
+      "animais australia arca",
+      "preguica arca",
+      "urso polar arca"
+    ],
+    "resposta": "Cangurus e coalas vivem na Austrália; preguiças na América do Sul; pinguins e ursos polares em polos. Até o Oriente Médio há milhares de quilômetros e oceanos. Coalas dependem de eucalipto. Depois do dilúvio, marsupiais teriam de voltar e ficar só na Austrália, apagando rastros em todos os continentes — o oposto do registro. Dois indivíduos por espécie criam gargalo genético que não aparece como funil global único há ~4.350 anos.",
+    "aprofundar": "Mesmo inventando rafting milagroso, a dieta, o tempo de viagem e a repovoação quebram a hipótese. Velocidade sustentável de um canguru em terra (~5 km/h de deslocamento médio generoso) não atravessa oceanos; a distância Austrália–Levante é da ordem de 10³–10⁴ km com água no caminho. A calculadora estima tempo de viagem terrestre hipotético para mostrar o absurdo da premissa.",
+    "camada3": "Para contemplar: a beleza da biodiversidade é geográfica. Respeitar o mapa da vida é uma forma de honestidade diante do mistério, não um ataque a Noé como símbolo.",
+    "fontes": [
+      "https://en.wikipedia.org/wiki/Biogeography",
+      "https://en.wikipedia.org/wiki/Population_bottleneck",
+      "https://en.wikipedia.org/wiki/Marsupial"
+    ],
+    "nivelVerdade": [
+      "Comprovado"
+    ]
+  },
+  {
+    "grupo": "A matemática do dilúvio",
+    "tema": "Cronologia, civilizações e o que a Terra registrou",
+    "palavras": [
+      "usser diluvio",
+      "2348 diluvio",
+      "civilizacoes no diluvio",
+      "camadas de gelo diluvio",
+      "dendrocronologia diluvio",
+      "egito diluvio"
+    ],
+    "resposta": "Cronologias tipo Ussher colocam o dilúvio perto de 2348 a.C. Nessa época, Egito (Império Antigo), Suméria, Vale do Indo e China mostram continuidade cultural e material — sem hiato global. Testemunhos de gelo com mais de 100 mil camadas anuais, varves, dendrocronologia e recifes não exibem uma única camada de dilúvio global recente. Oito pessoas repovoando o planeta até os números históricos conhecidos exigiria demografia impossível e apagaria diversidade genética observada.",
+    "aprofundar": "Ausência de evidência não é sempre evidência de ausência — mas aqui a expectativa de um dilúvio global recente é clara: lodo global, extinção sincrônica, funil genético, colapso civilizacional. Nada disso aparece no padrão previsto. O que aparece são cheias regionais e relatos locais.",
+    "camada3": "Para contemplar: a memória humana guarda traumas de água porque cheias destroem cidades de verdade. A pergunta é a escala: vale ou planeta inteiro?",
+    "fontes": [
+      "https://en.wikipedia.org/wiki/Flood_myth",
+      "https://en.wikipedia.org/wiki/Black_Sea_deluge_hypothesis",
+      "https://en.wikipedia.org/wiki/Shuruppak",
+      "https://en.wikipedia.org/wiki/Ussher_chronology",
+      "https://en.wikipedia.org/wiki/Ice_core"
+    ],
+    "nivelVerdade": [
+      "Comprovado",
+      "Pesquisa"
+    ]
+  },
+  {
+    "grupo": "A matemática do dilúvio",
+    "tema": "O que bate: cheias locais e mitos do Oriente Próximo",
+    "palavras": [
+      "gilgamesh diluvio",
+      "atrahasis",
+      "ziusudra",
+      "shuruppak",
+      "diluvio local",
+      "fontes j e p"
+    ],
+    "resposta": "Há depósitos de inundação em sítios como Shuruppak/Ur (~2900 a.C.) e um longo histórico de cheias do Eufrates — catástrofes locais reais. Textos como Atrahasis, Gilgamesh (tábua XI) e Ziusudra narram heróis, barcos e deuses das águas séculos antes da forma final de Gênesis. Dentro de Gn 6–9, misturam-se tradições (40 vs 150 dias; um casal vs sete): costura literária J/P, não um único diário de bordo. A hipótese do Mar Negro existe, mas permanece em debate.",
+    "aprofundar": "Ler Gênesis ao lado de Gilgamesh XI não “destrói” a Bíblia: situa o texto numa família de narrativas do Oriente Próximo. Muitos teólogos assumem isso e ainda assim oram com o texto. O Portal registra ✅ para paralelos e cheias locais; ⚠️ para Mar Negro; ❌ para dilúvio global literal.",
+    "camada3": "Para contemplar: às vezes a verdade espiritual viaja dentro de uma história de barco, como uma semente dentro de um fruto. O fruto pode ser regional; a semente, ética.",
+    "fontes": [
+      "https://pt.wikipedia.org/wiki/Epopeia_de_Gilgamesh",
+      "https://en.wikipedia.org/wiki/Atra-Hasis",
+      "https://en.wikipedia.org/wiki/Ziusudra",
+      "https://pt.wikipedia.org/wiki/Hip%C3%B3tese_documental",
+      "https://en.wikipedia.org/wiki/Flood_myth",
+      "https://en.wikipedia.org/wiki/Black_Sea_deluge_hypothesis",
+      "https://en.wikipedia.org/wiki/Shuruppak"
+    ],
+    "nivelVerdade": [
+      "Pesquisa",
+      "Tradição",
+      "Comprovado"
+    ]
+  },
+  {
+    "grupo": "A matemática do dilúvio",
+    "tema": "Opinião do Mestre Solar: veredito honesto",
+    "palavras": [
+      "opiniao diluvio",
+      "opinião do mestre solar diluvio",
+      "diluvio foi real",
+      "dilúvio foi verdadeiro",
+      "veredito diluvio",
+      "conclusao diluvio"
+    ],
+    "resposta": "Veredito do Portal, item a item: volume de água ❌; chuva e calor latente ❌; fontes do abismo ❌; pressão/oxigênio e salinidade ❌; estrutura e logística da arca ❌; biogeografia e genética de casais ❌; cronologia Ussher vs civilizações e geoquímica de camadas ❌. Cheias locais na Mesopotâmia ✅; paralelos com Atrahasis/Gilgamesh/Ziusudra ✅; costura J/P ✅; Mar Negro ⚠️. Conclusão geral: um dilúvio literal global, como reportagem física de Gênesis 6–9, não se sustenta na matemática nem nas evidências. Isso não autoriza humilhar quem crê: muitos leem o relato como narrativa teológica sobre violência, aliança e recomeço, ecoando memórias de cheias reais e mitos mais antigos. Mentir sobre a física da Terra não fortalece a fé; honestidade sim.",
+    "aprofundar": "Como usar este tema: abra a Calculadora do dilúvio (conteudo/calculadora-diluvio.html), varie altura-alvo, dias de chuva e número de espécies, e veja as fórmulas reagir. Compare com o RESUMO em /workspace/diluvio/RESUMO-CALCULOS.md no material de estudo. Se a sua fé for literalista, este texto vai incomodar — e o Portal prefere o incômodo verdadeiro ao conforto falso.",
+    "camada3": "Para contemplar: a coragem de dizer “não bate” pode ser tão espiritual quanto a coragem de esperar um milagre. O Sol do Portal ilumina números e também o respeito.",
+    "fontes": [
+      "https://pt.wikipedia.org/wiki/Dil%C3%BAvio",
+      "https://pt.wikipedia.org/wiki/Arca_de_No%C3%A9",
+      "https://en.wikipedia.org/wiki/Genesis_flood_narrative",
+      "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+      "https://www.usgs.gov/special-topics/water-science-school/science/how-much-water-there-earth",
+      "https://en.wikipedia.org/wiki/Mount_Everest",
+      "https://en.wikipedia.org/wiki/World_meteorological_organization",
+      "https://pt.wikipedia.org/wiki/Epopeia_de_Gilgamesh",
+      "https://en.wikipedia.org/wiki/Atra-Hasis",
+      "https://en.wikipedia.org/wiki/Ziusudra",
+      "https://pt.wikipedia.org/wiki/Hip%C3%B3tese_documental"
+    ],
+    "nivelVerdade": [
+      "Comprovado",
+      "Pesquisa",
+      "Opinião"
+    ]
+  },
+  {
+    "grupo": "A matemática do dilúvio",
+    "tema": "Calculadora do dilúvio (ferramenta offline)",
+    "palavras": [
+      "calculadora do diluvio",
+      "calculadora do dilúvio",
+      "calculadora arca",
+      "calculadora noe",
+      "simulador diluvio"
+    ],
+    "resposta": "No app há uma Calculadora do dilúvio offline, no tema cinza-ouro do Portal: conteudo/calculadora-diluvio.html. Você escolhe altura-alvo (padrão Everest+15 côvados), dias de chuva, côvado, espécies/pares e comida por animal. Ela devolve volume de água vs oceanos, mm/h vs recorde, calor e ΔT, volume da arca por animal, comida/água/esterco por dia, carga de trabalho e tempo hipotético de viagem do canguru. Fórmulas visíveis. Idiomas: PT/EN/ES.",
+    "aprofundar": "A calculadora não “prova Deus” nem “destrói Deus”. Ela só traduz afirmações físicas em aritmética. Use junto das lições deste tema. Águia Primordial permanece a voz do Portal; este tema novo ainda não tem gravação Águia dedicada — a leitura pode usar a voz do aparelho até haver áudio correspondente.",
+    "camada3": "Para contemplar: medir é uma forma de respeito pela realidade. A fé que dialoga com a medida cresce sem medo.",
+    "fontes": [
+      "conteudo/calculadora-diluvio.html"
+    ],
+    "nivelVerdade": [
+      "Comprovado"
+    ]
+  }
+]
