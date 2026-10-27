@@ -822,7 +822,7 @@ function marcaDia(){var c=cfg(),hoje=new Date().toISOString().slice(0,10);if(c.u
  salvaCfg({dias:d,ultimoDia:hoje})}
 var __solIntroFeita=false;
 function __solPlayIntroThen(next){var c=cfg();if(c.introEpica===false||__solIntroFeita){next();return}
- __solIntroFeita=true;try{var base=(typeof M==="string"&&M)?M:((window.MestreSolar&&MestreSolar.conteudo&&MestreSolar.conteudo().base)||"conteudo/");if(base.slice(-1)!=="/")base+="/";var ax=new Audio(base+"audio-sigma/intro-epica.mp3");ax.volume=0.88;var done=false,fire=function(){if(done)return;done=true;try{next()}catch(e){}};ax.addEventListener("ended",fire);ax.addEventListener("error",fire);var pr=ax.play();if(pr&&pr.catch)pr.catch(fire);setTimeout(fire,5800)}catch(e){next()}}
+ __solIntroFeita=true;try{var base=(typeof M==="string"&&M)?M:((window.MestreSolar&&MestreSolar.conteudo&&MestreSolar.conteudo().base)||"conteudo/");if(base.slice(-1)!=="/")base+="/";var ax=new Audio(base+"audio-sigma/intro-epica.mp3");ax.volume=0.88;var done=false,fire=function(){if(done)return;done=true;try{next()}catch(e){}};ax.addEventListener("error",fire);var pr=ax.play();if(pr&&pr.catch)pr.catch(fire);/* saudação entra no duck (~4.2s), intro segue no fundo até o fim */setTimeout(fire,4200)}catch(e){next()}}
 function despertar(){quando(function(){ativo=true;marcaDia();var c=cfg(),seq=[];
  var d=linha("intencoes.despertar")||(LANG==="en"?"Solar systems online.":LANG==="es"?"Sistemas solares activos.":"Sistemas solares ativos.");
  seq.push({q:"mestre",t:d});
