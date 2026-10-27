@@ -820,6 +820,9 @@ function detectar(e){var o=norm(e);
 function marcaDia(){var c=cfg(),hoje=new Date().toISOString().slice(0,10);if(c.ultimoDia===hoje)return;
  var d=c.dias||0;if(c.ultimoDia){var prev=new Date(c.ultimoDia+"T12:00:00"),dif=Math.round((new Date(hoje+"T12:00:00")-prev)/864e5);d=dif===1?d+1:1}else d=1;
  salvaCfg({dias:d,ultimoDia:hoje})}
+var __solIntroFeita=false;
+function __solPlayIntroThen(next){var c=cfg();if(c.introEpica===false||__solIntroFeita){next();return}
+ __solIntroFeita=true;try{var base=(typeof M==="string"&&M)?M:((window.MestreSolar&&MestreSolar.conteudo&&MestreSolar.conteudo().base)||"conteudo/");if(base.slice(-1)!=="/")base+="/";var ax=new Audio(base+"audio-sigma/intro-epica.mp3");ax.volume=0.88;var done=false,fire=function(){if(done)return;done=true;try{next()}catch(e){}};ax.addEventListener("ended",fire);ax.addEventListener("error",fire);var pr=ax.play();if(pr&&pr.catch)pr.catch(fire);setTimeout(fire,5800)}catch(e){next()}}
 function despertar(){quando(function(){ativo=true;marcaDia();var c=cfg(),seq=[];
  var d=linha("intencoes.despertar")||(LANG==="en"?"Solar systems online.":LANG==="es"?"Sistemas solares activos.":"Sistemas solares ativos.");
  seq.push({q:"mestre",t:d});
@@ -829,7 +832,7 @@ function despertar(){quando(function(){ativo=true;marcaDia();var c=cfg(),seq=[];
  else if(c.ultimoTema)seq.push({q:"guia",t:linha("intencoes.retorno")||""});
  else seq.push({q:"guia",t:linha("intencoes.comoesta")||""});
  seq=seq.filter(function(x){return x.t});
- falaSeq(seq,0,function(){fase="pos_despertar";if(cfg().micApos)abreMic()})})}
+ __solPlayIntroThen(function(){falaSeq(seq,0,function(){fase="pos_despertar";if(cfg().micApos)abreMic()})})})}
 function abreMic(){try{var mic=D.getElementById("mic");mic&&mic.click()}catch(e){}}
 function aposHumor(h){var k=h==="bem"?"humor_bem":h==="mal"?"humor_mal":"humor_neutro";
  falaSeq([{q:"guia",t:linha("intencoes."+k)},{q:"guia",t:linha("intencoes.escolher_tema")}],0,function(){fase="tema";if(cfg().micApos)abreMic()})}
@@ -1202,6 +1205,7 @@ function montaAjustes(){var box=D.getElementById("f-ajustes");if(!box||box.query
  campo(T("Nome da IA que guia"),"sol-guia",'<select class="campo" id="sol-guia"><option value="aguia">Águia Primordial</option><option value="aurora">Aurora</option><option value="mestre">Mestre Solar</option></select>');
  campo(T("Tom"),"sol-tom",'<select class="campo" id="sol-tom"><option value="alegre">Alegre</option><option value="normal">Normal</option><option value="elevado">Elevado</option></select>');
  var _l1=el("label","chk");_l1.innerHTML='<input type="checkbox" id="sol-legenda"> '+T("Legenda sob o Sol");bloco.appendChild(_l1);
+ var _lIntro=el("label","chk");_lIntro.innerHTML='<input type="checkbox" id="sol-intro" checked> '+T("Intro épica na entrada do Sol");bloco.appendChild(_lIntro);
  campo(T("Frase de despertar"),"sol-wake",'<select class="campo" id="sol-wake"><option value="off">'+T("Desligada")+'</option><option value="novo">Novo Universo Solar</option><option value="desperta">Desperta, Sol</option><option value="ola">Olá, Mestre Solar</option><option value="custom">'+T("Frase própria")+'</option></select>');
  campo(T("Frase própria"),"sol-wake-c",'<input class="campo" id="sol-wake-c" type="text" placeholder="Novo Universo Solar">');
  var _l2=el("label","chk");_l2.innerHTML='<input type="checkbox" id="sol-mic"> '+T("Abrir microfone após a fala do Sol");bloco.appendChild(_l2);
@@ -1230,10 +1234,10 @@ function montaAjustes(){var box=D.getElementById("f-ajustes");if(!box||box.query
   ["sol-trat","sol-gen","sol-custom","sol-guia","sol-tom","sol-wake","sol-wake-c","sol-mov","sol-prov","sol-key","sol-base","sol-model"].forEach(function(){});
   var map={trat:"tratamento",gen:"genero",custom:"custom",guia:"guia",tom:"tom",wake:"wake","wake-c":"wakeCustom",mov:"movimento",prov:"netProv",key:"netKey",base:"netBase",model:"netModel"};
   for(var k in map){var elx=D.getElementById("sol-"+k);if(!elx)continue;elx.value=c[map[k]]||""}
-  D.getElementById("sol-legenda").checked=c.legenda;D.getElementById("sol-mic").checked=c.micApos;D.getElementById("sol-tela").checked=c.telaAcesa;D.getElementById("sol-quiz").checked=c.quizApos;D.getElementById("sol-net").checked=c.net}
+  D.getElementById("sol-legenda").checked=c.legenda;try{D.getElementById("sol-intro").checked=c.introEpica!==false}catch(e){}D.getElementById("sol-mic").checked=c.micApos;D.getElementById("sol-tela").checked=c.telaAcesa;D.getElementById("sol-quiz").checked=c.quizApos;D.getElementById("sol-net").checked=c.net}
  sync();
  function read(){salvaCfg({tratamento:D.getElementById("sol-trat").value,genero:D.getElementById("sol-gen").value,custom:D.getElementById("sol-custom").value,
-  guia:D.getElementById("sol-guia").value,tom:D.getElementById("sol-tom").value,legenda:D.getElementById("sol-legenda").checked,
+  guia:D.getElementById("sol-guia").value,tom:D.getElementById("sol-tom").value,legenda:D.getElementById("sol-legenda").checked,introEpica:D.getElementById("sol-intro")?D.getElementById("sol-intro").checked:true,
   wake:D.getElementById("sol-wake").value,wakeCustom:D.getElementById("sol-wake-c").value,micApos:D.getElementById("sol-mic").checked,
   movimento:D.getElementById("sol-mov").value,telaAcesa:D.getElementById("sol-tela").checked,quizApos:D.getElementById("sol-quiz").checked,
   net:D.getElementById("sol-net").checked,netProv:D.getElementById("sol-prov").value,netKey:D.getElementById("sol-key").value,
