@@ -932,8 +932,14 @@ function keySelo(x){var map={"Comprovado":"verdadeiro","Proven":"verdadeiro","Co
  var s=String(x||"").replace(/^[^A-Za-zÀ-ÿ]+/,"");return map[s]||map[x]||null}
 function emojiSelo(k){return({verdadeiro:"✅",duvidoso:"🔭",falso:"⚠️",desconhecido:"❓",tradicao:"📜",misto:"🔭"})[k]||"❓"}
 function rotuloSelo(k){var n=(SOL_DATA&&SOL_DATA.nucleo&&SOL_DATA.nucleo.rotulos)||{};return n[k]||(emojiSelo(k)+" "+k)}
-function bandeiraDeSelos(selos){var keys=[];(selos||[]).forEach(function(x){var k=keySelo(x);if(k&&keys.indexOf(k)<0)keys.push(k)});
+function headlineBand(band){if(!band)return"";
+ if(band.key==="falso")return LANG==="en"?"⚠️ Myth":"⚠️ Mito";
+ return band.band}
+function bandeiraDeSelos(selos){var keys=[],order=[];
+ (selos||[]).forEach(function(x){var k=keySelo(x);if(!k)return;if(keys.indexOf(k)<0)keys.push(k);order.push(k)});
  if(!keys.length)return{key:"desconhecido",band:rotuloSelo("desconhecido"),keys:[]};
+ /* Primary seal mito/falso → headline ⚠️ Mito even if other seals exist */
+ if(order[0]==="falso")return{key:"falso",band:rotuloSelo("falso"),keys:keys};
  if(keys.length>1)return{key:"misto",band:rotuloSelo("misto"),keys:keys};
  return{key:keys[0],band:rotuloSelo(keys[0]),keys:keys}}
 function confiancaDe(score,key){var alta=LANG==="en"?"high":LANG==="es"?"alta":"alta";
@@ -1021,8 +1027,7 @@ function cardOffline(tema,hits){var n=SOL_DATA.nucleo||{},secs=n.secoes||[];
   (hits||[]).slice(0,potencia?5:4).forEach(function(h){if(!h||h===best)return;var fr=primeiraFrase(h.resposta||"");
    if(fr){var line=fr;if(aFavor.indexOf(line)<0)aFavor.push(line)}
    (h.selosRaw||[]).forEach(function(x){/* keep */})});
-  if(band.key==="misto"){subs=[];
-   /* primary claim = user theme with dominant non-comprovado seal if claim is myth */
+  if(band.key==="misto"||(band.key==="falso"&&(band.keys||[]).length>1)){subs=[];
    var claimSelo=(selos.filter(function(x){return keySelo(x)==="falso"})[0])||selos[0];
    if(claimSelo)subs.push({alegacao:tema,selo:claimSelo});
    (hits||[]).slice(0,5).forEach(function(h){if(!h||!h.tema)return;var sk=(h.selosRaw||[])[0];if(!sk)return;
@@ -1031,12 +1036,13 @@ function cardOffline(tema,hits){var n=SOL_DATA.nucleo||{},secs=n.secoes||[];
  }
  else{band=bandeiraDeSelos([]);band.conf=confiancaDe(0,"desconhecido");veredito=tema+" — "+(n.sem_base||T("ainda sem lição direta no Portal"))}
 
- var txt="🔍 "+(secs[0]||"Veredito")+"\n"+band.band+" — "+veredito+" "+(LANG==="en"?"Confidence":LANG==="es"?"Confianza":"Confiança")+": "+band.conf+".\n";
+ if(band.key==="falso"){veredito=String(veredito||"").replace(/^(?:Mito|Myth)\s*[.:–—-]*\s*/i,"").trim()||veredito}
+ var txt="🔍 "+(secs[0]||"Veredito")+"\n"+headlineBand(band)+" — "+veredito+" "+(LANG==="en"?"Confidence":LANG==="es"?"Confianza":"Confiança")+": "+band.conf+".\n";
  if(subs&&subs.length){txt+="\n";subs.forEach(function(s){var k=keySelo(s.selo)||"desconhecido";txt+="  "+emojiSelo(k)+" "+(s.alegacao||s.selo)+"\n"})}
  function sec(i,title,arr){if(!arr||!arr.length)return;txt+="\n"+(i)+") "+(secs[i-1]||title)+"\n";arr.forEach(function(x){txt+="• "+x+"\n"})}
  sec(2,"A favor",aFavor);sec(3,"Contra",contra);sec(4,"Quem afirma",quem);sec(5,"Não se sabe",nao);sec(6,"Conferir",conferir);
  if(hits&&hits.length){txt+="\n7) "+(secs[6]||"Lições do Portal")+"\n";hits.slice(0,potencia?8:5).forEach(function(h){txt+="• "+h.tema+(h.id?"  →  ?l="+h.id:"")+(h.selos&&h.selos.length?" ("+h.selos.join(" ")+")":"")+"\n"})}
- return{texto:txt,veredito:veredito,bandeira:band.band,confianca:band.conf,id:best&&best.id,hits:hits,key:band.key}}
+ return{texto:txt,veredito:veredito,bandeira:headlineBand(band),confianca:band.conf,id:best&&best.id,hits:hits,key:band.key}}
 function investigar(tema,idHint){if(bloqueado(tema)){bloquearFala();return}
  investigaTema=tema;fase="investiga";
  var usaIA=!!(cfg().net),usaWiki=true;
