@@ -1,5 +1,5 @@
 /* Service worker do Mestre Solar: app offline + conteúdo guardado depois de usado. */
-var VERSAO = "ms-2026-10-27-0750-jervis-voz";
+var VERSAO = "ms-2026-10-27-0758-legenda";
 var APP = ["./", "./index.html", "./manifest.json", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png", "./icons/apple-touch-icon-180.png"];
 self.addEventListener("install", function (e) {
   e.waitUntil(caches.open(VERSAO + "-app").then(function (c) { return c.addAll(APP); }).then(function () { return self.skipWaiting(); }));
