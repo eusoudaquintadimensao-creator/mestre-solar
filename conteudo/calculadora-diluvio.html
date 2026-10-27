@@ -7,27 +7,33 @@
 <style>
 :root{--bg:#0c0b10;--panel:#16131c;--txt:#e8e4dc;--muted:#9a9488;--line:#2a2633;--accent:#9aa0a6;--ok:#7dcea0;--bad:#e98a8a;--warn:#e0c36a}
 *{box-sizing:border-box}
-body{margin:0;font:15px/1.45 system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--txt);padding:16px;padding-bottom:48px}
-h1{font-size:1.25rem;margin:0 0 6px;font-weight:700;letter-spacing:.02em}
-h2{font-size:1rem;margin:18px 0 8px;color:var(--accent)}
-p.lead{color:var(--muted);margin:0 0 14px;font-size:13px}
-.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-.bar button,.lang button{background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:8px 12px;cursor:pointer}
+body{margin:0;font:15px/1.45 system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--txt);padding:16px;padding-bottom:64px}
+h1{font-size:1.25rem;margin:0 0 6px;font-weight:700}
+h2{font-size:1rem;margin:14px 0 8px;color:var(--accent)}
+p.lead{color:var(--muted);margin:0 0 12px;font-size:13px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.bar button,.lang button{background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:8px 12px;cursor:pointer;font-size:13px}
 .lang button.on,.bar button.on{border-color:var(--accent);color:#fff;background:#2a1c12}
 .grid{display:grid;gap:10px}
 @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
 label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
-input{width:100%;background:#0a090e;border:1px solid var(--line);border-radius:10px;color:var(--txt);padding:10px 12px;font-size:15px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
-.out{font-variant-numeric:tabular-nums}
+input,select{width:100%;background:#0a090e;border:1px solid var(--line);border-radius:10px;color:var(--txt);padding:10px 12px;font-size:15px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px}
 .out div{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid var(--line);font-size:13px}
-.out div:last-child{border:0}
-.k{color:var(--muted)}
-.v{font-weight:600;text-align:right}
-.formula{font-family:ui-monospace,monospace;font-size:11px;color:var(--muted);margin-top:8px;white-space:pre-wrap}
+.out .k{color:var(--muted)}.out .v{font-weight:600;text-align:right}
+.formula{font-family:ui-monospace,monospace;font-size:11px;color:var(--muted);white-space:pre-wrap}
 .verdict{margin-top:10px;padding:10px;border-radius:10px;background:#1a181f;border:1px solid var(--line);font-size:13px}
+details.cite{margin:8px 0;border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:#120f18;font-size:13px}
+details.cite summary{cursor:pointer;color:var(--accent)}
+details.cite blockquote{margin:8px 0;color:var(--txt);font-style:italic}
+.step{border-left:3px solid var(--accent);padding-left:10px;margin:12px 0}
+.step h3{margin:0 0 4px;font-size:14px}
 .bad{color:var(--bad)}.ok{color:var(--ok)}.warn{color:var(--warn)}
+table{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0}
+th,td{border:1px solid var(--line);padding:6px 8px;vertical-align:top}
+th{color:var(--muted);font-weight:600;text-align:left}
 a{color:var(--accent)}
+.hide{display:none!important}
 </style>
 </head>
 <body>
@@ -37,221 +43,223 @@ a{color:var(--accent)}
   <button type="button" data-l="es">ES</button>
 </div>
 <h1 id="t-title">Calculadora do Dilúvio</h1>
-<p class="lead" id="t-lead">Ferramenta offline do Mestre Solar. Hipóteses declaradas. Não zomba da fé: traduz afirmações físicas em aritmética.</p>
-
+<p class="lead" id="t-lead">Offline · hipóteses declaradas · citações verificáveis · sem zombar da fé.</p>
 <div class="bar" id="modes">
-  <button type="button" data-mode="geral" class="on" id="m-geral">Geral</button>
-  <button type="button" data-mode="arca" id="m-arca">Capacidade da arca</button>
+  <button type="button" data-mode="geral">Geral</button>
+  <button type="button" data-mode="arca">Capacidade</button>
+  <button type="button" data-mode="viagens" class="on">Viagens</button>
+  <button type="button" data-mode="pensar">Pensar juntos</button>
+  <button type="button" data-mode="retrato">Retrato / coerência</button>
 </div>
-<div class="bar" id="tiers" style="display:none">
+<div class="bar hide" id="tiers">
   <button type="button" data-tier="A" class="on">A · Vertebrados ~37k</button>
-  <button type="button" data-tier="B">B · Terrestres+insetos ~1,4M</button>
-  <button type="button" data-tier="C">C · ~8,7M − marinhas</button>
+  <button type="button" data-tier="B">B · ~1,4M</button>
+  <button type="button" data-tier="C">C · ~8,7M−marinhas</button>
 </div>
-<p class="lead" id="tier-note" style="display:none"></p>
-<div class="grid">
+<p class="lead hide" id="tier-note"></p>
 
+<section id="panel-geral" class="hide">
+<div class="grid">
   <div class="card">
-    <h2 id="t-in">Entradas</h2>
-    <label id="l-h"><span id="t-h">Altura-alvo de água (m)</span>
-      <input id="h" type="number" step="any" value="8855.855"/></label>
-    <label><span id="t-days">Dias de chuva</span>
-      <input id="days" type="number" step="any" value="40"/></label>
-    <label><span id="t-cubit">Côvado (m)</span>
-      <input id="cubit" type="number" step="any" value="0.457"/></label>
-    <label><span id="t-area">Área da Terra (km²)</span>
-      <input id="area" type="number" step="any" value="510000000"/></label>
-    <label><span id="t-ocean">Volume dos oceanos (km³)</span>
-      <input id="ocean" type="number" step="any" value="1335000000"/></label>
-    <label><span id="t-spec">Nº de espécies (vertebrados)</span>
-      <input id="spec" type="number" step="1" value="37400"/></label>
-    <label><span id="t-pairs">Pares por espécie (1=casal; 7=sete pares)</span>
-      <input id="pairs" type="number" step="1" value="1"/></label>
-    <label><span id="t-clean">Fração “limpos” com 7 pares (0–1)</span>
-      <input id="clean" type="number" step="any" value="0.1"/></label>
-    <label><span id="t-food">Comida kg/animal/dia</span>
-      <input id="food" type="number" step="any" value="0.5"/></label>
-    <label><span id="t-kang">Distância canguru (km)</span>
-      <input id="kang" type="number" step="any" value="12000"/></label>
-    <label><span id="t-ks">Velocidade média canguru (km/h)</span>
-      <input id="ks" type="number" step="any" value="5"/></label>
+    <h2>Entradas</h2>
+    <label>Altura-alvo (m) — Everest+15 côvados<input id="h" type="number" step="any" value="8855.855"/></label>
+    <label>Dias de chuva<input id="days" type="number" value="40"/></label>
+    <label>Côvado (m)<input id="cubit" type="number" step="any" value="0.457"/></label>
+    <label>Área Terra (km²)<input id="area" type="number" value="510000000"/></label>
+    <label>Oceanos (km³)<input id="ocean" type="number" value="1335000000"/></label>
+    <label>Espécies (manual)<input id="spec" type="number" value="37400"/></label>
+    <label>Fração limpos 7 pares<input id="clean" type="number" step="any" value="0.1"/></label>
+    <label>Comida kg/animal/dia<input id="food" type="number" step="any" value="0.5"/></label>
   </div>
-  <div class="card out" id="out"></div>
+  <div class="card out" id="out-geral"></div>
 </div>
-<p class="formula" id="forms"></p>
-<p class="verdict" id="verdict"></p>
-<p class="lead" id="t-foot"><a href="../index.html">← Voltar ao Portal</a> · Águia Primordial é a voz publicada; Jervis pausado.</p>
+<div id="cites-geral"></div>
+</section>
+
+<section id="panel-arca" class="hide">
+<div class="card out" id="out-arca"></div>
+<div id="cites-arca"></div>
+</section>
+
+<section id="panel-viagens">
+<div class="card">
+  <h2>Escolha o animal</h2>
+  <label>Espécie / origem<select id="animal"></select></label>
+  <label>Velocidade média (km/h) — editável<input id="spd" type="number" step="any"/></label>
+  <label>Km/dia sustentados (marcha realista)<input id="kmdia" type="number" step="any" value="30"/></label>
+</div>
+<div class="card out" id="out-via"></div>
+<div id="cites-via"></div>
+</section>
+
+<section id="panel-pensar" class="hide">
+<div class="card" id="pensar-cards"></div>
+</section>
+
+<section id="panel-retrato" class="hide">
+<div class="card" id="retrato-body"></div>
+</section>
+
+<p class="lead" id="tr-note">Traduções bíblicas citadas: PT Almeida (domínio público) · EN KJV · ES Reina-Valera 1909. Links online para conferência.</p>
+</body>
 <script>
-const I18N={
-pt:{title:"Calculadora do Dilúvio",lead:"Ferramenta offline do Mestre Solar. Hipóteses declaradas. Não zomba da fé: traduz afirmações físicas em aritmética.",inn:"Entradas",h:"Altura-alvo de água (m) — padrão Everest+15 côvados",days:"Dias de chuva",cubit:"Côvado (m)",area:"Área da Terra (km²)",ocean:"Volume dos oceanos (km³)",spec:"Nº de espécies (modo manual)",pairs:"Pares base por espécie (se não usar 7 para limpos/aves)",clean:"Fração “limpos” com 7 pares (0–1)",food:"Comida kg/animal/dia",kang:"Distância canguru (km)",ks:"Velocidade média canguru (km/h)",
-mGeral:"Geral",mArca:"Capacidade da arca",
-tierNote:{
- A:"Degrau A — só vertebrados terrestres (~37.400 spp.): mamíferos~6400, aves~11000, répteis~12000, anfíbios~8000. Gn 7:2–3: 7 casais limpos + 7 casais aves; 1 casal demais → ~200 mil+ animais ≈ 0,18 m³ (~180 L) cada no volume bruto da arca (~43.000 m³).",
- B:"Degrau B — espécies terrestres descritas incl. insetos (~1,3–1,5 milhão; usamos 1,4 M). A biodiversidade descrita é majoritariamente insetos. Mesmo com 1 casal/espécie a arca esgota-se em litros por indivíduo.",
- C:"Degrau C — estimativa Mora et al. 2011: ~8,7 milhões de espécies no total, menos ~2,2 milhões marinhas ≈ 6,5 milhões terrestres. Ordem de grandeza: ~2 L brutos/animal antes de comida e água de um ano."
+const ANIMALS = [{"id": "canguru", "nome": "Canguru (Austrália)", "km": 11805, "speed": 20, "swim": "não cruza oceano", "oceans": ["Oceano Índico"], "diet": "herbívoro / pastagem australiana", "climate": "árido–temperado AU", "continente": "Austrália", "dias": 24.6, "veredito": "❌"}, {"id": "coala", "nome": "Coala (Austrália)", "km": 12625, "speed": 0.5, "swim": "não", "oceans": ["Oceano Índico"], "diet": "quase só eucalipto", "climate": "eucaliptais AU", "continente": "Austrália", "dias": 1052.1, "veredito": "❌"}, {"id": "wombat", "nome": "Wombat (Austrália)", "km": 13349, "speed": 3, "swim": "não", "oceans": ["Oceano Índico"], "diet": "gramíneas AU", "climate": "AU temperado", "continente": "Austrália", "dias": 185.4, "veredito": "❌"}, {"id": "preguica", "nome": "Preguiça (América do Sul)", "km": 11584, "speed": 0.2, "swim": "ruim / não oceano", "oceans": ["Atlântico"], "diet": "folhas tropicais", "climate": "Amazônia", "continente": "América do Sul", "dias": 2413.3, "veredito": "❌"}, {"id": "tatu", "nome": "Tatu (América do Sul)", "km": 11428, "speed": 5, "swim": "rios, não oceano", "oceans": ["Atlântico"], "diet": "insetos/solo", "climate": "neotropical", "continente": "América do Sul", "dias": 95.2, "veredito": "❌"}, {"id": "lhama", "nome": "Lhama (Andes)", "km": 13133, "speed": 8, "swim": "não oceano", "oceans": ["Atlântico/Pacífico"], "diet": "pastagem andina", "climate": "altitude Andes", "continente": "América do Sul", "dias": 68.4, "veredito": "❌"}, {"id": "pinguim", "nome": "Pinguim-imperador (Antártida)", "km": 13157, "speed": 2, "swim": "excelente no mar gelado; não sobe Ararat", "oceans": ["Oceano Austral"], "diet": "peixes/krill gelado", "climate": "Antártida", "continente": "Antártida", "dias": 274.1, "veredito": "❌"}, {"id": "urso-polar", "nome": "Urso-polar (Ártico)", "km": 5610, "speed": 5, "swim": "longo no gelo/mar polar; habitat gelo", "oceans": ["Ártico/Atlântico"], "diet": "focas", "climate": "Ártico", "continente": "Ártico", "dias": 46.8, "veredito": "❌"}, {"id": "bisao", "nome": "Bisão (América do Norte)", "km": 9945, "speed": 10, "swim": "rios, não oceano", "oceans": ["Atlântico"], "diet": "pradaria", "climate": "pradarias NA", "continente": "América do Norte", "dias": 41.4, "veredito": "❌"}, {"id": "lemure", "nome": "Lêmure (Madagascar)", "km": 6533, "speed": 4, "swim": "não cruza canal de Moçambique (~400 km)", "oceans": ["Canal de Moçambique"], "diet": "frutos/folhas MDG", "climate": "Madagascar", "continente": "Madagascar", "dias": 68.1, "veredito": "❌"}, {"id": "tartaruga-galapagos", "nome": "Tartaruga-das-Galápagos", "km": 13700, "speed": 0.3, "swim": "marinho limitado; espécie terrestre ilha", "oceans": ["Pacífico"], "diet": "vegetação Galápagos", "climate": "ilhas Galápagos", "continente": "Galápagos", "dias": 1902.8, "veredito": "❌"}, {"id": "kiwi", "nome": "Kiwi (Nova Zelândia, endêmico ilha)", "km": 15810, "speed": 2, "swim": "não oceano", "oceans": ["Pacífico/Tasmânia"], "diet": "invertebrados NZ", "climate": "NZ", "continente": "Nova Zelândia", "dias": 329.4, "veredito": "❌"}];
+const VERSES = {"genesis 6:3": {"pt": {"ref": "Gênesis 6:3", "text": "Então disse o Senhor: O meu Espírito não permanecerá para sempre no homem, porquanto ele é carne, mas os seus dias serão cento e vinte anos.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 6:3", "text": "And the LORD said, My spirit shall not always strive with man, for that he also\nis flesh: yet his days shall be an hundred and twenty years.", "tr": "King James Version"}, "es": {"ref": "Génesis 6:3", "text": "Y dijo Jehová: No contenderá mi espíritu con el hombre para siempre, porque ciertamente él es carne: mas serán sus días ciento y veinte años.", "tr": "Reina-Valera 1909"}}, "genesis 6:5": {"pt": {"ref": "Gênesis 6:5", "text": "Viu o Senhor que era grande a maldade do homem na terra, e que toda a imaginação dos pensamentos de seu coração era má continuamente.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 6:5", "text": "And GOD saw that the wickedness of man\nwas great in the earth, and\nthat every imagination of the thoughts of his heart\nwas\n only evil continually.", "tr": "King James Version"}, "es": {"ref": "Génesis 6:5", "text": "Y vió Jehová que la malicia de los hombres era mucha en la tierra, y que todo designio de los pensamientos del corazón de ellos era de continuo solamente el mal.", "tr": "Reina-Valera 1909"}}, "genesis 6:6": {"pt": {"ref": "Gênesis 6:6", "text": "Então arrependeu-se o Senhor de haver feito o homem na terra, e isso lhe pesou no coração", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 6:6", "text": "And it repented the LORD that he had made man on the earth, and it grieved him at his heart.", "tr": "King James Version"}, "es": {"ref": "Génesis 6:6", "text": "Y arrepintióse Jehová de haber hecho hombre en la tierra, y pesóle en su corazón.", "tr": "Reina-Valera 1909"}}, "genesis 6:7": {"pt": {"ref": "Gênesis 6:7", "text": "E disse o Senhor: Destruirei da face da terra o homem que criei, tanto o homem como o animal, os répteis e as aves do céu; porque me arrependo de os haver feito.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 6:7", "text": "And the LORD said, I will destroy man whom I have created from the face of the earth; both man, and beast, and the creeping thing, and the fowls of the air; for it repenteth me that I have made them.", "tr": "King James Version"}, "es": {"ref": "Génesis 6:7", "text": "Y dijo Jehová: Raeré los hombres que he criado de sobre la faz de la tierra, desde el hombre hasta la bestia, y hasta el reptil y las aves del cielo: porque me arrepiento de haberlos hecho.", "tr": "Reina-Valera 1909"}}, "genesis 6:13": {"pt": {"ref": "Gênesis 6:13", "text": "Então disse Deus a Noé: O fim de toda carne é chegado perante mim; porque a terra está cheia da violência dos homens; eis que os destruirei juntamente com a terra.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 6:13", "text": "And God said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth.", "tr": "King James Version"}, "es": {"ref": "Génesis 6:13", "text": "Y dijo Dios á Noé: El fin de toda carne ha venido delante de mí; porque la tierra está llena de violencia á causa de ellos; y he aquí que yo los destruiré con la tierra.", "tr": "Reina-Valera 1909"}}, "genesis 6:14": {"pt": {"ref": "Gênesis 6:14", "text": "Faze para ti uma arca de madeira de gôfer: farás compartimentos na arca, e a revestirás de betume por dentro e por fora.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 6:14", "text": "Make thee an ark of gopher wood; rooms shalt thou make in the ark, and shalt pitch it within and without with pitch.", "tr": "King James Version"}, "es": {"ref": "Génesis 6:14", "text": "Hazte un arca de madera de Gopher: harás aposentos en el arca, y la embetunarás con brea por dentro y por fuera.", "tr": "Reina-Valera 1909"}}, "genesis 6:15": {"pt": {"ref": "Gênesis 6:15", "text": "Desta maneira a farás: o comprimento da arca será de trezentos côvados, a sua largura de cinqüenta e a sua altura de trinta.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 6:15", "text": "And this\nis the fashion which thou shalt make it\nof:\n The length of the ark\nshall be three hundred cubits, the breadth of it fifty cubits, and the height of it thirty cubits.", "tr": "King James Version"}, "es": {"ref": "Génesis 6:15", "text": "Y de esta manera la harás: de trescientos codos la longitud del arca, de cincuenta codos su anchura, y de treinta codos su altura.", "tr": "Reina-Valera 1909"}}, "genesis 6:16": {"pt": {"ref": "Gênesis 6:16", "text": "Farás na arca uma janela e lhe darás um côvado de altura; e a porta da arca porás no seu lado; fá-la-ás com andares, baixo, segundo e terceiro.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 6:16", "text": "A window shalt thou make to the ark, and in a cubit shalt thou finish it above; and the door of the ark shalt thou set in the side thereof;\nwith\n lower, second, and third\nstories shalt thou make it.", "tr": "King James Version"}, "es": {"ref": "Génesis 6:16", "text": "Una ventana harás al arca, y la acabarás á un codo de elevación por la parte de arriba: y pondrás la puerta del arca á su lado; y le harás piso bajo, segundo y tercero.", "tr": "Reina-Valera 1909"}}, "genesis 6:19": {"pt": {"ref": "Gênesis 6:19", "text": "De tudo o que vive, de toda a carne, dois de cada espécie, farás entrar na arca, para os conservares vivos contigo; macho e fêmea serão.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 6:19", "text": "And of every living thing of all flesh, two of every\nsort\n shalt thou bring into the ark, to keep\nthem alive with thee; they shall be male and female.", "tr": "King James Version"}, "es": {"ref": "Génesis 6:19", "text": "Y de todo lo que vive, de toda carne, dos de cada especie meterás en el arca, para que tengan vida contigo; macho y hembra serán.", "tr": "Reina-Valera 1909"}}, "genesis 6:20": {"pt": {"ref": "Gênesis 6:20", "text": "Das aves segundo as suas espécies, do gado segundo as suas espécies, de todo réptil da terra segundo as suas espécies, dois de cada espécie virão a ti, para os conservares em vida.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 6:20", "text": "Of fowls after their kind, and of cattle after their kind, of every creeping thing of the earth after his kind, two of every\nsort shall come unto thee, to keep\nthem alive.", "tr": "King James Version"}, "es": {"ref": "Génesis 6:20", "text": "De las aves según su especie, y de las bestias según su especie, de todo reptil de la tierra según su especie, dos de cada especie entrarán contigo para que hayan vida.", "tr": "Reina-Valera 1909"}}, "genesis 7:2": {"pt": {"ref": "Gênesis 7:2", "text": "De todos os animais limpos levarás contigo sete e sete, o macho e sua fêmea; mas dos animais que não são limpos, dois, o macho e sua fêmea;", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 7:2", "text": "Of every clean beast thou shalt take to thee by sevens, the male and his female: and of beasts that\nare not clean by two, the male and his female.", "tr": "King James Version"}, "es": {"ref": "Génesis 7:2", "text": "De todo animal limpio te tomarás de siete en siete, macho y su hembra; mas de los animales que no son limpios, dos, macho y su hembra.", "tr": "Reina-Valera 1909"}}, "genesis 7:3": {"pt": {"ref": "Gênesis 7:3", "text": "também das aves do céu sete e sete, macho e fêmea, para se conservar em vida sua espécie sobre a face de toda a terra.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 7:3", "text": "Of fowls also of the air by sevens, the male and the female; to keep seed alive upon the face of all the earth.", "tr": "King James Version"}, "es": {"ref": "Génesis 7:3", "text": "También de las aves de los cielos de siete en siete, macho y hembra; para guardar en vida la casta sobre la faz de toda la tierra.", "tr": "Reina-Valera 1909"}}, "genesis 7:4": {"pt": {"ref": "Gênesis 7:4", "text": "Porque, passados ainda sete dias, farei chover sobre a terra quarenta dias e quarenta noites, e exterminarei da face da terra todas as criaturas que fiz.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 7:4", "text": "For yet seven days, and I will cause it to rain upon the earth forty days and forty nights; and every living substance that I have made will I destroy from off the face of the earth.", "tr": "King James Version"}, "es": {"ref": "Génesis 7:4", "text": "Porque pasados aún siete días, yo haré llover sobre la tierra cuarenta días y cuarenta noches; y raeré toda sustancia que hice de sobre la faz de la tierra.", "tr": "Reina-Valera 1909"}}, "genesis 7:11": {"pt": {"ref": "Gênesis 7:11", "text": "No ano seiscentos da vida de Noé, no mês segundo, aos dezessete dias do mês, romperam-se todas as fontes do grande abismo, e as janelas do céu se abriram,", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 7:11", "text": "In the six hundredth year of Noah’s life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.", "tr": "King James Version"}, "es": {"ref": "Génesis 7:11", "text": "El año seiscientos de la vida de Noé, en el mes segundo, á diecisiete días del mes, aquel día fueron rotas todas las fuentes del grande abismo, y las cataratas de los cielos fueron abiertas;", "tr": "Reina-Valera 1909"}}, "genesis 7:12": {"pt": {"ref": "Gênesis 7:12", "text": "e caiu chuva sobre a terra quarenta dias e quarenta noites.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 7:12", "text": "And the rain was upon the earth forty days and forty nights.", "tr": "King James Version"}, "es": {"ref": "Génesis 7:12", "text": "Y hubo lluvia sobre la tierra cuarenta días y cuarenta noches.", "tr": "Reina-Valera 1909"}}, "genesis 7:17": {"pt": {"ref": "Gênesis 7:17", "text": "Veio o dilúvio sobre a terra durante quarenta dias; e as águas cresceram e levantaram a arca, e ela se elevou por cima da terra.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 7:17", "text": "And the flood was forty days upon the earth; and the waters increased, and bare up the ark, and it was lift up above the earth.", "tr": "King James Version"}, "es": {"ref": "Génesis 7:17", "text": "Y fué el diluvio cuarenta días sobre la tierra; y las aguas crecieron, y alzaron el arca, y se elevó sobre la tierra.", "tr": "Reina-Valera 1909"}}, "genesis 7:19": {"pt": {"ref": "Gênesis 7:19", "text": "As águas prevaleceram excessivamente sobre a terra; e todos os altos montes que havia debaixo do céu foram cobertos.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 7:19", "text": "And the waters prevailed exceedingly upon the earth; and all the high hills, that\nwere under the whole heaven, were covered.", "tr": "King James Version"}, "es": {"ref": "Génesis 7:19", "text": "Y las aguas prevalecieron mucho en extremo sobre la tierra; y todos los montes altos que había debajo de todos los cielos, fueron cubiertos.", "tr": "Reina-Valera 1909"}}, "genesis 7:20": {"pt": {"ref": "Gênesis 7:20", "text": "Quinze côvados acima deles prevaleceram as águas; e assim foram cobertos.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 7:20", "text": "Fifteen cubits upward did the waters prevail; and the mountains were covered.", "tr": "King James Version"}, "es": {"ref": "Génesis 7:20", "text": "Quince codos en alto prevalecieron las aguas; y fueron cubiertos los montes.", "tr": "Reina-Valera 1909"}}, "genesis 7:24": {"pt": {"ref": "Gênesis 7:24", "text": "E prevaleceram as águas sobre a terra cento e cinqüenta dias.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 7:24", "text": "And the waters prevailed upon the earth an hundred and fifty days.", "tr": "King James Version"}, "es": {"ref": "Génesis 7:24", "text": "Y prevalecieron las aguas sobre la tierra ciento y cincuenta días.", "tr": "Reina-Valera 1909"}}, "genesis 8:3": {"pt": {"ref": "Gênesis 8:3", "text": "as águas se foram retirando de sobre a terra; no fim de cento e cinqüenta dias começaram a minguar.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 8:3", "text": "And the waters returned from off the earth continually: and after the end of the hundred and fifty days the waters were abated.", "tr": "King James Version"}, "es": {"ref": "Génesis 8:3", "text": "Y tornáronse las aguas de sobre la tierra, yendo y volviendo: y decrecieron las aguas al cabo de ciento y cincuenta días.", "tr": "Reina-Valera 1909"}}, "genesis 8:4": {"pt": {"ref": "Gênesis 8:4", "text": "No sétimo mês, no dia dezessete do mês, repousou a arca sobre os montes de Arará.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 8:4", "text": "And the ark rested in the seventh month, on the seventeenth day of the month, upon the mountains of Ararat.", "tr": "King James Version"}, "es": {"ref": "Génesis 8:4", "text": "Y reposó el arca en el mes séptimo, á diecisiete días del mes, sobre los montes de Armenia.", "tr": "Reina-Valera 1909"}}, "genesis 8:6": {"pt": {"ref": "Gênesis 8:6", "text": "Ao cabo de quarenta dias, abriu Noé a janela que havia feito na arca;", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 8:6", "text": "And it came to pass at the end of forty days, that Noah opened the window of the ark which he had made:", "tr": "King James Version"}, "es": {"ref": "Génesis 8:6", "text": "Y sucedió que, al cabo de cuarenta días, abrió Noé la ventana del arca que había hecho,", "tr": "Reina-Valera 1909"}}, "genesis 8:7": {"pt": {"ref": "Gênesis 8:7", "text": "soltou um corvo que, saindo, ia e voltava até que as águas se secaram de sobre a terra.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 8:7", "text": "And he sent forth a raven, which went forth to and fro, until the waters were dried up from off the earth.", "tr": "King James Version"}, "es": {"ref": "Génesis 8:7", "text": "Y envió al cuervo, el cual salió, y estuvo yendo y tornando hasta que las aguas se secaron de sobre la tierra.", "tr": "Reina-Valera 1909"}}, "genesis 8:8": {"pt": {"ref": "Gênesis 8:8", "text": "Depois soltou uma pomba, para ver se as águas tinham minguado de sobre a face da terra;", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 8:8", "text": "Also he sent forth a dove from him, to see if the waters were abated from off the face of the ground;", "tr": "King James Version"}, "es": {"ref": "Génesis 8:8", "text": "Envió también de sí á la paloma, para ver si las aguas se habían retirado de sobre la faz de la tierra;", "tr": "Reina-Valera 1909"}}, "genesis 8:9": {"pt": {"ref": "Gênesis 8:9", "text": "mas a pomba não achou onde pousar a planta do pé, e voltou a ele para a arca; porque as águas ainda estavam sobre a face de toda a terra; e Noé, estendendo a mão, tomou-a e a recolheu consigo na arca.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 8:9", "text": "But the dove found no rest for the sole of her foot, and she returned unto him into the ark, for the waters\nwere on the face of the whole earth: then he put forth his hand, and took her, and pulled her in unto him into the ark.", "tr": "King James Version"}, "es": {"ref": "Génesis 8:9", "text": "Y no halló la paloma donde sentar la planta de su pie, y volvióse á él al arca, porque las aguas estaban aún sobre la faz de toda la tierra: entonces él extendió su mano, y cogiéndola, hízola entrar consigo en el arca.", "tr": "Reina-Valera 1909"}}, "genesis 8:10": {"pt": {"ref": "Gênesis 8:10", "text": "Esperou ainda outros sete dias, e tornou a soltar a pomba fora da arca.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 8:10", "text": "And he stayed yet other seven days; and again he sent forth the dove out of the ark;", "tr": "King James Version"}, "es": {"ref": "Génesis 8:10", "text": "Y esperó aún otros siete días, y volvió á enviar la paloma fuera del arca.", "tr": "Reina-Valera 1909"}}, "genesis 8:11": {"pt": {"ref": "Gênesis 8:11", "text": "Â tardinha a pomba voltou para ele, e eis no seu bico uma folha verde de oliveira; assim soube Noé que as águas tinham minguado de sobre a terra.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 8:11", "text": "And the dove came in to him in the evening; and, lo, in her mouth\nwas an olive leaf pluckt off: so Noah knew that the waters were abated from off the earth.", "tr": "King James Version"}, "es": {"ref": "Génesis 8:11", "text": "Y la paloma volvió á él á la hora de la tarde; y he aquí que traía una hoja de oliva tomada en su pico: y entendió Noé que las aguas se habían retirado de sobre la tierra.", "tr": "Reina-Valera 1909"}}, "genesis 8:13": {"pt": {"ref": "Gênesis 8:13", "text": "No ano seiscentos e um, no mês primeiro, no primeiro dia do mês, secaram-se as águas de sobre a terra. Então Noé tirou a cobertura da arca: e olhou, e eis que a face a terra estava enxuta.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 8:13", "text": "And it came to pass in the six hundredth and first year, in the first\nmonth, the first\nday of the month, the waters were dried up from off the earth: and Noah removed the covering of the ark, and looked, and, behold, the face of the ground was dry.", "tr": "King James Version"}, "es": {"ref": "Génesis 8:13", "text": "Y sucedió que en el año seiscientos y uno de Noé, en el mes primero, al primero del mes, las aguas se enjugaron de sobre la tierra; y quitó Noé la cubierta del arca, y miró, y he aquí que la faz de la tierra estaba enjuta.", "tr": "Reina-Valera 1909"}}, "genesis 8:14": {"pt": {"ref": "Gênesis 8:14", "text": "No segundo mês, aos vinte e sete dias do mês, a terra estava seca.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 8:14", "text": "And in the second month, on the seven and twentieth day of the month, was the earth dried.", "tr": "King James Version"}, "es": {"ref": "Génesis 8:14", "text": "Y en el mes segundo, á los veintisiete días del mes, se secó la tierra.", "tr": "Reina-Valera 1909"}}, "genesis 8:20": {"pt": {"ref": "Gênesis 8:20", "text": "Edificou Noé um altar ao Senhor; e tomou de todo animal limpo e de toda ave limpa, e ofereceu holocaustos sobre o altar.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 8:20", "text": "And Noah builded an altar unto the LORD; and took of every clean beast, and of every clean fowl, and offered burnt offerings on the altar.", "tr": "King James Version"}, "es": {"ref": "Génesis 8:20", "text": "Y edificó Noé un altar á Jehová, y tomó de todo animal limpio y de toda ave limpia, y ofreció holocausto en el altar.", "tr": "Reina-Valera 1909"}}, "genesis 8:21": {"pt": {"ref": "Gênesis 8:21", "text": "Sentiu o Senhor o suave cheiro e disse em seu coração: Não tornarei mais a amaldiçoar a terra por causa do homem; porque a imaginação do coração do homem é má desde a sua meninice; nem tornarei mais a ferir todo vivente, como acabo de fazer.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 8:21", "text": "And the LORD smelled a sweet savour; and the LORD said in his heart, I will not again curse the ground any more for man’s sake; for the imagination of man’s heart\nis evil from his youth; neither will I again smite any more every thing living, as I have done.", "tr": "King James Version"}, "es": {"ref": "Génesis 8:21", "text": "Y percibió Jehová olor de suavidad; y dijo Jehová en su corazón: No tornaré más á maldecir la tierra por causa del hombre; porque el intento del corazón del hombre es malo desde su juventud: ni volveré más á destruir todo viviente, como he hecho.", "tr": "Reina-Valera 1909"}}, "genesis 8:22": {"pt": {"ref": "Gênesis 8:22", "text": "Enquanto a terra durar, não deixará de haver sementeira e ceifa, frio e calor, verão e inverno, dia e noite.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 8:22", "text": "While the earth remaineth, seedtime and harvest, and cold and heat, and summer and winter, and day and night shall not cease.", "tr": "King James Version"}, "es": {"ref": "Génesis 8:22", "text": "Todavía serán todos los tiempos de la tierra; la sementera y la siega, y el frío y calor, verano é invierno, y día y noche, no cesarán.", "tr": "Reina-Valera 1909"}}, "genesis 9:1": {"pt": {"ref": "Gênesis 9:1", "text": "Abençoou Deus a Noé e a seus filhos, e disse-lhes: Frutificai e multiplicai-vos, e enchei a terra.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 9:1", "text": "And God blessed Noah and his sons, and said unto them, Be fruitful, and multiply, and replenish the earth.", "tr": "King James Version"}, "es": {"ref": "Génesis 9:1", "text": "Y BENDIJO Dios á Noé y á sus hijos, y díjoles: Fructificad, y multiplicad, y henchid la tierra:", "tr": "Reina-Valera 1909"}}, "genesis 9:11": {"pt": {"ref": "Gênesis 9:11", "text": "Sim, estabeleço o meu pacto convosco; não será mais destruída toda a carne pelas águas do dilúvio; e não haverá mais dilúvio, para destruir a terra.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 9:11", "text": "And I will establish my covenant with you; neither shall all flesh be cut off any more by the waters of a flood; neither shall there any more be a flood to destroy the earth.", "tr": "King James Version"}, "es": {"ref": "Génesis 9:11", "text": "Estableceré mi pacto con vosotros, y no fenecerá ya más toda carne con aguas de diluvio; ni habrá más diluvio para destruir la tierra.", "tr": "Reina-Valera 1909"}}, "genesis 9:13": {"pt": {"ref": "Gênesis 9:13", "text": "O meu arco tenho posto nas nuvens, e ele será por sinal de haver um pacto entre mim e a terra.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 9:13", "text": "I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth.", "tr": "King James Version"}, "es": {"ref": "Génesis 9:13", "text": "Mi arco pondré en las nubes, el cual será por señal de convenio entre mí y la tierra.", "tr": "Reina-Valera 1909"}}, "genesis 9:15": {"pt": {"ref": "Gênesis 9:15", "text": "então me lembrarei do meu pacto, que está entre mim e vós e todo ser vivente de toda a carne; e as águas não se tornarão mais em dilúvio para destruir toda a carne.", "tr": "João Ferreira de Almeida"}, "en": {"ref": "Genesis 9:15", "text": "And I will remember my covenant, which\nis between me and you and every living creature of all flesh; and the waters shall no more become a flood to destroy all flesh.", "tr": "King James Version"}, "es": {"ref": "Génesis 9:15", "text": "Y acordarme he del pacto mío, que hay entre mí y vosotros y toda alma viviente de toda carne; y no serán más las aguas por diluvio para destruir toda carne.", "tr": "Reina-Valera 1909"}}};
+const STEPS_PT = [{"t": "1) Onde vivem os cangurus?", "q": "Os cangurus vivem naturalmente onde?", "f": "Só na Austrália e Nova Guiné (Sahul). Não há populações nativas no Oriente Médio. Fonte: biogeografia de marsupiais (resumo IUCN/Wikipedia Macropodidae).", "refs": []}, {"t": "2) Onde a arca teria pousado?", "q": "O texto diz que a arca pousou onde?", "f": "Nos “montes de Ararate” (região da Anatólia oriental / Armênia histórica).", "refs": ["genesis 8:4"]}, {"t": "3) Qual a distância?", "q": "Quantos quilômetros separam a Austrália central da região do Ararate?", "f": "Círculo máximo ≈ 11.800–12.600 km (cálculo haversine; ver modo Viagens). Não é uma caminhada continental contínua.", "refs": []}, {"t": "4) Há oceano no caminho?", "q": "A Austrália é um continente-ilha? O canguru cruza oceano aberto?", "f": "Sim, é continente-ilha. Mesmo no máximo glacial, a Linha de Wallace / estreitos profundos separam Sahul da Ásia. Cangurus não cruzam oceano aberto. Fontes: Wallace Line; biogeografia de Sahul.", "refs": []}, {"t": "5) Tempo de marcha vs. prazo do texto", "q": "Em 7 dias (Gn 7:4) ou mesmo no ano da arca, dá para cruzar ~12.000 km + oceano?", "f": "Marcha sustentada realista de mamífero grande em terra: ordem de ~20–40 km/dia em boas condições (ordem de grandeza de trekking/migração terrestre — não uma medida milagrosa). Só a distância terrestre equivalente já pediria centenas de dias — e ainda falta o oceano.", "refs": ["genesis 7:4"]}, {"t": "6) Comida, água, clima, predadores", "q": "O que o canguru comeria e beberia ao longo de desertos, montanhas e mares?", "f": "Herbívoro de pastagens australianas; precisa de água e clima compatível. Uma rota Eurásia–Oriente Médio atravessa biomas hostis e barreiras.", "refs": []}, {"t": "7) A volta e os fósseis", "q": "Depois, os cangurus voltariam só à Austrália sem deixar fósseis/populações no caminho?", "f": "Não há fósseis de canguru no Oriente Médio/Ásia continental como rastro de tal migração pós-dilúvio. Endemismo australiano permanece. Fonte: registro fóssil de Macropodidae (Austrália/NG).", "refs": []}, {"t": "8) Repita: coala, preguiça, pinguim", "q": "O mesmo padrão vale para outras espécies?", "f": "Coala: dieta quase exclusiva de eucalipto australiano. Preguiça: Amazônia, ~0,2 km/h, Atlântico. Pinguim: gelo antártico e dieta marinha fria — incompatível com Ararate. Use o modo Viagens.", "refs": []}, {"t": "9) Conclusão", "q": "O que isso implica para a leitura literal?", "f": "Como história literal global, a viagem é logicamente impossível. Portanto este relato funciona como narrativa humana religiosa (com paralelos mesopotâmicos), não como registro zoológico literal. Isso não zomba da fé: separa gênero literário de inventário científico. O dilúvio como cheia local + mito teológico permanece inteligível.", "refs": ["genesis 8:4"]}];
+
+const I18N = {
+pt:{lead:"Offline · hipóteses declaradas · citações verificáveis · sem zombar da fé.",
+ m:{geral:"Geral",arca:"Capacidade",viagens:"Viagens",pensar:"Pensar juntos",retrato:"Retrato / coerência"},
+ thinkTitle:"Vamos pensar juntos: a viagem do canguru",
+ concl:"Conclusão: como história literal é logicamente impossível — narrativa humana religiosa, não inventário zoológico. Respeito à fé sincera; o gênero do texto importa."
 },
-o_v:"Volume de água V",o_vs:"V / oceanos",o_rain:"Chuva média",o_vsrec:"vs ~75 mm/h (dia recorde ~1800 mm)",o_Q:"Calor latente Q",o_dT:"ΔT se só na atmosfera",o_ark:"Volume arca (300×50×30 côvados)",o_per:"m³ brutos / animal",o_L:"Litros brutos / animal",o_anim:"Indivíduos (aprox.)",o_food:"Comida t/ano",o_water:"Água L/dia (0,2 L/animal)",o_man:"Esterco kg/dia (0,3 kg/animal)",o_work:"Segundos/animal/dia se 8 pessoas × 16 h",o_kang:"Tempo viagem canguru (dias contínuos)",
-o_out:"Saídas",
-forms:"Fórmulas:\nV = A_km² × (H_m/1000)  [km³]\nrain_mm/h = (H_m/dias)×1000/24\nm = V×1e12 kg;  Q = m×2.26e6 J;  ΔT ≈ Q/(5.15e18×1004)\nArca: L,W,H = 300,50,30 × côvado; Vol = LWH\nAnimais (Gn 7:2–3): aves×14 + limpos×14 + demais×2\nLitros/animal = Vol×1000 / N\nTrabalho ≈ 8×16×3600 / N  [s/animal/dia]",
-verd:s=>`Veredito (ordem de grandeza): água ${s.water} · chuva ${s.rain} · calor ${s.heat} · caber na arca ${s.fit} · logística ${s.log}. Como história literal global não fecha; como narrativa religiosa inspirada em cheias locais e mitos antigos, faz sentido no seu contexto.`
+en:{lead:"Offline · stated assumptions · verifiable quotes · no mockery.",
+ m:{geral:"General",arca:"Capacity",viagens:"Journeys",pensar:"Think together",retrato:"Portrait / coherence"},
+ thinkTitle:"Let's think together: the kangaroo's journey",
+ concl:"Conclusion: as literal history it is logically impossible — a human religious narrative, not a zoological record. Respect for sincere faith."
 },
-en:{title:"Flood Calculator",lead:"Offline Mestre Solar tool. Stated assumptions. No mockery: turns physical claims into arithmetic.",inn:"Inputs",h:"Target water height (m) — default Everest+15 cubits",days:"Days of rain",cubit:"Cubit (m)",area:"Earth area (km²)",ocean:"Ocean volume (km³)",spec:"Species count (manual mode)",pairs:"Base pairs per species",clean:"Fraction “clean” with 7 pairs (0–1)",food:"Food kg/animal/day",kang:"Kangaroo distance (km)",ks:"Kangaroo mean speed (km/h)",
-mGeral:"General",mArca:"Ark capacity",
-tierNote:{
- A:"Tier A — land vertebrates only (~37,400 spp.). Gen 7:2–3: 7 pairs clean + 7 pairs birds; 1 pair others → ~200k+ animals ≈ 0.18 m³ (~180 L) each in ~43,000 m³ gross ark volume.",
- B:"Tier B — described terrestrial species incl. insects (~1.4 M). Most described biodiversity is insects. Even 1 pair/species exhausts the ark to liters per individual.",
- C:"Tier C — Mora et al. 2011 ~8.7 M species total minus ~2.2 M marine ≈ 6.5 M terrestrial → ~2 L gross/animal before a year of food and water."
-},
-o_v:"Water volume V",o_vs:"V / oceans",o_rain:"Mean rainfall",o_vsrec:"vs ~75 mm/h (record day ~1800 mm)",o_Q:"Latent heat Q",o_dT:"ΔT if atmosphere only",o_ark:"Ark volume (300×50×30 cubits)",o_per:"gross m³ / animal",o_L:"gross liters / animal",o_anim:"Individuals (approx.)",o_food:"Food t/year",o_water:"Water L/day (0.2 L/animal)",o_man:"Manure kg/day (0.3 kg/animal)",o_work:"Seconds/animal/day if 8 people × 16 h",o_kang:"Kangaroo travel time (continuous days)",
-o_out:"Outputs",
-forms:"Formulas:\nV = A_km² × (H_m/1000)\nArk Vol = 300×50×30×cubit³\nAnimals (Gen 7:2–3): birds×14 + clean×14 + others×2\nL/animal = Vol×1000 / N",
-verd:s=>`Verdict: water ${s.water} · rain ${s.rain} · heat ${s.heat} · ark fit ${s.fit} · logistics ${s.log}. As literal global history it doesn't add up; as religious narrative inspired by local floods and older myths it makes sense in context.`
-},
-es:{title:"Calculadora del diluvio",lead:"Herramienta offline. Hipótesis declaradas. Sin burla: aritmética de afirmaciones físicas.",inn:"Entradas",h:"Altura objetivo (m)",days:"Días de lluvia",cubit:"Codo (m)",area:"Área Tierra (km²)",ocean:"Volumen océanos (km³)",spec:"Nº especies (manual)",pairs:"Parejas base",clean:"Fracción limpios con 7 parejas",food:"Comida kg/animal/día",kang:"Distancia canguro (km)",ks:"Velocidad canguro (km/h)",
-mGeral:"General",mArca:"Capacidad del arca",
-tierNote:{
- A:"Peldaño A — solo vertebrados terrestres (~37400 spp.). Gn 7:2–3 → ~200 mil+ animales ≈ 0,18 m³ (~180 L) cada uno en ~43000 m³.",
- B:"Peldaño B — terrestres descritas con insectos (~1,4 M) → litros por individuo.",
- C:"Peldaño C — Mora et al. 2011 ~8,7 M − ~2,2 M marinas ≈ 6,5 M terrestres → ~2 L/animal."
-},
-o_v:"Volumen agua V",o_vs:"V / océanos",o_rain:"Lluvia media",o_vsrec:"vs ~75 mm/h",o_Q:"Calor latente Q",o_dT:"ΔT atmósfera",o_ark:"Volumen arca",o_per:"m³ brutos / animal",o_L:"Litros brutos / animal",o_anim:"Individuos",o_food:"Comida t/año",o_water:"Agua L/día",o_man:"Estiércol kg/día",o_work:"Segundos/animal/día (8×16 h)",o_kang:"Viaje canguro (días)",
-o_out:"Salidas",
-forms:"Fórmulas: V=A×H/1000; Vol arca=300×50×30×codo³; L/animal=Vol×1000/N",
-verd:s=>`Veredicto: agua ${s.water} · lluvia ${s.rain} · calor ${s.heat} · caber ${s.fit} · logística ${s.log}. Como historia literal global no cuadra; como narrativa religiosa inspirada en crecidas locales y mitos antiguos, tiene sentido en su contexto.`
+es:{lead:"Offline · hipótesis declaradas · citas verificables · sin burla.",
+ m:{geral:"General",arca:"Capacidad",viagens:"Viajes",pensar:"Pensar juntos",retrato:"Retrato / coherencia"},
+ thinkTitle:"Pensemos juntos: el viaje del canguro",
+ concl:"Conclusión: como historia literal es lógicamente imposible — narrativa humana religiosa. Respeto a la fe sincera."
 }};
 
-const TIERS={
-  A:{spec:37400, birds:11000, cleanFrac:0.1, useBirds7:true},
-  B:{spec:1400000, birds:0, cleanFrac:0.0, useBirds7:false},
-  C:{spec:6500000, birds:0, cleanFrac:0.0, useBirds7:false}
-};
+let lang='pt', mode='viagens', tier='A';
 
-let lang='pt', mode='geral', tier='A';
+function verseBox(ref){
+  const key=ref.toLowerCase();
+  const pack=VERSES[key]||{};
+  const info=pack[lang]||pack.pt||pack.en;
+  if(!info) return '';
+  const chvs=ref.split(' ').pop();
+  let link,trnote;
+  if(lang==='pt'){link=`https://www.bibliaonline.com.br/acf/gn/${chvs.replace(':','/')}`;trnote=info.tr||'Almeida';}
+  else if(lang==='es'){link=`https://www.biblegateway.com/passage/?search=Genesis+${chvs}&version=RVR1960`;trnote=info.tr||'RV1909';}
+  else {link=`https://www.biblegateway.com/passage/?search=Genesis+${chvs}&version=KJV`;trnote=info.tr||'KJV';}
+  return `<details class="cite"><summary>${info.ref||ref} — ${trnote}</summary><blockquote>“${(info.text||'').replace(/</g,'&lt;')}”</blockquote><p><a href="${link}" target="_blank" rel="noopener">Ver online</a></p></details>`;
+}
+
+function sci(x){if(!isFinite(x))return '—'; const a=Math.abs(x); if(a&& (a>=1e4||a<1e-2)) return x.toExponential(3); return (Math.round(x*1000)/1000).toLocaleString(lang==='en'?'en-US':'pt-BR')}
 function n(id){return parseFloat(document.getElementById(id).value)||0}
-function sci(x){if(!isFinite(x))return '—'; const a=Math.abs(x); if(a!==0&&(a>=1e4||a<1e-2))return x.toExponential(3); return (Math.round(x*1000)/1000).toLocaleString(lang==='en'?'en-US':'pt-BR')}
+function row(k,v){return `<div><span class="k">${k}</span><span class="v">${v}</span></div>`}
 
-function countAnimals(S, birds, cleanFrac, useBirds7){
-  S=Math.max(0,S);
-  if(useBirds7){
-    const b=Math.min(birds,S);
-    const rest=S-b;
-    const clean=rest*cleanFrac;
-    const unclean=rest-clean;
-    return b*14 + clean*14 + unclean*2;
-  }
-  // 1 pair each (insects / total estimates)
-  const clean=S*cleanFrac;
-  const unclean=S-clean;
-  return unclean*2 + clean*14;
+function fillAnimals(){
+  const sel=document.getElementById('animal');
+  sel.innerHTML=ANIMALS.map(a=>`<option value="${a.id}">${a.nome}</option>`).join('');
+  sel.onchange=()=>{const a=ANIMALS.find(x=>x.id===sel.value); document.getElementById('spd').value=a.speed; calcVia()};
+  document.getElementById('spd').value=ANIMALS[0].speed;
 }
 
-function calc(){
-  const T=I18N[lang];
-  const cubit=n('cubit');
-  const L=300*cubit,W=50*cubit,Hh=30*cubit, Vol=L*W*Hh;
-  let S, birds, cleanFrac, useBirds7;
-  if(mode==='arca'){
-    const t=TIERS[tier];
-    S=t.spec; birds=t.birds; cleanFrac=t.cleanFrac; useBirds7=t.useBirds7;
-    document.getElementById('spec').value=S;
-    document.getElementById('clean').value=cleanFrac;
-  } else {
-    S=n('spec'); birds=11000; cleanFrac=n('clean'); useBirds7=false;
-  }
-  const pairs=Math.max(n('pairs'),1);
-  let animals;
-  if(mode==='arca' && tier==='A'){
-    animals=countAnimals(S, birds, cleanFrac, true);
-  } else if(mode==='arca'){
-    animals=S*2; // 1 pair / species for B and C (kinds debate aside — show lower bound of boarding described species)
-  } else {
-    animals=countAnimals(S, 0, cleanFrac, false)*Math.max(pairs,1)/Math.max(pairs,1);
-    // general: unclean*2*pairs scale — keep simple
-    const clean=S*cleanFrac, unclean=S-clean;
-    animals=unclean*2*pairs + clean*14;
-  }
-  const food=n('food');
-  const food_t=animals*food*365/1000;
-  const water=animals*0.2, manure=animals*0.3;
-  const work= animals>0 ? (8*16*3600)/animals : Infinity;
-  const liters= animals>0 ? Vol*1000/animals : Infinity;
-  const m3= animals>0 ? Vol/animals : Infinity;
-
+function calcGeral(){
+  const cubit=n('cubit'), Vol=300*cubit*50*cubit*30*cubit;
   const H=n('h'), days=Math.max(n('days'),1e-9), A=n('area'), ocean=n('ocean');
-  const V=A*(H/1000);
-  const rain_mm_h=(H/days)*1000/24;
-  const m=V*1e12, Q=m*2.26e6, dT=Q/(5.15e18*1004);
-  const kangDays=n('kang')/Math.max(n('ks'),1e-9)/24;
-
-  const row=(k,v)=>`<div><span class="k">${k}</span><span class="v">${v}</span></div>`;
-  let body=`<h2>${T.o_out}</h2>`;
-  body+=row(T.o_ark, sci(Vol)+' m³ ('+sci(Vol*1000)+' L)');
-  body+=row(T.o_anim, sci(animals));
-  body+=row(T.o_per, sci(m3)+' m³');
-  body+=row(T.o_L, sci(liters)+' L');
-  body+=row(T.o_food, sci(food_t)+' t');
-  body+=row(T.o_water, sci(water)+' L');
-  body+=row(T.o_man, sci(manure)+' kg');
-  body+=row(T.o_work, sci(work)+' s');
-  if(mode==='geral'){
-    body+=row(T.o_v, sci(V)+' km³')+row(T.o_vs, sci(V/Math.max(ocean,1e-9))+'×')+
-      row(T.o_rain, sci(rain_mm_h)+' mm/h')+row(T.o_Q, sci(Q)+' J')+row(T.o_dT, sci(dT)+' K')+
-      row(T.o_kang, sci(kangDays)+' d');
-  }
-  document.getElementById('out').innerHTML=body;
-  document.getElementById('forms').textContent=T.forms;
-  const fit = liters<500 ? '❌' : (liters<2000?'⚠️':'✅');
-  const s={
-    water: V>ocean?'❌':'✅',
-    rain: rain_mm_h>200?'❌':'✅',
-    heat: dT>100?'❌':'✅',
-    fit: liters<1000?'❌':'⚠️',
-    log: work<120?'❌':'⚠️'
-  };
-  document.getElementById('verdict').innerHTML=T.verd(s);
+  const Vkm3=A*(H/1000), rain=(H/days)*1000/24, m=Vkm3*1e12, Q=m*2.26e6, dT=Q/(5.15e18*1004);
+  document.getElementById('out-geral').innerHTML=`<h2>Saídas</h2>${row('V água',sci(Vkm3)+' km³')}${row('V/oceanos',sci(Vkm3/ocean)+'×')}${row('Chuva',sci(rain)+' mm/h')}${row('Q latente',sci(Q)+' J')}${row('ΔT ar',sci(dT)+' K')}${row('Vol arca',sci(Vol)+' m³')}`+
+    `<p class="verdict"><span class="bad">❌</span> Volume/chuva/calor incompatíveis com física conhecida numa leitura literal global.</p>`;
+  document.getElementById('cites-geral').innerHTML = verseBox('genesis 7:12')+verseBox('genesis 7:20')+verseBox('genesis 6:15');
+}
+function calcArca(){
+  const cubit=0.457, Vol=300*cubit*50*cubit*30*cubit;
+  const tiers={A:{S:37400,birds:11000,cf:0.1,mult:'7pares'},B:{S:1400000,birds:0,cf:0,mult:'1casal'},C:{S:6500000,birds:0,cf:0,mult:'1casal'}};
+  const t=tiers[tier];
+  let N;
+  if(tier==='A'){const b=t.birds, rest=t.S-b, clean=rest*t.cf, unc=rest-clean; N=b*14+clean*14+unc*2;}
+  else N=t.S*2;
+  const L=Vol*1000/N, food=N*0.5*365/1000, water=N*0.2, man=N*0.3, work=(8*16*3600)/N;
+  document.getElementById('out-arca').innerHTML=`<h2>Capacidade — degrau ${tier}</h2>${row('Espécies',sci(t.S))}${row('Indivíduos',sci(N))}${row('L/animal',sci(L))}${row('Comida t/ano',sci(food))}${row('Água L/dia',sci(water))}${row('Esterco kg/dia',sci(man))}${row('s/animal/dia (8×16h)',sci(work))}`+
+    `<p class="verdict"><span class="bad">❌</span> Mesmo só vertebrados (~180 L brutos/animal) não fecha comida/água/cuidado. Mora et al. 2011 (PLoS Biology) ≈8,7 M espécies.</p>`;
+  document.getElementById('cites-arca').innerHTML = verseBox('genesis 6:15')+verseBox('genesis 7:2')+verseBox('genesis 7:3');
+}
+function calcVia(){
+  const id=document.getElementById('animal').value;
+  const a=ANIMALS.find(x=>x.id===id);
+  const spd=n('spd')||a.speed;
+  const kmdia=n('kmdia')||30;
+  const diasMarcha=a.km/Math.max(spd,0.01)/24;
+  const diasReal=a.km/Math.max(kmdia,0.01);
+  const html = `<h2>${a.nome}</h2>`+
+    row('Continente',a.continente)+row('Km até Ararate (haversine)',sci(a.km)+' km')+
+    row('Oceanos/estreitos',a.oceans.join(', '))+row('Natação',a.swim)+
+    row('Dias se contínuo à vel. média',sci(diasMarcha)+' d')+
+    row('Dias a '+kmdia+' km/dia (só terra hipotética)',sci(diasReal)+' d')+
+    row('Dieta / clima',a.diet+' / '+a.climate)+
+    row('Volta ao mesmo continente','mesmo problema em espelho')+
+    row('Possível como história literal?', '<span class="bad">❌ não</span>')+
+    `<p class="verdict"><span class="bad">❌</span> Barreira oceânica + dieta/clima + ausência de fósseis na rota. Fonte distância: círculo máximo até ≈39,7°N 44,3°E (Ararate).</p>`;
+  document.getElementById('out-via').innerHTML=html;
+  document.getElementById('cites-via').innerHTML = verseBox('genesis 8:4')+verseBox('genesis 7:4')+
+    `<details class="cite"><summary>Fontes não bíblicas</summary><p>Wallace Line / Sahul biogeography; IUCN/Macropodidae; Mount Ararat coords. Marcha ~20–40 km/dia = ordem de grandeza de deslocamento terrestre sustentado (trekking/migração), não milagre.</p></details>`;
+}
+function renderPensar(){
+  const box=document.getElementById('pensar-cards');
+  const title=I18N[lang].thinkTitle;
+  let h=`<h2>${title}</h2><p class="lead">Um passo por card. Pergunta → fato → versículo/fonte.</p>`;
+  STEPS_PT.forEach((s,i)=>{
+    // EN/ES light: keep PT structure with bilingual titles minimal
+    h+=`<div class="step card"><h3>${s.t}</h3><p><b>Pergunta:</b> ${s.q}</p><p><b>Fato:</b> ${s.f}</p>${(s.refs||[]).map(verseBox).join('')}</div>`;
+  });
+  h+=`<p class="verdict">${I18N[lang].concl}</p>`;
+  // reuse pattern note
+  h+=`<p class="lead">O mesmo roteiro aplica-se no modo Viagens a coala, preguiça, pinguim e demais.</p>`;
+  box.innerHTML=h;
+}
+function renderRetrato(){
+  const balanca = `
+<table><tr><th>Ato no texto</th><th>Ref.</th><th>Se fosse humano</th><th></th></tr>
+<tr><td>Decide destruir humanos e animais</td><td>Gn 6:7</td><td>Punição coletiva / desproporcional</td><td class="bad">❌</td></tr>
+<tr><td>“Arrependeu-se” de ter feito o homem</td><td>Gn 6:6</td><td>Tensão com omnisciência clássica</td><td class="warn">⚠️</td></tr>
+<tr><td>Executa o dilúvio</td><td>Gn 7</td><td>Destruição em massa incl. crianças/animais</td><td class="bad">❌</td></tr>
+<tr><td>Reconhece que o coração humano segue “mau”</td><td>Gn 8:21</td><td>O dilúvio não “conserta” o problema</td><td class="warn">⚠️</td></tr>
+<tr><td>Aliança / arco-íris</td><td>Gn 9:13</td><td>Promessa de não repetir</td><td class="ok">✅</td></tr>
+</table>`;
+  const logic = `
+<table><tr><th>Premissa</th><th>Afirmação no texto / tradição</th><th>Compatível?</th></tr>
+<tr><td>Deus é amor + onisciente</td><td>“Arrependeu-se” (Gn 6:6)</td><td class="warn">⚠️/❌ tensão</td></tr>
+<tr><td>Amor</td><td>Destruição coletiva incl. crianças/animais (Gn 6:7)</td><td class="bad">❌ sob ética humana contemporânea</td></tr>
+<tr><td>Onipotência</td><td>Dilúvio que não remove a “maldade” do coração (Gn 8:21)</td><td class="warn">⚠️/❌</td></tr>
+<tr><td>Justiça proporcional</td><td>Tradições posteriores de fogo eterno (não está em Gn 6–9)</td><td class="bad">❌ proporcionalidade (fora deste texto)</td></tr>
+</table>`;
+  document.getElementById('retrato-body').innerHTML = `
+<h2>O retrato de Deus — balança de atos</h2>
+<p>Psicologia/psiquiatria <b>não</b> diagnosticam personagem literário nem a divindade. Aqui: atos do texto × ética.</p>
+${balanca}
+${verseBox('genesis 6:6')}${verseBox('genesis 6:7')}${verseBox('genesis 8:21')}${verseBox('genesis 9:13')}
+<h2>Teste de coerência lógica</h2>
+<p>Não é “prova científica de que Deus não existe”: é teste de coerência <b>deste</b> retrato. Autores humanos (fontes J e P; Atrahasis / Gilgamesh XI). Sem diagnóstico de “doença mental” dos autores.</p>
+${logic}
+<p><b>Problema do mal:</b> trilema epicurista (Lactâncio); Hume. Respostas: livre-arbítrio (Plantinga), soul-making (Hick), leitura simbólica, open theism, aniquilacionismo/universalismo — críticos as acham insuficientes.</p>
+<details class="cite"><summary>Fontes não bíblicas</summary>
+<p>Atra-Hasis (mito mesopotâmico); Epic of Gilgamesh Tablet XI; Documentary hypothesis (J/P); Plantinga, Alvin — free-will defense; Hick, John — soul-making; Ehrman, Bart — God's Problem (2008); Lactantius relatando Epicuro; Hume, Dialogues Concerning Natural Religion.</p>
+</details>
+<p class="verdict">Tensões lógicas <b>são reais</b> para este retrato. Consenso acadêmico: narrativa de autores humanos adaptando mitos do Oriente Próximo — um Deus à imagem dos medos da época. O divino, se buscado, pode ser buscado sem medo. Sem zombar da fé sincera.</p>`;
 }
 
-function applyLang(){
-  const T=I18N[lang];
-  document.getElementById('t-title').textContent=T.title;
-  document.getElementById('t-lead').textContent=T.lead;
-  document.querySelectorAll('#modes button')[0].textContent=T.mGeral;
-  document.querySelectorAll('#modes button')[1].textContent=T.mArca;
-  document.getElementById('t-h').textContent=T.h;
-  document.getElementById('t-days').textContent=T.days;
-  document.getElementById('t-cubit').textContent=T.cubit;
-  document.getElementById('t-area').textContent=T.area;
-  document.getElementById('t-ocean').textContent=T.ocean;
-  document.getElementById('t-spec').textContent=T.spec;
-  document.getElementById('t-pairs').textContent=T.pairs;
-  document.getElementById('t-clean').textContent=T.clean;
-  document.getElementById('t-food').textContent=T.food;
-  document.getElementById('t-kang').textContent=T.kang;
-  document.getElementById('t-ks').textContent=T.ks;
-  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===lang));
-  const note=document.getElementById('tier-note');
-  note.textContent=T.tierNote[tier];
-  calc();
-}
 function setMode(m){
   mode=m;
   document.querySelectorAll('#modes button').forEach(b=>b.classList.toggle('on',b.dataset.mode===m));
-  document.getElementById('tiers').style.display=m==='arca'?'flex':'none';
-  document.getElementById('tier-note').style.display=m==='arca'?'block':'none';
-  applyLang();
+  document.getElementById('tiers').classList.toggle('hide', m!=='arca');
+  document.getElementById('tier-note').classList.toggle('hide', m!=='arca');
+  ['geral','arca','viagens','pensar','retrato'].forEach(x=>{
+    document.getElementById('panel-'+x).classList.toggle('hide', x!==m);
+  });
+  if(m==='geral') calcGeral();
+  if(m==='arca') calcArca();
+  if(m==='viagens') calcVia();
+  if(m==='pensar') renderPensar();
+  if(m==='retrato') renderRetrato();
 }
-function setTier(t){
-  tier=t;
-  document.querySelectorAll('#tiers button').forEach(b=>b.classList.toggle('on',b.dataset.tier===t));
-  applyLang();
+function applyLang(){
+  const T=I18N[lang];
+  document.getElementById('t-lead').textContent=T.lead;
+  document.querySelectorAll('#modes button').forEach(b=>{ b.textContent=T.m[b.dataset.mode]; });
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===lang));
+  setMode(mode);
 }
 document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{lang=b.dataset.l;applyLang()});
 document.querySelectorAll('#modes button').forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
-document.querySelectorAll('#tiers button').forEach(b=>b.onclick=()=>setTier(b.dataset.tier));
-['h','days','cubit','area','ocean','spec','pairs','clean','food','kang','ks'].forEach(id=>{
-  document.getElementById(id).addEventListener('input',calc);
-});
-setMode('arca'); // emphasize capacity mode by default as requested
+document.querySelectorAll('#tiers button').forEach(b=>b.onclick=()=>{tier=b.dataset.tier;document.querySelectorAll('#tiers button').forEach(x=>x.classList.toggle('on',x.dataset.tier===tier));calcArca()});
+['h','days','cubit','area','ocean','spec','clean','food','spd','kmdia'].forEach(id=>{const el=document.getElementById(id); if(el) el.addEventListener('input',()=>{if(mode==='geral')calcGeral(); if(mode==='viagens')calcVia();});});
+fillAnimals();
+applyLang();
 </script>
-</body>
 </html>

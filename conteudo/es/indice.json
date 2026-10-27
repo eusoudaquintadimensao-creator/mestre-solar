@@ -10,7 +10,7 @@
     {
       "nome": "La matemática del diluvio",
       "arquivo": "a-matematica-do-diluvio.json",
-      "n": 10
+      "n": 14
     },
     {
       "nome": "Cocriação",
@@ -1472,6 +1472,69 @@
       "nivelVerdade": [
         "Comprobado",
         "Investigación"
+      ],
+      "_arq": "a-matematica-do-diluvio.json"
+    },
+    {
+      "grupo": "La matemática del diluvio",
+      "tema": "Viajes de los animales: continentes, océanos y el regreso",
+      "palavras": [
+        "viaje animales arca",
+        "canguro ararat",
+        "koala",
+        "perezoso",
+        "pingüino antártida",
+        "lemur madagascar",
+        "galápagos"
+      ],
+      "nivelVerdade": [
+        "Comprobado",
+        "Investigación"
+      ],
+      "_arq": "a-matematica-do-diluvio.json"
+    },
+    {
+      "grupo": "La matemática del diluvio",
+      "tema": "El retrato de Dios en la historia del diluvio",
+      "palavras": [
+        "retrato de dios diluvio",
+        "dios cruel",
+        "gn 6:6 se arrepintió",
+        "problema del mal",
+        "prueba de coherencia lógica"
+      ],
+      "nivelVerdade": [
+        "Investigación",
+        "Opinión"
+      ],
+      "_arq": "a-matematica-do-diluvio.json"
+    },
+    {
+      "grupo": "La matemática del diluvio",
+      "tema": "Pensemos juntos: el viaje del canguro",
+      "palavras": [
+        "pensemos juntos canguro",
+        "viaje del canguro"
+      ],
+      "nivelVerdade": [
+        "Comprobado",
+        "Investigación"
+      ],
+      "_arq": "a-matematica-do-diluvio.json"
+    },
+    {
+      "grupo": "La matemática del diluvio",
+      "tema": "Una mentira repetida muchas veces — y el derecho a preguntar",
+      "palavras": [
+        "efecto de verdad ilusoria",
+        "mentira repetida",
+        "Hasher",
+        "Fazio 2015",
+        "cuestionar el diluvio con calma"
+      ],
+      "nivelVerdade": [
+        "Investigación",
+        "Opinión"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -7002,13 +7065,11 @@
         "la matemática del diluvio",
         "temas de la matemática del diluvio",
         "dilúvio",
-        "milhões de espécies na arca",
-        "caber na arca",
-        "calculadora do dilúvio",
-        "ark capacity",
-        "diluvio",
-        "flood",
-        "matemática do dilúvio"
+        "canguru",
+        "pensar juntos",
+        "retrato de deus",
+        "verdade ilusória",
+        "calculadora do dilúvio"
       ],
       "grupo": "La matemática del diluvio"
     },

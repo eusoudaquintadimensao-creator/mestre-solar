@@ -10,7 +10,7 @@
     {
       "nome": "A matemática do dilúvio",
       "arquivo": "a-matematica-do-diluvio.json",
-      "n": 10
+      "n": 14
     },
     {
       "nome": "Cocriação",
@@ -1168,6 +1168,82 @@
       "nivelVerdade": [
         "Comprovado",
         "Pesquisa"
+      ],
+      "_arq": "a-matematica-do-diluvio.json"
+    },
+    {
+      "grupo": "A matemática do dilúvio",
+      "tema": "Viagens dos animais: continentes, oceanos e a volta para casa",
+      "palavras": [
+        "viagem dos animais à arca",
+        "canguru até o ararate",
+        "coala eucalipto",
+        "preguiça amazônia",
+        "pinguim antártida arca",
+        "urso polar dilúvio",
+        "lêmure madagascar",
+        "galápagos tartaruga",
+        "endemismo ilhas",
+        "volta dos animais após o dilúvio",
+        "animal journey ark"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Pesquisa"
+      ],
+      "_arq": "a-matematica-do-diluvio.json"
+    },
+    {
+      "grupo": "A matemática do dilúvio",
+      "tema": "O retrato de Deus na história do dilúvio",
+      "palavras": [
+        "retrato de deus no dilúvio",
+        "deus cruel dilúvio",
+        "arrependeu-se gn 6:6",
+        "teodiceia dilúvio",
+        "problema do mal dilúvio",
+        "balança de atos gênesis",
+        "teste de coerência lógica",
+        "deus é amor vs dilúvio",
+        "atrahasis enki"
+      ],
+      "nivelVerdade": [
+        "Pesquisa",
+        "Opinião"
+      ],
+      "_arq": "a-matematica-do-diluvio.json"
+    },
+    {
+      "grupo": "A matemática do dilúvio",
+      "tema": "Vamos pensar juntos: a viagem do canguru",
+      "palavras": [
+        "vamos pensar juntos canguru",
+        "viagem do canguru passo a passo",
+        "kangarooto ararat walkthrough",
+        "pensar juntos dilúvio"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Pesquisa"
+      ],
+      "_arq": "a-matematica-do-diluvio.json"
+    },
+    {
+      "grupo": "A matemática do dilúvio",
+      "tema": "Uma mentira repetida muitas vezes — e o direito de perguntar",
+      "palavras": [
+        "mentira repetida vira verdade",
+        "efeito de verdade ilusória",
+        "illusory truth effect",
+        "Hasher Goldstein Toppino",
+        "crença perseverança",
+        "questionar o dilúvio com calma",
+        "goebbels atribuição falsa",
+        "repetição infância fé"
+      ],
+      "nivelVerdade": [
+        "Pesquisa",
+        "Opinião"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -5435,13 +5511,11 @@
         "a matemática do dilúvio",
         "temas de a matemática do dilúvio",
         "dilúvio",
-        "milhões de espécies na arca",
-        "caber na arca",
-        "calculadora do dilúvio",
-        "ark capacity",
-        "diluvio",
-        "flood",
-        "matemática do dilúvio"
+        "canguru",
+        "pensar juntos",
+        "retrato de deus",
+        "verdade ilusória",
+        "calculadora do dilúvio"
       ],
       "grupo": "A matemática do dilúvio"
     },

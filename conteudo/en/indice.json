@@ -10,7 +10,7 @@
     {
       "nome": "The mathematics of the flood",
       "arquivo": "a-matematica-do-diluvio.json",
-      "n": 10
+      "n": 14
     },
     {
       "nome": "Cocriação",
@@ -1468,6 +1468,71 @@
       "nivelVerdade": [
         "Proven",
         "Research"
+      ],
+      "_arq": "a-matematica-do-diluvio.json"
+    },
+    {
+      "grupo": "The mathematics of the flood",
+      "tema": "Animal journeys: continents, oceans, and the return home",
+      "palavras": [
+        "animal journey ark",
+        "kangaroo to ararat",
+        "koala eucalyptus",
+        "sloth amazon",
+        "penguin antarctica ark",
+        "lemur madagascar",
+        "galapagos tortoise",
+        "island endemics"
+      ],
+      "nivelVerdade": [
+        "Proven",
+        "Research"
+      ],
+      "_arq": "a-matematica-do-diluvio.json"
+    },
+    {
+      "grupo": "The mathematics of the flood",
+      "tema": "The portrait of God in the flood story",
+      "palavras": [
+        "portrait of god flood",
+        "cruel god flood",
+        "gen 6:6 regret",
+        "problem of evil flood",
+        "logical coherence test",
+        "god is love vs flood"
+      ],
+      "nivelVerdade": [
+        "Research",
+        "Opinion"
+      ],
+      "_arq": "a-matematica-do-diluvio.json"
+    },
+    {
+      "grupo": "The mathematics of the flood",
+      "tema": "Let's think together: the kangaroo's journey",
+      "palavras": [
+        "think together kangaroo",
+        "kangaroo to ararat steps"
+      ],
+      "nivelVerdade": [
+        "Proven",
+        "Research"
+      ],
+      "_arq": "a-matematica-do-diluvio.json"
+    },
+    {
+      "grupo": "The mathematics of the flood",
+      "tema": "A lie repeated many times — and the right to ask",
+      "palavras": [
+        "illusory truth effect",
+        "lie repeated becomes truth",
+        "Hasher Goldstein Toppino",
+        "Fazio 2015",
+        "question the flood calmly"
+      ],
+      "nivelVerdade": [
+        "Research",
+        "Opinion"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -6980,13 +7045,11 @@
         "the mathematics of the flood",
         "temas de the mathematics of the flood",
         "dilúvio",
-        "milhões de espécies na arca",
-        "caber na arca",
-        "calculadora do dilúvio",
-        "ark capacity",
-        "diluvio",
-        "flood",
-        "matemática do dilúvio"
+        "canguru",
+        "pensar juntos",
+        "retrato de deus",
+        "verdade ilusória",
+        "calculadora do dilúvio"
       ],
       "grupo": "The mathematics of the flood"
     },
