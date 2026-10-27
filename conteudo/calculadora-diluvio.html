@@ -13,7 +13,7 @@ h2{font-size:1rem;margin:18px 0 8px;color:var(--accent)}
 p.lead{color:var(--muted);margin:0 0 14px;font-size:13px}
 .bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
 .bar button,.lang button{background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:8px 12px;cursor:pointer}
-.lang button.on{border-color:var(--accent);color:#fff}
+.lang button.on,.bar button.on{border-color:var(--accent);color:#fff;background:#2a1c12}
 .grid{display:grid;gap:10px}
 @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
 label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
@@ -38,7 +38,19 @@ a{color:var(--accent)}
 </div>
 <h1 id="t-title">Calculadora do Dilúvio</h1>
 <p class="lead" id="t-lead">Ferramenta offline do Mestre Solar. Hipóteses declaradas. Não zomba da fé: traduz afirmações físicas em aritmética.</p>
+
+<div class="bar" id="modes">
+  <button type="button" data-mode="geral" class="on" id="m-geral">Geral</button>
+  <button type="button" data-mode="arca" id="m-arca">Capacidade da arca</button>
+</div>
+<div class="bar" id="tiers" style="display:none">
+  <button type="button" data-tier="A" class="on">A · Vertebrados ~37k</button>
+  <button type="button" data-tier="B">B · Terrestres+insetos ~1,4M</button>
+  <button type="button" data-tier="C">C · ~8,7M − marinhas</button>
+</div>
+<p class="lead" id="tier-note" style="display:none"></p>
 <div class="grid">
+
   <div class="card">
     <h2 id="t-in">Entradas</h2>
     <label id="l-h"><span id="t-h">Altura-alvo de água (m)</span>
@@ -71,70 +83,140 @@ a{color:var(--accent)}
 <p class="lead" id="t-foot"><a href="../index.html">← Voltar ao Portal</a> · Águia Primordial é a voz publicada; Jervis pausado.</p>
 <script>
 const I18N={
-pt:{title:"Calculadora do Dilúvio",lead:"Ferramenta offline do Mestre Solar. Hipóteses declaradas. Não zomba da fé: traduz afirmações físicas em aritmética.",inn:"Entradas",h:"Altura-alvo de água (m) — padrão Everest+15 côvados",days:"Dias de chuva",cubit:"Côvado (m)",area:"Área da Terra (km²)",ocean:"Volume dos oceanos (km³)",spec:"Nº de espécies (vertebrados)",pairs:"Pares base por espécie",clean:"Fração “limpos” com 7 pares (0–1)",food:"Comida kg/animal/dia",kang:"Distância canguru (km)",ks:"Velocidade média canguru (km/h)",
-o_v:"Volume de água V",o_vs:"V / oceanos",o_rain:"Chuva média",o_vsrec:"vs ~75 mm/h (dia recorde ~1800 mm)",o_Q:"Calor latente Q",o_dT:"ΔT se só na atmosfera",o_ark:"Volume arca (300×50×30 côvados)",o_per:"m³ brutos / animal",o_anim:"Indivíduos (aprox.)",o_food:"Comida t/ano",o_water:"Água L/dia (0,2 L/animal)",o_man:"Esterco kg/dia (0,3 kg/animal)",o_work:"Segundos/animal/dia se 8 pessoas × 16 h",o_kang:"Tempo viagem canguru (dias contínuos)",
-forms:"Fórmulas:\nV = A_km² × (H_m/1000)  [km³]\nrain_mm/h = (H_m/dias)×1000/24\nm = V×1e12 kg;  Q = m×2.26e6 J;  ΔT ≈ Q/(5.15e18×1004)\nArca: L,W,H = 300,50,30 × côvado; Vol = LWH\nAnimais ≈ (1-f)×S×2×pares + f×S×14\nTrabalho ≈ 8×16×3600 / animais  [s/animal/dia]",
-verd:s=>`Veredito automático (ordem de grandeza): água ${s.water} · chuva ${s.rain} · calor ${s.heat} · logística ${s.log}. Dilúvio global literal como física: não se sustenta. Fé narrativa/local: outro registro — ver lições do tema.`
+pt:{title:"Calculadora do Dilúvio",lead:"Ferramenta offline do Mestre Solar. Hipóteses declaradas. Não zomba da fé: traduz afirmações físicas em aritmética.",inn:"Entradas",h:"Altura-alvo de água (m) — padrão Everest+15 côvados",days:"Dias de chuva",cubit:"Côvado (m)",area:"Área da Terra (km²)",ocean:"Volume dos oceanos (km³)",spec:"Nº de espécies (modo manual)",pairs:"Pares base por espécie (se não usar 7 para limpos/aves)",clean:"Fração “limpos” com 7 pares (0–1)",food:"Comida kg/animal/dia",kang:"Distância canguru (km)",ks:"Velocidade média canguru (km/h)",
+mGeral:"Geral",mArca:"Capacidade da arca",
+tierNote:{
+ A:"Degrau A — só vertebrados terrestres (~37.400 spp.): mamíferos~6400, aves~11000, répteis~12000, anfíbios~8000. Gn 7:2–3: 7 casais limpos + 7 casais aves; 1 casal demais → ~200 mil+ animais ≈ 0,18 m³ (~180 L) cada no volume bruto da arca (~43.000 m³).",
+ B:"Degrau B — espécies terrestres descritas incl. insetos (~1,3–1,5 milhão; usamos 1,4 M). A biodiversidade descrita é majoritariamente insetos. Mesmo com 1 casal/espécie a arca esgota-se em litros por indivíduo.",
+ C:"Degrau C — estimativa Mora et al. 2011: ~8,7 milhões de espécies no total, menos ~2,2 milhões marinhas ≈ 6,5 milhões terrestres. Ordem de grandeza: ~2 L brutos/animal antes de comida e água de um ano."
 },
-en:{title:"Flood Calculator",lead:"Offline Mestre Solar tool. Stated assumptions. No mockery of faith: turns physical claims into arithmetic.",inn:"Inputs",h:"Target water height (m) — default Everest+15 cubits",days:"Days of rain",cubit:"Cubit (m)",area:"Earth area (km²)",ocean:"Ocean volume (km³)",spec:"Number of species (vertebrates)",pairs:"Base pairs per species",clean:"Fraction “clean” with 7 pairs (0–1)",food:"Food kg/animal/day",kang:"Kangaroo distance (km)",ks:"Kangaroo mean speed (km/h)",
-o_v:"Water volume V",o_vs:"V / oceans",o_rain:"Mean rainfall",o_vsrec:"vs ~75 mm/h (record day ~1800 mm)",o_Q:"Latent heat Q",o_dT:"ΔT if atmosphere only",o_ark:"Ark volume (300×50×30 cubits)",o_per:"gross m³ / animal",o_anim:"Individuals (approx.)",o_food:"Food t/year",o_water:"Water L/day (0.2 L/animal)",o_man:"Manure kg/day (0.3 kg/animal)",o_work:"Seconds/animal/day if 8 people × 16 h",o_kang:"Kangaroo travel time (continuous days)",
-forms:"Formulas:\nV = A_km² × (H_m/1000)  [km³]\nrain_mm/h = (H_m/days)×1000/24\nm = V×1e12 kg;  Q = m×2.26e6 J;  ΔT ≈ Q/(5.15e18×1004)\nArk: L,W,H = 300,50,30 × cubit; Vol = LWH\nAnimals ≈ (1-f)×S×2×pairs + f×S×14\nWork ≈ 8×16×3600 / animals  [s/animal/day]",
-verd:s=>`Automatic verdict (order of magnitude): water ${s.water} · rain ${s.rain} · heat ${s.heat} · logistics ${s.log}. Literal global flood as physics: does not hold. Narrative/local faith reading: see theme lessons.`
+o_v:"Volume de água V",o_vs:"V / oceanos",o_rain:"Chuva média",o_vsrec:"vs ~75 mm/h (dia recorde ~1800 mm)",o_Q:"Calor latente Q",o_dT:"ΔT se só na atmosfera",o_ark:"Volume arca (300×50×30 côvados)",o_per:"m³ brutos / animal",o_L:"Litros brutos / animal",o_anim:"Indivíduos (aprox.)",o_food:"Comida t/ano",o_water:"Água L/dia (0,2 L/animal)",o_man:"Esterco kg/dia (0,3 kg/animal)",o_work:"Segundos/animal/dia se 8 pessoas × 16 h",o_kang:"Tempo viagem canguru (dias contínuos)",
+o_out:"Saídas",
+forms:"Fórmulas:\nV = A_km² × (H_m/1000)  [km³]\nrain_mm/h = (H_m/dias)×1000/24\nm = V×1e12 kg;  Q = m×2.26e6 J;  ΔT ≈ Q/(5.15e18×1004)\nArca: L,W,H = 300,50,30 × côvado; Vol = LWH\nAnimais (Gn 7:2–3): aves×14 + limpos×14 + demais×2\nLitros/animal = Vol×1000 / N\nTrabalho ≈ 8×16×3600 / N  [s/animal/dia]",
+verd:s=>`Veredito (ordem de grandeza): água ${s.water} · chuva ${s.rain} · calor ${s.heat} · caber na arca ${s.fit} · logística ${s.log}. Como história literal global não fecha; como narrativa religiosa inspirada em cheias locais e mitos antigos, faz sentido no seu contexto.`
 },
-es:{title:"Calculadora del diluvio",lead:"Herramienta offline del Mestre Solar. Hipótesis declaradas. Sin burla: traduce afirmaciones físicas en aritmética.",inn:"Entradas",h:"Altura objetivo de agua (m) — Everest+15 codos",days:"Días de lluvia",cubit:"Codo (m)",area:"Área de la Tierra (km²)",ocean:"Volumen de océanos (km³)",spec:"Nº de especies (vertebrados)",pairs:"Parejas base por especie",clean:"Fracción “limpios” con 7 parejas (0–1)",food:"Comida kg/animal/día",kang:"Distancia canguro (km)",ks:"Velocidad media canguro (km/h)",
-o_v:"Volumen de agua V",o_vs:"V / océanos",o_rain:"Lluvia media",o_vsrec:"vs ~75 mm/h (día récord ~1800 mm)",o_Q:"Calor latente Q",o_dT:"ΔT si solo atmósfera",o_ark:"Volumen arca (300×50×30 codos)",o_per:"m³ brutos / animal",o_anim:"Individuos (aprox.)",o_food:"Comida t/año",o_water:"Agua L/día (0,2 L/animal)",o_man:"Estiércol kg/día (0,3 kg/animal)",o_work:"Segundos/animal/día si 8 personas × 16 h",o_kang:"Tiempo viaje canguro (días continuos)",
-forms:"Fórmulas:\nV = A_km² × (H_m/1000)  [km³]\nrain_mm/h = (H_m/dias)×1000/24\nm = V×1e12 kg;  Q = m×2.26e6 J;  ΔT ≈ Q/(5.15e18×1004)\nArca: L,W,H = 300,50,30 × codo; Vol = LWH\nAnimales ≈ (1-f)×S×2×pares + f×S×14\nTrabajo ≈ 8×16×3600 / animales  [s/animal/día]",
-verd:s=>`Veredicto automático: agua ${s.water} · lluvia ${s.rain} · calor ${s.heat} · logística ${s.log}. Diluvio global literal como física: no se sostiene. Lectura narrativa/local: ver lecciones del tema.`
+en:{title:"Flood Calculator",lead:"Offline Mestre Solar tool. Stated assumptions. No mockery: turns physical claims into arithmetic.",inn:"Inputs",h:"Target water height (m) — default Everest+15 cubits",days:"Days of rain",cubit:"Cubit (m)",area:"Earth area (km²)",ocean:"Ocean volume (km³)",spec:"Species count (manual mode)",pairs:"Base pairs per species",clean:"Fraction “clean” with 7 pairs (0–1)",food:"Food kg/animal/day",kang:"Kangaroo distance (km)",ks:"Kangaroo mean speed (km/h)",
+mGeral:"General",mArca:"Ark capacity",
+tierNote:{
+ A:"Tier A — land vertebrates only (~37,400 spp.). Gen 7:2–3: 7 pairs clean + 7 pairs birds; 1 pair others → ~200k+ animals ≈ 0.18 m³ (~180 L) each in ~43,000 m³ gross ark volume.",
+ B:"Tier B — described terrestrial species incl. insects (~1.4 M). Most described biodiversity is insects. Even 1 pair/species exhausts the ark to liters per individual.",
+ C:"Tier C — Mora et al. 2011 ~8.7 M species total minus ~2.2 M marine ≈ 6.5 M terrestrial → ~2 L gross/animal before a year of food and water."
+},
+o_v:"Water volume V",o_vs:"V / oceans",o_rain:"Mean rainfall",o_vsrec:"vs ~75 mm/h (record day ~1800 mm)",o_Q:"Latent heat Q",o_dT:"ΔT if atmosphere only",o_ark:"Ark volume (300×50×30 cubits)",o_per:"gross m³ / animal",o_L:"gross liters / animal",o_anim:"Individuals (approx.)",o_food:"Food t/year",o_water:"Water L/day (0.2 L/animal)",o_man:"Manure kg/day (0.3 kg/animal)",o_work:"Seconds/animal/day if 8 people × 16 h",o_kang:"Kangaroo travel time (continuous days)",
+o_out:"Outputs",
+forms:"Formulas:\nV = A_km² × (H_m/1000)\nArk Vol = 300×50×30×cubit³\nAnimals (Gen 7:2–3): birds×14 + clean×14 + others×2\nL/animal = Vol×1000 / N",
+verd:s=>`Verdict: water ${s.water} · rain ${s.rain} · heat ${s.heat} · ark fit ${s.fit} · logistics ${s.log}. As literal global history it doesn't add up; as religious narrative inspired by local floods and older myths it makes sense in context.`
+},
+es:{title:"Calculadora del diluvio",lead:"Herramienta offline. Hipótesis declaradas. Sin burla: aritmética de afirmaciones físicas.",inn:"Entradas",h:"Altura objetivo (m)",days:"Días de lluvia",cubit:"Codo (m)",area:"Área Tierra (km²)",ocean:"Volumen océanos (km³)",spec:"Nº especies (manual)",pairs:"Parejas base",clean:"Fracción limpios con 7 parejas",food:"Comida kg/animal/día",kang:"Distancia canguro (km)",ks:"Velocidad canguro (km/h)",
+mGeral:"General",mArca:"Capacidad del arca",
+tierNote:{
+ A:"Peldaño A — solo vertebrados terrestres (~37400 spp.). Gn 7:2–3 → ~200 mil+ animales ≈ 0,18 m³ (~180 L) cada uno en ~43000 m³.",
+ B:"Peldaño B — terrestres descritas con insectos (~1,4 M) → litros por individuo.",
+ C:"Peldaño C — Mora et al. 2011 ~8,7 M − ~2,2 M marinas ≈ 6,5 M terrestres → ~2 L/animal."
+},
+o_v:"Volumen agua V",o_vs:"V / océanos",o_rain:"Lluvia media",o_vsrec:"vs ~75 mm/h",o_Q:"Calor latente Q",o_dT:"ΔT atmósfera",o_ark:"Volumen arca",o_per:"m³ brutos / animal",o_L:"Litros brutos / animal",o_anim:"Individuos",o_food:"Comida t/año",o_water:"Agua L/día",o_man:"Estiércol kg/día",o_work:"Segundos/animal/día (8×16 h)",o_kang:"Viaje canguro (días)",
+o_out:"Salidas",
+forms:"Fórmulas: V=A×H/1000; Vol arca=300×50×30×codo³; L/animal=Vol×1000/N",
+verd:s=>`Veredicto: agua ${s.water} · lluvia ${s.rain} · calor ${s.heat} · caber ${s.fit} · logística ${s.log}. Como historia literal global no cuadra; como narrativa religiosa inspirada en crecidas locales y mitos antiguos, tiene sentido en su contexto.`
 }};
-let lang='pt';
+
+const TIERS={
+  A:{spec:37400, birds:11000, cleanFrac:0.1, useBirds7:true},
+  B:{spec:1400000, birds:0, cleanFrac:0.0, useBirds7:false},
+  C:{spec:6500000, birds:0, cleanFrac:0.0, useBirds7:false}
+};
+
+let lang='pt', mode='geral', tier='A';
 function n(id){return parseFloat(document.getElementById(id).value)||0}
-function sci(x){if(!isFinite(x))return '—'; const a=Math.abs(x); if(a!==0&&(a>=1e5||a<1e-2))return x.toExponential(3); return (Math.round(x*1000)/1000).toLocaleString(lang==='pt'||lang==='es'?'pt-BR': 'en-US')}
-function mark(ok){return ok?'❌':'✅'} // for flood claims: mismatch is expected → show as fail badge text below
+function sci(x){if(!isFinite(x))return '—'; const a=Math.abs(x); if(a!==0&&(a>=1e4||a<1e-2))return x.toExponential(3); return (Math.round(x*1000)/1000).toLocaleString(lang==='en'?'en-US':'pt-BR')}
+
+function countAnimals(S, birds, cleanFrac, useBirds7){
+  S=Math.max(0,S);
+  if(useBirds7){
+    const b=Math.min(birds,S);
+    const rest=S-b;
+    const clean=rest*cleanFrac;
+    const unclean=rest-clean;
+    return b*14 + clean*14 + unclean*2;
+  }
+  // 1 pair each (insects / total estimates)
+  const clean=S*cleanFrac;
+  const unclean=S-clean;
+  return unclean*2 + clean*14;
+}
+
 function calc(){
-  const H=n('h'), days=Math.max(n('days'),1e-9), cubit=n('cubit'), A=n('area'), ocean=n('ocean');
-  const S=Math.max(n('spec'),0), pairs=Math.max(n('pairs'),0), f=Math.min(Math.max(n('clean'),0),1), food=n('food');
-  const V=A*(H/1000);
-  const rain_m_day=H/days, rain_mm_h=rain_m_day*1000/24;
-  const m=V*1e12, Q=m*2.26e6, dT=Q/(5.15e18*1004);
+  const T=I18N[lang];
+  const cubit=n('cubit');
   const L=300*cubit,W=50*cubit,Hh=30*cubit, Vol=L*W*Hh;
-  const unclean=(1-f)*S, clean=f*S;
-  const animals=unclean*2*Math.max(pairs,1)+clean*14;
+  let S, birds, cleanFrac, useBirds7;
+  if(mode==='arca'){
+    const t=TIERS[tier];
+    S=t.spec; birds=t.birds; cleanFrac=t.cleanFrac; useBirds7=t.useBirds7;
+    document.getElementById('spec').value=S;
+    document.getElementById('clean').value=cleanFrac;
+  } else {
+    S=n('spec'); birds=11000; cleanFrac=n('clean'); useBirds7=false;
+  }
+  const pairs=Math.max(n('pairs'),1);
+  let animals;
+  if(mode==='arca' && tier==='A'){
+    animals=countAnimals(S, birds, cleanFrac, true);
+  } else if(mode==='arca'){
+    animals=S*2; // 1 pair / species for B and C (kinds debate aside — show lower bound of boarding described species)
+  } else {
+    animals=countAnimals(S, 0, cleanFrac, false)*Math.max(pairs,1)/Math.max(pairs,1);
+    // general: unclean*2*pairs scale — keep simple
+    const clean=S*cleanFrac, unclean=S-clean;
+    animals=unclean*2*pairs + clean*14;
+  }
+  const food=n('food');
   const food_t=animals*food*365/1000;
   const water=animals*0.2, manure=animals*0.3;
   const work= animals>0 ? (8*16*3600)/animals : Infinity;
+  const liters= animals>0 ? Vol*1000/animals : Infinity;
+  const m3= animals>0 ? Vol/animals : Infinity;
+
+  const H=n('h'), days=Math.max(n('days'),1e-9), A=n('area'), ocean=n('ocean');
+  const V=A*(H/1000);
+  const rain_mm_h=(H/days)*1000/24;
+  const m=V*1e12, Q=m*2.26e6, dT=Q/(5.15e18*1004);
   const kangDays=n('kang')/Math.max(n('ks'),1e-9)/24;
-  const T=I18N[lang];
+
   const row=(k,v)=>`<div><span class="k">${k}</span><span class="v">${v}</span></div>`;
-  document.getElementById('out').innerHTML =
-    `<h2>${lang==='en'?'Outputs':lang==='es'?'Salidas':'Saídas'}</h2>`+
-    row(T.o_v, sci(V)+' km³')+
-    row(T.o_vs, sci(V/Math.max(ocean,1e-9))+'×')+
-    row(T.o_rain, sci(rain_mm_h)+' mm/h')+
-    row(T.o_vsrec, sci(rain_mm_h/75)+'×')+
-    row(T.o_Q, sci(Q)+' J')+
-    row(T.o_dT, sci(dT)+' K')+
-    row(T.o_ark, sci(Vol)+' m³')+
-    row(T.o_anim, sci(animals))+
-    row(T.o_per, animals?sci(Vol/animals)+' m³':'—')+
-    row(T.o_food, sci(food_t)+' t')+
-    row(T.o_water, sci(water)+' L')+
-    row(T.o_man, sci(manure)+' kg')+
-    row(T.o_work, sci(work)+' s')+
-    row(T.o_kang, sci(kangDays)+' d');
+  let body=`<h2>${T.o_out}</h2>`;
+  body+=row(T.o_ark, sci(Vol)+' m³ ('+sci(Vol*1000)+' L)');
+  body+=row(T.o_anim, sci(animals));
+  body+=row(T.o_per, sci(m3)+' m³');
+  body+=row(T.o_L, sci(liters)+' L');
+  body+=row(T.o_food, sci(food_t)+' t');
+  body+=row(T.o_water, sci(water)+' L');
+  body+=row(T.o_man, sci(manure)+' kg');
+  body+=row(T.o_work, sci(work)+' s');
+  if(mode==='geral'){
+    body+=row(T.o_v, sci(V)+' km³')+row(T.o_vs, sci(V/Math.max(ocean,1e-9))+'×')+
+      row(T.o_rain, sci(rain_mm_h)+' mm/h')+row(T.o_Q, sci(Q)+' J')+row(T.o_dT, sci(dT)+' K')+
+      row(T.o_kang, sci(kangDays)+' d');
+  }
+  document.getElementById('out').innerHTML=body;
   document.getElementById('forms').textContent=T.forms;
+  const fit = liters<500 ? '❌' : (liters<2000?'⚠️':'✅');
   const s={
     water: V>ocean?'❌':'✅',
     rain: rain_mm_h>200?'❌':'✅',
     heat: dT>100?'❌':'✅',
-    log: work<60?'❌':'⚠️'
+    fit: liters<1000?'❌':'⚠️',
+    log: work<120?'❌':'⚠️'
   };
   document.getElementById('verdict').innerHTML=T.verd(s);
 }
+
 function applyLang(){
   const T=I18N[lang];
   document.getElementById('t-title').textContent=T.title;
   document.getElementById('t-lead').textContent=T.lead;
-  document.querySelector('#t-in')&&(document.querySelectorAll('h2')[0].textContent=T.inn);
+  document.querySelectorAll('#modes button')[0].textContent=T.mGeral;
+  document.querySelectorAll('#modes button')[1].textContent=T.mArca;
   document.getElementById('t-h').textContent=T.h;
   document.getElementById('t-days').textContent=T.days;
   document.getElementById('t-cubit').textContent=T.cubit;
@@ -147,13 +229,29 @@ function applyLang(){
   document.getElementById('t-kang').textContent=T.kang;
   document.getElementById('t-ks').textContent=T.ks;
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===lang));
+  const note=document.getElementById('tier-note');
+  note.textContent=T.tierNote[tier];
   calc();
 }
+function setMode(m){
+  mode=m;
+  document.querySelectorAll('#modes button').forEach(b=>b.classList.toggle('on',b.dataset.mode===m));
+  document.getElementById('tiers').style.display=m==='arca'?'flex':'none';
+  document.getElementById('tier-note').style.display=m==='arca'?'block':'none';
+  applyLang();
+}
+function setTier(t){
+  tier=t;
+  document.querySelectorAll('#tiers button').forEach(b=>b.classList.toggle('on',b.dataset.tier===t));
+  applyLang();
+}
 document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{lang=b.dataset.l;applyLang()});
+document.querySelectorAll('#modes button').forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
+document.querySelectorAll('#tiers button').forEach(b=>b.onclick=()=>setTier(b.dataset.tier));
 ['h','days','cubit','area','ocean','spec','pairs','clean','food','kang','ks'].forEach(id=>{
   document.getElementById(id).addEventListener('input',calc);
 });
-applyLang();
+setMode('arca'); // emphasize capacity mode by default as requested
 </script>
 </body>
 </html>

@@ -186,6 +186,36 @@
   },
   {
     "grupo": "A matemática do dilúvio",
+    "tema": "Como milhões de espécies caberiam numa arca tão pequena?",
+    "palavras": [
+      "milhoes de animais na arca",
+      "milhões de espécies na arca",
+      "caber na arca",
+      "espaço na arca",
+      "quantos animais na arca",
+      "insetos na arca",
+      "volume por animal",
+      "arca pequena",
+      "how many animals on the ark",
+      "espécies na arca de noé"
+    ],
+    "resposta": "Este é o ponto que mais aperta a leitura literal. A arca, com côvado de 45,7 cm, tem cerca de 137×23×14 m — volume bruto ≈ 43.000 m³ (≈ 43 milhões de litros). Só os vertebrados terrestres descritos hoje (mamíferos ~6.400, aves ~11.000, répteis ~12.000, anfíbios ~8.000 → ~37.400 espécies), aplicando Gênesis 7:2–3 (sete casais dos limpos e das aves; um casal dos demais), passam de ~200.000 indivíduos. Isso dá ~0,18 m³ por animal — cerca de 180 litros — para corpo, comida de um ano, água e movimentação, misturando elefante e beija-flor na mesma média. Se incluirmos a biota terrestre descrita (≈1,3–1,5 milhão de espécies, majoritariamente insetos) ou a estimativa global de ~8,7 milhões de espécies (Mora et al. 2011) menos ~2,2 milhões marinhas (~6,5 milhões terrestres), o “espaço” cai para poucos litros ou ~2 litros por indivíduo. Não é deboche: é geometria. Como história literal global, não fecha; como narrativa religiosa ecoando cheias locais e mitos mais antigos, o tamanho da arca funciona como símbolo, não como navio de carga planetária.",
+    "aprofundar": "Três degraus na Calculadora do dilúvio (modo Capacidade da arca): (A) só vertebrados terrestres ~37 mil espécies → ~200 mil+ animais → ~0,18 m³/animal; (B) espécies terrestres descritas incl. insetos ~1,4 milhão → milhões de indivíduos → ~9 L/animal; (C) estimativa total ~8,7 M menos marinhas ~2,2 M → ~6,5 M espécies terrestres → dezenas de milhões de indivíduos → ~2 L/animal. Some comida (~0,5 kg/animal/dia), água, esterco e o cuidado por 8 pessoas: mesmo no degrau A a cadência é impossível. Fontes de contagem: IUCN/catálogos de vertebrados; Mora et al. 2011 (PLoS Biology) para ~8,7 M espécies. Insetos dominam a biodiversidade descrita. Prática: abra a calculadora, escolha o degrau A, depois B e C, e compare litros por animal.",
+    "camada3": "Para contemplar: a pergunta “como cabe?” não agride Noé como figura de obediência — agride a pretensão de transformar um relato teológico em inventário zoológico mundial. O respeito à fé e o respeito à biologia podem caminhar juntos quando cada um fica no seu registro.",
+    "fontes": [
+      "https://en.wikipedia.org/wiki/Wyoming_(schooner)",
+      "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001127",
+      "https://en.wikipedia.org/wiki/Species#Numbers_of_species",
+      "https://www.iucnredlist.org/",
+      "conteudo/calculadora-diluvio.html"
+    ],
+    "nivelVerdade": [
+      "Comprovado",
+      "Pesquisa"
+    ]
+  },
+  {
+    "grupo": "A matemática do dilúvio",
     "tema": "Opinião do Mestre Solar: veredito honesto",
     "palavras": [
       "opiniao diluvio",

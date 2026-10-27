@@ -134,6 +134,28 @@
   },
   {
     "grupo": "La matemática del diluvio",
+    "tema": "¿Cómo cabrían millones de especies en un arca tan pequeña?",
+    "palavras": [
+      "millones de animales en el arca",
+      "caber en el arca",
+      "espacio en el arca",
+      "especies en el arca",
+      "insectos en el arca"
+    ],
+    "resposta": "Aquí la lectura literal se aprieta más. Con codo de 45,7 cm, el arca mide ~137×23×14 m — volumen bruto ≈ 43.000 m³ (≈ 43 millones de litros). Solo los vertebrados terrestres descritos hoy (~37.400 especies), aplicando Gn 7:2–3 (siete parejas de limpios y de aves; una pareja del resto), superan ~200.000 individuos: ~0,18 m³ por animal (~180 litros) para cuerpo, comida de un año, agua y movimiento. Si sumamos la biota terrestre descrita con insectos (~1,3–1,5 millones de especies) o la estimación de ~8,7 millones (Mora et al. 2011) menos ~2,2 millones marinas (~6,5 millones terrestres), el “espacio” cae a pocos litros o ~2 litros por individuo. No es burla: es geometría. Como historia literal global no cuadra; como narrativa religiosa inspirada en crecidas locales y mitos más antiguos, el tamaño del arca funciona como símbolo, no como buque de carga planetaria.",
+    "aprofundar": "Tres peldaños en la Calculadora (modo Capacidad del arca): (A) solo vertebrados ~37 mil → ~200 mil+ animales → ~0,18 m³/animal; (B) terrestres descritas con insectos ~1,4 M → ~9 L/animal; (C) ~8,7 M menos marinas → ~6,5 M terrestres → ~2 L/animal. Suma comida, agua, estiércol y el cuidado de 8 personas.",
+    "camada3": "Para contemplar: preguntar “¿cómo cabe?” no insulta a Noé como figura de obediencia — niega convertir la teología en inventario zoológico mundial.",
+    "fontes": [
+      "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001127",
+      "conteudo/calculadora-diluvio.html"
+    ],
+    "nivelVerdade": [
+      "Comprobado",
+      "Investigación"
+    ]
+  },
+  {
+    "grupo": "La matemática del diluvio",
     "tema": "Opinión del Mestre Solar: veredicto honesto",
     "palavras": [
       "veredicto diluvio",

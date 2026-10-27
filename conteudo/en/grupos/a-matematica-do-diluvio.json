@@ -142,6 +142,30 @@
   },
   {
     "grupo": "The mathematics of the flood",
+    "tema": "How could millions of animal species fit in such a small ark?",
+    "palavras": [
+      "millions of animals on the ark",
+      "fit on the ark",
+      "ark space",
+      "species on noah ark",
+      "insects on the ark",
+      "liters per animal"
+    ],
+    "resposta": "This is where a literal reading is squeezed hardest. With a 45.7 cm cubit, the ark is ~137×23×14 m — gross volume ≈ 43,000 m³ (≈ 43 million liters). Land vertebrates described today alone (mammals ~6,400, birds ~11,000, reptiles ~12,000, amphibians ~8,000 → ~37,400 species), applying Genesis 7:2–3 (seven pairs of clean animals and of birds; one pair of the others), exceed ~200,000 individuals. That is ~0.18 m³ per animal — about 180 liters — for body, a year of food, water, and movement, averaging elephant and hummingbird together. Add described terrestrial biota including insects (~1.3–1.5 million species) or the ~8.7 million species estimate (Mora et al. 2011) minus ~2.2 million marine (~6.5 million terrestrial), and “space” falls to a few liters or ~2 liters each. This is geometry, not mockery. As literal global history it does not add up; as a religious narrative inspired by real local floods and older myths, the ark’s size works as symbol, not as a planetary cargo ship.",
+    "aprofundar": "Three tiers in the Flood Calculator (Ark capacity mode): (A) land vertebrates only ~37k species → ~200k+ animals → ~0.18 m³/animal; (B) described terrestrial species incl. insects ~1.4M → millions of individuals → ~9 L/animal; (C) ~8.7M total minus ~2.2M marine → ~6.5M terrestrial → tens of millions of individuals → ~2 L/animal. Add food, water, manure, and care by 8 people. Sources: vertebrate catalogs/IUCN; Mora et al. 2011 (PLoS Biology).",
+    "camada3": "To contemplate: asking “how does it fit?” does not insult Noah as a figure of obedience — it refuses to treat theology as a global zoo inventory.",
+    "fontes": [
+      "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001127",
+      "https://en.wikipedia.org/wiki/Species#Numbers_of_species",
+      "conteudo/calculadora-diluvio.html"
+    ],
+    "nivelVerdade": [
+      "Proven",
+      "Research"
+    ]
+  },
+  {
+    "grupo": "The mathematics of the flood",
     "tema": "Mestre Solar’s opinion: honest verdict",
     "palavras": [
       "flood verdict",

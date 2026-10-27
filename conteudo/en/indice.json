@@ -5,7 +5,7 @@
     {
       "nome": "The mathematics of the flood",
       "arquivo": "a-matematica-do-diluvio.json",
-      "n": 9
+      "n": 10
     },
     {
       "nome": "A Matrix e o Véu",
@@ -188,6 +188,23 @@
         "Research",
         "Tradition",
         "Proven"
+      ],
+      "_arq": "a-matematica-do-diluvio.json"
+    },
+    {
+      "grupo": "The mathematics of the flood",
+      "tema": "How could millions of animal species fit in such a small ark?",
+      "palavras": [
+        "millions of animals on the ark",
+        "fit on the ark",
+        "ark space",
+        "species on noah ark",
+        "insects on the ark",
+        "liters per animal"
+      ],
+      "nivelVerdade": [
+        "Proven",
+        "Research"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -6789,160 +6806,124 @@
     {
       "gatilhos": [
         "the mathematics of the flood",
-        "lições de the mathematics of the flood",
         "temas de the mathematics of the flood",
-        "lista the mathematics of the flood",
         "dilúvio",
-        "diluvio",
-        "matemática do dilúvio",
-        "matematica do diluvio",
-        "arca de noé",
-        "flood calculator",
-        "calculadora do dilúvio"
+        "milhões de espécies na arca",
+        "caber na arca",
+        "calculadora do dilúvio",
+        "ark capacity"
       ],
       "grupo": "The mathematics of the flood"
     },
     {
       "gatilhos": [
         "a matrix e o véu",
-        "lições de a matrix e o véu",
-        "temas de a matrix e o véu",
-        "lista a matrix e o véu"
+        "temas de a matrix e o véu"
       ],
       "grupo": "A Matrix e o Véu"
     },
     {
       "gatilhos": [
         "a verdade sobre a bíblia",
-        "lições de a verdade sobre a bíblia",
-        "temas de a verdade sobre a bíblia",
-        "lista a verdade sobre a bíblia"
+        "temas de a verdade sobre a bíblia"
       ],
       "grupo": "A Verdade sobre a Bíblia"
     },
     {
       "gatilhos": [
         "caixa de pandora",
-        "lições de caixa de pandora",
-        "temas de caixa de pandora",
-        "lista caixa de pandora"
+        "temas de caixa de pandora"
       ],
       "grupo": "Caixa de Pandora"
     },
     {
       "gatilhos": [
         "caminhos de despertar",
-        "lições de caminhos de despertar",
-        "temas de caminhos de despertar",
-        "lista caminhos de despertar"
+        "temas de caminhos de despertar"
       ],
       "grupo": "Caminhos de Despertar"
     },
     {
       "gatilhos": [
         "cocriação",
-        "lições de cocriação",
-        "temas de cocriação",
-        "lista cocriação"
+        "temas de cocriação"
       ],
       "grupo": "Cocriação"
     },
     {
       "gatilhos": [
         "conhecimento oculto",
-        "lições de conhecimento oculto",
-        "temas de conhecimento oculto",
-        "lista conhecimento oculto"
+        "temas de conhecimento oculto"
       ],
       "grupo": "Conhecimento Oculto"
     },
     {
       "gatilhos": [
         "contradições, atrocidades e manipulação na bíblia",
-        "lições de contradições, atrocidades e manipulação na bíblia",
-        "temas de contradições, atrocidades e manipulação na bíblia",
-        "lista contradições, atrocidades e manipulação na bíblia"
+        "temas de contradições, atrocidades e manipulação na bíblia"
       ],
       "grupo": "Contradições, Atrocidades e Manipulação na Bíblia"
     },
     {
       "gatilhos": [
         "despertar da matrix e expansão de consciência",
-        "lições de despertar da matrix e expansão de consciência",
-        "temas de despertar da matrix e expansão de consciência",
-        "lista despertar da matrix e expansão de consciência"
+        "temas de despertar da matrix e expansão de consciência"
       ],
       "grupo": "Despertar da Matrix e Expansão de Consciência"
     },
     {
       "gatilhos": [
         "física quântica",
-        "lições de física quântica",
-        "temas de física quântica",
-        "lista física quântica"
+        "temas de física quântica"
       ],
       "grupo": "Física Quântica"
     },
     {
       "gatilhos": [
         "mestres e sábios",
-        "lições de mestres e sábios",
-        "temas de mestres e sábios",
-        "lista mestres e sábios"
+        "temas de mestres e sábios"
       ],
       "grupo": "Mestres e Sábios"
     },
     {
       "gatilhos": [
         "mistérios do universo",
-        "lições de mistérios do universo",
-        "temas de mistérios do universo",
-        "lista mistérios do universo"
+        "temas de mistérios do universo"
       ],
       "grupo": "Mistérios do Universo"
     },
     {
       "gatilhos": [
         "mitos derrubados",
-        "lições de mitos derrubados",
-        "temas de mitos derrubados",
-        "lista mitos derrubados"
+        "temas de mitos derrubados"
       ],
       "grupo": "Mitos Derrubados"
     },
     {
       "gatilhos": [
         "princípios herméticos",
-        "lições de princípios herméticos",
-        "temas de princípios herméticos",
-        "lista princípios herméticos"
+        "temas de princípios herméticos"
       ],
       "grupo": "Princípios Herméticos"
     },
     {
       "gatilhos": [
         "sabedoria e vida",
-        "lições de sabedoria e vida",
-        "temas de sabedoria e vida",
-        "lista sabedoria e vida"
+        "temas de sabedoria e vida"
       ],
       "grupo": "Sabedoria e Vida"
     },
     {
       "gatilhos": [
         "símbolos sagrados",
-        "lições de símbolos sagrados",
-        "temas de símbolos sagrados",
-        "lista símbolos sagrados"
+        "temas de símbolos sagrados"
       ],
       "grupo": "Símbolos Sagrados"
     },
     {
       "gatilhos": [
         "sonhos e inconsciente",
-        "lições de sonhos e inconsciente",
-        "temas de sonhos e inconsciente",
-        "lista sonhos e inconsciente"
+        "temas de sonhos e inconsciente"
       ],
       "grupo": "Sonhos e Inconsciente"
     }
