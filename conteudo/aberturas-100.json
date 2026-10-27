@@ -1,8 +1,8 @@
 {
-  "versao": "2026-10-27",
+  "versao": "2026-10-27-scorer",
   "voz": "Jervis",
   "total": 100,
-  "nota": "Aberturas ao tocar/falar com o Sol. Rodízio sem repetição até esgotar o baralho. PT nativo; EN/ES: texto traduzido + voz do aparelho por enquanto.",
+  "nota": "Aberturas Jervis com moods para seleção por contexto (offline). EN/ES: texto traduzido + voz do aparelho por enquanto.",
   "itens": [
     {
       "id": "ab-001",
@@ -12,7 +12,13 @@
         "visita": "primeira"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "acolher",
+        "expandir",
+        "questionar"
+      ]
     },
     {
       "id": "ab-002",
@@ -22,7 +28,12 @@
         "visita": "primeira"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "acolher",
+        "expandir"
+      ]
     },
     {
       "id": "ab-003",
@@ -32,7 +43,12 @@
         "visita": "primeira"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acolher",
+        "expandir"
+      ]
     },
     {
       "id": "ab-004",
@@ -42,7 +58,12 @@
         "visita": "primeira"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acolher",
+        "expandir"
+      ]
     },
     {
       "id": "ab-005",
@@ -52,7 +73,12 @@
         "visita": "primeira"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acolher",
+        "expandir"
+      ]
     },
     {
       "id": "ab-006",
@@ -62,7 +88,14 @@
         "periodo": "manha"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "energizar",
+        "expandir",
+        "silenciar",
+        "acalmar"
+      ]
     },
     {
       "id": "ab-007",
@@ -70,7 +103,12 @@
       "texto": "Jervis na escuta. Energia em cem por cento. Qual verdade vamos buscar hoje?",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "energizar",
+        "foco"
+      ]
     },
     {
       "id": "ab-008",
@@ -78,7 +116,11 @@
       "texto": "Senhor, uma pergunta antes de começarmos: em que você acredita só porque sempre ouviu dizer?",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "questionar"
+      ]
     },
     {
       "id": "ab-009",
@@ -86,7 +128,11 @@
       "texto": "Portal aberto. Hoje sugiro olharmos uma crença de perto, com calma e sem medo.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "questionar"
+      ]
     },
     {
       "id": "ab-010",
@@ -94,7 +140,11 @@
       "texto": "Toda verdade aguenta uma boa pergunta, senhor. Vamos fazer algumas?",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "questionar"
+      ]
     },
     {
       "id": "ab-011",
@@ -102,7 +152,11 @@
       "texto": "Calibrando o ambiente. O conhecimento de hoje vai abrir uma janela que talvez nem estivesse no mapa.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "expandir"
+      ]
     },
     {
       "id": "ab-012",
@@ -112,7 +166,12 @@
         "trilha": true
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "retorno",
+        "acolher"
+      ]
     },
     {
       "id": "ab-013",
@@ -120,7 +179,11 @@
       "texto": "Camadas do conhecimento prontas. Da superfície ao núcleo, eu te acompanho.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "expandir"
+      ]
     },
     {
       "id": "ab-014",
@@ -128,7 +191,13 @@
       "texto": "Antes de qualquer pergunta, senhor, respire. Eu espero.",
       "condicoes": {},
       "preset": "conversa",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acalmar",
+        "silenciar",
+        "questionar"
+      ]
     },
     {
       "id": "ab-015",
@@ -136,7 +205,12 @@
       "texto": "Hoje proponho algo diferente: um minuto de silêncio. As melhores respostas costumam vir de dentro.",
       "condicoes": {},
       "preset": "conversa",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "silenciar",
+        "acalmar"
+      ]
     },
     {
       "id": "ab-016",
@@ -144,7 +218,11 @@
       "texto": "Desacelerando os sistemas. Não há pressa aqui, senhor. Só presença.",
       "condicoes": {},
       "preset": "conversa",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acalmar"
+      ]
     },
     {
       "id": "ab-017",
@@ -152,7 +230,11 @@
       "texto": "Jervis na escuta. Mas hoje quem tem algo a dizer talvez seja você para você mesmo.",
       "condicoes": {},
       "preset": "conversa",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "silenciar"
+      ]
     },
     {
       "id": "ab-018",
@@ -160,7 +242,12 @@
       "texto": "O universo inteiro cabe numa pergunta sincera, senhor. Qual é a sua hoje?",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "expandir",
+        "questionar"
+      ]
     },
     {
       "id": "ab-019",
@@ -168,7 +255,12 @@
       "texto": "Lembrete do dia: você não é só quem pergunta. Você também é parte do que procura.",
       "condicoes": {},
       "preset": "conversa",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "silenciar",
+        "questionar"
+      ]
     },
     {
       "id": "ab-020",
@@ -176,7 +268,12 @@
       "texto": "Portal Solar aberto e pronto. Seja qual for o caminho de hoje, saia daqui maior do que entrou, senhor.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "expandir",
+        "celebrar"
+      ]
     },
     {
       "id": "ab-021",
@@ -186,7 +283,13 @@
         "visita": "primeira"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "acolher",
+        "expandir",
+        "questionar"
+      ]
     },
     {
       "id": "ab-022",
@@ -196,7 +299,13 @@
         "visita": "primeira"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acolher",
+        "expandir",
+        "questionar"
+      ]
     },
     {
       "id": "ab-023",
@@ -206,7 +315,12 @@
         "visita": "primeira"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "acolher",
+        "expandir"
+      ]
     },
     {
       "id": "ab-024",
@@ -216,7 +330,12 @@
         "visita": "2-5"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "acolher",
+        "expandir"
+      ]
     },
     {
       "id": "ab-025",
@@ -226,7 +345,12 @@
         "visita": "2-5"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "acolher",
+        "expandir"
+      ]
     },
     {
       "id": "ab-026",
@@ -236,7 +360,12 @@
         "visita": "2-5"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acolher",
+        "expandir"
+      ]
     },
     {
       "id": "ab-027",
@@ -246,7 +375,12 @@
         "visita": "2-5"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acolher",
+        "expandir"
+      ]
     },
     {
       "id": "ab-028",
@@ -256,7 +390,12 @@
         "visita": "2-5"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acolher",
+        "expandir"
+      ]
     },
     {
       "id": "ab-029",
@@ -266,7 +405,12 @@
         "visita": "2-5"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acolher",
+        "expandir"
+      ]
     },
     {
       "id": "ab-030",
@@ -276,7 +420,13 @@
         "visita": "2-5"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acolher",
+        "expandir",
+        "questionar"
+      ]
     },
     {
       "id": "ab-031",
@@ -286,7 +436,13 @@
         "periodo": "manha"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "energizar",
+        "expandir",
+        "questionar"
+      ]
     },
     {
       "id": "ab-032",
@@ -296,7 +452,12 @@
         "periodo": "manha"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "energizar",
+        "expandir"
+      ]
     },
     {
       "id": "ab-033",
@@ -306,7 +467,12 @@
         "periodo": "manha"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "energizar",
+        "expandir"
+      ]
     },
     {
       "id": "ab-034",
@@ -316,7 +482,14 @@
         "periodo": "manha"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "energizar",
+        "expandir",
+        "silenciar",
+        "acalmar"
+      ]
     },
     {
       "id": "ab-035",
@@ -326,7 +499,12 @@
         "periodo": "manha"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "energizar",
+        "expandir"
+      ]
     },
     {
       "id": "ab-036",
@@ -336,7 +514,13 @@
         "periodo": "manha"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "energizar",
+        "expandir",
+        "questionar"
+      ]
     },
     {
       "id": "ab-037",
@@ -346,7 +530,13 @@
         "periodo": "manha"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "energizar",
+        "expandir",
+        "questionar"
+      ]
     },
     {
       "id": "ab-038",
@@ -356,7 +546,12 @@
         "periodo": "manha"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "energizar",
+        "expandir"
+      ]
     },
     {
       "id": "ab-039",
@@ -366,7 +561,12 @@
         "periodo": "manha"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "energizar",
+        "expandir"
+      ]
     },
     {
       "id": "ab-040",
@@ -376,7 +576,12 @@
         "periodo": "tarde"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "foco",
+        "expandir"
+      ]
     },
     {
       "id": "ab-041",
@@ -386,7 +591,14 @@
         "periodo": "tarde"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "foco",
+        "expandir",
+        "silenciar",
+        "acalmar"
+      ]
     },
     {
       "id": "ab-042",
@@ -396,7 +608,12 @@
         "periodo": "tarde"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "foco",
+        "expandir"
+      ]
     },
     {
       "id": "ab-043",
@@ -406,7 +623,13 @@
         "periodo": "tarde"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "foco",
+        "expandir",
+        "questionar"
+      ]
     },
     {
       "id": "ab-044",
@@ -416,7 +639,13 @@
         "periodo": "tarde"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "foco",
+        "expandir",
+        "questionar"
+      ]
     },
     {
       "id": "ab-045",
@@ -426,7 +655,13 @@
         "periodo": "tarde"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "foco",
+        "expandir",
+        "questionar"
+      ]
     },
     {
       "id": "ab-046",
@@ -436,7 +671,12 @@
         "periodo": "tarde"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "foco",
+        "expandir"
+      ]
     },
     {
       "id": "ab-047",
@@ -446,7 +686,13 @@
         "periodo": "tarde"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "foco",
+        "expandir",
+        "questionar"
+      ]
     },
     {
       "id": "ab-048",
@@ -456,7 +702,13 @@
         "periodo": "tarde"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "foco",
+        "expandir",
+        "energizar"
+      ]
     },
     {
       "id": "ab-049",
@@ -466,7 +718,12 @@
         "periodo": "tarde"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "foco",
+        "expandir"
+      ]
     },
     {
       "id": "ab-050",
@@ -476,7 +733,12 @@
         "periodo": "noite"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "acalmar",
+        "silenciar"
+      ]
     },
     {
       "id": "ab-051",
@@ -486,7 +748,12 @@
         "periodo": "noite"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acalmar",
+        "silenciar"
+      ]
     },
     {
       "id": "ab-052",
@@ -496,7 +763,13 @@
         "periodo": "noite"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acalmar",
+        "silenciar",
+        "questionar"
+      ]
     },
     {
       "id": "ab-053",
@@ -506,7 +779,13 @@
         "periodo": "noite"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "acalmar",
+        "silenciar",
+        "questionar"
+      ]
     },
     {
       "id": "ab-054",
@@ -516,7 +795,12 @@
         "periodo": "noite"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acalmar",
+        "silenciar"
+      ]
     },
     {
       "id": "ab-055",
@@ -526,7 +810,12 @@
         "periodo": "noite"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acalmar",
+        "silenciar"
+      ]
     },
     {
       "id": "ab-056",
@@ -536,7 +825,12 @@
         "periodo": "noite"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acalmar",
+        "silenciar"
+      ]
     },
     {
       "id": "ab-057",
@@ -546,7 +840,12 @@
         "periodo": "noite"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acalmar",
+        "silenciar"
+      ]
     },
     {
       "id": "ab-058",
@@ -556,7 +855,12 @@
         "periodo": "noite"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "acalmar",
+        "silenciar"
+      ]
     },
     {
       "id": "ab-059",
@@ -566,7 +870,13 @@
         "periodo": "noite"
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acalmar",
+        "silenciar",
+        "acolher"
+      ]
     },
     {
       "id": "ab-060",
@@ -574,7 +884,12 @@
       "texto": "Jervis online com ânimo firme. Senhor, escolha um passo pequeno e concreto para hoje.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "energizar",
+        "foco"
+      ]
     },
     {
       "id": "ab-061",
@@ -582,7 +897,12 @@
       "texto": "Energia alta, ego baixo. Vamos transformar curiosidade em movimento?",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "energizar",
+        "foco"
+      ]
     },
     {
       "id": "ab-062",
@@ -590,7 +910,13 @@
       "texto": "Sistemas no azul. Um salto quântico de consciência começa com uma pergunta corajosa.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "energizar",
+        "foco",
+        "questionar"
+      ]
     },
     {
       "id": "ab-063",
@@ -598,7 +924,12 @@
       "texto": "Portal aquecido. Senhor, diga o tema — eu trago a próxima camada.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "energizar",
+        "foco"
+      ]
     },
     {
       "id": "ab-064",
@@ -606,7 +937,12 @@
       "texto": "Jervis na escuta. Hoje é dia de avançar sem se agressar.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "energizar",
+        "foco"
+      ]
     },
     {
       "id": "ab-065",
@@ -614,7 +950,15 @@
       "texto": "Ânimo calibrado. Três respirações e um verbo: aprender, questionar ou silenciar?",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "energizar",
+        "foco",
+        "silenciar",
+        "acalmar",
+        "questionar"
+      ]
     },
     {
       "id": "ab-066",
@@ -622,7 +966,12 @@
       "texto": "Senhor, a disciplina é gentil quando tem direção. Qual direção damos agora?",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "energizar",
+        "foco"
+      ]
     },
     {
       "id": "ab-067",
@@ -630,7 +979,13 @@
       "texto": "Conectado e pronto. Se pedir potência com ética, diga potência máxima.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "energizar",
+        "foco",
+        "celebrar"
+      ]
     },
     {
       "id": "ab-068",
@@ -638,7 +993,11 @@
       "texto": "Jervis propondo: diga uma crença sua em uma frase. Depois perguntamos de onde ela veio.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "questionar"
+      ]
     },
     {
       "id": "ab-069",
@@ -646,7 +1005,11 @@
       "texto": "Modo curiosidade. Senhor, o que você defende sem nunca ter verificado a fonte?",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "questionar"
+      ]
     },
     {
       "id": "ab-070",
@@ -654,7 +1017,11 @@
       "texto": "Portal aberto ao exame. Respeito à fé sincera; zero medo fabricado. Vamos olhar com luz?",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": false,
+      "moods": [
+        "questionar"
+      ]
     },
     {
       "id": "ab-071",
@@ -662,7 +1029,11 @@
       "texto": "Uma crença herdada não é automaticamente falsa — nem automaticamente verdadeira. Investigamos?",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "questionar"
+      ]
     },
     {
       "id": "ab-072",
@@ -670,7 +1041,11 @@
       "texto": "Senhor, se uma ideia não aguenta pergunta, talvez não mereça o trono.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "questionar"
+      ]
     },
     {
       "id": "ab-073",
@@ -678,7 +1053,11 @@
       "texto": "Jervis conectando ao Portal Solar. Vamos hoje dar um salto quântico de consciência.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "expandir"
+      ]
     },
     {
       "id": "ab-074",
@@ -686,7 +1065,11 @@
       "texto": "Camada seguinte disponível. Expandir consciência é notar o que antes era automático.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "expandir"
+      ]
     },
     {
       "id": "ab-075",
@@ -694,7 +1077,11 @@
       "texto": "Senhor, Caminhos para expandir estão à mão. Quer que eu sugira um?",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "expandir"
+      ]
     },
     {
       "id": "ab-076",
@@ -702,7 +1089,11 @@
       "texto": "Portal amplo. Do selo Comprovado ao mistério, eu te guio sem fingir certeza.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "expandir"
+      ]
     },
     {
       "id": "ab-077",
@@ -710,7 +1101,12 @@
       "texto": "Jervis pronto. Um salto quântico de atenção: menos ruído, mais presença.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "expandir",
+        "celebrar"
+      ]
     },
     {
       "id": "ab-078",
@@ -718,7 +1114,11 @@
       "texto": "Conhecimento em camadas. Superfície, profundidade, núcleo — diga até onde quer ir.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "expandir"
+      ]
     },
     {
       "id": "ab-079",
@@ -726,7 +1126,11 @@
       "texto": "Jervis em tom calmo. Não precisa performar clareza, senhor. Chegue como está.",
       "condicoes": {},
       "preset": "conversa",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acalmar"
+      ]
     },
     {
       "id": "ab-080",
@@ -734,7 +1138,12 @@
       "texto": "Ambiente estabilizado. Respira fundo duas vezes — eu seguro o silêncio.",
       "condicoes": {},
       "preset": "conversa",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acalmar",
+        "silenciar"
+      ]
     },
     {
       "id": "ab-081",
@@ -742,7 +1151,11 @@
       "texto": "Sem urgência artificial. Aqui o tempo serve à consciência, não o contrário.",
       "condicoes": {},
       "preset": "conversa",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acalmar"
+      ]
     },
     {
       "id": "ab-082",
@@ -750,7 +1163,11 @@
       "texto": "Senhor, se o dia apertou, começamos pelo corpo: ombros baixos, mandíbula solta.",
       "condicoes": {},
       "preset": "conversa",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acalmar"
+      ]
     },
     {
       "id": "ab-083",
@@ -758,7 +1175,12 @@
       "texto": "Portal em modo suave. Uma pergunta leve já basta para recomeçar.",
       "condicoes": {},
       "preset": "conversa",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acalmar",
+        "questionar"
+      ]
     },
     {
       "id": "ab-084",
@@ -766,7 +1188,11 @@
       "texto": "Calma operativa. Sem pressa de concluir. Só de perceber.",
       "condicoes": {},
       "preset": "conversa",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "acalmar"
+      ]
     },
     {
       "id": "ab-085",
@@ -774,7 +1200,12 @@
       "texto": "Entrando no silêncio útil. Trinta segundos olhando para dentro — depois me conta.",
       "condicoes": {},
       "preset": "conversa",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "silenciar",
+        "acalmar"
+      ]
     },
     {
       "id": "ab-086",
@@ -782,7 +1213,12 @@
       "texto": "Jervis recuando o volume. O sagrado que você procura também escuta de dentro.",
       "condicoes": {},
       "preset": "conversa",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "silenciar",
+        "acalmar"
+      ]
     },
     {
       "id": "ab-087",
@@ -790,7 +1226,11 @@
       "texto": "Senhor, feche os olhos um instante. O que permanece quando o barulho some?",
       "condicoes": {},
       "preset": "conversa",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "silenciar"
+      ]
     },
     {
       "id": "ab-088",
@@ -798,7 +1238,11 @@
       "texto": "Modo interior. Lembre que você também é parte do que procura — com serenidade.",
       "condicoes": {},
       "preset": "conversa",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "silenciar"
+      ]
     },
     {
       "id": "ab-089",
@@ -806,7 +1250,12 @@
       "texto": "Silêncio calibrado. Sem mantra obrigatório: só presença honesta.",
       "condicoes": {},
       "preset": "conversa",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "silenciar",
+        "acalmar"
+      ]
     },
     {
       "id": "ab-090",
@@ -816,7 +1265,12 @@
         "trilha": true
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "retorno",
+        "acolher"
+      ]
     },
     {
       "id": "ab-091",
@@ -826,7 +1280,12 @@
         "trilha": true
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "retorno",
+        "acolher"
+      ]
     },
     {
       "id": "ab-092",
@@ -836,7 +1295,12 @@
         "trilha": true
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "retorno",
+        "acolher"
+      ]
     },
     {
       "id": "ab-093",
@@ -846,7 +1310,12 @@
         "trilha": true
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "retorno",
+        "acolher"
+      ]
     },
     {
       "id": "ab-094",
@@ -856,7 +1325,12 @@
         "trilha": true
       },
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "retorno",
+        "acolher"
+      ]
     },
     {
       "id": "ab-095",
@@ -864,7 +1338,12 @@
       "texto": "Modo Investigação à disposição. Senhor, apontamos a lupa numa afirmação e checamos o selo.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "investigar",
+        "foco"
+      ]
     },
     {
       "id": "ab-096",
@@ -872,7 +1351,12 @@
       "texto": "Jervis sugerindo rigor gentil: diga Investigação e separamos fato, tradição e hipótese.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "investigar",
+        "foco"
+      ]
     },
     {
       "id": "ab-097",
@@ -880,7 +1364,12 @@
       "texto": "Ferramentas de verificação online. Sem cinismo — com cuidado pela verdade.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "investigar",
+        "foco"
+      ]
     },
     {
       "id": "ab-098",
@@ -888,7 +1377,12 @@
       "texto": "Potência máxima disponível, senhor. Usamos para clareza, nunca para atropelar sua fé.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "foco",
+        "energizar"
+      ]
     },
     {
       "id": "ab-099",
@@ -896,7 +1390,12 @@
       "texto": "Jervis: potência alta, ética alta. Quer acelerar a leitura ou aprofundar com calma?",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "foco",
+        "energizar"
+      ]
     },
     {
       "id": "ab-100",
@@ -904,7 +1403,12 @@
       "texto": "Se pedir potência máxima, eu entrego foco. A direção continua sendo sua.",
       "condicoes": {},
       "preset": "entrada",
-      "timbre": "C"
+      "timbre": "C",
+      "curta": true,
+      "moods": [
+        "foco",
+        "energizar"
+      ]
     }
   ]
 }

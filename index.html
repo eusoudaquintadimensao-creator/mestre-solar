@@ -688,7 +688,7 @@ function bloqueado(texto){if(!SOL_DATA||!SOL_DATA.filtroPadroes)return false;
  if(temaLivre){var pornish=["porn","xxx","hentai","nsfw","nudes","sexo oral","sexo anal","masturb","pedo","child porn","como fazer bomba","how to make a bomb","hackear","how to hack","como matar","how to kill","cocaina","cocaine","meth","explosivo","ransomware","hitman","foto nua"];
   for(var p=0;p<pornish.length;p++)if(hit.indexOf(norm(pornish[p]))>=0)return true;return false}
  return true}
-function bloquearFala(){fala("guia",filtroMsg());return true}
+function bloquearFala(){try{window.MSAberturas&&MSAberturas.markBlocked()}catch(e){}fala("guia",filtroMsg());return true}
 /* ---------- tratamento / slots ---------- */
 function genero(){var c=cfg(),g=c.genero||"n",tr=SOL_DATA&&SOL_DATA.tratamento;if(!tr)return g;var fix=(tr.generoFixo||{})[c.tratamento];if(fix)return fix;return g}
 function vocativo(){var c=cfg(),tr=SOL_DATA&&SOL_DATA.tratamento;if(!tr)return c.nome||"";
@@ -1116,7 +1116,7 @@ function cardOffline(tema,hits){var n=SOL_DATA.nucleo||{},secs=n.secoes||[];
  if(hits&&hits.length){txt+="\n7) "+(secs[6]||"Lições do Portal")+"\n";hits.slice(0,potencia?8:5).forEach(function(h){txt+="• "+h.tema+(h.id?"  →  ?l="+h.id:"")+(h.selos&&h.selos.length?" ("+h.selos.join(" ")+")":"")+"\n"})}
  return{texto:txt,veredito:veredito,bandeira:headlineBand(band),confianca:band.conf,id:best&&best.id,hits:hits,key:band.key}}
 function investigar(tema,idHint){if(bloqueado(tema)){bloquearFala();return}
- investigaTema=tema;fase="investiga";
+ investigaTema=tema;fase="investiga";try{window.MSAberturas&&MSAberturas.markInvest()}catch(e){}
  var usaIA=!!(cfg().net),usaWiki=true;
  if(potencia)progStart(usaWiki,usaIA);else{D.body.classList.remove("sol-potencia")}
  fala("guia",preenche((SOL_DATA.nucleo&&SOL_DATA.nucleo.lendo)||"…",{tema:tema}),function(){
@@ -1176,7 +1176,7 @@ function chamarIANucleo(pergunta,licoesTxt,cb){var c=cfg();if(!c.net)return cb(n
   fetch(url,{method:"POST",headers:headers,body:body}).then(function(r){return r.json()}).then(function(j){var t=j&&j.candidates&&j.candidates[0]&&j.candidates[0].content&&j.candidates[0].content.parts;done(t&&t.map(function(p){return p.text}).join(""))}).catch(function(){cb(null)});return}
  url=(c.netBase||(prov==="groq"?"https://api.groq.com/openai/v1":"https://api.openai.com/v1"))+"/chat/completions";headers.Authorization="Bearer "+c.netKey;
  fetch(url,{method:"POST",headers:headers,body:JSON.stringify({model:c.netModel||(prov==="groq"?"llama-3.3-70b-versatile":"gpt-4o-mini"),messages:[{role:"system",content:sys},{role:"user",content:pergunta}],temperature:0.2,max_tokens:potencia?2400:1200})}).then(function(r){return r.json()}).then(function(j){done(j&&j.choices&&j.choices[0]&&j.choices[0].message&&j.choices[0].message.content)}).catch(function(){cb(null)})}
-function togglePotencia(silent){potencia=!potencia;var c=ls(KS)||{};c.potencia=potencia;ls(KS,c);var b=D.getElementById("sol-potencia");if(b)b.setAttribute("aria-pressed",potencia?"true":"false");if(!silent)fala("guia",linha(potencia?"intencoes.potencia_on":"intencoes.potencia_off")||(potencia?"⚡":""))}
+function togglePotencia(silent){potencia=!potencia;try{if(potencia&&window.MSAberturas)MSAberturas.markPotencia()}catch(e){}var c=ls(KS)||{};c.potencia=potencia;ls(KS,c);var b=D.getElementById("sol-potencia");if(b)b.setAttribute("aria-pressed",potencia?"true":"false");if(!silent)fala("guia",linha(potencia?"intencoes.potencia_on":"intencoes.potencia_off")||(potencia?"⚡":""))}
 function pedirInvestiga(){fase="investiga_pedir";fala("guia",linha("intencoes.investigar_pedir")||(SOL_DATA.nucleo&&SOL_DATA.nucleo.pedir)||"",function(){if(cfg().micApos)abreMic()})}
 
 /* ---------- cmd principal ---------- */
