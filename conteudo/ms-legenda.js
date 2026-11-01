@@ -189,6 +189,11 @@
       }
     }
     html += "</span></span>";
+    /* mantém o rótulo de quem fala ("Jervis:", "Águia Primordial:") durante o destaque das palavras */
+    try {
+      var lab = /^\s*((?:Jervis|Águia Primordial|Aguia Primordial|Aurora|Mestre Solar|Remy)\s*:\s*)/.exec(root.textContent || "");
+      if (lab && !/^(?:Jervis|Águia|Aguia|Aurora|Mestre|Remy)\b/.test(String(words[0] || ""))) html = '<b class="quem-fala">' + escapeHtml(lab[1]) + "</b>" + html;
+    } catch (e) {}
     root.innerHTML = html;
     var wspans = root.querySelectorAll(".ms-w");
     var sspans = root.querySelectorAll(".ms-s");
