@@ -16,8 +16,8 @@
       "https://en.wikipedia.org/wiki/Genesis_flood_narrative"
     ],
     "nivelVerdade": [
-      "Tradition",
-      "Research"
+      "Tradição",
+      "Comprovado"
     ]
   },
   {
@@ -37,8 +37,7 @@
       "https://en.wikipedia.org/wiki/Mount_Everest"
     ],
     "nivelVerdade": [
-      "Proven",
-      "Research"
+      "Comprovado"
     ]
   },
   {
@@ -56,7 +55,7 @@
       "https://en.wikipedia.org/wiki/Latent_heat"
     ],
     "nivelVerdade": [
-      "Proven"
+      "Comprovado"
     ]
   },
   {
@@ -75,8 +74,7 @@
       "https://en.wikipedia.org/wiki/Wyoming_(schooner)"
     ],
     "nivelVerdade": [
-      "Proven",
-      "Research"
+      "Comprovado"
     ]
   },
   {
@@ -95,7 +93,7 @@
       "https://en.wikipedia.org/wiki/Population_bottleneck"
     ],
     "nivelVerdade": [
-      "Proven"
+      "Comprovado"
     ]
   },
   {
@@ -114,8 +112,7 @@
       "https://en.wikipedia.org/wiki/Ice_core"
     ],
     "nivelVerdade": [
-      "Proven",
-      "Research"
+      "Comprovado"
     ]
   },
   {
@@ -135,9 +132,8 @@
       "https://en.wikipedia.org/wiki/Atra-Hasis"
     ],
     "nivelVerdade": [
-      "Research",
-      "Tradition",
-      "Proven"
+      "Comprovado",
+      "Tradição"
     ]
   },
   {
@@ -160,8 +156,7 @@
       "conteudo/calculadora-diluvio.html"
     ],
     "nivelVerdade": [
-      "Proven",
-      "Research"
+      "Comprovado"
     ]
   },
   {
@@ -185,8 +180,7 @@
       "conteudo/calculadora-diluvio.html"
     ],
     "nivelVerdade": [
-      "Proven",
-      "Research"
+      "Comprovado"
     ]
   },
   {
@@ -209,8 +203,8 @@
       "conteudo/calculadora-diluvio.html"
     ],
     "nivelVerdade": [
-      "Research",
-      "Opinion"
+      "Comprovado",
+      "Hipótese"
     ]
   },
   {
@@ -228,8 +222,7 @@
       "conteudo/calculadora-diluvio.html"
     ],
     "nivelVerdade": [
-      "Proven",
-      "Research"
+      "Comprovado"
     ]
   },
   {
@@ -252,8 +245,8 @@
       "https://quoteinvestigator.com/2014/11/13/big-lie/"
     ],
     "nivelVerdade": [
-      "Research",
-      "Opinion"
+      "Comprovado",
+      "Hipótese"
     ]
   },
   {
@@ -271,9 +264,8 @@
       "https://en.wikipedia.org/wiki/Genesis_flood_narrative"
     ],
     "nivelVerdade": [
-      "Proven",
-      "Research",
-      "Opinion"
+      "Comprovado",
+      "Hipótese"
     ],
     "imagem": "imagens/diluvio-veredito-en.png"
   },
@@ -292,7 +284,7 @@
       "conteudo/calculadora-diluvio.html"
     ],
     "nivelVerdade": [
-      "Proven"
+      "Comprovado"
     ]
   }
 ]

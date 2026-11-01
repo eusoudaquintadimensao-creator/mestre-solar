@@ -15,8 +15,8 @@
       "https://es.wikipedia.org/wiki/Diluvio_universal"
     ],
     "nivelVerdade": [
-      "Tradición",
-      "Investigación"
+      "Tradição",
+      "Comprovado"
     ]
   },
   {
@@ -34,8 +34,7 @@
       "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
     ],
     "nivelVerdade": [
-      "Comprobado",
-      "Investigación"
+      "Comprovado"
     ]
   },
   {
@@ -52,7 +51,7 @@
       "https://es.wikipedia.org/wiki/Calor_latente"
     ],
     "nivelVerdade": [
-      "Comprobado"
+      "Comprovado"
     ]
   },
   {
@@ -70,8 +69,7 @@
       "https://en.wikipedia.org/wiki/Wyoming_(schooner)"
     ],
     "nivelVerdade": [
-      "Comprobado",
-      "Investigación"
+      "Comprovado"
     ]
   },
   {
@@ -89,7 +87,7 @@
       "https://es.wikipedia.org/wiki/Biogeograf%C3%ADa"
     ],
     "nivelVerdade": [
-      "Comprobado"
+      "Comprovado"
     ]
   },
   {
@@ -107,8 +105,7 @@
       "https://en.wikipedia.org/wiki/Ussher_chronology"
     ],
     "nivelVerdade": [
-      "Comprobado",
-      "Investigación"
+      "Comprovado"
     ]
   },
   {
@@ -127,9 +124,8 @@
       "https://es.wikipedia.org/wiki/Poema_de_Gilgamesh"
     ],
     "nivelVerdade": [
-      "Investigación",
-      "Tradición",
-      "Comprobado"
+      "Comprovado",
+      "Tradição"
     ]
   },
   {
@@ -150,8 +146,7 @@
       "conteudo/calculadora-diluvio.html"
     ],
     "nivelVerdade": [
-      "Comprobado",
-      "Investigación"
+      "Comprovado"
     ]
   },
   {
@@ -174,8 +169,7 @@
       "conteudo/calculadora-diluvio.html"
     ],
     "nivelVerdade": [
-      "Comprobado",
-      "Investigación"
+      "Comprovado"
     ]
   },
   {
@@ -196,8 +190,8 @@
       "conteudo/calculadora-diluvio.html"
     ],
     "nivelVerdade": [
-      "Investigación",
-      "Opinión"
+      "Comprovado",
+      "Hipótese"
     ]
   },
   {
@@ -214,8 +208,7 @@
       "conteudo/calculadora-diluvio.html"
     ],
     "nivelVerdade": [
-      "Comprobado",
-      "Investigación"
+      "Comprovado"
     ]
   },
   {
@@ -238,8 +231,8 @@
       "https://quoteinvestigator.com/2014/11/13/big-lie/"
     ],
     "nivelVerdade": [
-      "Investigación",
-      "Opinión"
+      "Comprovado",
+      "Hipótese"
     ]
   },
   {
@@ -257,9 +250,8 @@
       "https://es.wikipedia.org/wiki/Diluvio_universal"
     ],
     "nivelVerdade": [
-      "Comprobado",
-      "Investigación",
-      "Opinión"
+      "Comprovado",
+      "Hipótese"
     ],
     "imagem": "imagens/diluvio-veredito-es.png"
   },
@@ -277,7 +269,7 @@
       "conteudo/calculadora-diluvio.html"
     ],
     "nivelVerdade": [
-      "Comprobado"
+      "Comprovado"
     ]
   }
 ]

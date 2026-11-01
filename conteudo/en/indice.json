@@ -1363,8 +1363,8 @@
         "flood story"
       ],
       "nivelVerdade": [
-        "Tradition",
-        "Research"
+        "Tradição",
+        "Comprovado"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -1378,8 +1378,7 @@
         "15 cubits"
       ],
       "nivelVerdade": [
-        "Proven",
-        "Research"
+        "Comprovado"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -1392,7 +1391,7 @@
         "mm per hour flood"
       ],
       "nivelVerdade": [
-        "Proven"
+        "Comprovado"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -1406,8 +1405,7 @@
         "wyoming ark"
       ],
       "nivelVerdade": [
-        "Proven",
-        "Research"
+        "Comprovado"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -1420,7 +1418,7 @@
         "biogeography flood"
       ],
       "nivelVerdade": [
-        "Proven"
+        "Comprovado"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -1433,8 +1431,7 @@
         "ice cores flood"
       ],
       "nivelVerdade": [
-        "Proven",
-        "Research"
+        "Comprovado"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -1448,9 +1445,8 @@
         "local flood"
       ],
       "nivelVerdade": [
-        "Research",
-        "Tradition",
-        "Proven"
+        "Comprovado",
+        "Tradição"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -1466,8 +1462,7 @@
         "liters per animal"
       ],
       "nivelVerdade": [
-        "Proven",
-        "Research"
+        "Comprovado"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -1485,8 +1480,7 @@
         "island endemics"
       ],
       "nivelVerdade": [
-        "Proven",
-        "Research"
+        "Comprovado"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -1502,8 +1496,8 @@
         "god is love vs flood"
       ],
       "nivelVerdade": [
-        "Research",
-        "Opinion"
+        "Comprovado",
+        "Hipótese"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -1515,8 +1509,7 @@
         "kangaroo to ararat steps"
       ],
       "nivelVerdade": [
-        "Proven",
-        "Research"
+        "Comprovado"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -1531,8 +1524,8 @@
         "question the flood calmly"
       ],
       "nivelVerdade": [
-        "Research",
-        "Opinion"
+        "Comprovado",
+        "Hipótese"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -1545,9 +1538,8 @@
         "mestre solar flood opinion"
       ],
       "nivelVerdade": [
-        "Proven",
-        "Research",
-        "Opinion"
+        "Comprovado",
+        "Hipótese"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
@@ -1560,7 +1552,7 @@
         "noah calculator"
       ],
       "nivelVerdade": [
-        "Proven"
+        "Comprovado"
       ],
       "_arq": "a-matematica-do-diluvio.json"
     },
