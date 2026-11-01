@@ -18,6 +18,11 @@
       "n": 14
     },
     {
+      "nome": "Quem criou o Deus da Bíblia? A mente por trás do texto",
+      "arquivo": "quem-criou-o-deus-da-biblia.json",
+      "n": 15
+    },
+    {
       "nome": "Cocriação",
       "arquivo": "cocriacao.json",
       "n": 9
@@ -1519,6 +1524,299 @@
         "Hipótese"
       ],
       "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Quem criou o Deus da Bíblia? A mente por trás do texto",
+      "tema": "Quem criou o Deus da Bíblia? A pergunta e o método",
+      "palavras": [
+        "quem criou deus",
+        "quem criou o deus biblico",
+        "quem criou o deus bíblico",
+        "deus foi criado pelo homem",
+        "quem inventou deus",
+        "mente de quem escreveu a biblia",
+        "deus criado a imagem do homem"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Quem criou o Deus da Bíblia? A mente por trás do texto",
+      "tema": "Quem escreveu a Bíblia: muitas mãos, muitos séculos",
+      "palavras": [
+        "quem escreveu a biblia",
+        "quem escreveu a bíblia",
+        "autores da biblia",
+        "hipotese documental",
+        "hipótese documental",
+        "fonte javista",
+        "fonte sacerdotal",
+        "deuteronomista",
+        "moises escreveu"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Quem criou o Deus da Bíblia? A mente por trás do texto",
+      "tema": "De onde veio Javé: um deus da tempestade do sul",
+      "palavras": [
+        "de onde veio jave",
+        "de onde veio javé",
+        "origem de jave",
+        "origem de yahweh",
+        "jeova origem",
+        "deus de seir",
+        "hipotese quenita",
+        "deus da tempestade"
+      ],
+      "nivelVerdade": [
+        "Hipótese",
+        "Comprovado"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Quem criou o Deus da Bíblia? A mente por trás do texto",
+      "tema": "El, Aserá e a 'esposa de Deus': o panteão cananeu",
+      "palavras": [
+        "asera",
+        "aserá",
+        "asherah",
+        "esposa de deus",
+        "deus tinha esposa",
+        "el cananeu",
+        "kuntillet ajrud",
+        "panteao cananeu",
+        "ugarit",
+        "filhos de deus"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Quem criou o Deus da Bíblia? A mente por trás do texto",
+      "tema": "De muitos deuses a um só: o monoteísmo nasce no exílio",
+      "palavras": [
+        "monoteismo",
+        "monoteísmo",
+        "monolatria",
+        "um so deus",
+        "um só deus",
+        "exilio babilonia",
+        "exílio na babilônia",
+        "deus zeloso",
+        "deus ciumento"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Quem criou o Deus da Bíblia? A mente por trás do texto",
+      "tema": "O Deus guerreiro e os reis do Antigo Oriente",
+      "palavras": [
+        "estela de mesa",
+        "estela de mesha",
+        "quemos",
+        "chemosh",
+        "herem",
+        "anatema",
+        "tratado assirio",
+        "tratados de esarhaddon",
+        "deus guerreiro",
+        "reis antigos"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Quem criou o Deus da Bíblia? A mente por trás do texto",
+      "tema": "Os versículos mais duros (1): massacres ordenados",
+      "palavras": [
+        "versiculos mais violentos",
+        "versículos violentos",
+        "deus mandou matar",
+        "numeros 31",
+        "números 31",
+        "virgens numeros 31",
+        "deuteronomio 20",
+        "1 samuel 15",
+        "amalequitas",
+        "jerico",
+        "primogenitos",
+        "genocidio na biblia",
+        "genocídio na bíblia"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Quem criou o Deus da Bíblia? A mente por trás do texto",
+      "tema": "Os versículos mais duros (2): castigo coletivo e controle pelo medo",
+      "palavras": [
+        "matar quem muda de religiao",
+        "deuteronomio 13",
+        "ezequiel 9",
+        "eliseu ursos",
+        "2 reis 2",
+        "oseias 13",
+        "bezerro de ouro",
+        "sabado apedrejamento",
+        "numeros 15",
+        "comer os filhos",
+        "controle pelo medo"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Quem criou o Deus da Bíblia? A mente por trás do texto",
+      "tema": "Um Deus à imagem de quem o descreve: o que diz a psicologia",
+      "palavras": [
+        "deus a imagem do homem",
+        "deus à imagem do homem",
+        "psicologia de deus",
+        "mentalidade do deus biblico",
+        "personalidade de deus",
+        "deus e projecao",
+        "projeção",
+        "deus ciumento psicologia"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Quem criou o Deus da Bíblia? A mente por trás do texto",
+      "tema": "Do Sheol ao inferno: como a ideia de castigo eterno foi construída",
+      "palavras": [
+        "inferno",
+        "origem do inferno",
+        "sheol",
+        "seol",
+        "geena",
+        "castigo eterno",
+        "fogo eterno",
+        "inferno existe",
+        "bart ehrman"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Quem criou o Deus da Bíblia? A mente por trás do texto",
+      "tema": "Deuses que vigiam e castigam: religião e controle social",
+      "palavras": [
+        "controle social",
+        "religiao e controle",
+        "religião e controle",
+        "big gods",
+        "grandes deuses",
+        "deuses moralizantes",
+        "norenzayan",
+        "deus que vigia",
+        "obediencia pelo medo",
+        "controlar o povo"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Quem criou o Deus da Bíblia? A mente por trás do texto",
+      "tema": "'Deus é amor' × os textos: as contradições que pedem perguntas",
+      "palavras": [
+        "deus e amor",
+        "deus é amor",
+        "deus amoroso",
+        "contradicoes deus",
+        "contradições de deus",
+        "deus do antigo testamento",
+        "deus do velho testamento",
+        "marciao",
+        "ezequiel 18"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Tradição"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Quem criou o Deus da Bíblia? A mente por trás do texto",
+      "tema": "Como uma ideia repetida vira 'verdade': o efeito da verdade ilusória",
+      "palavras": [
+        "mentira repetida",
+        "mentira repetida vira verdade",
+        "verdade ilusoria",
+        "verdade ilusória",
+        "efeito da verdade ilusoria",
+        "repeticao",
+        "por que as pessoas acreditam",
+        "doutrinacao infancia"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Quem criou o Deus da Bíblia? A mente por trás do texto",
+      "tema": "O que é verdadeiro e o que não é: quem criou o Deus da Bíblia (tabela)",
+      "palavras": [
+        "tabela quem criou deus",
+        "o que e verdadeiro deus biblico",
+        "verdadeiro ou falso deus da biblia",
+        "placar deus biblico",
+        "soma cientifica deus biblico"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Quem criou o Deus da Bíblia? A mente por trás do texto",
+      "tema": "Opinião do Mestre Solar: veredito honesto sobre quem criou o Deus da Bíblia",
+      "palavras": [
+        "veredito quem criou deus",
+        "deus da biblia foi inventado",
+        "a biblia e verdade",
+        "opiniao deus biblico",
+        "deus foi inventado"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
     },
     {
       "grupo": "Cocriação",
@@ -5774,6 +6072,22 @@
     },
     {
       "gatilhos": [
+        "quem criou o deus da bíblia? a mente por trás do texto",
+        "temas de quem criou o deus da bíblia? a mente por trás do texto",
+        "quem criou deus",
+        "quem criou o deus da biblia",
+        "quem criou o deus bíblico",
+        "deus foi inventado",
+        "who created god",
+        "quién creó a dios",
+        "quien creo a dios",
+        "origem de javé",
+        "origem de jave"
+      ],
+      "grupo": "Quem criou o Deus da Bíblia? A mente por trás do texto"
+    },
+    {
+      "gatilhos": [
         "cocriação",
         "temas de cocriação"
       ],
@@ -5893,7 +6207,8 @@
     "O caminho do despertar": "Aqui o despertar é tratado com honestidade: o que a ciência comprovou, o que as tradições ensinam e o que ninguém sabe ainda, cada coisa com o seu selo. Despertar não é trocar uma crença por outra; é ver a própria mente funcionando, e então escolher.",
     "Metacognição: pensar sobre o pensar": "Metacognição é a arte de observar a própria mente trabalhando: o que você sabe, o que acha que sabe, e como decide. Aqui estão os estudos mais sólidos, as críticas honestas e práticas avançadas, cada coisa com o seu selo. Despertar começa quando a mente aprende a se ver.",
     "Trindade, inferno e o medo": "Aqui se separa o que é história documentada, o que é mito, o que é fé e o que é medo usado para controlar. A Trindade e o inferno são crenças sinceras de milhões de pessoas; o Portal não ataca a fé de ninguém, mostra a história e quem usa o medo como coleira.",
-    "Adão e Eva: a história e a realidade": "Aqui Gênesis 1–5 é lido versículo por versículo e conferido com a ciência, sem zombaria. Cada afirmação traz o versículo e a fonte, e no fim há a tabela do que bate e do que não bate."
+    "Adão e Eva: a história e a realidade": "Aqui Gênesis 1–5 é lido versículo por versículo e conferido com a ciência, sem zombaria. Cada afirmação traz o versículo e a fonte, e no fim há a tabela do que bate e do que não bate.",
+    "Quem criou o Deus da Bíblia? A mente por trás do texto": "Aqui a pergunta é quem escreveu a imagem de Deus que aparece na Bíblia, e com que mentalidade. Seguimos a pesquisa histórica, a arqueologia e a psicologia, com os versículos por inteiro e a fonte em cada afirmação, sem zombar de quem crê."
   },
   "audio": {
     "Bom dia. Bem-vindo ao Portal do Conhecimento. Mestre Solar na escuta. O que você busca?": "a78ca52b7d1c.mp3",

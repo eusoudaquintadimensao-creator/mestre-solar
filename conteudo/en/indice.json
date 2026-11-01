@@ -18,6 +18,11 @@
       "n": 14
     },
     {
+      "nome": "Who created the God of the Bible? The minds behind the text",
+      "arquivo": "quem-criou-o-deus-da-biblia.json",
+      "n": 15
+    },
+    {
       "nome": "Cocriação",
       "arquivo": "cocriacao.json",
       "n": 9
@@ -1795,6 +1800,272 @@
         "Hipótese"
       ],
       "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Who created the God of the Bible? The minds behind the text",
+      "tema": "Who created the God of the Bible? The question and the method",
+      "palavras": [
+        "who created god",
+        "who created the biblical god",
+        "god created by man",
+        "who invented god",
+        "mind of the bible writers",
+        "god made in man's image"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Who created the God of the Bible? The minds behind the text",
+      "tema": "Who wrote the Bible: many hands, many centuries",
+      "palavras": [
+        "who wrote the bible",
+        "bible authors",
+        "documentary hypothesis",
+        "yahwist",
+        "priestly source",
+        "deuteronomist",
+        "did moses write"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Who created the God of the Bible? The minds behind the text",
+      "tema": "Where Yahweh came from: a storm god from the south",
+      "palavras": [
+        "where did yahweh come from",
+        "origin of yahweh",
+        "jehovah origin",
+        "god from seir",
+        "kenite hypothesis",
+        "storm god"
+      ],
+      "nivelVerdade": [
+        "Hipótese",
+        "Comprovado"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Who created the God of the Bible? The minds behind the text",
+      "tema": "El, Asherah and 'God's wife': the Canaanite pantheon",
+      "palavras": [
+        "asherah",
+        "god's wife",
+        "did god have a wife",
+        "canaanite el",
+        "kuntillet ajrud",
+        "canaanite pantheon",
+        "ugarit",
+        "sons of god"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Who created the God of the Bible? The minds behind the text",
+      "tema": "From many gods to one: monotheism is born in exile",
+      "palavras": [
+        "monotheism",
+        "monolatry",
+        "one god",
+        "babylonian exile",
+        "jealous god"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Who created the God of the Bible? The minds behind the text",
+      "tema": "The warrior God and the kings of the ancient Near East",
+      "palavras": [
+        "mesha stele",
+        "chemosh",
+        "herem",
+        "assyrian treaty",
+        "esarhaddon treaty",
+        "warrior god",
+        "ancient kings"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Who created the God of the Bible? The minds behind the text",
+      "tema": "The hardest verses (1): ordered massacres",
+      "palavras": [
+        "most violent bible verses",
+        "god ordered killing",
+        "numbers 31",
+        "virgins numbers 31",
+        "deuteronomy 20",
+        "1 samuel 15",
+        "amalekites",
+        "jericho",
+        "firstborn",
+        "genocide in the bible"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Who created the God of the Bible? The minds behind the text",
+      "tema": "The hardest verses (2): collective punishment and control by fear",
+      "palavras": [
+        "kill apostates",
+        "deuteronomy 13",
+        "ezekiel 9",
+        "elisha bears",
+        "2 kings 2",
+        "hosea 13",
+        "golden calf",
+        "sabbath stoning",
+        "numbers 15",
+        "eat their children",
+        "control by fear"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Who created the God of the Bible? The minds behind the text",
+      "tema": "A God in the image of those who describe him: what psychology says",
+      "palavras": [
+        "god in man's image",
+        "psychology of god",
+        "biblical god mindset",
+        "personality of god",
+        "god and projection",
+        "jealous god psychology"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Who created the God of the Bible? The minds behind the text",
+      "tema": "From Sheol to hell: how eternal punishment was built",
+      "palavras": [
+        "hell",
+        "origin of hell",
+        "sheol",
+        "gehenna",
+        "eternal punishment",
+        "eternal fire",
+        "does hell exist",
+        "bart ehrman"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Who created the God of the Bible? The minds behind the text",
+      "tema": "Gods who watch and punish: religion and social control",
+      "palavras": [
+        "social control",
+        "religion and control",
+        "big gods",
+        "moralizing gods",
+        "norenzayan",
+        "watching god",
+        "obedience through fear",
+        "control the people"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Who created the God of the Bible? The minds behind the text",
+      "tema": "'God is love' vs the texts: contradictions that invite questions",
+      "palavras": [
+        "god is love",
+        "loving god",
+        "god contradictions",
+        "old testament god",
+        "marcion",
+        "ezekiel 18"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Tradição"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Who created the God of the Bible? The minds behind the text",
+      "tema": "How a repeated idea becomes 'truth': the illusory truth effect",
+      "palavras": [
+        "repeated lie",
+        "repeated lie becomes truth",
+        "illusory truth",
+        "illusory truth effect",
+        "repetition",
+        "why people believe",
+        "childhood indoctrination"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Who created the God of the Bible? The minds behind the text",
+      "tema": "What is true and what is not: who created the God of the Bible (table)",
+      "palavras": [
+        "who created god table",
+        "biblical god true or false",
+        "god of the bible scorecard",
+        "scientific sum biblical god"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Who created the God of the Bible? The minds behind the text",
+      "tema": "Mestre Solar's opinion: honest verdict on who created the God of the Bible",
+      "palavras": [
+        "who created god verdict",
+        "was the god of the bible invented",
+        "is the bible true",
+        "biblical god opinion",
+        "god was invented"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "quem-criou-o-deus-da-biblia.json"
     },
     {
       "grupo": "Cocriação",
@@ -7300,6 +7571,22 @@
     },
     {
       "gatilhos": [
+        "who created the god of the bible? the minds behind the text",
+        "temas de who created the god of the bible? the minds behind the text",
+        "quem criou deus",
+        "quem criou o deus da biblia",
+        "quem criou o deus bíblico",
+        "deus foi inventado",
+        "who created god",
+        "quién creó a dios",
+        "quien creo a dios",
+        "origem de javé",
+        "origem de jave"
+      ],
+      "grupo": "Who created the God of the Bible? The minds behind the text"
+    },
+    {
+      "gatilhos": [
         "cocriação",
         "temas de cocriação"
       ],
@@ -7419,7 +7706,8 @@
     "O caminho do despertar": "Here awakening is treated with honesty: what science has proven, what traditions teach and what no one knows yet, each with its own stamp. Awakening is not trading one belief for another; it's seeing your own mind at work, and then making a choice.",
     "Metacognição: pensar sobre o pensar": "Metacognition is the art of observing your own mind at work: what you know, what you think you know, and how you decide. Here are the most solid studies, the honest reviews and advanced practices, each with its own stamp. Awakening begins when the mind learns to see itself.",
     "Trindade, inferno e o medo": "Here we separate what is documented history, what is myth, what is faith and what is fear used to control. The Trinity and hell are sincere beliefs of millions of people; the Portal does not attack anyone's faith, it shows the history and who uses fear as a leash.",
-    "Adam and Eve: the story and reality": "Here Genesis 1–5 is read verse by verse and checked against science, without mockery. Every claim carries its verse and source, and at the end there's a table of what matches and what doesn't."
+    "Adam and Eve: the story and reality": "Here Genesis 1–5 is read verse by verse and checked against science, without mockery. Every claim carries its verse and source, and at the end there's a table of what matches and what doesn't.",
+    "Who created the God of the Bible? The minds behind the text": "Here the question is who wrote the image of God found in the Bible, and with what mindset. We follow historical research, archaeology and psychology, with the verses in full and a source for every claim, without mocking believers."
   },
   "audio": {
     "Good morning. Welcome to the Portal of Knowledge. Mestre Solar is listening. What are you seeking?": "4b3495d49168.mp3",
