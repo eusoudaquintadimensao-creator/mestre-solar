@@ -795,7 +795,7 @@ function nota(t){var n=D.getElementById("nota");if(n)n.textContent=t}
 function norm(s){return String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9ñ]+/g," ").trim()}
 /* ---------- índice: id estável de cada lição (igual nos 3 idiomas: arquivo do grupo + posição) ---------- */
 var IX=null,POR_ID={},POR_TEMA={},ORDEM=[],GRUPOS={},prontos=[];
-function abrev(a){if(a==="a-matematica-do-diluvio.json")return "dil";return a.replace(/\.json$/,"").split("-").filter(function(w){return w.length>2||/^\d/.test(w)}).map(function(w){return w[0]}).join("")||"x"}
+function abrev(a){if(a==="a-matematica-do-diluvio.json")return "dil";if(a==="adao-e-eva-a-historia-e-a-realidade.json")return "ade";return a.replace(/\.json$/,"").split("-").filter(function(w){return w.length>2||/^\d/.test(w)}).map(function(w){return w[0]}).join("")||"x"}
 function base(){var c=MS()&&MS().conteudo&&MS().conteudo();return c&&c.base||null}
 function quando(f){IX?f():prontos.push(f)}
 function carregaIndice(n){var b=base();if(!b){if((n||0)<60)return setTimeout(function(){carregaIndice((n||0)+1)},250);return}

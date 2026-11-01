@@ -13,6 +13,11 @@
       "n": 14
     },
     {
+      "nome": "Adam and Eve: the story and reality",
+      "arquivo": "adao-e-eva-a-historia-e-a-realidade.json",
+      "n": 14
+    },
+    {
       "nome": "Cocriação",
       "arquivo": "cocriacao.json",
       "n": 9
@@ -1555,6 +1560,241 @@
         "Comprovado"
       ],
       "_arq": "a-matematica-do-diluvio.json"
+    },
+    {
+      "grupo": "Adam and Eve: the story and reality",
+      "tema": "What the Adam and Eve story tells (Genesis 1–5)",
+      "palavras": [
+        "adam and eve",
+        "creation of adam",
+        "genesis 1",
+        "genesis 2",
+        "garden of eden",
+        "adam and eve story"
+      ],
+      "nivelVerdade": [
+        "Tradição",
+        "Comprovado"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adam and Eve: the story and reality",
+      "tema": "Six days vs 4.5 billion years",
+      "palavras": [
+        "six days",
+        "6 days",
+        "creation in six days",
+        "age of the earth",
+        "young earth",
+        "radiometric dating"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adam and Eve: the story and reality",
+      "tema": "The order of creation vs the fossil record",
+      "palavras": [
+        "order of creation",
+        "fossils",
+        "fossil record",
+        "plants before the sun",
+        "birds before",
+        "light before the sun"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adam and Eve: the story and reality",
+      "tema": "Genesis 1 vs Genesis 2: two different orders",
+      "palavras": [
+        "genesis 1 and 2",
+        "two creations",
+        "genesis contradiction",
+        "order of creation genesis 2",
+        "two creation accounts"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Tradição"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adam and Eve: the story and reality",
+      "tema": "A single first couple? What genetics says",
+      "palavras": [
+        "first couple",
+        "single couple",
+        "mitochondrial eve",
+        "y chromosome adam",
+        "population genetics",
+        "all descended from adam"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adam and Eve: the story and reality",
+      "tema": "From dust and rib vs biology",
+      "palavras": [
+        "dust of the ground",
+        "adam's rib",
+        "woman from the rib",
+        "man from clay",
+        "human evolution",
+        "men have fewer ribs"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adam and Eve: the story and reality",
+      "tema": "The talking serpent, 'eating dust' and the tree of life",
+      "palavras": [
+        "serpent",
+        "talking snake",
+        "eating dust",
+        "crawling",
+        "tree of life",
+        "cherubim",
+        "flaming sword"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Tradição"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adam and Eve: the story and reality",
+      "tema": "Death before sin? What fossils show",
+      "palavras": [
+        "death before sin",
+        "immortality",
+        "fossils and death",
+        "extinctions",
+        "no death in eden",
+        "sin brought death"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adam and Eve: the story and reality",
+      "tema": "Cain: his wife, the city and whom he feared",
+      "palavras": [
+        "cain",
+        "cain's wife",
+        "wife of cain",
+        "city of cain",
+        "land of nod",
+        "cain and abel"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Tradição"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adam and Eve: the story and reality",
+      "tema": "930-year lives and a 6,000-year-old world",
+      "palavras": [
+        "age of adam",
+        "930 years",
+        "methuselah",
+        "969 years",
+        "ussher chronology",
+        "4004 bc",
+        "6000 year old earth",
+        "genesis 5 genealogy"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adam and Eve: the story and reality",
+      "tema": "Internal contradictions and the logic test",
+      "palavras": [
+        "genesis contradictions",
+        "adam and eve contradictions",
+        "where art thou",
+        "like one of us",
+        "let us make man",
+        "in the day you eat you will die",
+        "god logic test",
+        "original sin"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adam and Eve: the story and reality",
+      "tema": "Where the story comes from: two sources and Mesopotamian myths",
+      "palavras": [
+        "sources of genesis",
+        "yahwist priestly",
+        "enuma elish",
+        "atrahasis",
+        "adapa",
+        "gilgamesh",
+        "mesopotamian myths",
+        "origin of adam and eve"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adam and Eve: the story and reality",
+      "tema": "What is true and what is not (full table)",
+      "palavras": [
+        "what is true",
+        "adam and eve table",
+        "true or false adam and eve",
+        "adam and eve scorecard",
+        "scientific sum adam and eve"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adam and Eve: the story and reality",
+      "tema": "Mestre Solar's opinion: honest verdict on Adam and Eve",
+      "palavras": [
+        "adam and eve verdict",
+        "did adam and eve exist",
+        "is adam and eve true",
+        "adam and eve opinion"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
     },
     {
       "grupo": "Cocriação",
@@ -7047,6 +7287,19 @@
     },
     {
       "gatilhos": [
+        "adam and eve: the story and reality",
+        "temas de adam and eve: the story and reality",
+        "adão e eva",
+        "adao e eva",
+        "adam and eve",
+        "adán y eva",
+        "gênesis 1",
+        "jardim do éden"
+      ],
+      "grupo": "Adam and Eve: the story and reality"
+    },
+    {
+      "gatilhos": [
         "cocriação",
         "temas de cocriação"
       ],
@@ -7165,7 +7418,8 @@
     "Neuroplasticidade: o cérebro que muda": "The brain changes with what you repeat, learn, sleep and feel. Here's what science has proven, what's still hypothesis and what's market exaggeration, each with its own stamp. The good news is real, and it doesn't need a miracle.",
     "O caminho do despertar": "Here awakening is treated with honesty: what science has proven, what traditions teach and what no one knows yet, each with its own stamp. Awakening is not trading one belief for another; it's seeing your own mind at work, and then making a choice.",
     "Metacognição: pensar sobre o pensar": "Metacognition is the art of observing your own mind at work: what you know, what you think you know, and how you decide. Here are the most solid studies, the honest reviews and advanced practices, each with its own stamp. Awakening begins when the mind learns to see itself.",
-    "Trindade, inferno e o medo": "Here we separate what is documented history, what is myth, what is faith and what is fear used to control. The Trinity and hell are sincere beliefs of millions of people; the Portal does not attack anyone's faith, it shows the history and who uses fear as a leash."
+    "Trindade, inferno e o medo": "Here we separate what is documented history, what is myth, what is faith and what is fear used to control. The Trinity and hell are sincere beliefs of millions of people; the Portal does not attack anyone's faith, it shows the history and who uses fear as a leash.",
+    "Adam and Eve: the story and reality": "Here Genesis 1–5 is read verse by verse and checked against science, without mockery. Every claim carries its verse and source, and at the end there's a table of what matches and what doesn't."
   },
   "audio": {
     "Good morning. Welcome to the Portal of Knowledge. Mestre Solar is listening. What are you seeking?": "4b3495d49168.mp3",

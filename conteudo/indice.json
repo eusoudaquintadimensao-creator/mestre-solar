@@ -13,6 +13,11 @@
       "n": 14
     },
     {
+      "nome": "Adão e Eva: a história e a realidade",
+      "arquivo": "adao-e-eva-a-historia-e-a-realidade.json",
+      "n": 14
+    },
+    {
       "nome": "Cocriação",
       "arquivo": "cocriacao.json",
       "n": 9
@@ -1271,6 +1276,249 @@
         "Comprovado"
       ],
       "_arq": "a-matematica-do-diluvio.json"
+    },
+    {
+      "grupo": "Adão e Eva: a história e a realidade",
+      "tema": "O que a história de Adão e Eva conta (Gênesis 1–5)",
+      "palavras": [
+        "adao e eva",
+        "adão e eva",
+        "criacao de adao",
+        "criação de adão",
+        "genesis 1",
+        "gênesis 1",
+        "genesis 2",
+        "jardim do eden",
+        "jardim do éden",
+        "historia de adao e eva"
+      ],
+      "nivelVerdade": [
+        "Tradição",
+        "Comprovado"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adão e Eva: a história e a realidade",
+      "tema": "Seis dias × 4,5 bilhões de anos",
+      "palavras": [
+        "seis dias",
+        "6 dias",
+        "criacao em seis dias",
+        "idade da terra",
+        "terra jovem",
+        "datacao radiometrica"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adão e Eva: a história e a realidade",
+      "tema": "A ordem da criação × o registro fóssil",
+      "palavras": [
+        "ordem da criacao",
+        "fosseis",
+        "registro fossil",
+        "plantas antes do sol",
+        "aves antes",
+        "luz antes do sol"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adão e Eva: a história e a realidade",
+      "tema": "Gênesis 1 × Gênesis 2: duas ordens diferentes",
+      "palavras": [
+        "genesis 1 e 2",
+        "duas criacoes",
+        "contradicao genesis",
+        "ordem da criacao genesis 2",
+        "dois relatos da criacao"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Tradição"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adão e Eva: a história e a realidade",
+      "tema": "Um único primeiro casal? O que diz a genética",
+      "palavras": [
+        "primeiro casal",
+        "casal unico",
+        "eva mitocondrial",
+        "adao cromossomo y",
+        "genetica de populacoes",
+        "todos descendem de adao"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adão e Eva: a história e a realidade",
+      "tema": "Do pó e da costela × a biologia",
+      "palavras": [
+        "po da terra",
+        "costela de adao",
+        "mulher da costela",
+        "homem do barro",
+        "evolucao humana",
+        "homem tem menos costelas"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adão e Eva: a história e a realidade",
+      "tema": "A serpente que fala, o 'comer pó' e a árvore da vida",
+      "palavras": [
+        "serpente",
+        "cobra falante",
+        "serpente falante",
+        "comer po",
+        "rastejar",
+        "arvore da vida",
+        "querubins",
+        "espada flamejante"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Tradição"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adão e Eva: a história e a realidade",
+      "tema": "Morte antes do pecado? O que os fósseis mostram",
+      "palavras": [
+        "morte antes do pecado",
+        "imortalidade",
+        "fosseis e morte",
+        "extincoes",
+        "sem morte no eden",
+        "pecado trouxe a morte"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adão e Eva: a história e a realidade",
+      "tema": "Caim: a esposa, a cidade e quem ele temia",
+      "palavras": [
+        "caim",
+        "esposa de caim",
+        "mulher de caim",
+        "cidade de caim",
+        "terra de node",
+        "caim e abel"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Tradição"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adão e Eva: a história e a realidade",
+      "tema": "930 anos de vida e um mundo de 6 mil anos",
+      "palavras": [
+        "idade de adao",
+        "930 anos",
+        "matusalem",
+        "969 anos",
+        "cronologia de ussher",
+        "4004 a.c.",
+        "terra de 6 mil anos",
+        "genealogia de genesis 5"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adão e Eva: a história e a realidade",
+      "tema": "Contradições internas e o teste de lógica",
+      "palavras": [
+        "contradicoes de genesis",
+        "contradicoes adao e eva",
+        "onde estas",
+        "como um de nos",
+        "facamos o homem",
+        "no dia em que comeres morreras",
+        "teste de logica deus",
+        "pecado original"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adão e Eva: a história e a realidade",
+      "tema": "De onde vem a história: duas fontes e os mitos da Mesopotâmia",
+      "palavras": [
+        "fontes de genesis",
+        "javista sacerdotal",
+        "enuma elish",
+        "atrahasis",
+        "adapa",
+        "gilgamesh",
+        "mitos mesopotamicos",
+        "origem de adao e eva"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adão e Eva: a história e a realidade",
+      "tema": "O que é verdadeiro e o que não é (tabela completa)",
+      "palavras": [
+        "o que e verdadeiro",
+        "o que é verdadeiro",
+        "tabela adao e eva",
+        "tabela adão e eva",
+        "verdadeiro ou falso adao e eva",
+        "soma cientifica adao e eva",
+        "placar adao e eva"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
+    },
+    {
+      "grupo": "Adão e Eva: a história e a realidade",
+      "tema": "Opinião do Mestre Solar: veredito honesto sobre Adão e Eva",
+      "palavras": [
+        "veredito adao e eva",
+        "adao e eva existiram",
+        "adão e eva existiram",
+        "adao e eva e verdade",
+        "opiniao adao e eva"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "adao-e-eva-a-historia-e-a-realidade.json"
     },
     {
       "grupo": "Cocriação",
@@ -5513,6 +5761,19 @@
     },
     {
       "gatilhos": [
+        "adão e eva: a história e a realidade",
+        "temas de adão e eva: a história e a realidade",
+        "adão e eva",
+        "adao e eva",
+        "adam and eve",
+        "adán y eva",
+        "gênesis 1",
+        "jardim do éden"
+      ],
+      "grupo": "Adão e Eva: a história e a realidade"
+    },
+    {
+      "gatilhos": [
         "cocriação",
         "temas de cocriação"
       ],
@@ -5631,7 +5892,8 @@
     "Neuroplasticidade: o cérebro que muda": "O cérebro muda com o que você repete, aprende, dorme e sente. Aqui está o que a ciência comprovou, o que ainda é hipótese e o que é exagero de mercado, cada coisa com o seu selo. A boa notícia é real e não precisa de milagre.",
     "O caminho do despertar": "Aqui o despertar é tratado com honestidade: o que a ciência comprovou, o que as tradições ensinam e o que ninguém sabe ainda, cada coisa com o seu selo. Despertar não é trocar uma crença por outra; é ver a própria mente funcionando, e então escolher.",
     "Metacognição: pensar sobre o pensar": "Metacognição é a arte de observar a própria mente trabalhando: o que você sabe, o que acha que sabe, e como decide. Aqui estão os estudos mais sólidos, as críticas honestas e práticas avançadas, cada coisa com o seu selo. Despertar começa quando a mente aprende a se ver.",
-    "Trindade, inferno e o medo": "Aqui se separa o que é história documentada, o que é mito, o que é fé e o que é medo usado para controlar. A Trindade e o inferno são crenças sinceras de milhões de pessoas; o Portal não ataca a fé de ninguém, mostra a história e quem usa o medo como coleira."
+    "Trindade, inferno e o medo": "Aqui se separa o que é história documentada, o que é mito, o que é fé e o que é medo usado para controlar. A Trindade e o inferno são crenças sinceras de milhões de pessoas; o Portal não ataca a fé de ninguém, mostra a história e quem usa o medo como coleira.",
+    "Adão e Eva: a história e a realidade": "Aqui Gênesis 1–5 é lido versículo por versículo e conferido com a ciência, sem zombaria. Cada afirmação traz o versículo e a fonte, e no fim há a tabela do que bate e do que não bate."
   },
   "audio": {
     "Bom dia. Bem-vindo ao Portal do Conhecimento. Mestre Solar na escuta. O que você busca?": "a78ca52b7d1c.mp3",
