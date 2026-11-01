@@ -8,6 +8,7 @@ function tx(pt,en,es){var l=LG();return l==="en"?en:l==="es"?es:pt}
 function meta(v){try{if(v===undefined)return JSON.parse(localStorage.getItem(KM)||"null")||{pacotes:[],h:{}};localStorage.setItem(KM,JSON.stringify(v))}catch(e){return{pacotes:[],h:{}}}}
 function mb(n){if(!n)return"0 MB";return n>=1e9?(n/1e9).toFixed(2)+" GB":n>=1e6?(n/1e6).toFixed(1)+" MB":Math.max(1,Math.round(n/1e3))+" KB"}
 function jervisOk(){return typeof W.VOZ_JERVIS_ATIVA==="undefined"||W.VOZ_JERVIS_ATIVA===true}
+function confere(buf,h){if(!(W.crypto&&crypto.subtle))return Promise.resolve(true);return crypto.subtle.digest("SHA-1",buf).then(function(d){var x=Array.prototype.map.call(new Uint8Array(d),function(b){return("0"+b.toString(16)).slice(-2)}).join("");return x.slice(0,h.length)===h})}
 var MAN=null,st={rodando:false,pausado:false,feito:0,total:0,bytes:0,totalB:0,erro:""};
 function manifesto(){return fetch(ROOT+"offline.json",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(m){MAN=m;return m})}
 function lista(pac){var a=[];pac.forEach(function(k){var p=MAN&&MAN.pacotes[k];if(p)a=a.concat(p.arquivos)});return a}
@@ -18,7 +19,7 @@ function baixar(pac){if(st.rodando)return;if(!("caches"in W)){st.erro=tx("Este n
  manifesto().then(function(){var fila=pendentes(pac);st.total=fila.length;st.feito=0;st.totalB=fila.reduce(function(s,f){return s+f[1]},0);st.bytes=0;st.rodando=true;st.pausado=false;ui();
   return caches.open(CN).then(function(c){var i=0;
    function um(){if(st.pausado||i>=fila.length)return Promise.resolve();var f=fila[i++],url=ROOT+f[0];
-    function pega(t){return fetch(url+"?v="+f[2],{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error(r.status);return c.put(url,r)}).catch(function(e){if(t>0)return new Promise(function(ok){setTimeout(ok,900)}).then(function(){return pega(t-1)});throw e})}
+    function pega(t){return fetch(url+"?v="+f[2],{cache:"no-store"}).then(function(r){if(!r.ok||r.redirected||new URL(r.url).origin!==location.origin)throw new Error(r.status);return r.arrayBuffer().then(function(buf){return confere(buf,f[2]).then(function(ok){if(!ok)throw new Error("hash");return c.put(url,new Response(buf,{status:200,headers:{"Content-Type":r.headers.get("Content-Type")||"application/octet-stream"}}))})})}).catch(function(e){if(t>0)return new Promise(function(ok){setTimeout(ok,900)}).then(function(){return pega(t-1)});throw e})}
     return pega(2).then(function(){H[f[0]]=f[2];st.feito++;st.bytes+=f[1];if(st.feito%25===0)flush();ui()})
      .catch(function(e){st.erro=tx("Falhou: ","Failed: ","Falló: ")+f[0];}).then(um)}
    var H={};function flush(){var mm=meta();for(var k in H)mm.h[k]=H[k];H={};meta(mm)}return Promise.all([um(),um(),um(),um()]).then(function(){flush();if(!pendentes(pac).length){var mm=meta();mm.versao=MAN.versao;mm.quando=Date.now();meta(mm)}})})})

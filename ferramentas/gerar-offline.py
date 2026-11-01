@@ -4,6 +4,7 @@ Rode antes de cada commit que mude conteúdo:  python3 ferramentas/gerar-offline
 import os,hashlib,json,re
 R=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(R)
+import subprocess as _sp;_sp.check_call(['python3','ferramentas/csp.py'])
 sw=open('sw.js').read();ver=re.search(r'VERSAO = "([^"]+)"',sw).group(1)
 G={'base':[],'aguia':[],'jervis':[]}
 def h(p): return hashlib.sha1(open(p,'rb').read()).hexdigest()[:12]
