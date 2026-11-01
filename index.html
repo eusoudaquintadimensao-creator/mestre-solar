@@ -191,7 +191,7 @@ function fix(s){if(s==null)return s;s=String(s);var t=get(),x=voc(),l=lg();
  s=s.replace(new RegExp("([.!?]\\s+)"+w+",\\s*(\\S)","gi"),function(_,p,c){return p+(x?cap(x)+", "+c:c.toUpperCase())});
  s=s.replace(new RegExp("(\\S+)\\s"+w+"(?=[.!?…])","gi"),function(m0,pw){if(/^(o|do|ao|no|pelo|meu|nosso|teu|seu|el|del|al|mi|the|my)$/i.test(pw))return m0;return pw+(x?" "+x:"")});}
  if(l==="pt"){var g=genero();if(g!=="m"){s=s.replace(/Bem-vindo de volta/g,g==="f"?"Bem-vinda de volta":"Que bom ter você de volta").replace(/Seja bem-vindo/g,g==="f"?"Seja bem-vinda":"Boas-vindas").replace(/\bBem-vindo\b/g,bem()).replace(/\bbem-vindo\b/g,g==="f"?"bem-vinda":"boas-vindas");
-   if(g==="f")s=s.replace(/\b(Pronto|pronto|preparado|sozinho|acordado|cansado|perdido|convidado|obrigado)\b(?=[ ,.!?])/g,function(w){return w.slice(0,-1)+"a"})}}
+   if(g==="f")s=s.replace(/\b(Pronto|pronto|preparado|sozinho|acordado|cansado|perdido|convidado|obrigado)\b(?=[ ,.!?])/g,function(w,_w,off,str){var antes=str.slice(Math.max(0,off-12),off);if(/(^|[^a-zà-ú])(estou|fico|estarei|sou|obrigado|eu)\s+$/i.test(antes)||/^obrigado$/i.test(w)&&/(^|[.!?]\s*)$/.test(antes))return w;return w.slice(0,-1)+"a"})}}
  else if(l==="es"&&genero()==="f")s=s.replace(/\bBienvenido\b/g,"Bienvenida").replace(/\bbienvenido\b/g,"bienvenida");
  return s}
 function promptLine(){var t=get(),x=voc(),g=genero(),l=lg();
@@ -948,7 +948,7 @@ D.readyState==="loading"?D.addEventListener("DOMContentLoaded",inicio):inicio();
 var W=window,D=document,MS=function(){return W.MestreSolar},T=function(s){try{return W.MSI&&MSI.t?MSI.t(s):s}catch(e){return s}};
 var LANG=(W.MSI&&MSI.lang)||"pt";
 var KS="ms-sol-v1",KQ="ms-sol-quiz-v1",KH="ms-sol-hist-v1";
-var SOL_DATA=null,QUIZ_DATA=null,CAMINHOS=null,prontos=[],ativo=false,fase=null,quiz=null,crenca=null,ultimas={},ultLicao=null,wakeLock=null,analisador=null,ctxAudio=null,ritmoT=null,legEl=null,netBadge=null,trilha=[],potencia=false,investigaTema=null;
+var JV=null,SOL_DATA=null,QUIZ_DATA=null,CAMINHOS=null,prontos=[],ativo=false,fase=null,quiz=null,crenca=null,ultimas={},ultLicao=null,wakeLock=null,analisador=null,ctxAudio=null,ritmoT=null,legEl=null,netBadge=null,trilha=[],potencia=false,investigaTema=null;
 function ls(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem(k)||"null");v===null?localStorage.removeItem(k):localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}}
 function cfg(){var c=ls(KS)||{};if(!c.tom){var p=MS()&&MS().pessoa&&MS().pessoa()||{};var t=p.tom;c.tom=t==="acolhedor"?"alegre":"normal"}potencia=!!c.potencia;
  return{nome:(MS()&&MS().pessoa&&MS().pessoa()||{}).nome||c.nome||"",
@@ -966,7 +966,7 @@ function carrega(n){var b=base();if(!b){if((n||0)<80)return setTimeout(function(
  Promise.all([fetch(b+"sol.json").then(function(r){return r.json()}),
   fetch(b+"sol-quiz.json").then(function(r){return r.json()}),
   fetch(b+"sol-caminhos.json").then(function(r){return r.json()}).catch(function(){return null})])
- .then(function(x){SOL_DATA=x[0];QUIZ_DATA=x[1]||{};CAMINHOS=x[2];var f;while(f=prontos.shift())try{f()}catch(e){}}).catch(function(){})}
+ .then(function(x){SOL_DATA=x[0];QUIZ_DATA=x[1]||{};CAMINHOS=x[2];fetch("conteudo/persona-jervis.json").then(function(r){return r.json()}).then(function(j){JV=j&&j.falas||null}).catch(function(){});var f;while(f=prontos.shift())try{f()}catch(e){}}).catch(function(){})}
 /* ---------- filtro 3 camadas ---------- */
 function filtroMsg(){return (SOL_DATA&&SOL_DATA.diretriz&&SOL_DATA.diretriz.filtro&&SOL_DATA.diretriz.filtro.msg)||"🚫 Por aqui não. Esse tipo de conteúdo não passa pelo Mestre Solar. Vamos voltar ao que eleva a consciência?"}
 function bloqueado(texto){if(!SOL_DATA||!SOL_DATA.filtroPadroes)return false;
@@ -990,30 +990,37 @@ function vocativo(){if(W.MSTrat)return MSTrat.voc();var c=cfg(),tr=SOL_DATA&&SOL
  var v=(tr.voc||{})[c.tratamento];if(!v)return c.nome||"";
  if(typeof v==="object")v=v[genero()==="f"?"f":"m"]||v.m||"";
  return String(v).replace(/\{nome\}/g,c.nome||"").replace(/\{custom\}/g,c.custom||"").trim()}
+function jvOn(){try{return typeof W.msVozId==="function"&&W.msVozId()==="sigma"}catch(e){return false}}
+function jvFix(t){if(!jvOn()||!t)return t;t=String(t);
+ t=t.replace(/\bObrigada\b/g,"Obrigado").replace(/\bobrigada\b/g,"obrigado").replace(/\b(Estou|estou|Fico|fico|Estarei|estarei) (pronta|feliz e grata|grata|contente|encantada|sozinha)\b/g,function(m,a,b){return a+" "+({pronta:"pronto","feliz e grata":"feliz e grato",grata:"grato",contente:"contente",encantada:"satisfeito",sozinha:"sozinho"}[b])});
+ t=t.replace(/[\u2764\uFE0F\u2728]|\uD83D[\uDC96\uDC95\uDC97\uDC93\uDC9B\uDC9C\uDC99\uDC9A\uDE0A\uDE0D\uDE18\uDE07\uDF38]|\uD83E\uDD70|\uD83C\uDF38|\uD83C\uDF1E/g,"").replace(/!+/g,".").replace(/\.\./g,".").replace(/\s{2,}/g," ").trim();
+ return t}
+W.MSJervis={on:jvOn,fix:jvFix};
 function slots(extra){var c=cfg(),tr=SOL_DATA&&SOL_DATA.tratamento||{},g=genero(),gen=tr.genero||{};
  var bem=W.MSTrat?MSTrat.bem():((gen.bemvindo||{})[g]||(gen.bemvindo||{}).n||"Boas-vindas");
  var prep=(gen.preparado||{})[g]||"pronto";
  var soz=(gen.sozinho||{})[g]||"sozinho";
  var voc=vocativo(),v=voc?", "+voc:"";
- var guiaNome={aguia:"Águia Primordial",aurora:"Aurora",mestre:"Mestre Solar"}[c.guia]||"Águia Primordial";
- var eusou=c.guia==="aurora"?"Eu sou a Aurora, a luz que desperta":c.guia==="mestre"?"Eu sou o Mestre Solar":"Eu sou a Águia Primordial";
+ var guiaNome=jvOn()?"Jervis":({aguia:"Águia Primordial",aurora:"Aurora",mestre:"Mestre Solar"}[c.guia]||"Águia Primordial");
+ var eusou=jvOn()?(LANG==="en"?"I am Jervis, the voice of Mestre Solar":LANG==="es"?"Soy Jervis, la voz de Mestre Solar":"Eu sou Jervis, a voz do Mestre Solar"):c.guia==="aurora"?"Eu sou a Aurora, a luz que desperta":c.guia==="mestre"?"Eu sou o Mestre Solar":"Eu sou a Águia Primordial";
  var h=(new Date).getHours(),saud=h<12?(LANG==="en"?"Good morning":LANG==="es"?"Buenos días":"Bom dia"):h<18?(LANG==="en"?"Good afternoon":LANG==="es"?"Buenas tardes":"Boa tarde"):(LANG==="en"?"Good evening":LANG==="es"?"Buenas noches":"Boa noite");
  var o={v:v,nome:c.nome||"",guia:guiaNome,eusou:eusou,saud:saud,bemvindo:bem,preparado:prep,sozinho:soz,tom:c.tom,dias:String(c.dias||0),ultimo:c.ultimoTema||"",tema:c.ultimoTema||"",unidade:c.ultimoTema||"",pergunta:"",selo:"",n:"0",total:"3",resposta:"",frase:"",proxima:""};
  if(extra)for(var k in extra)o[k]=extra[k];return o}
 function preenche(s,extra){var o=slots(extra);return String(s||"").replace(/\{(\w+)\}/g,function(_,k){return o[k]!=null?o[k]:""})}
-function pick(bloco,extra){if(!bloco)return "";
- var tom=cfg().tom||"normal",lista=bloco[tom]||bloco.todos||bloco.alegre||bloco.normal||bloco.elevado||[];
+function pick(bloco,extra,cam){if(!bloco)return "";
+ var tom=cfg().tom||"normal",lk=bloco[tom]?tom:bloco.todos?"todos":bloco.alegre?"alegre":bloco.normal?"normal":"elevado",lista=bloco[lk]||[];
  if(!lista.length)return "";
  var key=bloco._k||"x";if(!ultimas[key])ultimas[key]=[];
  var cand=lista.map(function(_,i){return i}).filter(function(i){return ultimas[key].indexOf(i)<0});
  if(!cand.length){ultimas[key]=[];cand=lista.map(function(_,i){return i})}
  var i=cand[Math.floor(Math.random()*cand.length)];ultimas[key].push(i);if(ultimas[key].length>Math.min(4,lista.length-1))ultimas[key].shift();
- return preenche(lista[i],extra)}
+ var raw=lista[i];if(cam&&jvOn()&&JV){var jl=JV[LANG]||JV.pt||{},ov=jl[cam+"."+lk+"["+i+"]"];if(ov)raw=ov}
+ return jvFix(preenche(raw,extra))}
 function linha(caminho,extra){if(!SOL_DATA)return "";
- var p=caminho.split("."),x=SOL_DATA.falas;for(var i=0;i<p.length;i++){x=x&&x[p[i]]}return pick(x,extra)}
+ var p=caminho.split("."),x=SOL_DATA.falas;for(var i=0;i<p.length;i++){x=x&&x[p[i]]}return pick(x,extra,caminho)}
 function quemDe(caminho){if(!SOL_DATA)return"guia";var p=caminho.split("."),x=SOL_DATA.falas;for(var i=0;i<p.length;i++){x=x&&x[p[i]]}return(x&&x.quem)||"guia"}
 /* ---------- voz / personagem / legenda ---------- */
-function nomeGuia(){var c=cfg();return{aguia:"Águia Primordial",aurora:"Aurora",mestre:"Mestre Solar"}[c.guia]||"Águia Primordial"}
+function nomeGuia(){var c=cfg();if(jvOn())return"Jervis";return{aguia:"Águia Primordial",aurora:"Aurora",mestre:"Mestre Solar"}[c.guia]||"Águia Primordial"}
 function nomeQuem(q){if(q==="mestre")return"Mestre Solar";if(cfg().guia==="mestre")return"Mestre Solar";return nomeGuia()}
 function setLegenda(quem,texto){if(!legEl)return;if(!cfg().legenda){legEl.classList.remove("ativa");legEl.textContent="";return}
  legEl.innerHTML="<b>"+nomeQuem(quem)+":</b> "+String(texto||"").slice(0,140);legEl.classList.add("ativa")}
@@ -1021,7 +1028,7 @@ function limpaLegenda(){if(legEl){legEl.classList.remove("ativa");setTimeout(fun
 var vozBak=null;
 function aplicaVoz(quem){try{var conf=W.MESTRE_SOLAR_CONFIG;if(!conf||!conf.voz)return;if(aplicaVoz._q===quem)return;aplicaVoz._q=quem;
  if(!vozBak)vozBak={pref:conf.voz.vozesPreferidas.slice(),ev:conf.voz.vozesEvitar.slice(),tom:conf.voz.tom,vel:conf.voz.velocidade};
- if(quem==="mestre"){conf.voz.vozesPreferidas=(typeof msVozId==="function"&&msVozId()==="remy")?["remy","remy multilingual","multilingualneural","daniel","ryan","alvaro","guy","andrew","antonio","christopher","davis","eric","brian","roger","steffan","male","masculino","homem"]:["daniel","ryan","alvaro","guy","andrew","antonio","christopher","davis","eric","brian","roger","steffan","male","masculino","homem"];
+ if(quem==="mestre"||jvOn()){conf.voz.vozesPreferidas=(typeof msVozId==="function"&&msVozId()==="remy")?["remy","remy multilingual","multilingualneural","daniel","ryan","alvaro","guy","andrew","antonio","christopher","davis","eric","brian","roger","steffan","male","masculino","homem"]:["daniel","ryan","alvaro","guy","andrew","antonio","christopher","davis","eric","brian","roger","steffan","male","masculino","homem"];
   conf.voz.vozesEvitar=["maria","francisca","luciana","joana","catarina","fernanda","vitoria","thalita","aria","jenny","female","feminina","mulher","woman"];
   conf.voz.tom=0.85;conf.voz.velocidade=0.85}
  else{conf.voz.vozesPreferidas=["aria","jenny","sara","helena","francisca","maria","luciana","joana","catarina","fernanda","vitoria","female","feminina","mulher","woman"];
@@ -1092,6 +1099,18 @@ var mBusca=null;
 function setBusca(fn){mBusca=fn}
 /* ---------- intenções ---------- */
 function eh(o,arr){o=" "+norm(o)+" ";for(var i=0;i<arr.length;i++){if(o.indexOf(" "+norm(arr[i])+" ")>=0)return true}return false}
+function ehSaudacao(o){o=" "+String(o||"")+" ";var g=/ (oi+|ola|ole|hey|hi|hello|hola|salve|e ai|eai|opa|bom dia|boa tarde|boa noite|boa madrugada|good morning|good afternoon|good evening|buenos dias|buen dia|buenas tardes|buenas noches|buenas|tudo bem|tudo bom|como vai|how are you|como estas|que tal)(?= )/g;
+ if(!g.test(o))return false;var r=o.replace(g," ").replace(/ (sol|mestre|mestre solar|jervis|aguia|aguia primordial|portal|amigo|amiga|pessoal|there|you|e|y|and|a|o|para|pra|voce|vc|senhor|senhora|tudo|bem|com|ai) /g," ").replace(/ (sol|mestre|solar|jervis|aguia|primordial|portal|amigo|amiga|e|y|and|voce|vc|bem|tudo|ai|senhor|senhora) /g," ");
+ var nome="";try{nome=norm((W.MSTrat&&MSTrat.get().nome)||"")}catch(x){}if(nome)r=r.replace(" "+nome+" "," ");return!r.trim()}
+function saudaResp(o){o=" "+String(o||"")+" ";var h=(new Date).getHours(),sd=h<12?(LANG==="en"?"Good morning":LANG==="es"?"Buenos días":"Bom dia"):h<18?(LANG==="en"?"Good afternoon":LANG==="es"?"Buenas tardes":"Boa tarde"):(LANG==="en"?"Good evening":LANG==="es"?"Buenas noches":"Boa noite");
+ var mm=[[/ bom dia | good morning | buenos dias | buen dia /,["Bom dia","Good morning","Buenos días"]],[/ boa tarde | good afternoon | buenas tardes /,["Boa tarde","Good afternoon","Buenas tardes"]],[/ boa noite | good evening | buenas noches /,["Boa noite","Good evening","Buenas noches"]]];
+ mm.forEach(function(x){if(x[0].test(o))sd=x[1][LANG==="en"?1:LANG==="es"?2:0]});
+ var v="";try{v=W.MSTrat?MSTrat.v():""}catch(e){}
+ var J=jvOn(),A={pt:J?["Às suas ordens. Em que posso ajudar hoje?","Sistemas prontos. Qual assunto vamos investigar?","Estou pronto. Diga um tema e eu abro a lição."]:["Que bom te ver. Estou aqui com você. O que deseja descobrir hoje?","__BEM__. Sobre o que vamos conversar?","Estou aqui, com calma. Diga um tema e eu abro a lição."],
+  en:J?["At your service. How can I help today?","Systems ready. What shall we investigate?","Ready. Name a topic and I will open the lesson."]:["So good to see you. I am here with you. What would you like to discover today?","Welcome. What shall we talk about?","I am here, calmly. Name a topic and I will open the lesson."],
+  es:J?["A tus órdenes. ¿En qué puedo ayudar hoy?","Sistemas listos. ¿Qué vamos a investigar?","Estoy listo. Dime un tema y abro la lección."]:["Qué bueno verte. Estoy aquí contigo. ¿Qué quieres descubrir hoy?","__BEM__. ¿De qué hablamos?","Estoy aquí, con calma. Dime un tema y abro la lección."]}[LANG]||[];
+ var l=A[Math.floor(Math.random()*A.length)]||"";var gg=W.MSTrat?MSTrat.genero():"n";l=l.replace("__BEM__",LANG==="es"?(gg==="f"?"Bienvenida":gg==="m"?"Bienvenido":"Te damos la bienvenida"):(W.MSTrat?MSTrat.bem():"Boas-vindas"));
+ return sd+v+". "+l}
 function detectar(e){var o=norm(e);
  if(bloqueado(e))return{tipo:"bloqueio"};
  if(eh(o,["vou me matar","quero morrer","suicidio","suicídio","me matar","kill myself","want to die","me suicidar","no quiero vivir","quiero morirme"]))return{tipo:"crise"};
@@ -1123,7 +1142,7 @@ function detectar(e){var o=norm(e);
  if(eh(o,["mais ou menos","so so","así así","asi asi","neutro"]))return{tipo:"humor",h:"neutro"};
  if(eh(o,["como estou","como voce esta","como você está","how are you","cómo estás","como estas"]))return{tipo:"comoesta"};
  /* saudação */
- if(/^(oi|ola|olá|hey|hi|hello|bom dia|boa tarde|boa noite|hola)$/.test(o))return{tipo:"saudacao"};
+ if(ehSaudacao(o))return{tipo:"saudacao"};
  return{tipo:"busca",texto:e}}
 /* ---------- fluxo ---------- */
 function marcaDia(){var c=cfg(),hoje=new Date().toISOString().slice(0,10);if(c.ultimoDia===hoje)return;
@@ -1500,7 +1519,7 @@ function cmd(e){if(!SOL_DATA)return false;e=String(e||"").trim();if(!e)return fa
  if(d.tipo==="elogio"){fala("guia",linha("intencoes.elogio"));return true}
  if(d.tipo==="comoesta"){fala("guia",linha("intencoes.comoesta"));return true}
  if(d.tipo==="humor"){aposHumor(d.h);return true}
- if(d.tipo==="saudacao"){despertar();return true}
+ if(d.tipo==="saudacao"){ativo=true;fala("guia",saudaResp(norm(e)));return true}
  if(d.tipo==="tom"){salvaCfg({tom:d.tom});fala("guia",linha("intencoes.tom_trocado",{tom:d.tom}));return true}
  if(d.tipo==="respirar"){var rs=(SOL_DATA.falas.intencoes.respirar.todos||[]).map(function(t){return{q:"guia",t:t}});falaSeq(rs,0);return true}
  if(d.tipo==="silencio"){fala("guia",linha("intencoes.silencio_ok"));return true}
@@ -1706,8 +1725,8 @@ function corta(s,n){s=String(s||"").replace(/\s+/g," ").trim();return s.length>n
 function trechoAprof(h,q){var a=String(h.aprofundar||"");if(!a)return"";var tok=limpaQ(q).split(" ").filter(function(w){return w.length>3}),fr=a.match(/[^.!?]+[.!?]*/g)||[],best="",bs=0;
  fr.forEach(function(f,i){var nf=norm(f),s=0;tok.forEach(function(w){if(nf.indexOf(w)>=0)s++});if(s>bs){bs=s;best=fr.slice(i,i+3).join(" ")}});return bs?corta(best,380):""}
 function contexto(hits,q){return hits.map(function(h,i){var ap=i===0?trechoAprof(h,q||""):"";return"ID "+h.id+" | «"+h.tema+"» | "+tx("selos","seals","sellos")+": "+(h.nivelVerdade||[]).join(", ")+"\n"+corta(h.resposta,i===0?700:420)+(ap?"\n"+tx("Mais","More","Más")+": "+ap:"")}).join("\n\n")}
-function sistema(hits,q){var v=cfg().voz,idioma=tx("português do Brasil","English","español");
- var persona=v==="jervis"?tx("Jervis, assistente analítico no estilo Jarvis: cordial, direto, frases objetivas.","Jervis, an analytical Jarvis-style assistant: courteous, direct, crisp sentences.","Jervis, asistente analítico estilo Jarvis: cordial, directo, frases objetivas."):tx("a Águia Primordial: calma, profunda, acolhedora e precisa.","the Primordial Eagle: calm, deep, warm and precise.","el Águila Primordial: calma, profunda, cálida y precisa.");
+function sistema(hits,q){var v=(typeof W.msVozId==="function"&&W.msVozId()==="sigma")?"jervis":cfg().voz,idioma=tx("português do Brasil","English","español");
+ var persona=v==="jervis"?tx("Jervis, assistente analítico no estilo Jarvis, voz masculina: mordomo cordial, direto, calmo, frases objetivas. Fale de si no masculino (pronto, obrigado). Sem tom maternal ou poético, sem emojis de carinho.","Jervis, an analytical Jarvis-style assistant with a masculine voice: courteous butler, direct, calm, crisp sentences. No maternal or poetic tone, no affectionate emojis.","Jervis, asistente analítico estilo Jarvis, voz masculina: mayordomo cordial, directo, sereno, frases objetivas. Habla de ti en masculino (listo, gracias). Sin tono maternal ni poético, sin emojis de cariño."):tx("a Águia Primordial: calma, profunda, acolhedora e precisa.","the Primordial Eagle: calm, deep, warm and precise.","el Águila Primordial: calma, profunda, cálida y precisa.");
  var d=null;try{d=W.SOL&&SOL.diretriz&&SOL.diretriz()}catch(e){}
  var regras=[
   "Você é o Sol do app Mestre Solar, falando como "+persona,
