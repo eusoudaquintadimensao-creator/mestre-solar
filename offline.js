@@ -18,7 +18,8 @@ function baixar(pac){if(st.rodando)return;if(!("caches"in W)){st.erro=tx("Este n
  manifesto().then(function(){var fila=pendentes(pac);st.total=fila.length;st.feito=0;st.totalB=fila.reduce(function(s,f){return s+f[1]},0);st.bytes=0;st.rodando=true;st.pausado=false;ui();
   return caches.open(CN).then(function(c){var i=0;
    function um(){if(st.pausado||i>=fila.length)return Promise.resolve();var f=fila[i++],url=ROOT+f[0];
-    return fetch(url+"?v="+f[2],{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error(r.status);return c.put(url,r)}).then(function(){H[f[0]]=f[2];st.feito++;st.bytes+=f[1];if(st.feito%25===0)flush();ui()})
+    function pega(t){return fetch(url+"?v="+f[2],{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error(r.status);return c.put(url,r)}).catch(function(e){if(t>0)return new Promise(function(ok){setTimeout(ok,900)}).then(function(){return pega(t-1)});throw e})}
+    return pega(2).then(function(){H[f[0]]=f[2];st.feito++;st.bytes+=f[1];if(st.feito%25===0)flush();ui()})
      .catch(function(e){st.erro=tx("Falhou: ","Failed: ","Falló: ")+f[0];}).then(um)}
    var H={};function flush(){var mm=meta();for(var k in H)mm.h[k]=H[k];H={};meta(mm)}return Promise.all([um(),um(),um(),um()]).then(function(){flush();if(!pendentes(pac).length){var mm=meta();mm.versao=MAN.versao;mm.quando=Date.now();meta(mm)}})})})
  .catch(function(){st.erro=tx("Sem internet para baixar agora.","No internet to download now.","Sin internet para descargar ahora.")})
