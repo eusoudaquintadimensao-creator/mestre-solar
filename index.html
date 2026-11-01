@@ -285,7 +285,7 @@ W.MSTrat={get:get,set:set,genero:genero,voc:voc,v:v,bem:bem,fix:fix,promptLine:p
     <option value="padrao">Padrão (gravações + voz do aparelho)</option>
   </select>
   <div class="linha" style="margin-top:8px"><button class="botao2" type="button" id="aj-voz-amostra">Ouvir amostra desta voz</button></div>
-  <p class="pequeno" id="aj-voz-nota">Águia Primordial é a voz do Portal. A voz Jervis está pausada para avaliação. Em textos sem gravação (inclui respostas da IA da internet), o app usa a voz do aparelho.</p>
+  <p class="pequeno" id="aj-voz-nota">Águia Primordial é a voz do Portal. Em textos sem gravação (inclui respostas da IA da internet), o app usa a voz do aparelho.</p>
   <h3 style="color:var(--ouro);font-size:15px;margin:16px 0 4px">🧠 IA Livre (opcional, grátis, roda no seu aparelho)</h3>
   <p class="pequeno">Ordem das respostas: 1) Base do Portal, 2) Wikipédia, 3) IA Livre. A IA é pequena e pode errar; por isso a base e a Wikipédia vêm primeiro. O download (~1 GB) acontece uma vez e fica guardado no navegador.</p>
   <div class="linha"><button class="botao" type="button" id="aj-ia">Ativar IA Livre (baixa ~1 GB uma vez)</button></div>
@@ -538,12 +538,12 @@ function msVozNeutraliza(t){
   t=String(t||"");
   var v=msVozId();
   if(v==="sigma"&&(typeof VOZ_JERVIS_ATIVA==="undefined"||VOZ_JERVIS_ATIVA))return t;
-  t=t.replace(/\bEu sou Jervis,\s*a voz do Mestre Solar\b/gi,"Eu sou a voz do Mestre Solar");
-  t=t.replace(/\bEu sou Jervis\b/gi,"Eu sou a voz do Mestre Solar");
-  t=t.replace(/\bI am Jervis,\s*the voice of Mestre Solar\b/gi,"I am the voice of Mestre Solar");
-  t=t.replace(/\bI am Jervis\b/gi,"I am the voice of Mestre Solar");
-  t=t.replace(/\bSoy Jervis,\s*la voz del Mestre Solar\b/gi,"Soy la voz del Mestre Solar");
-  t=t.replace(/\bSoy Jervis\b/gi,"Soy la voz del Mestre Solar");
+  t=t.replace(/\bEu sou Jervis,\s*a voz do Mestre Solar\b/gi,"Eu sou o Sol do Mestre Solar");
+  t=t.replace(/\bEu sou Jervis\b/gi,"Eu sou o Sol do Mestre Solar");
+  t=t.replace(/\bI am Jervis,\s*the voice of Mestre Solar\b/gi,"I am the Sun of Mestre Solar");
+  t=t.replace(/\bI am Jervis\b/gi,"I am the Sun of Mestre Solar");
+  t=t.replace(/\bSoy Jervis,\s*la voz de(?:l)? Mestre Solar\b/gi,"Soy el Sol de Mestre Solar");
+  t=t.replace(/\bSoy Jervis\b/gi,"Soy el Sol de Mestre Solar");
   t=t.replace(/\bJervis\s+sugerindo:\s*/gi,"");
   t=t.replace(/\bJervis\s+propondo:\s*/gi,"");
   t=t.replace(/(^|[.!?]\s*)Jervis:\s*/gi,"$1");
@@ -1135,6 +1135,7 @@ function __solPlayIntroThen(next){var modo=__solEntradaModo();if(modo==="off"||_
 function despertar(){quando(function(){ativo=true;marcaDia();
  function _seg(d){var c=cfg(),seq=[];
   if(LANG!=="pt"&&d){try{d=MSI.t(d)}catch(e){}}
+  try{if(typeof msVozNeutraliza==="function")d=msVozNeutraliza(d)}catch(e){}
   seq.push({q:"mestre",t:d});
   if(!c.viuSol){seq.push({q:"mestre",t:linha("intencoes.primeira_vez")||""});salvaCfg({viuSol:true})}
   if(c.guia!=="mestre")seq.push({q:"guia",t:linha("intencoes.apresenta")||""});
