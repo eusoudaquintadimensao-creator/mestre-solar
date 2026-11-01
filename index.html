@@ -280,7 +280,7 @@ W.MSTrat={get:get,set:set,genero:genero,voc:voc,v:v,bem:bem,fix:fix,promptLine:p
   <label class="pequeno" for="aj-voz">Voz</label>
   <select class="campo" id="aj-voz">
     <option value="aguia">Águia Primordial (voz do Portal)</option>
-    <!-- Jervis: option value="sigma" oculto enquanto VOZ_JERVIS_ATIVA=false -->
+    <option value="sigma">Jervis (opcional, tom grave)</option>
     <option value="remy">Remy — voz 6</option>
     <option value="padrao">Padrão (gravações + voz do aparelho)</option>
   </select>
@@ -554,6 +554,7 @@ function msVozNeutraliza(t){
   if(t)t=t.charAt(0).toUpperCase()+t.slice(1);
   return t;
 }
+try{window.msVozNeutraliza=msVozNeutraliza;window.msVozId=msVozId;window.msVozSet=function(){return msVozSet.apply(null,arguments)};window.VOZ_JERVIS_ATIVA=VOZ_JERVIS_ATIVA}catch(e){}
 function msVozTextoFala(t){t=String(t||"").replace(/\s*[—–-]?\s*https?:\/\/[^\s|]+/g,"");return msVozNeutraliza(t)}
 function msVozJaPerguntou(){try{return k(MS_VOZ_ASKED_KEY)==="1"}catch(e){return false}}
 function msVozMarcaPerguntou(){try{localStorage.setItem(MS_VOZ_ASKED_KEY,"1")}catch(e){try{/*k set*/}catch(x){}}}
