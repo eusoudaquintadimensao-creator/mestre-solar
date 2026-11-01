@@ -1,5 +1,5 @@
 /* Service worker do Mestre Solar: app offline + conteúdo guardado depois de usado. */
-var VERSAO = "ms-2026-10-31-2143-diluvio-aguia";
+var VERSAO = "ms-2026-10-31-2212-rede-portal-solar";
 var APP = ["./", "./index.html", "./manifest.json", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png", "./icons/apple-touch-icon-180.png"];
 self.addEventListener("install", function (e) {
   e.waitUntil(caches.open(VERSAO + "-app").then(function (c) { return c.addAll(APP); }).then(function () { return self.skipWaiting(); }));
@@ -39,6 +39,7 @@ function ehConteudo(u) { return u.pathname.indexOf("/conteudo/") !== -1; }
 self.addEventListener("fetch", function (e) {
   var r = e.request; if (r.method !== "GET") return;
   var u = new URL(r.url);
+  if (u.origin !== location.origin) return; /* sites externos (ex.: Rede de App Portal Solar) nunca passam pelo cache */
   if (r.mode === "navigate") {
     e.respondWith(fetch(r).then(function (res) { var cp = res.clone(); caches.open(VERSAO + "-app").then(function (c) { c.put("./index.html", cp); }); return res; })
       .catch(function () { return caches.match("./index.html"); }));
