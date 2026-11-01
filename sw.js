@@ -1,5 +1,7 @@
 /* Service worker do Mestre Solar: app offline + conteúdo guardado depois de usado. */
-var VERSAO = "ms-2026-11-01-0410-jervis-tom-grave";
+var VERSAO = "ms-2026-11-01-0520-usar-offline";
+var OFF = "offline-ms"; /* downloads do "Usar offline" (não apagado na troca de versão) */
+function doOffline(url) { return caches.open(OFF).then(function (c) { return c.match(url.split("#")[0], { ignoreSearch: true }); }).catch(function () { return null; }); }
 var APP = ["./", "./index.html", "./manifest.json", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png", "./icons/apple-touch-icon-180.png"];
 self.addEventListener("install", function (e) {
   e.waitUntil(caches.open(VERSAO + "-app").then(function (c) { return c.addAll(APP); }).then(function () { return self.skipWaiting(); }));
@@ -16,9 +18,11 @@ function audio(r) {
   return caches.open(VERSAO + "-conteudo").then(function (c) {
     return c.match(url).then(function (hit) {
       if (hit) return hit;
+      return doOffline(url).then(function (off) { if (off) return off;
       return fetch(url, { credentials: "same-origin" }).then(function (res) {
         if (res.status === 200) c.put(url, res.clone()).catch(function () {});
         return res;
+      });
       });
     }).then(function (res) {
       var rg = r.headers.get("range");
@@ -42,7 +46,7 @@ self.addEventListener("fetch", function (e) {
   if (u.origin !== location.origin) return; /* sites externos (ex.: Rede de App Portal Solar) nunca passam pelo cache */
   if (r.mode === "navigate") {
     e.respondWith(fetch(r).then(function (res) { var cp = res.clone(); caches.open(VERSAO + "-app").then(function (c) { c.put("./index.html", cp); }); return res; })
-      .catch(function () { return caches.match("./index.html"); }));
+      .catch(function () { return caches.match("./index.html").then(function (h) { return h || doOffline(new URL("./index.html", self.registration.scope).href); }); }));
     return;
   }
   if (ehConteudo(u) && /\.mp3$/i.test(u.pathname)) { e.respondWith(audio(r)); return; }
@@ -52,10 +56,11 @@ self.addEventListener("fetch", function (e) {
       return c.match(r).then(function (hit) {
         var rede = fetch(r).then(function (res) { if (res.status === 200) c.put(r, res.clone()).catch(function () {}); return res; });
         if (hit) { rede.catch(function () {}); return hit; }
-        return rede;
+        return rede.catch(function (err) { return doOffline(r.url).then(function (off) { if (off) return off; throw err; }); });
       });
     }));
     return;
   }
-  if (u.origin === location.origin) e.respondWith(caches.match(r).then(function (hit) { return hit || fetch(r); }));
+  if (u.pathname.slice(-12) === "offline.json") return; /* manifesto do offline sempre da rede */
+  if (u.origin === location.origin) e.respondWith(caches.match(r).then(function (hit) { return hit || fetch(r).catch(function (err) { return doOffline(r.url).then(function (off) { if (off) return off; throw err; }); }); }));
 });
