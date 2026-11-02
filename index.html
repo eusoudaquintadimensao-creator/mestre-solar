@@ -2,10 +2,62 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-NyZ+ND7SZcPbXvg6DWx66AMIYRanqXcct0khgoGPyoE=' 'sha256-biFZk/jnlEFPmtcyvnMcrmKeAzxQbixwlPZ1hk1J/Fw=' 'sha256-70OGYDxfQtsgR+QXZ7Epp2G5NVKDAhjob2u3i2D5c0o=' 'sha256-lbfCvhSnN2aWeRZs+0ib9Xby/uMp4RP0PXAAg1H+iTA=' 'sha256-DrwdttShICO2Xg10793PAcIrzl2EGUnvV50TreTUXTw=' 'sha256-UUJM51aITBL8IGyEEVZA/irsl2fO/QATKCL85QOFHRE=' 'sha256-N8CAttHA8estheqkyP0qPfmnQPDaaB5msDpsACWnnGM=' 'sha256-k9cd92eMihzE9mK5g5MCxBu0J/ZALjTyhI6NFQeEupE=' 'sha256-pZU6splTVO6yg1MVJvtPNF2NvFQwC077VoEhsRXA1SQ=' 'sha256-RfcQ+g/IkaJBy8MTg5+22jJLyCf7CBWtLpnPscVQccs=' 'sha256-ZxAqZPO43kb+mYTQxMGkkCl4NZU+Y1CYTu4HUac50Wc=' 'sha256-K4OE1s1mOynSuIFBFp0KZ15N1FtP7Pma/nJPY6rxflQ=' https://cdn.jsdelivr.net 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.wikimedia.org https://*.wikipedia.org; media-src 'self' blob: data: https://cdn.jsdelivr.net https://raw.githubusercontent.com; font-src 'self' data:; connect-src 'self' https://*.wikipedia.org https://api.wikimedia.org https://abacus.jasoncameron.dev https://cdn.jsdelivr.net https://raw.githubusercontent.com https://huggingface.co https://*.huggingface.co https://*.hf.co https://api.open-meteo.com https://geocoding-api.open-meteo.com https://api.gdeltproject.org https://text.pollinations.ai https://api.openai.com https://api.groq.com https://generativelanguage.googleapis.com http://localhost:* http://127.0.0.1:*; frame-src https://sand-lunar-green-quartz.grok.me; worker-src 'self' blob:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-QrvuFko8xvyiJObtOCxoJOVmmcRthVcOfV4lq8ejn2Y=' 'sha256-NyZ+ND7SZcPbXvg6DWx66AMIYRanqXcct0khgoGPyoE=' 'sha256-biFZk/jnlEFPmtcyvnMcrmKeAzxQbixwlPZ1hk1J/Fw=' 'sha256-70OGYDxfQtsgR+QXZ7Epp2G5NVKDAhjob2u3i2D5c0o=' 'sha256-lbfCvhSnN2aWeRZs+0ib9Xby/uMp4RP0PXAAg1H+iTA=' 'sha256-DrwdttShICO2Xg10793PAcIrzl2EGUnvV50TreTUXTw=' 'sha256-UUJM51aITBL8IGyEEVZA/irsl2fO/QATKCL85QOFHRE=' 'sha256-N8CAttHA8estheqkyP0qPfmnQPDaaB5msDpsACWnnGM=' 'sha256-k9cd92eMihzE9mK5g5MCxBu0J/ZALjTyhI6NFQeEupE=' 'sha256-pZU6splTVO6yg1MVJvtPNF2NvFQwC077VoEhsRXA1SQ=' 'sha256-RfcQ+g/IkaJBy8MTg5+22jJLyCf7CBWtLpnPscVQccs=' 'sha256-ZxAqZPO43kb+mYTQxMGkkCl4NZU+Y1CYTu4HUac50Wc=' 'sha256-K4OE1s1mOynSuIFBFp0KZ15N1FtP7Pma/nJPY6rxflQ=' https://cdn.jsdelivr.net 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.wikimedia.org https://*.wikipedia.org; media-src 'self' blob: data: https://cdn.jsdelivr.net https://raw.githubusercontent.com; font-src 'self' data:; connect-src 'self' https://*.wikipedia.org https://api.wikimedia.org https://abacus.jasoncameron.dev https://cdn.jsdelivr.net https://raw.githubusercontent.com https://huggingface.co https://*.huggingface.co https://*.hf.co https://api.open-meteo.com https://geocoding-api.open-meteo.com https://api.gdeltproject.org https://text.pollinations.ai https://api.openai.com https://api.groq.com https://generativelanguage.googleapis.com http://localhost:* http://127.0.0.1:*; frame-src https://sand-lunar-green-quartz.grok.me; worker-src 'self' blob:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Conhecimento Solar · Portal do Conhecimento</title>
+<script>/* Rede de segurança da abertura (tela escura): ?reset=1, dados salvos validados, aviso de erro e vigia da abertura. ES5 de propósito. */
+!function(){var W=window,D=document,L=null,T0=Date.now(),erros=[],card=null,ss=null;
+try{L=W.localStorage}catch(e){}try{ss=W.sessionStorage}catch(e){}
+function limpaApp(cheio){var ps=[];try{if(cheio&&L)L.clear()}catch(e){}
+ try{if(navigator.serviceWorker&&navigator.serviceWorker.getRegistrations)ps.push(navigator.serviceWorker.getRegistrations().then(function(rs){return Promise.all(rs.map(function(r){return r.unregister()}))}).catch(function(){}))}catch(e){}
+ try{if(W.caches)ps.push(caches.keys().then(function(ks){return Promise.all(ks.map(function(k){
+  if(k!=="offline-ms"||cheio)return caches.delete(k);
+  /* downloads do "Usar offline" ficam, menos as cópias do próprio app (podem estar velhas) */
+  return caches.open(k).then(function(c){return c.keys().then(function(rq){return Promise.all(rq.filter(function(r){return/\/(index\.html|offline\.js|manifest\.json|sw\.js|conteudo\/ms-[a-z-]+\.js)$/.test(r.url.split("?")[0])||/\/$/.test(r.url.split("?")[0])}).map(function(r){return c.delete(r)}))})})}))}).catch(function(){}))}catch(e){}
+ return Promise.all(ps)}
+function recarrega(){try{ss&&ss.setItem("ms-reset-em",String(Date.now()))}catch(e){}var q=location.search.replace(/([?&])(reset|v)=[^&]*&?/g,"$1").replace(/[?&]$/,"");location.replace(location.pathname+q+(q?"&":"?")+"v="+Date.now()+location.hash)}
+W.MSResgate={limpa:limpaApp,erros:erros};
+/* 1) link de recuperação: ?reset=1 (mantém os dados) ou ?reset=tudo (apaga tudo) */
+var m=/[?&]reset=([^&#]*)/.exec(location.search);
+if(m){var cheio=m[1]==="tudo";try{D.documentElement.style.background="#07050d"}catch(e){}
+ var fim=function(){recarrega()};W.__msResetando=1;try{W.stop()}catch(e){}limpaApp(cheio).then(fim,fim);setTimeout(fim,4000);return}
+/* 2) dados salvos: valida o formato; valor estragado vai para ms-bak-* e sai do caminho */
+var OBJ=["ms-sol-v1","jarvis-pessoa-v1","jarvis-tempo-real-v1","ms-ia-sol-v1","ms-aberturas-v1","ms-offline","jarvis-conhecimento-v2"],ARR=["ms-historico-v1","ms-favoritos-v1"];
+function confere(k,arr){var v;try{v=L.getItem(k)}catch(e){return}if(v==null)return;var ok=false;
+ try{var o=JSON.parse(v);ok=o===null?!arr:(arr?Object.prototype.toString.call(o)==="[object Array]":typeof o==="object"&&Object.prototype.toString.call(o)!=="[object Array]")}catch(e){ok=false}
+ if(!ok){try{L.setItem("ms-bak-"+k,v)}catch(e){}try{L.removeItem(k)}catch(e){}}}
+if(L){try{OBJ.forEach(function(k){confere(k,false)});ARR.forEach(function(k){confere(k,true)});
+ for(var i=L.length-1;i>=0;i--){var k=L.key(i);if(k&&/^ms-(x|indice)/.test(k)){try{var o=JSON.parse(L.getItem(k));if(o===null||typeof o!=="object")throw 0}catch(e){try{L.removeItem(k)}catch(e2){}}}}}catch(e){}}
+/* 3) erros na abertura e vigia */
+function pronto(){return!!(W.MestreSolar&&D.querySelector(".app"))}
+W.addEventListener("error",function(e){if(e&&e.message)erros.push(String(e.message).slice(0,160))},true);
+W.addEventListener("unhandledrejection",function(e){try{erros.push("promise: "+String(e.reason&&e.reason.message||e.reason).slice(0,160))}catch(x){}});
+function mostraCard(){if(card)return;var b=D.body||D.documentElement;card=D.createElement("div");card.setAttribute("role","alertdialog");
+ card.style.cssText="position:fixed;left:12px;right:12px;bottom:16px;z-index:2147483647;max-width:460px;margin:0 auto;background:#1b1324;color:#efe8d6;border:1px solid #f1c75b;border-radius:16px;padding:16px;font:16px/1.4 system-ui,sans-serif;box-shadow:0 8px 40px #000;text-align:center";
+ card.innerHTML='<p style="margin:0 0 6px;font-weight:700;color:#f1c75b">Algo travou ao abrir.</p><p style="margin:0 0 12px;font-size:14px">Toque para atualizar. Suas lições, favoritos e ajustes continuam salvos.</p>'+
+ '<button type="button" data-a="at" style="font:700 16px system-ui;padding:12px 18px;border-radius:999px;border:0;background:#f1c75b;color:#1a1206;min-height:44px">☀️ Atualizar o app</button> '+
+ '<button type="button" data-a="fe" style="font:15px system-ui;padding:11px 14px;border-radius:999px;border:1px solid #6b5a3a;background:none;color:#efe8d6;min-height:44px">Continuar</button>'+
+ '<p style="margin:12px 0 0"><button type="button" data-a="tudo" style="font:12px system-ui;background:none;border:0;color:#a99f86;text-decoration:underline">Apagar tudo e começar do zero</button></p>';
+ card.addEventListener("click",function(e){var a=e.target&&e.target.getAttribute&&e.target.getAttribute("data-a");if(!a)return;
+  if(a==="fe"){card.parentNode&&card.parentNode.removeChild(card);return}
+  if(a==="tudo"&&!confirm("Apagar histórico, favoritos, ajustes e downloads deste aparelho?"))return;
+  e.target.textContent="Atualizando…";var f=function(){recarrega()};limpaApp(a==="tudo").then(f,f);setTimeout(f,4000)});
+ b.appendChild(card)}
+function destrava(){/* tira camada que cobre a tela sem mostrar nada */try{var el=D.elementFromPoint((W.innerWidth||360)/2,(W.innerHeight||640)/2),n=0;
+ while(el&&el!==D.body&&n++<20){var s=getComputedStyle(el);if(s.position==="fixed"&&el.id!=="ceu"&&el.id!=="portal"&&el.offsetWidth>=W.innerWidth*.9&&el.offsetHeight>=W.innerHeight*.9&&!(el.innerText||"").replace(/\s/g,"")){el.hidden=true;el.style.display="none";break}el=el.parentElement}
+ var a=D.querySelector(".app");if(a){var sa=getComputedStyle(a);if(sa.display==="none"||sa.visibility==="hidden"||+sa.opacity<.1){a.style.display="flex";a.style.visibility="visible";a.style.opacity="1"}}
+ if(D.body&&+getComputedStyle(D.body).opacity<.1)D.body.style.opacity="1"}catch(e){}}
+var recem=false;try{recem=ss&&Date.now()-Number(ss.getItem("ms-reset-em")||0)<20000}catch(e){}
+function vigia(final){if(pronto()){destrava();return true}if(final||erros.length){if(!recem||final)mostraCard();return true}return false}
+setTimeout(function(){if(!vigia(false))setTimeout(function(){vigia(true)},4000)},4000);
+/* 4) versão nova do app: avisa para atualizar */
+try{var sw=navigator.serviceWorker;if(sw&&/^https?:/.test(location.protocol)){var tinha=!!sw.controller,avisou=false;
+ sw.addEventListener("controllerchange",function(){if(!tinha||avisou){tinha=true;return}avisou=true;var t=D.createElement("button");t.type="button";
+  t.style.cssText="position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:2147483646;padding:11px 18px;border-radius:999px;border:1px solid #f1c75b;background:#1b1324;color:#f1c75b;font:600 15px system-ui,sans-serif;box-shadow:0 6px 24px #000";
+  t.textContent="☀️ Versão nova do app. Toque para atualizar";t.addEventListener("click",function(){location.reload()});(D.body||D.documentElement).appendChild(t);setTimeout(function(){t.parentNode&&t.parentNode.removeChild(t)},20000)});
+ D.addEventListener("visibilitychange",function(){if(D.visibilityState==="visible"&&sw.getRegistration)sw.getRegistration().then(function(r){r&&r.update()}).catch(function(){})})}}catch(e){}
+}();</script>
 <meta name="description" content="Conhecimento Solar, o Portal do Conhecimento: mistérios, sabedoria e verdade, com voz.">
 <meta name="theme-color" content="#07050d">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -204,9 +256,9 @@ function promptLine(){var t=get(),x=voc(),g=genero(),l=lg();
 W.MSTrat={get:get,set:set,genero:genero,voc:voc,v:v,bem:bem,fix:fix,promptLine:promptLine,rotulos:function(){return ROT[lg()]},opcoes:["nome","senhor","senhora","senhor_nome","senhora_nome","amigo","irmao","buscador","neutro","personalizado"],perguntou:function(){try{return!!localStorage.getItem(KQ)||!!get().nome}catch(e){return true}},marca:function(){try{localStorage.setItem(KQ,"1")}catch(e){}}};
 }();
 </script>
-<script src="conteudo/ms-legenda.js"></script>
-<script src="conteudo/ms-podcast.js"></script>
-<script src="conteudo/ms-aberturas.js"></script>
+<script src="conteudo/ms-legenda.js" defer></script>
+<script src="conteudo/ms-podcast.js" defer></script>
+<script src="conteudo/ms-aberturas.js" defer></script>
 
 <canvas id="ceu" aria-hidden="true"></canvas>
 <div class="app">

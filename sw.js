@@ -1,10 +1,12 @@
 /* Service worker do Mestre Solar: app offline + conteúdo guardado depois de usado. */
-var VERSAO = "ms-2026-11-02-1640-podcast-ep03";
+var VERSAO = "ms-2026-11-02-1900-tela-escura";
 var OFF = "offline-ms"; /* downloads do "Usar offline" (não apagado na troca de versão) */
 function doOffline(url) { return caches.open(OFF).then(function (c) { return c.match(url.split("#")[0], { ignoreSearch: true }); }).catch(function () { return null; }); }
-var APP = ["./", "./index.html", "./manifest.json", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png", "./icons/apple-touch-icon-180.png"];
+var APP = ["./", "./index.html", "./manifest.json", "./offline.js", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png", "./icons/apple-touch-icon-180.png"];
 self.addEventListener("install", function (e) {
-  e.waitUntil(caches.open(VERSAO + "-app").then(function (c) { return c.addAll(APP); }).then(function () { return self.skipWaiting(); }));
+  e.waitUntil(caches.open(VERSAO + "-app").then(function (c) { return c.addAll(APP); })
+    .then(function () { return caches.open(VERSAO + "-conteudo").then(function (c) { return c.addAll(["./conteudo/ms-legenda.js", "./conteudo/ms-podcast.js", "./conteudo/ms-aberturas.js"]); }).catch(function () {}); })
+    .then(function () { return self.skipWaiting(); }));
 });
 self.addEventListener("activate", function (e) {
   e.waitUntil(caches.keys().then(function (ks) {
@@ -39,14 +41,27 @@ function audio(r) {
     });
   }).catch(function () { return fetch(r); });
 }
+function prazo(p, ms) { return new Promise(function (ok, falha) { var t = setTimeout(function () { falha(new Error("prazo")); }, ms); p.then(function (v) { clearTimeout(t); ok(v); }, function (er) { clearTimeout(t); falha(er); }); }); }
+/* cópia do app: primeiro a desta versão, depois a do "Usar offline" (que pode ser de uma versão antiga, então só como último recurso) */
+function copiaApp(url) {
+  var abs = new URL(url, self.registration.scope).href;
+  return caches.open(VERSAO + "-app").then(function (c) { return c.match(abs, { ignoreSearch: true }); })
+    .then(function (h) { return h || doOffline(abs); }).catch(function () { return null; });
+}
+self.addEventListener("message", function (e) {
+  if (e.data && e.data.tipo === "versao" && e.source) e.source.postMessage({ tipo: "versao", versao: VERSAO });
+});
 function ehConteudo(u) { return u.pathname.indexOf("/conteudo/") !== -1; }
 self.addEventListener("fetch", function (e) {
   var r = e.request; if (r.method !== "GET") return;
   var u = new URL(r.url);
   if (u.origin !== location.origin) return; /* sites externos (ex.: Rede de App Portal Solar) nunca passam pelo cache */
   if (r.mode === "navigate") {
-    e.respondWith(fetch(r).then(function (res) { var cp = res.clone(); caches.open(VERSAO + "-app").then(function (c) { c.put("./index.html", cp); }); return res; })
-      .catch(function () { return caches.match("./index.html").then(function (h) { return h || doOffline(new URL("./index.html", self.registration.scope).href); }); }));
+    /* página: rede primeiro, mas sem esperar para sempre (rede ruim = tela escura). Passou do prazo, usa a cópia desta versão. */
+    var rede = fetch(r).then(function (res) { if (res.ok) { var cp = res.clone(); caches.open(VERSAO + "-app").then(function (c) { return c.put("./index.html", cp); }).catch(function () {}); } return res; });
+    e.respondWith(prazo(rede, 4000).catch(function () {
+      return copiaApp("./index.html").then(function (h) { return h || rede; });
+    }));
     return;
   }
   if (ehConteudo(u) && /\.(mp3|mp4)$/i.test(u.pathname)) { e.respondWith(audio(r)); return; }
@@ -56,11 +71,18 @@ self.addEventListener("fetch", function (e) {
       return c.match(r).then(function (hit) {
         var rede = fetch(r).then(function (res) { if (res.status === 200) c.put(r, res.clone()).catch(function () {}); return res; });
         if (hit) { rede.catch(function () {}); return hit; }
-        return rede.catch(function (err) { return doOffline(r.url).then(function (off) { if (off) return off; throw err; }); });
+        return prazo(rede, 8000).catch(function (err) { return doOffline(r.url).then(function (off) { if (off) return off; return rede; }); });
       });
     }));
     return;
   }
   if (u.pathname.slice(-12) === "offline.json") return; /* manifesto do offline sempre da rede */
-  if (u.origin === location.origin) e.respondWith(caches.match(r).then(function (hit) { return hit || fetch(r).catch(function (err) { return doOffline(r.url).then(function (off) { if (off) return off; throw err; }); }); }));
+  /* resto do app (ícones, offline.js...): cópia desta versão; senão rede (e guarda); o "Usar offline" só se a rede falhar */
+  e.respondWith(caches.open(VERSAO + "-app").then(function (c) {
+    return c.match(r).then(function (hit) {
+      if (hit) return hit;
+      var rede = fetch(r).then(function (res) { if (res.status === 200 && /\.(js|json|png|webmanifest)$/.test(u.pathname)) c.put(r, res.clone()).catch(function () {}); return res; });
+      return prazo(rede, 8000).catch(function (err) { return doOffline(r.url).then(function (off) { if (off) return off; return rede; }); });
+    });
+  }));
 });
