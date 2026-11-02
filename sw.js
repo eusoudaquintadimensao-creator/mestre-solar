@@ -1,5 +1,5 @@
 /* Service worker do Mestre Solar: app offline + conteúdo guardado depois de usado. */
-var VERSAO = "ms-2026-11-01-2301-aguia-lote";
+var VERSAO = "ms-2026-11-02-0100-podcast-piloto";
 var OFF = "offline-ms"; /* downloads do "Usar offline" (não apagado na troca de versão) */
 function doOffline(url) { return caches.open(OFF).then(function (c) { return c.match(url.split("#")[0], { ignoreSearch: true }); }).catch(function () { return null; }); }
 var APP = ["./", "./index.html", "./manifest.json", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png", "./icons/apple-touch-icon-180.png"];
@@ -49,7 +49,7 @@ self.addEventListener("fetch", function (e) {
       .catch(function () { return caches.match("./index.html").then(function (h) { return h || doOffline(new URL("./index.html", self.registration.scope).href); }); }));
     return;
   }
-  if (ehConteudo(u) && /\.mp3$/i.test(u.pathname)) { e.respondWith(audio(r)); return; }
+  if (ehConteudo(u) && /\.(mp3|mp4)$/i.test(u.pathname)) { e.respondWith(audio(r)); return; }
   if (ehConteudo(u)) {
     /* conteúdo: responde do cache na hora e atualiza em segundo plano (stale-while-revalidate) */
     e.respondWith(caches.open(VERSAO + "-conteudo").then(function (c) {

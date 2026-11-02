@@ -13,6 +13,7 @@ for p in base:
     if os.path.isfile(p): G['base'].append([p,os.path.getsize(p),h(p)])
 import subprocess
 for p in sorted(subprocess.check_output(['git','ls-files','-co','--exclude-standard','conteudo'],text=True).split('\n')):
+        if '/podcast/' in p: continue  # vídeos do podcast: não entram no pacote offline
         if not p or not os.path.isfile(p): continue
         f=os.path.basename(p)
         if f.startswith('.') or f.endswith('.bak'): continue
