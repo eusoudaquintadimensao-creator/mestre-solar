@@ -1,8 +1,9 @@
 /* Podcast Sol Nascente: player com Baixar e Compartilhar (Web Share API com arquivo/link; senão WhatsApp e copiar link). */
 (function () {
   var EP = [{ n: 1, titulo: "O mapa do despertar", sub: "Despertar da Matrix: o mapa", arq: "conteudo/podcast/ep01.mp4", poster: "conteudo/podcast/ep01.jpg", nome: "Sol-Nascente-ep01-O-mapa-do-despertar.mp4" },
+    { n: 3, titulo: "Você não é a voz na sua cabeça", sub: "Eu observador e descentramento", arq: "conteudo/podcast/ep03.mp4", poster: "conteudo/podcast/ep03.jpg", nome: "Sol-Nascente-ep03-Voce-nao-e-a-voz-na-sua-cabeca.mp4", vertical: true },
     { n: 2, titulo: "A Matrix da religião", sub: "Matriz religiosa: culpa, medo, raiva e ganância", arq: "conteudo/podcast/ep02.mp4", poster: "conteudo/podcast/ep02.jpg", nome: "Sol-Nascente-ep02-A-Matrix-da-religiao.mp4", vertical: true }];
-  EP.reverse(); /* mais novo primeiro */
+  EP.sort(function (a, b) { return b.n - a.n; }); /* mais novo primeiro */
   function $(i) { return document.getElementById(i); }
   function link() { return new URL("./#podcast", location.href).href; }
   function msg(t, ep) { var s = ep && ep._msg; if (s) { s.textContent = t; clearTimeout(msg.t); msg.t = setTimeout(function () { s.textContent = ""; }, 4000); } }
