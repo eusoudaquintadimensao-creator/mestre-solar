@@ -1,5 +1,5 @@
 /* Service worker do Mestre Solar: app offline + conteúdo guardado depois de usado. */
-var VERSAO = "ms-2026-11-02-2000-ia-externa-bloq";
+var VERSAO = "ms-2026-11-02-1807-aguia-lote";
 var OFF = "offline-ms"; /* downloads do "Usar offline" (não apagado na troca de versão) */
 function doOffline(url) { return caches.open(OFF).then(function (c) { return c.match(url.split("#")[0], { ignoreSearch: true }); }).catch(function () { return null; }); }
 var APP = ["./", "./index.html", "./manifest.json", "./offline.js", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png", "./icons/apple-touch-icon-180.png"];
