@@ -1,4 +1,4 @@
-/*! MSLegenda — karaoke-style read-along for Mestre Solar (Jervis/Águia/TTS). */
+/*! MSLegenda — karaoke-style read-along for Conhecimento Solar (Jervis/Águia/TTS). */
 (function (W, D) {
   "use strict";
   var STATE = {

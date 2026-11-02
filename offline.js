@@ -1,4 +1,4 @@
-/* Mestre Solar — "Usar offline": baixa o app (textos e imagens, + áudios da Águia, + áudios do Jervis) para o Cache Storage.
+/* Conhecimento Solar — "Usar offline": baixa o app (textos e imagens, + áudios da Águia, + áudios do Jervis) para o Cache Storage.
    Cache próprio "offline-ms" (sobrevive às trocas de versão do SW). Só baixa o que mudou (hash por arquivo em offline.json).
    Pausar/retomar, tamanho antes, progresso, espaço usado, armazenamento persistente, remover. PT/EN/ES. */
 !function(){"use strict";
@@ -67,7 +67,7 @@ function ui(){if(!F)return;ui._l=LG();var m=meta(),tem=m.pacotes&&m.pacotes.leng
  var feitos=function(k){if(!P||!P[k])return 0;var h=m.h||{};return P[k].arquivos.filter(function(f){return h[f[0]]===f[2]}).length};
  var pct=st.total?Math.round(100*st.feito/st.total):(MAN&&!falta.length&&tem?100:0);
  var h='<h2><span>'+tx("📥 Usar offline","📥 Use offline","📥 Usar sin conexión")+'</span><button type="button" data-x aria-label="×">×</button></h2>'+
- '<p>'+tx("Baixe o Mestre Solar para abrir sem internet. Fica só neste aparelho.","Download Mestre Solar to open without internet. Stays on this device only.","Descarga Mestre Solar para abrirlo sin internet. Queda solo en este dispositivo.")+'</p>'+
+ '<p>'+tx("Baixe o Conhecimento Solar para abrir sem internet. Fica só neste aparelho.","Download Conhecimento Solar to open without internet. Stays on this device only.","Descarga Conhecimento Solar para abrirlo sin internet. Queda solo en este dispositivo.")+'</p>'+
  '<label class="op"><input type="checkbox" checked disabled><span><b>'+tx("Textos e imagens","Texts and images","Textos e imágenes")+'</b> · '+sz("base")+'<small>'+tx("Todas as lições, temas, tabelas e imagens","All lessons, themes, tables and images","Todas las lecciones, temas, tablas e imágenes")+' ('+feitos("base")+'/'+n("base")+')</small></span></label>'+
  '<label class="op"><input type="checkbox" id="op-ag"'+(ag?" checked":"")+'><span><b>+ '+tx("Áudios da Águia","Eagle audios","Audios del Águila")+'</b> · '+sz("aguia")+'<small>'+tx("A voz gravada das lições","The recorded voice of the lessons","La voz grabada de las lecciones")+' ('+feitos("aguia")+'/'+n("aguia")+')</small></span></label>'+
  (jervisOk()?'<label class="op"><input type="checkbox" id="op-jv"'+(jv?" checked":"")+'><span><b>+ '+tx("Áudios do Jervis","Jervis audios","Audios de Jervis")+'</b> · '+sz("jervis")+'<small>'+tx("Voz opcional, tom grave","Optional voice, deep tone","Voz opcional, tono grave")+' ('+feitos("jervis")+'/'+n("jervis")+')</small></span></label>':"")+

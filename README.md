@@ -1,4 +1,4 @@
-# ☀️ Mestre Solar · Portal do Conhecimento (app)
+# ☀️ Conhecimento Solar · Portal do Conhecimento (app)
 
 Um assistente com voz e a cara do JARVIS. Ele ensina mistérios, história e sabedoria seguindo a regra da **verdade calculada**: o que é comprovado, ele afirma; o que é crença, ele atribui a quem acredita; o que ninguém sabe, ele admite. Funciona no celular e no computador, pode ser instalado como app (PWA) e continua funcionando sem internet depois do primeiro uso.
 

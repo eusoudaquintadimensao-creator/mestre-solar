@@ -9,7 +9,7 @@
     prompt("Copie o link:", txt);
   }
   function compartilhar(ep) {
-    var texto = "Sol Nascente, o podcast do Mestre Solar. Episódio " + ep.n + ": " + ep.titulo;
+    var texto = "Sol Nascente, o podcast do Conhecimento Solar. Episódio " + ep.n + ": " + ep.titulo;
     var dados = { title: "Sol Nascente — ep. " + ep.n, text: texto, url: link() };
     if (!navigator.share) { $("pod-alt").hidden = false; return; }
     msg("Preparando o vídeo…");
