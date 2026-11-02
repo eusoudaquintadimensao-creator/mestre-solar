@@ -89,3 +89,13 @@ Depois abra http://localhost:8000. Abrir o arquivo direto (`file://`) também fu
 ## Privacidade
 
 Nada sai do aparelho além das buscas que você mesmo pede (Wikipédia, clima, notícias). Nome, cidade, caminho, favoritos e histórico ficam no `localStorage` do navegador. Para apagar tudo, use **⚙️ Ajustes → Limpar**.
+
+## IA externa (bloqueada até segunda ordem)
+
+Interruptor único em `index.html`: `var IA_EXTERNA_BLOQUEADA = true;` (logo antes de `msOllamaOk`).
+Com `true`, ficam bloqueados: "Conectar o Sol à internet" (Gemini/Groq/OpenAI/Pollinations) e o endereço de Ollama
+nos Ajustes. As configurações salvas no aparelho não são apagadas, só ignoradas. Continuam: Sol offline, Gemini Nano
+do Chrome (no aparelho) e IA Livre (WebLLM, no aparelho).
+Para liberar: mude para `false`, devolva ao `connect-src` do CSP `https://text.pollinations.ai https://api.openai.com
+https://api.groq.com https://generativelanguage.googleapis.com http://localhost:* http://127.0.0.1:*`, rode
+`python3 ferramentas/gerar-offline.py` e suba a `VERSAO` do `sw.js`.
