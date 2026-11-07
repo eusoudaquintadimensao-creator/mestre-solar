@@ -1,0 +1,31 @@
+# Contador anônimo do Conhecimento Solar (Cloudflare Worker + Durable Object com SQLite).
+# Guarda SÓ números agregados. Sem IP, sem user agent, sem cookie, sem nome. Logs/observabilidade desligados.
+name = "contador-conhecimento-solar"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+workers_dev = true
+preview_urls = false
+logpush = false
+
+[observability]
+enabled = false
+
+[observability.logs]
+enabled = false
+invocation_logs = false
+
+[vars]
+# Origens que podem usar o contador (CORS + WebSocket). Só o app publicado.
+ORIGENS = "https://eusoudaquintadimensao-creator.github.io"
+
+[[durable_objects.bindings]]
+name = "CONTADOR"
+class_name = "Contador"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Contador"]
+
+[triggers]
+# Backup diário dos totais: 03:00 UTC = 00:00 em Brasília
+crons = ["0 3 * * *"]

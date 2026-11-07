@@ -5,6 +5,9 @@ import re,hashlib,base64,os
 R=os.path.dirname(os.path.dirname(os.path.abspath(__file__)));P=os.path.join(R,'index.html')
 s=open(P,encoding='utf-8').read()
 hs=[]
+# Contador ao vivo: libera SÓ o host do Worker (https + wss), lido da constante CONTADOR_URL do index.html
+mc=re.search(r'var CONTADOR_URL="(https?)://([^"/]+)',s)
+cont=(" "+mc.group(1)+"://"+mc.group(2)+" "+("wss" if mc.group(1)=="https" else "ws")+"://"+mc.group(2)) if mc else ""
 for m in re.finditer(r'<script>(.*?)</script>',s,re.S):
     hs.append("'sha256-"+base64.b64encode(hashlib.sha256(m.group(1).encode('utf-8')).digest()).decode()+"'")
 pol="; ".join([
@@ -14,7 +17,7 @@ pol="; ".join([
  "img-src 'self' data: blob: https://*.wikimedia.org https://*.wikipedia.org",
  "media-src 'self' blob: data: https://cdn.jsdelivr.net https://raw.githubusercontent.com",
  "font-src 'self' data:",
- "connect-src 'self' https://*.wikipedia.org https://api.wikimedia.org https://abacus.jasoncameron.dev https://cdn.jsdelivr.net https://raw.githubusercontent.com https://huggingface.co https://*.huggingface.co https://*.hf.co https://api.open-meteo.com https://geocoding-api.open-meteo.com https://api.gdeltproject.org https://text.pollinations.ai https://api.openai.com https://api.groq.com https://generativelanguage.googleapis.com http://localhost:* http://127.0.0.1:*",
+ "connect-src 'self' https://*.wikipedia.org https://api.wikimedia.org https://abacus.jasoncameron.dev https://cdn.jsdelivr.net https://raw.githubusercontent.com https://huggingface.co https://*.huggingface.co https://*.hf.co https://api.open-meteo.com https://geocoding-api.open-meteo.com https://api.gdeltproject.org https://text.pollinations.ai https://api.openai.com https://api.groq.com https://generativelanguage.googleapis.com http://localhost:* http://127.0.0.1:*"+cont,
  "frame-src https://sand-lunar-green-quartz.grok.me",
  "worker-src 'self' blob:",
  "manifest-src 'self'",
