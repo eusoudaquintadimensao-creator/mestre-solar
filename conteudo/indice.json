@@ -23,6 +23,11 @@
       "n": 15
     },
     {
+      "nome": "Gênesis à prova: crença ou verdade?",
+      "arquivo": "genesis-a-prova.json",
+      "n": 14
+    },
+    {
       "nome": "Cocriação",
       "arquivo": "cocriacao.json",
       "n": 9
@@ -1826,6 +1831,266 @@
         "Hipótese"
       ],
       "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Gênesis à prova: crença ou verdade?",
+      "tema": "Gênesis à prova: o que já vimos e o que faltava",
+      "palavras": [
+        "genesis a prova",
+        "análise de genesis",
+        "analise de genesis",
+        "analise minuciosa da biblia",
+        "crenca ou verdade",
+        "o que bate e o que nao bate na biblia",
+        "genesis e verdade"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Gênesis à prova: crença ou verdade?",
+      "tema": "Por que um Deus que sabe tudo faz perguntas?",
+      "palavras": [
+        "deus pergunta",
+        "por que deus pergunta",
+        "deus sabe tudo e pergunta",
+        "onisciencia",
+        "onisciência",
+        "deus perguntou a adao",
+        "onde esta abel"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Tradição"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Gênesis à prova: crença ou verdade?",
+      "tema": "'Descerei e verei': o Deus que precisa conferir",
+      "palavras": [
+        "descerei e verei",
+        "deus desceu para ver",
+        "agora sei que temes a deus",
+        "deus testa abraao",
+        "deus precisa ver",
+        "torre de babel deus desceu",
+        "sodoma deus desceu"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Tradição"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Gênesis à prova: crença ou verdade?",
+      "tema": "Da serpente a Satanás: como a cobra virou o diabo",
+      "palavras": [
+        "serpente e satanas",
+        "a serpente era satanas",
+        "cobra era o diabo",
+        "satanas no eden",
+        "quem era a serpente",
+        "antiga serpente",
+        "satanas no antigo testamento",
+        "origem de satanas",
+        "origem do diabo"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Gênesis à prova: crença ou verdade?",
+      "tema": "Animais que falam: a serpente, a jumenta e as fábulas antigas",
+      "palavras": [
+        "cobra fala",
+        "cobra que fala",
+        "serpente que fala",
+        "por que a cobra fala",
+        "jumenta de balaao",
+        "jumenta que fala",
+        "animais que falam na biblia",
+        "serpente de bronze",
+        "neusta",
+        "fabula na biblia"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Gênesis à prova: crença ou verdade?",
+      "tema": "Caim e Abel: por que uma oferta valeu e a outra não?",
+      "palavras": [
+        "caim matou abel",
+        "por que deus rejeitou caim",
+        "oferta de caim",
+        "oferta de abel",
+        "sou eu guardador do meu irmao",
+        "guarda do meu irmao",
+        "primeiro assassinato",
+        "pastor e lavrador"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Gênesis à prova: crença ou verdade?",
+      "tema": "A marca de Caim: de proteção a desculpa para o racismo",
+      "palavras": [
+        "marca de caim",
+        "sinal de caim",
+        "maldicao de caim",
+        "maldição de caim",
+        "caim e os negros",
+        "pele negra maldicao",
+        "racismo na biblia",
+        "biblia e escravidao",
+        "mormons e negros"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Gênesis à prova: crença ou verdade?",
+      "tema": "Deus escreveu a Bíblia ou pessoas escreveram em nome de Deus?",
+      "palavras": [
+        "a biblia e palavra de deus",
+        "biblia foi inventada",
+        "homens escreveram a biblia",
+        "assim diz o senhor",
+        "falsos profetas",
+        "a biblia e criacao humana",
+        "biblia escrita por homens"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Gênesis à prova: crença ou verdade?",
+      "tema": "Por que um livro 'sagrado' parece verdade absoluta",
+      "palavras": [
+        "livro sagrado",
+        "por que a biblia parece verdade",
+        "verdade absoluta",
+        "valores sagrados",
+        "nao se questiona a biblia",
+        "duvidar da biblia",
+        "certeza religiosa",
+        "sagrado e intocavel"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Gênesis à prova: crença ou verdade?",
+      "tema": "Mente de esponja: por que a criança aceita o que ouve como verdade",
+      "palavras": [
+        "mente de esponja",
+        "crianca acredita em tudo",
+        "criança acredita",
+        "crenca na infancia",
+        "crença na infância",
+        "fe ensinada na infancia",
+        "sugestionavel",
+        "sugestionável",
+        "religiao na infancia"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Gênesis à prova: crença ou verdade?",
+      "tema": "Se você tivesse nascido em outro lugar: religião e berço",
+      "palavras": [
+        "se eu nascesse em outro pais",
+        "nascer em outro pais",
+        "religiao depende de onde nasce",
+        "religião e país",
+        "religiao herdada",
+        "religião herdada",
+        "religiao dos pais",
+        "por que sigo a religiao dos meus pais",
+        "pew religiao"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Gênesis à prova: crença ou verdade?",
+      "tema": "Ensinar a crer ou ensinar a pensar: a diferença",
+      "palavras": [
+        "doutrinacao",
+        "doutrinação",
+        "doutrinar",
+        "ensinar a pensar",
+        "educar ou doutrinar",
+        "liberdade religiosa da crianca",
+        "direitos da crianca religiao",
+        "como ensinar fe sem medo"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Gênesis à prova: crença ou verdade?",
+      "tema": "O que bate e o que não bate: Gênesis à prova (tabela)",
+      "palavras": [
+        "tabela genesis a prova",
+        "soma genesis",
+        "o que bate e o que nao bate",
+        "verdadeiro ou falso genesis",
+        "placar genesis",
+        "soma cientifica genesis",
+        "o que e mito na biblia"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Gênesis à prova: crença ou verdade?",
+      "tema": "Opinião do Mestre Solar: veredito honesto sobre Gênesis e a crença",
+      "palavras": [
+        "veredito genesis",
+        "genesis e verdade ou mito",
+        "opiniao sobre genesis",
+        "genesis e mito",
+        "a biblia foi deus quem fez",
+        "crenca colocada na mente"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "genesis-a-prova.json"
     },
     {
       "grupo": "Cocriação",
@@ -6097,6 +6362,22 @@
     },
     {
       "gatilhos": [
+        "gênesis à prova: crença ou verdade?",
+        "temas de gênesis à prova: crença ou verdade?",
+        "genesis a prova",
+        "gênesis à prova",
+        "genesis put to the test",
+        "genesis a prueba",
+        "crenca ou verdade",
+        "crença ou verdade",
+        "belief or truth",
+        "creencia o verdad",
+        "analise de genesis"
+      ],
+      "grupo": "Gênesis à prova: crença ou verdade?"
+    },
+    {
+      "gatilhos": [
         "cocriação",
         "temas de cocriação"
       ],
@@ -6217,7 +6498,8 @@
     "Metacognição: pensar sobre o pensar": "Metacognição é a arte de observar a própria mente trabalhando: o que você sabe, o que acha que sabe, e como decide. Aqui estão os estudos mais sólidos, as críticas honestas e práticas avançadas, cada coisa com o seu selo. Despertar começa quando a mente aprende a se ver.",
     "Trindade, inferno e o medo": "Aqui se separa o que é história documentada, o que é mito, o que é fé e o que é medo usado para controlar. A Trindade e o inferno são crenças sinceras de milhões de pessoas; o Portal não ataca a fé de ninguém, mostra a história e quem usa o medo como coleira.",
     "Adão e Eva: a história e a realidade": "Aqui Gênesis 1–5 é lido versículo por versículo e conferido com a ciência, sem zombaria. Cada afirmação traz o versículo e a fonte, e no fim há a tabela do que bate e do que não bate.",
-    "Quem criou o Deus da Bíblia? A mente por trás do texto": "Aqui a pergunta é quem escreveu a imagem de Deus que aparece na Bíblia, e com que mentalidade. Seguimos a pesquisa histórica, a arqueologia e a psicologia, com os versículos por inteiro e a fonte em cada afirmação, sem zombar de quem crê."
+    "Quem criou o Deus da Bíblia? A mente por trás do texto": "Aqui a pergunta é quem escreveu a imagem de Deus que aparece na Bíblia, e com que mentalidade. Seguimos a pesquisa histórica, a arqueologia e a psicologia, com os versículos por inteiro e a fonte em cada afirmação, sem zombar de quem crê.",
+    "Gênesis à prova: crença ou verdade?": "Aqui Gênesis é examinado passo a passo: o que o texto diz, o que a ciência e a história mostram, o que é mito e o que continua tendo valor. E também por que a criança aceita a crença da família como verdade absoluta. Versículos por inteiro, fonte em cada afirmação, respeito a quem crê."
   },
   "audio": {
     "Bom dia. Bem-vindo ao Portal do Conhecimento. Mestre Solar na escuta. O que você busca?": "a78ca52b7d1c.mp3",

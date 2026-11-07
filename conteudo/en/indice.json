@@ -23,6 +23,11 @@
       "n": 15
     },
     {
+      "nome": "Genesis put to the test: belief or truth?",
+      "arquivo": "genesis-a-prova.json",
+      "n": 14
+    },
+    {
       "nome": "Cocriação",
       "arquivo": "cocriacao.json",
       "n": 9
@@ -2066,6 +2071,253 @@
         "Hipótese"
       ],
       "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Genesis put to the test: belief or truth?",
+      "tema": "Genesis put to the test: what we've seen and what was missing",
+      "palavras": [
+        "genesis put to the test",
+        "genesis analysis",
+        "detailed bible analysis",
+        "belief or truth",
+        "what matches in the bible"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Genesis put to the test: belief or truth?",
+      "tema": "Why does an all-knowing God ask questions?",
+      "palavras": [
+        "god asks questions",
+        "why does god ask",
+        "where are you adam",
+        "god knows everything but asks",
+        "omniscience",
+        "where is abel"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Tradição"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Genesis put to the test: belief or truth?",
+      "tema": "'I will go down and see': the God who has to check",
+      "palavras": [
+        "i will go down and see",
+        "god came down to see",
+        "now i know that you fear god",
+        "god tests abraham",
+        "tower of babel god came down",
+        "sodom god came down"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Tradição"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Genesis put to the test: belief or truth?",
+      "tema": "From serpent to Satan: how the snake became the devil",
+      "palavras": [
+        "serpent and satan",
+        "was the serpent satan",
+        "snake was the devil",
+        "satan in eden",
+        "who was the serpent",
+        "ancient serpent",
+        "satan in the old testament",
+        "origin of satan",
+        "origin of the devil"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Genesis put to the test: belief or truth?",
+      "tema": "Talking animals: the serpent, the donkey and ancient fables",
+      "palavras": [
+        "snake that talks",
+        "talking serpent",
+        "why does the snake talk",
+        "balaam's donkey",
+        "talking donkey",
+        "talking animals in the bible",
+        "bronze serpent",
+        "nehushtan",
+        "fable in the bible"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Genesis put to the test: belief or truth?",
+      "tema": "Cain and Abel: why was one offering accepted and not the other?",
+      "palavras": [
+        "cain killed abel",
+        "why did god reject cain",
+        "cain's offering",
+        "abel's offering",
+        "am i my brother's keeper",
+        "first murder",
+        "shepherd and farmer"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Genesis put to the test: belief or truth?",
+      "tema": "The mark of Cain: from protection to an excuse for racism",
+      "palavras": [
+        "mark of cain",
+        "sign of cain",
+        "curse of cain",
+        "cain and black people",
+        "black skin curse",
+        "racism in the bible",
+        "bible and slavery",
+        "mormons and black people"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Genesis put to the test: belief or truth?",
+      "tema": "Did God write the Bible, or did people write in God's name?",
+      "palavras": [
+        "did god write the bible",
+        "bible written by god",
+        "is the bible the word of god",
+        "was the bible invented",
+        "men wrote the bible",
+        "thus says the lord",
+        "false prophets",
+        "bible is human creation"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Genesis put to the test: belief or truth?",
+      "tema": "Why a 'sacred' book feels like absolute truth",
+      "palavras": [
+        "sacred book",
+        "why the bible feels true",
+        "absolute truth",
+        "sacred values",
+        "you can't question the bible",
+        "doubting the bible",
+        "religious certainty"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Genesis put to the test: belief or truth?",
+      "tema": "Sponge mind: why children accept what they hear as truth",
+      "palavras": [
+        "sponge mind",
+        "children believe everything",
+        "childhood belief",
+        "faith taught in childhood",
+        "suggestible",
+        "religion in childhood"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Genesis put to the test: belief or truth?",
+      "tema": "If you had been born somewhere else: religion and birthplace",
+      "palavras": [
+        "if i was born in another country",
+        "born in another country",
+        "religion depends on where you are born",
+        "religion and country",
+        "inherited religion",
+        "parents' religion",
+        "why do i follow my parents religion",
+        "pew religion"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Genesis put to the test: belief or truth?",
+      "tema": "Teaching to believe or teaching to think: the difference",
+      "palavras": [
+        "indoctrination",
+        "indoctrinate",
+        "teaching to think",
+        "educate or indoctrinate",
+        "child's religious freedom",
+        "children's rights religion",
+        "teaching faith without fear"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Genesis put to the test: belief or truth?",
+      "tema": "What matches and what doesn't: Genesis put to the test (table)",
+      "palavras": [
+        "genesis put to the test table",
+        "genesis scorecard",
+        "what matches and what doesn't",
+        "genesis true or false",
+        "scientific sum genesis",
+        "what is myth in the bible"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Genesis put to the test: belief or truth?",
+      "tema": "Mestre Solar's opinion: honest verdict on Genesis and belief",
+      "palavras": [
+        "genesis verdict",
+        "is genesis true or myth",
+        "opinion on genesis",
+        "genesis is myth",
+        "did god make the bible",
+        "belief put in the mind"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "genesis-a-prova.json"
     },
     {
       "grupo": "Cocriação",
@@ -7587,6 +7839,22 @@
     },
     {
       "gatilhos": [
+        "genesis put to the test: belief or truth?",
+        "temas de genesis put to the test: belief or truth?",
+        "genesis a prova",
+        "gênesis à prova",
+        "genesis put to the test",
+        "genesis a prueba",
+        "crenca ou verdade",
+        "crença ou verdade",
+        "belief or truth",
+        "creencia o verdad",
+        "analise de genesis"
+      ],
+      "grupo": "Genesis put to the test: belief or truth?"
+    },
+    {
+      "gatilhos": [
         "cocriação",
         "temas de cocriação"
       ],
@@ -7707,7 +7975,8 @@
     "Metacognição: pensar sobre o pensar": "Metacognition is the art of observing your own mind at work: what you know, what you think you know, and how you decide. Here are the most solid studies, the honest reviews and advanced practices, each with its own stamp. Awakening begins when the mind learns to see itself.",
     "Trindade, inferno e o medo": "Here we separate what is documented history, what is myth, what is faith and what is fear used to control. The Trinity and hell are sincere beliefs of millions of people; the Portal does not attack anyone's faith, it shows the history and who uses fear as a leash.",
     "Adam and Eve: the story and reality": "Here Genesis 1–5 is read verse by verse and checked against science, without mockery. Every claim carries its verse and source, and at the end there's a table of what matches and what doesn't.",
-    "Who created the God of the Bible? The minds behind the text": "Here the question is who wrote the image of God found in the Bible, and with what mindset. We follow historical research, archaeology and psychology, with the verses in full and a source for every claim, without mocking believers."
+    "Who created the God of the Bible? The minds behind the text": "Here the question is who wrote the image of God found in the Bible, and with what mindset. We follow historical research, archaeology and psychology, with the verses in full and a source for every claim, without mocking believers.",
+    "Genesis put to the test: belief or truth?": "Here Genesis is examined step by step: what the text says, what science and history show, what is myth and what still has value. And also why children accept their family's belief as absolute truth. Full verses, a source for every claim, respect for believers."
   },
   "audio": {
     "Good morning. Welcome to the Portal of Knowledge. Mestre Solar is listening. What are you seeking?": "4b3495d49168.mp3",

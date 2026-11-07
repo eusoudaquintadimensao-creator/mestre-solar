@@ -23,6 +23,11 @@
       "n": 15
     },
     {
+      "nome": "Génesis a prueba: ¿creencia o verdad?",
+      "arquivo": "genesis-a-prova.json",
+      "n": 14
+    },
+    {
       "nome": "Cocriação",
       "arquivo": "cocriacao.json",
       "n": 9
@@ -2067,6 +2072,251 @@
         "Hipótese"
       ],
       "_arq": "quem-criou-o-deus-da-biblia.json"
+    },
+    {
+      "grupo": "Génesis a prueba: ¿creencia o verdad?",
+      "tema": "Génesis a prueba: lo que ya vimos y lo que faltaba",
+      "palavras": [
+        "genesis a prueba",
+        "analisis de genesis",
+        "analisis minucioso de la biblia",
+        "creencia o verdad",
+        "lo que coincide en la biblia"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Génesis a prueba: ¿creencia o verdad?",
+      "tema": "¿Por qué un Dios que todo lo sabe hace preguntas?",
+      "palavras": [
+        "dios pregunta",
+        "por que dios pregunta",
+        "dios lo sabe todo y pregunta",
+        "omnisciencia",
+        "donde esta abel"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Tradição"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Génesis a prueba: ¿creencia o verdad?",
+      "tema": "'Descenderé y veré': el Dios que necesita comprobar",
+      "palavras": [
+        "descendere y vere",
+        "dios descendio a ver",
+        "ya conozco que temes a dios",
+        "dios prueba a abraham",
+        "torre de babel dios descendio",
+        "sodoma dios descendio"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Tradição"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Génesis a prueba: ¿creencia o verdad?",
+      "tema": "De la serpiente a Satanás: cómo la culebra se volvió el diablo",
+      "palavras": [
+        "serpiente y satanas",
+        "la serpiente era satanas",
+        "la culebra era el diablo",
+        "satanas en el eden",
+        "quien era la serpiente",
+        "serpiente antigua",
+        "satanas en el antiguo testamento",
+        "origen de satanas",
+        "origen del diablo"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Génesis a prueba: ¿creencia o verdad?",
+      "tema": "Animales que hablan: la serpiente, la burra y las fábulas antiguas",
+      "palavras": [
+        "culebra que habla",
+        "por que habla la serpiente",
+        "burra de balaam",
+        "burra que habla",
+        "animales que hablan en la biblia",
+        "serpiente de bronce",
+        "nehustan",
+        "fabula en la biblia"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Génesis a prueba: ¿creencia o verdad?",
+      "tema": "Caín y Abel: ¿por qué una ofrenda valió y la otra no?",
+      "palavras": [
+        "cain mato a abel",
+        "por que dios rechazo a cain",
+        "ofrenda de cain",
+        "ofrenda de abel",
+        "soy yo guarda de mi hermano",
+        "primer asesinato",
+        "pastor y labrador"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Génesis a prueba: ¿creencia o verdad?",
+      "tema": "La marca de Caín: de protección a excusa para el racismo",
+      "palavras": [
+        "marca de cain",
+        "senal de cain",
+        "maldicion de cain",
+        "cain y los negros",
+        "piel negra maldicion",
+        "racismo en la biblia",
+        "biblia y esclavitud",
+        "mormones y negros"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Génesis a prueba: ¿creencia o verdad?",
+      "tema": "¿Dios escribió la Biblia o personas escribieron en nombre de Dios?",
+      "palavras": [
+        "la biblia la escribio dios",
+        "la biblia es palabra de dios",
+        "la biblia fue inventada",
+        "hombres escribieron la biblia",
+        "asi dice el senor",
+        "falsos profetas",
+        "la biblia es creacion humana"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Génesis a prueba: ¿creencia o verdad?",
+      "tema": "Por qué un libro 'sagrado' parece verdad absoluta",
+      "palavras": [
+        "libro sagrado",
+        "por que la biblia parece verdad",
+        "verdad absoluta",
+        "valores sagrados",
+        "no se cuestiona la biblia",
+        "dudar de la biblia",
+        "certeza religiosa"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Génesis a prueba: ¿creencia o verdad?",
+      "tema": "Mente de esponja: por qué el niño acepta lo que oye como verdad",
+      "palavras": [
+        "mente de esponja",
+        "el nino cree todo",
+        "creencia en la infancia",
+        "fe ensenada en la infancia",
+        "sugestionable",
+        "adoctrinamiento infantil",
+        "religion en la infancia"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Génesis a prueba: ¿creencia o verdad?",
+      "tema": "Si hubieras nacido en otro lugar: religión y cuna",
+      "palavras": [
+        "si naciera en otro pais",
+        "nacer en otro pais",
+        "la religion depende de donde naces",
+        "religion y pais",
+        "religion heredada",
+        "religion de los padres",
+        "por que sigo la religion de mis padres",
+        "pew religion"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Génesis a prueba: ¿creencia o verdad?",
+      "tema": "Enseñar a creer o enseñar a pensar: la diferencia",
+      "palavras": [
+        "adoctrinamiento",
+        "adoctrinar",
+        "ensenar a pensar",
+        "educar o adoctrinar",
+        "libertad religiosa del nino",
+        "derechos del nino religion",
+        "como ensenar la fe sin miedo"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Génesis a prueba: ¿creencia o verdad?",
+      "tema": "Lo que coincide y lo que no: Génesis a prueba (tabla)",
+      "palavras": [
+        "tabla genesis a prueba",
+        "marcador genesis",
+        "lo que coincide y lo que no",
+        "genesis verdadero o falso",
+        "suma cientifica genesis",
+        "que es mito en la biblia"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Mito"
+      ],
+      "_arq": "genesis-a-prova.json"
+    },
+    {
+      "grupo": "Génesis a prueba: ¿creencia o verdad?",
+      "tema": "Opinión del Mestre Solar: veredicto honesto sobre el Génesis y la creencia",
+      "palavras": [
+        "veredicto genesis",
+        "el genesis es verdad o mito",
+        "opinion sobre el genesis",
+        "el genesis es mito",
+        "la biblia la hizo dios",
+        "creencia puesta en la mente"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "genesis-a-prova.json"
     },
     {
       "grupo": "Cocriação",
@@ -7607,6 +7857,22 @@
     },
     {
       "gatilhos": [
+        "génesis a prueba: ¿creencia o verdad?",
+        "temas de génesis a prueba: ¿creencia o verdad?",
+        "genesis a prova",
+        "gênesis à prova",
+        "genesis put to the test",
+        "genesis a prueba",
+        "crenca ou verdade",
+        "crença ou verdade",
+        "belief or truth",
+        "creencia o verdad",
+        "analise de genesis"
+      ],
+      "grupo": "Génesis a prueba: ¿creencia o verdad?"
+    },
+    {
+      "gatilhos": [
         "cocriação",
         "temas de cocriação"
       ],
@@ -7727,7 +7993,8 @@
     "Metacognição: pensar sobre o pensar": "La metacognición es el arte de observar la propia mente trabajando: lo que sabes, lo que crees que sabes y cómo decides. Aquí están los estudios más sólidos, las críticas honestas y las prácticas avanzadas, cada cosa con su sello. El despertar comienza cuando la mente aprende a verse a sí misma.",
     "Trindade, inferno e o medo": "Aquí se separa lo que es historia documentada, lo que es mito, lo que es fe y lo que es miedo usado para controlar. La Trinidad y el infierno son creencias sinceras de millones de personas; el Portal no ataca la fe de nadie, muestra la historia y quién usa el miedo como correa.",
     "Adán y Eva: la historia y la realidad": "Aquí Génesis 1–5 se lee versículo por versículo y se compara con la ciencia, sin burla. Cada afirmación trae su versículo y su fuente, y al final hay una tabla de lo que coincide y lo que no.",
-    "¿Quién creó al Dios de la Biblia? Las mentes detrás del texto": "Aquí la pregunta es quién escribió la imagen de Dios que aparece en la Biblia, y con qué mentalidad. Seguimos la investigación histórica, la arqueología y la psicología, con los versículos completos y la fuente en cada afirmación, sin burlarnos de quien cree."
+    "¿Quién creó al Dios de la Biblia? Las mentes detrás del texto": "Aquí la pregunta es quién escribió la imagen de Dios que aparece en la Biblia, y con qué mentalidad. Seguimos la investigación histórica, la arqueología y la psicología, con los versículos completos y la fuente en cada afirmación, sin burlarnos de quien cree.",
+    "Génesis a prueba: ¿creencia o verdad?": "Aquí se examina el Génesis paso a paso: lo que dice el texto, lo que muestran la ciencia y la historia, lo que es mito y lo que sigue teniendo valor. Y también por qué el niño acepta la creencia de su familia como verdad absoluta. Versículos completos, fuente en cada afirmación, respeto a quien cree."
   },
   "audio": {
     "Buenos días. Bienvenido al Portal del Conocimiento. Mestre Solar a la escucha. ¿Qué buscas?": "9762abb766d3.mp3",
