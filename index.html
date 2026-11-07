@@ -2198,5 +2198,63 @@ function aplica(){var o=D.getElementById("aj-ollama");if(o&&!o.disabled){o.disab
   ["sol-net","sol-prov","sol-key","sol-base","sol-model","sol-apaga-key"].forEach(function(id){var e=D.getElementById(id);if(e){e.disabled=true;e.title=msIAExtNota()}})}
  else if(n){n.checked=false}}
 aplica();try{new MutationObserver(aplica).observe(D.body,{childList:true,subtree:true})}catch(e){}})();</script>
+<style id="ms-responsivo">
+/* ===== Adaptação celular x computador (só CSS: muda ao vivo ao girar, redimensionar ou trocar mouse/toque) ===== */
+/* Toque: alvos grandes */
+@media (pointer:coarse){
+ .idiomas button{min-width:36px;min-height:36px}
+ .voz-chip{min-height:38px}
+ .ms-cont .mc-est{min-height:38px}
+ .folha h2 button,.folha [data-fecha]{min-width:44px;min-height:44px}
+ .vp-play{min-width:40px;min-height:40px}
+ .off-chip{min-height:38px}
+ .topo .topo-bts .icone{width:40px;height:40px}
+ .acoes button{min-width:40px;min-height:40px;font-size:17px}
+ button.selo{min-height:32px;display:inline-flex;align-items:center;padding-top:4px;padding-bottom:4px}
+}
+/* Bordas seguras (notch) nas folhas */
+.folha>div{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+/* Celular estreito: barra Pausar/Próxima/Parar cabe na largura */
+@media (max-width:420px){
+ .leitura{gap:6px;padding:4px 8px 2px}
+ .leitura button,.leitura .proxima{min-width:0;flex:1 1 0;padding:0 8px;font-size:15px;gap:5px;justify-content:center}
+}
+/* Rede de App (jogos, mapa/GPS): tela cheia no celular e no celular deitado */
+@media (max-width:700px),(orientation:landscape) and (max-height:560px){
+ #f-rede{align-items:stretch}
+ #f-rede>div{height:100vh;height:100dvh;max-height:none;max-width:none;width:100%;border-radius:0;padding-top:max(8px,env(safe-area-inset-top,0px));padding-bottom:max(8px,env(safe-area-inset-bottom,0px))}
+ #f-rede h2{margin-bottom:6px}
+ #f-rede .rede-moldura{margin:4px 0;min-height:0}
+ #f-rede #rede-desc{display:none}
+}
+/* Computador e tablet largo: folhas viram janelas no centro */
+@media (min-width:900px),(min-width:700px) and (pointer:fine){
+ .folha{align-items:center;padding:24px}
+ .folha>div{border-radius:20px;max-height:min(88vh,920px)}
+ #f-rede>div{width:min(1400px,96vw);max-width:none;height:min(90vh,1000px)}
+}
+/* Duas colunas: celular deitado (baixo) e computador largo. Esquerda: Sol + contador. Direita: conversa e entrada. */
+@media (orientation:landscape) and (max-height:560px),(min-width:1100px) and (min-height:640px){
+ .app{display:grid;grid-template-columns:minmax(240px,36%) minmax(0,1fr);grid-template-rows:auto auto minmax(0,1fr) auto auto auto auto;
+  grid-template-areas:"topo topo" "palco conv" "cont conv" "cont nota" "cont leit" "cont form" "abas abas";column-gap:12px;
+  padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+ .app>.topo{grid-area:topo}.app>.palco{grid-area:palco;align-self:end}.app>#ms-cont{grid-area:cont;align-self:start}
+ .app>.conversa{grid-area:conv;min-height:0}.app>.nota{grid-area:nota}.app>.ouvir-info{grid-area:nota}.app>.leitura{grid-area:leit}.app>.entrada{grid-area:form}.app>.abas{grid-area:abas}
+}
+@media (orientation:landscape) and (max-height:560px){
+ .app .palco .sol,body.compacto .app .palco .sol{--sol:min(24vh,110px);width:var(--sol);height:var(--sol)}
+ .topo{padding-top:max(4px,env(safe-area-inset-top,0px))}
+ .marca h1{font-size:15px}.marca p{display:none}
+ .ms-cont .mc-i b{font-size:14px}
+ .abas{padding-top:2px;padding-bottom:max(4px,env(safe-area-inset-bottom,0px))}.aba{min-height:42px;padding:3px 9px}
+ .leitura button,.leitura .proxima{min-height:40px}
+}
+@media (min-width:1100px) and (min-height:640px){
+ .app{max-width:1320px}
+ .app .palco .sol,body.compacto .app .palco .sol{--sol:min(30vh,270px);width:var(--sol);height:var(--sol)}
+ .app>.palco{padding-top:28px}
+ .app>.abas{justify-content:center}
+}
+</style>
 </body>
 </html>
