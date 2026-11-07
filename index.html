@@ -206,6 +206,13 @@ body.sol-potencia .sol-ondas{opacity:calc(0.4 + var(--sol-p,0)*0.6)}
 }
 
 </style>
+<style id="fix-voz-chip">
+/* Botão da voz (Águia/Jervis/Remy): no fluxo, logo abaixo do Sol, em qualquer tamanho do Sol (inclusive body.compacto). Nunca cobre o contador. */
+.palco{flex-direction:column;align-items:center}
+.palco .voz-chip{position:relative;left:auto;bottom:auto;transform:none;margin:6px auto 0;max-width:calc(100% - 24px);flex:0 0 auto}
+.palco .voz-chip #voz-chip-txt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ms-cont{margin-top:6px!important}
+</style>
 <style id="fix-topo-celular">
 /* Celular: título numa linha e botões (offline, idiomas, instalar, som, ajustes) numa segunda linha, sem passar da borda */
 @media (max-width:560px){
