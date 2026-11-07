@@ -2255,6 +2255,14 @@ aplica();try{new MutationObserver(aplica).observe(D.body,{childList:true,subtree
  .app>.palco{padding-top:28px}
  .app>.abas{justify-content:center}
 }
+/* Celular deitado: a Rede (jogos, mapa/GPS) fica em tela cheia mesmo em telas largas; "Abrir em nova aba" sobe para a linha do título */
+@media (orientation:landscape) and (max-height:560px){
+ body #f-rede{align-items:stretch;padding:0}
+ body #f-rede>div{position:relative;width:100%;max-width:none;height:100vh;height:100dvh;max-height:none;border-radius:0;padding-top:max(6px,env(safe-area-inset-top,0px));padding-bottom:max(6px,env(safe-area-inset-bottom,0px))}
+ #f-rede h2{margin-bottom:4px;font-size:16px}
+ #f-rede .linha{position:absolute;top:max(6px,env(safe-area-inset-top,0px));right:max(70px,calc(env(safe-area-inset-right,0px) + 70px));margin:0}
+ #f-rede .rede-abrir{min-height:40px;padding:0 12px;font-size:13px}
+}
 </style>
 </body>
 </html>
