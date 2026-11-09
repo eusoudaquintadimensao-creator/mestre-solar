@@ -2,6 +2,7 @@
 (function () {
   var EP = [{ n: 1, titulo: "O mapa do despertar", sub: "Despertar da Matrix: o mapa", arq: "conteudo/podcast/ep01.mp4", poster: "conteudo/podcast/ep01.jpg", nome: "Sol-Nascente-ep01-O-mapa-do-despertar.mp4" },
     { n: 3, titulo: "Você não é a voz na sua cabeça", sub: "Eu observador e descentramento", arq: "conteudo/podcast/ep03.mp4", poster: "conteudo/podcast/ep03.jpg", nome: "Sol-Nascente-ep03-Voce-nao-e-a-voz-na-sua-cabeca.mp4", vertical: true },
+    { n: 5, titulo: "A mente que a Matrix não programa", sub: "Mente soberana: perceber a isca, conferir a fonte e o filtro das 3 perguntas", arq: "conteudo/podcast/ep05.mp4", poster: "conteudo/podcast/ep05.jpg", nome: "Sol-Nascente-ep05-A-mente-que-a-Matrix-nao-programa.mp4", vertical: true },
     { n: 4, titulo: "Quem viu a Terra do espaço voltou diferente", sub: "Assombro e o efeito visão geral: a caminhada do assombro", arq: "conteudo/podcast/ep04.mp4", poster: "conteudo/podcast/ep04.jpg", nome: "Sol-Nascente-ep04-Quem-viu-a-Terra-do-espaco.mp4", vertical: true },
     { n: 2, titulo: "A Matrix da religião", sub: "Matriz religiosa: culpa, medo, raiva e ganância", arq: "conteudo/podcast/ep02.mp4", poster: "conteudo/podcast/ep02.jpg", nome: "Sol-Nascente-ep02-A-Matrix-da-religiao.mp4", vertical: true }];
   EP.sort(function (a, b) { return b.n - a.n; }); /* mais novo primeiro */
@@ -47,4 +48,15 @@
   document.addEventListener("click", function (e) { var b = e.target.closest && e.target.closest('[data-folha="f-podcast"]'); if (b) montar(); }, true);
   function hash() { if (location.hash === "#podcast") { montar(); var b = document.querySelector('[data-folha="f-podcast"]'); if (b) b.click(); } }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", hash); else hash();
+  /* Link #podcast na 1ª visita: depois do portal o app abre "Qual é o seu caminho?" por cima do podcast; quando essa folha fecha, volta ao podcast (uma vez). */
+  function voltar() {
+    var c = $("f-caminho"); if (!c || location.hash !== "#podcast" || !window.MutationObserver) return;
+    var viu = false, ob = new MutationObserver(function () {
+      if (!c.hidden) { viu = true; return; }
+      if (viu) { ob.disconnect(); setTimeout(function () { var f = $("f-podcast"); if (f && f.hidden) hash(); }, 50); }
+    });
+    ob.observe(c, { attributes: true, attributeFilter: ["hidden"] });
+    setTimeout(function () { ob.disconnect(); }, 600000);
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", voltar); else voltar();
 })();
