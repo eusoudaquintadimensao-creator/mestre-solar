@@ -18,7 +18,7 @@ pol="; ".join([
  "media-src 'self' blob: data: https://cdn.jsdelivr.net https://raw.githubusercontent.com",
  "font-src 'self' data:",
  "connect-src 'self' https://*.wikipedia.org https://api.wikimedia.org https://abacus.jasoncameron.dev https://cdn.jsdelivr.net https://raw.githubusercontent.com https://huggingface.co https://*.huggingface.co https://*.hf.co https://api.open-meteo.com https://geocoding-api.open-meteo.com https://api.gdeltproject.org https://text.pollinations.ai https://api.openai.com https://api.groq.com https://generativelanguage.googleapis.com http://localhost:* http://127.0.0.1:*"+cont,
- "frame-src https://sand-lunar-green-quartz.grok.me",
+ "frame-src https://rede-de-app.conhecimento-solar.workers.dev",
  "worker-src 'self' blob:",
  "manifest-src 'self'",
  "object-src 'none'",
