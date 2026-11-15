@@ -92,8 +92,11 @@ Atualizar depois de mudar lições: `python3 ferramentas/sol-kb.py` e `/workspac
 Mesmo conteúdo do memorial do Águia Primordial English, com a identidade do Conhecimento Solar (`marg-cs.css`): história em 8 partes com narração PT/EN da Aurora e legenda sincronizada, as palavras dela (manuscrito de Chantilly), memorial das vítimas da Inquisição com faixas publicadas e fontes, vela, reflexão e o livro original (só edições em domínio público). As imagens dela são **representações artísticas** (não existe retrato autêntico) e as fontes dizem que ela enfrentou o fogo com calma e que a multidão chorou, não que sorriu.
 As 9 lições do tema **Marguerite Porete e a Inquisição** (PT/EN/ES) estão no índice do app (`ferramentas/marguerite-licoes.py`), então o Sol do app e o Sol 2.0 respondem sobre ela.
 
+### 🦅 Radar Águia Solar (aba no app)
+O [Radar Águia Solar](https://eusoudaquintadimensao-creator.github.io/radar-aguia-solar/) entra no Conhecimento Solar pela aba **Radar Águia** (`#radar`): o app ao vivo em iframe, com o aviso de simulação visível e um botão para abrir em nova aba. Também há um cartão em **Nossas criações** (dentro da aba Rede de App). O Sol 2.0 responde "o que é o Radar Águia Solar" com o que o próprio Radar descreve: IA gratuita da NVIDIA, cenário mundial e simulador com dinheiro fictício (conteúdo educativo, não é recomendação de investimento).
+
 ### Visual 2.0 (`conteudo/ms-2088.css` e `conteudo/ms-2088.js`)
-Universo realista atrás do céu animado, bordas HUD ciano/ouro nas mensagens, abas novas **Sol 2.0** e **Marguerite**, atalho "SOL 2.0 · IA OFFLINE" junto do Sol (computador), dica de rolagem na barra de abas do celular. Escrever "abrir o memorial" ou "Sol 2.0" na conversa abre as páginas novas. Para voltar ao visual anterior basta remover as duas linhas que carregam esses arquivos no `index.html`.
+Universo realista atrás do céu animado, bordas HUD ciano/ouro nas mensagens, abas novas **Sol 2.0**, **Marguerite** e **Radar Águia**, atalho "SOL 2.0 · IA OFFLINE" junto do Sol (computador), dica de rolagem na barra de abas do celular. Escrever "abrir o memorial", "Sol 2.0" ou "abrir o radar" na conversa abre a página ou a aba correspondente. Para voltar ao visual anterior basta remover as duas linhas que carregam esses arquivos no `index.html`.
 
 O service worker agora guarda as páginas `sol/` e `marguerite/` com o próprio endereço (antes, qualquer página aberta era guardada no lugar do `index.html`).
 

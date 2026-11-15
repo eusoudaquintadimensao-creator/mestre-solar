@@ -6,10 +6,10 @@ const Q={pt:[
 ['O que é o Espelho das Almas Simples?',/mp-livro/],['Quem foi o inquisidor da Marguerite?',/mp-processo/],['Quem descobriu que o livro era dela?',/mp-depois/],['Se Marguerite pudesse falar, o que diria?',/mp-voz/],
 ['Quem foi Hermes Trismegisto?',/Hermes/],['O que é o efeito observador?',/observador|Observador|dupla fenda/i],['O que é a Matrix?',/Matrix/],['Adão e Eva existiram?',/Adão|Eva/],
 ['Quem criou o Deus da Bíblia?',/Deus|Javé|Yahweh|El/],['O que é o princípio do mentalismo?',/Mental/],['O que é sonho lúcido?',/lúcido|Sonho/i],['Quem foi Pitágoras?',/Pitágoras/],
-['Quem é você?',/x-quem-sou/],['O que tem de novo?',/x-novo/],['Funciona sem internet?',/x-offline/],['O que significa o selo comprovado?',/x-selos/],
+['Quem é você?',/x-quem-sou/],['O que é o Radar Águia Solar?',/x-radar-aguia/],['O que tem de novo?',/x-novo/],['Funciona sem internet?',/x-offline/],['O que significa o selo comprovado?',/x-selos/],
 ['Qual a capital da França?',/naosei/],['Quem ganhou a copa de 2022?',/naosei/],['Me passa uma receita de bolo',/naosei/],['oi, quem foi Hermes?',/Hermes/],['O que é a caixa de Pandora?',/Pandora/]],
-en:[['Who was Marguerite Porete?',/mp-quem/],['How many people did the Inquisition kill?',/mp-memorial/],['Where can I download the book?',/mp-baixar/],['Who was Hermes Trismegistus?',/Hermes/],['Who are you?',/x-quem-sou/],['What is the capital of France?',/naosei/]],
-es:[['¿Quién fue Marguerite Porete?',/mp-quem/],['¿Cuántas personas mató la Inquisición?',/mp-memorial/],['¿Quién fue Hermes Trismegisto?',/Hermes/],['¿Quién eres?',/x-quem-sou/],['¿Cuál es la capital de Francia?',/naosei/]]};
+en:[['Who was Marguerite Porete?',/mp-quem/],['How many people did the Inquisition kill?',/mp-memorial/],['Where can I download the book?',/mp-baixar/],['Who was Hermes Trismegistus?',/Hermes/],['Who are you?',/x-quem-sou/],['What is Radar Águia Solar?',/x-radar-aguia/],['What is the capital of France?',/naosei/]],
+es:[['¿Quién fue Marguerite Porete?',/mp-quem/],['¿Cuántas personas mató la Inquisición?',/mp-memorial/],['¿Quién fue Hermes Trismegisto?',/Hermes/],['¿Quién eres?',/x-quem-sou/],['¿Qué es el Radar Águia Solar?',/x-radar-aguia/],['¿Cuál es la capital de Francia?',/naosei/]]};
 (async()=>{const b=await puppeteer.launch({executablePath:'/usr/bin/google-chrome',headless:'new',args:['--no-sandbox','--autoplay-policy=no-user-gesture-required']});
 const p=await b.newPage();await p.setViewport({width:390,height:844,deviceScaleFactor:2,isMobile:true,hasTouch:true});
 const erros=[];p.on('pageerror',e=>erros.push('PE '+e.message));p.on('console',m=>{if(m.type()==='error')erros.push('CE '+m.text().slice(0,160))});p.on('response',r=>{if(r.status()>=400)erros.push(r.status()+' '+r.url())});
