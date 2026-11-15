@@ -119,6 +119,7 @@ NOMES={'radar-aguia':('Radar Águia Solar',U_RADAR,'#radar'),'aguia-english':('�
  'app':('Conhecimento Solar',U_APP,''),'novo':('Conhecimento Solar',U_APP,''),'offline':('Conhecimento Solar',U_APP,''),'selos':('Conhecimento Solar',U_APP,''),'criador':('Conhecimento Solar',U_APP,'')}
 for lg,lst in ns['INT'].items():
     for a,p,r in lst:
+        if a=='marguerite-pagina': p=list(p)+{'pt':['onde fica o memorial','onde fica o memorial da marguerite','memorial da marguerite porete','onde vejo o memorial'],'en':['where is the memorial','where is the marguerite memorial'],'es':['donde esta el memorial','donde esta el memorial de marguerite']}[lg]
         if a in NOMES: n,u,tab=NOMES[a];add(n,n if a in('radar-aguia','aguia-english','marguerite-pagina') else 'Conhecimento Solar: '+a,r,p,u,tab,lg=lg,pri=1)
 # ---------- 2) passagens do conteúdo real (PT) ----------
 # Rede de App: os 21 apps
