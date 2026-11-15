@@ -12,12 +12,14 @@ for m in re.finditer(r'<script>(.*?)</script>',s,re.S):
     hs.append("'sha256-"+base64.b64encode(hashlib.sha256(m.group(1).encode('utf-8')).digest()).decode()+"'")
 pol="; ".join([
  "default-src 'self'",
- "script-src 'self' "+" ".join(hs)+" https://cdn.jsdelivr.net 'wasm-unsafe-eval'",
+ "script-src 'self' "+" ".join(hs)+" https://cdn.jsdelivr.net/npm/ 'wasm-unsafe-eval'",  # só /npm/ (IA Livre/WebLLM); /gh/ do jsDelivr serviria qualquer repositório do GitHub
  "style-src 'self' 'unsafe-inline'",
  "img-src 'self' data: blob: https://*.wikimedia.org https://*.wikipedia.org",
- "media-src 'self' blob: data: https://cdn.jsdelivr.net https://raw.githubusercontent.com",
+ "media-src 'self' blob: data: https://cdn.jsdelivr.net/gh/eusoudaquintadimensao-creator/ https://raw.githubusercontent.com/eusoudaquintadimensao-creator/",
  "font-src 'self' data:",
- "connect-src 'self' https://*.wikipedia.org https://api.wikimedia.org https://abacus.jasoncameron.dev https://cdn.jsdelivr.net https://raw.githubusercontent.com https://huggingface.co https://*.huggingface.co https://*.hf.co https://api.open-meteo.com https://geocoding-api.open-meteo.com https://api.gdeltproject.org https://text.pollinations.ai https://api.openai.com https://api.groq.com https://generativelanguage.googleapis.com http://localhost:* http://127.0.0.1:*"+cont,
+ # IA externa bloqueada (IA_EXTERNA_BLOQUEADA=true no index.html): sem pollinations/openai/groq/gemini/localhost.
+ # Para liberar, devolva: https://text.pollinations.ai https://api.openai.com https://api.groq.com https://generativelanguage.googleapis.com http://localhost:* http://127.0.0.1:*
+ "connect-src 'self' https://*.wikipedia.org https://api.wikimedia.org https://abacus.jasoncameron.dev https://cdn.jsdelivr.net/gh/eusoudaquintadimensao-creator/ https://cdn.jsdelivr.net/npm/ https://raw.githubusercontent.com https://huggingface.co https://*.huggingface.co https://*.hf.co https://api.open-meteo.com https://geocoding-api.open-meteo.com https://api.gdeltproject.org"+cont,
  "frame-src https://rede-de-app.conhecimento-solar.workers.dev https://eusoudaquintadimensao-creator.github.io",
  "worker-src 'self' blob:",
  "manifest-src 'self'",

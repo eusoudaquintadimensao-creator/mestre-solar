@@ -1,8 +1,8 @@
 /* Service worker do Mestre Solar: app offline + conteúdo guardado depois de usado. */
-var VERSAO = "ms-2026-11-15-1850-share-sol";
+var VERSAO = "ms-2026-11-15-2130-sol1-jarvis";
 var OFF = "offline-ms"; /* downloads do "Usar offline" (não apagado na troca de versão) */
 function doOffline(url) { return caches.open(OFF).then(function (c) { return c.match(url.split("#")[0], { ignoreSearch: true }); }).catch(function () { return null; }); }
-var SOL2 = ["./sol/sol.js", "./sol/sol.css", "./sol/kb-pt.json", "./sol/img/sol-320.webp", "./sol/img/universo-m.webp", "./conteudo/ms-2088.css", "./conteudo/ms-2088.js"];
+var SOL2 = ["./conteudo/sol1/sol1.js", "./conteudo/sol1/sol1.css", "./sol/sol.js", "./sol/sol.css", "./sol/kb-pt.json", "./sol/img/sol-320.webp", "./sol/img/universo-m.webp", "./conteudo/ms-2088.css", "./conteudo/ms-2088.js"];
 var APP = ["./", "./index.html", "./manifest.json", "./offline.js", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png", "./icons/apple-touch-icon-180.png"];
 self.addEventListener("install", function (e) {
   e.waitUntil(caches.open(VERSAO + "-app").then(function (c) { return c.addAll(APP).then(function () { return c.add("./sol/").catch(function () {}); }); })
@@ -23,7 +23,7 @@ function audio(r) {
       if (hit) return hit;
       return doOffline(url).then(function (off) { if (off) return off;
       return fetch(url, { credentials: "same-origin" }).then(function (res) {
-        if (res.status === 200) c.put(url, res.clone()).catch(function () {});
+        if (guardavel(res)) c.put(url, res.clone()).catch(function () {});
         return res;
       });
       });
@@ -53,23 +53,37 @@ self.addEventListener("message", function (e) {
   if (e.data && e.data.tipo === "versao" && e.source) e.source.postMessage({ tipo: "versao", versao: VERSAO });
 });
 function ehConteudo(u) { return u.pathname.indexOf("/conteudo/") !== -1 || /\/(sol|marguerite)\//.test(u.pathname); }
+/* segurança do cache: só guarda resposta 200 "basic" (mesma origem, sem redirecionamento) */
+function guardavel(res) { return res && res.status === 200 && res.type === "basic" && !res.redirected; }
+var ESCOPO = new URL(self.registration.scope).pathname; /* /mestre-solar/ */
 self.addEventListener("fetch", function (e) {
   var r = e.request; if (r.method !== "GET") return;
   var u = new URL(r.url);
   if (u.origin !== location.origin) return; /* sites externos (ex.: Rede de App Portal Solar) nunca passam pelo cache */
+  /* o github.io do autor é uma origem só para todos os repositórios: fora da pasta do app, nada passa pelo cache daqui */
+  if (u.pathname.indexOf(ESCOPO) !== 0) return;
   var sub = /\/(sol|marguerite)\//.test(u.pathname); /* páginas novas: Sol 2.0 e memorial Marguerite Porete */
   if (r.mode === "navigate" && sub) {
     /* subpágina: rede primeiro (prazo 4 s), guardada com o próprio endereço (nunca no lugar do index.html) */
     var chave = u.origin + u.pathname.replace(/index\.html$/, "");
-    var redeS = fetch(r).then(function (res) { if (res.ok) { var cp = res.clone(); caches.open(VERSAO + "-app").then(function (c) { return c.put(chave, cp); }).catch(function () {}); } return res; });
+    var redeS = fetch(r).then(function (res) { if (guardavel(res)) { var cp = res.clone(); caches.open(VERSAO + "-app").then(function (c) { return c.put(chave, cp); }).catch(function () {}); } return res; });
     e.respondWith(prazo(redeS, 4000).catch(function () {
       return caches.open(VERSAO + "-app").then(function (c) { return c.match(chave); }).then(function (h) { return h || doOffline(chave); }).then(function (h) { return h || redeS; });
     }));
     return;
   }
+  var raiz = u.pathname === ESCOPO || u.pathname === ESCOPO + "index.html";
+  if (r.mode === "navigate" && !raiz) {
+    /* outra página do app (ex.: conteudo/tabela-*.html): rede primeiro e guardada com o próprio endereço.
+       Antes ela era guardada no lugar do index.html e o app offline abria a página errada. */
+    var chave2 = u.origin + u.pathname;
+    var redeP = fetch(r).then(function (res) { if (guardavel(res)) { var cp = res.clone(); caches.open(VERSAO + "-app").then(function (c) { return c.put(chave2, cp); }).catch(function () {}); } return res; });
+    e.respondWith(prazo(redeP, 4000).catch(function () { return caches.open(VERSAO + "-app").then(function (c) { return c.match(chave2); }).then(function (h) { return h || doOffline(chave2); }).then(function (h) { return h || redeP; }); }));
+    return;
+  }
   if (r.mode === "navigate") {
     /* página: rede primeiro, mas sem esperar para sempre (rede ruim = tela escura). Passou do prazo, usa a cópia desta versão. */
-    var rede = fetch(r).then(function (res) { if (res.ok) { var cp = res.clone(); caches.open(VERSAO + "-app").then(function (c) { return c.put("./index.html", cp); }).catch(function () {}); } return res; });
+    var rede = fetch(r).then(function (res) { if (guardavel(res)) { var cp = res.clone(); caches.open(VERSAO + "-app").then(function (c) { return c.put("./index.html", cp); }).catch(function () {}); } return res; });
     e.respondWith(prazo(rede, 4000).catch(function () {
       return copiaApp("./index.html").then(function (h) { return h || rede; });
     }));
@@ -80,7 +94,7 @@ self.addEventListener("fetch", function (e) {
     /* conteúdo: responde do cache na hora e atualiza em segundo plano (stale-while-revalidate) */
     e.respondWith(caches.open(VERSAO + "-conteudo").then(function (c) {
       return c.match(r).then(function (hit) {
-        var rede = fetch(r).then(function (res) { if (res.status === 200) c.put(r, res.clone()).catch(function () {}); return res; });
+        var rede = fetch(r).then(function (res) { if (guardavel(res)) c.put(r, res.clone()).catch(function () {}); return res; });
         if (hit) { rede.catch(function () {}); return hit; }
         return prazo(rede, 8000).catch(function (err) { return doOffline(r.url).then(function (off) { if (off) return off; return rede; }); });
       });
@@ -92,7 +106,7 @@ self.addEventListener("fetch", function (e) {
   e.respondWith(caches.open(VERSAO + "-app").then(function (c) {
     return c.match(r).then(function (hit) {
       if (hit) return hit;
-      var rede = fetch(r).then(function (res) { if (res.status === 200 && /\.(js|json|png|webmanifest)$/.test(u.pathname)) c.put(r, res.clone()).catch(function () {}); return res; });
+      var rede = fetch(r).then(function (res) { if (guardavel(res) && /\.(js|json|png|webp|css|webmanifest)$/.test(u.pathname)) c.put(r, res.clone()).catch(function () {}); return res; });
       return prazo(rede, 8000).catch(function (err) { return doOffline(r.url).then(function (off) { if (off) return off; return rede; }); });
     });
   }));
