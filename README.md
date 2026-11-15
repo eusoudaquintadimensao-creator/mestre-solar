@@ -73,6 +73,30 @@ Em **⚙️ Ajustes → IA Livre**, o app pode baixar uma IA que roda **dentro d
 
 Observação: um app publicado em HTTPS pode ser impedido pelo navegador de falar com `http://localhost`. Nesse caso, abra o app localmente (`python -m http.server` na pasta) para usar o Ollama.
 
+## Novidades de novembro/2026: Sol 2.0, Marguerite Porete e visual 2.0
+
+### ☀️ Sol 2.0 (`sol/`): a IA offline do app
+Abrir: https://eusoudaquintadimensao-creator.github.io/mestre-solar/sol/ (aba **Sol 2.0** no app, a primeira da barra).
+- **Responde só com as lições do app** (374 lições + respostas fixas sobre o próprio app), no aparelho, sem internet e sem servidor. Busca BM25 com acentos normalizados, radicais, frases-gatilho de cada lição e checagem de cobertura: se a pergunta não está nas lições, ele diz que não sabe e mostra os temas mais próximos.
+- **Voz do Sol gravada** (Duarte em PT, Ryan em EN, Álvaro em ES) com **legenda palavra por palavra** (tempo exato de cada palavra vindo do próprio sintetizador). Também dá para escolher a voz da Águia Primordial (gravações do app, PT) ou a voz do aparelho (botão 🎙️).
+- **Conversa com memória**: "fale mais" (aprofundar), "contemplar", "qual a fonte?", perguntas com "ele/ela/isso" usam o último tema, "o que eu já perguntei?", "me chamo …" (grava em `ms-sol-nome-v1`, o mesmo nome do app).
+- **Constelação do Conhecimento** (botão ✦): cada lição é uma estrela; as que você explorou ficam acesas. Toque numa estrela para perguntar.
+- **Bússola do Sol**: a sugestão dourada ✦ é a próxima estrela ainda apagada no tema que você mais explora.
+- Universo em movimento (imagem HD + estrelas que aceleram quando o Sol fala) e o Sol pulsa com o volume da voz.
+- Teste: `node ferramentas/teste-sol.js` (36 perguntas PT/EN/ES, celular, computador e modo sem internet; precisa de puppeteer-core e Chrome).
+
+Arquivos: `sol/index.html`, `sol/sol.js`, `sol/sol.css`, `sol/kb-{pt,en,es}.json` (gerado), `sol/voz/<lg>/<hash>.mp3` + `tempos.json` (gerado), `sol/falas.json`, `sol/img/`.
+Atualizar depois de mudar lições: `python3 ferramentas/sol-kb.py` e `/workspace/.ttsenv/bin/python ferramentas/sol-voz.py pt en es` (só grava o que falta).
+
+### 🕯️ Memorial Marguerite Porete (`marguerite/`)
+Mesmo conteúdo do memorial do Águia Primordial English, com a identidade do Conhecimento Solar (`marg-cs.css`): história em 8 partes com narração PT/EN da Aurora e legenda sincronizada, as palavras dela (manuscrito de Chantilly), memorial das vítimas da Inquisição com faixas publicadas e fontes, vela, reflexão e o livro original (só edições em domínio público). As imagens dela são **representações artísticas** (não existe retrato autêntico) e as fontes dizem que ela enfrentou o fogo com calma e que a multidão chorou, não que sorriu.
+As 9 lições do tema **Marguerite Porete e a Inquisição** (PT/EN/ES) estão no índice do app (`ferramentas/marguerite-licoes.py`), então o Sol do app e o Sol 2.0 respondem sobre ela.
+
+### Visual 2.0 (`conteudo/ms-2088.css` e `conteudo/ms-2088.js`)
+Universo realista atrás do céu animado, bordas HUD ciano/ouro nas mensagens, abas novas **Sol 2.0** e **Marguerite**, atalho "SOL 2.0 · IA OFFLINE" junto do Sol (computador), dica de rolagem na barra de abas do celular. Escrever "abrir o memorial" ou "Sol 2.0" na conversa abre as páginas novas. Para voltar ao visual anterior basta remover as duas linhas que carregam esses arquivos no `index.html`.
+
+O service worker agora guarda as páginas `sol/` e `marguerite/` com o próprio endereço (antes, qualquer página aberta era guardada no lugar do `index.html`).
+
 ## Instalar no celular
 
 - **Android (Chrome):** menu ⋮ → *Instalar app* ou *Adicionar à tela inicial*.

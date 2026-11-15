@@ -61,9 +61,10 @@ function indexa(){var N=KB.licoes.length,df={},docs=[],tot=0;
     add(e.t,3);add(e.p.join(' '),2.5);add(KB.grupos[e.g]||'',.8);add(e.r,1);add(e.a,.45);if(e.pa)add(e.pa,.8);
     var len=0;for(var k in tf){len+=tf[k];df[k]=(df[k]||0)+1}tot+=len;docs.push({tf:tf,len:len,fr:e.p.map(nz).filter(function(p){return p.length>3}),tn:nz(e.t)})});
   IDX={docs:docs,df:df,N:N,avg:tot/N}}
-function busca(q,extra){var qt=toks(q).map(st);if(extra)qt=qt.concat(toks(extra).map(st));var qn=' '+nz(q)+' ',res=[],I=IDX,k1=1.3,b=.72;
-  var uq=qt.filter(function(t,i){return qt.indexOf(t)===i});
-  I.docs.forEach(function(d,ix){var s=0,hit=0;uq.forEach(function(t){var f=d.tf[t];if(!f)return;hit++;var idf=Math.log(1+(I.N-I.df[t]+.5)/(I.df[t]+.5));s+=idf*(f*(k1+1))/(f+k1*(1-b+b*d.len/I.avg))});
+function busca(q,extra){var qt=toks(q).map(st),qn=' '+nz(q)+' ',res=[],I=IDX,k1=1.3,b=.72,PW={};
+  qt.forEach(function(t){PW[t]=1});if(extra)toks(extra).map(st).forEach(function(t){if(!PW[t])PW[t]=.35});
+  var uq=qt.filter(function(t,i){return qt.indexOf(t)===i}),todos=Object.keys(PW);
+  I.docs.forEach(function(d,ix){var s=0,hit=0;todos.forEach(function(t){var f=d.tf[t];if(!f)return;if(PW[t]===1)hit++;var idf=Math.log(1+(I.N-I.df[t]+.5)/(I.df[t]+.5));s+=PW[t]*idf*(f*(k1+1))/(f+k1*(1-b+b*d.len/I.avg))});
     if(s<=0)return;var cob=hit/Math.max(1,uq.length),fr=0;s*=.5+.5*cob;
     d.fr.forEach(function(p){if(qn.indexOf(' '+p+' ')>=0){s+=4+1.5*p.split(' ').length;fr=1}});
     if(d.tn&&qn.indexOf(' '+d.tn+' ')>=0){s+=6;fr=1}
@@ -92,6 +93,8 @@ function pergunta(q,origem){q=String(q||'').trim();if(!q)return;if(!KB){fila=q;r
   var extra='';if(ULT&&ULT.e&&toks(q).length<=3&&RX.pron.test(qn))extra=ULT.e.t+' '+ULT.e.p.slice(0,3).join(' ');
   var gi=grupoPedido(q);if(gi>=0)return visaoGrupo(gi);
   var rs=busca(q,extra),top=rs[0];
+  if(extra&&top&&ULT&&KB.licoes[top.i]===ULT.e&&rs[1]&&rs[1].s>=top.s*.6){rs.shift();top=rs[0]}/* não repetir a lição que acabou de ser dita */
+  if(extra&&top&&top.s>=3.2)top.cob=Math.max(top.cob,.6);
   if(fraco(top,q)){return responde({x:T().naosei,fala:T().naosei,chips:rs.slice(0,4).map(function(x){return KB.licoes[x.i].t}),naosei:true})}
   var e=KB.licoes[top.i];ULT={e:e,c:'r'};acende(e);MEM.hist.push({q:q,i:e.i,t:e.t,ts:Date.now()});salva();
   responde({e:e,c:'r',alts:rs.slice(1,4).filter(function(x){return x.s>top.s*.45}).map(function(x){return KB.licoes[x.i].t})})}

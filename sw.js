@@ -1,5 +1,5 @@
 /* Service worker do Mestre Solar: app offline + conteúdo guardado depois de usado. */
-var VERSAO = "ms-2026-11-15-1030-sol2-marguerite";
+var VERSAO = "ms-2026-11-15-1043-sol2-vozes";
 var OFF = "offline-ms"; /* downloads do "Usar offline" (não apagado na troca de versão) */
 function doOffline(url) { return caches.open(OFF).then(function (c) { return c.match(url.split("#")[0], { ignoreSearch: true }); }).catch(function () { return null; }); }
 var SOL2 = ["./sol/sol.js", "./sol/sol.css", "./sol/kb-pt.json", "./sol/img/sol-320.webp", "./sol/img/universo-m.webp", "./conteudo/ms-2088.css", "./conteudo/ms-2088.js"];
