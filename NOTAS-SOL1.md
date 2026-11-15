@@ -11,8 +11,14 @@ Backup: /workspace/backups/mestre-solar/20261115-191015-pre-sol1 (antes de tudo,
 
 ## Plano / progresso
 - [x] ferramentas/sol1-kb.py → conteudo/sol1/kb-{pt,en,es}.json (374 lições + ~600 trechos dos apps)
-- [ ] conteudo/sol1/sol1.js + sol1.css (motor BM25, memória, visual reativo, volume, paleta, push-to-talk)
-- [ ] gancho no index.html + legenda sem sobrepor + aberturas corrigidas
-- [ ] segurança (SW escopo/navegação, CSP jsdelivr por caminho, SEGURANCA.md)
-- [ ] testes (ferramentas/teste-sol1.js) celular/PC/offline
+- [x] conteudo/sol1/sol1.js + sol1.css (motor BM25, memória, visual reativo, volume, paleta, push-to-talk)
+- [x] gancho no index.html + legenda sem sobrepor + aberturas corrigidas
+- [x] segurança (SW escopo/navegação, CSP jsdelivr por caminho, SEGURANCA.md)
+- [x] testes (ferramentas/teste-sol1.js) celular/PC/offline
 - [ ] publicar, conferir ao vivo, e-mail
+
+## Estado (15/11/2026 ~21h45, horário de Brasília)
+- teste-sol1.js local: 28/28 verificações, 50/50 perguntas (PT/EN/ES). teste-sol.js (Sol 2.0): 42/42, sem erros.
+- SW: ms-2026-11-15-2130-sol1-jarvis. Depois de mudar script inline: `python3 ferramentas/csp.py`.
+- Falta: push, conferir ao vivo (BASE=URL ao vivo), e-mail.
+- Limites: respostas próprias do Sol 1 usam a voz do aparelho; trechos dos apps são em PT mesmo em EN/ES; Homem Cinza usa pages.json local (site é renderizado no cliente).
