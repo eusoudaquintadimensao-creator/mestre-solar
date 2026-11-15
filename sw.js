@@ -1,12 +1,12 @@
 /* Service worker do Mestre Solar: app offline + conteúdo guardado depois de usado. */
-var VERSAO = "ms-2026-11-15-1830-aguia-english";
+var VERSAO = "ms-2026-11-15-1850-share-sol";
 var OFF = "offline-ms"; /* downloads do "Usar offline" (não apagado na troca de versão) */
 function doOffline(url) { return caches.open(OFF).then(function (c) { return c.match(url.split("#")[0], { ignoreSearch: true }); }).catch(function () { return null; }); }
 var SOL2 = ["./sol/sol.js", "./sol/sol.css", "./sol/kb-pt.json", "./sol/img/sol-320.webp", "./sol/img/universo-m.webp", "./conteudo/ms-2088.css", "./conteudo/ms-2088.js"];
 var APP = ["./", "./index.html", "./manifest.json", "./offline.js", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png", "./icons/apple-touch-icon-180.png"];
 self.addEventListener("install", function (e) {
   e.waitUntil(caches.open(VERSAO + "-app").then(function (c) { return c.addAll(APP).then(function () { return c.add("./sol/").catch(function () {}); }); })
-    .then(function () { return caches.open(VERSAO + "-conteudo").then(function (c) { return c.addAll(["./conteudo/ms-legenda.js", "./conteudo/ms-podcast.js", "./conteudo/ms-aberturas.js"]).then(function () { return c.addAll(SOL2).catch(function () {}); }); }).catch(function () {}); })
+    .then(function () { return caches.open(VERSAO + "-conteudo").then(function (c) { return c.addAll(["./conteudo/ms-legenda.js", "./conteudo/ms-podcast.js", "./conteudo/ms-aberturas.js", "./conteudo/ms-share.js", "./conteudo/ms-share.css", "./icons/share-sol.webp"]).then(function () { return c.addAll(SOL2).catch(function () {}); }); }).catch(function () {}); })
     .then(function () { return self.skipWaiting(); }));
 });
 self.addEventListener("activate", function (e) {

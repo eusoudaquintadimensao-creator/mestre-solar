@@ -101,6 +101,9 @@ O [Águia Primordial English](https://eusoudaquintadimensao-creator.github.io/ag
 ### Visual 2.0 (`conteudo/ms-2088.css` e `conteudo/ms-2088.js`)
 Universo realista atrás do céu animado, bordas HUD ciano/ouro nas mensagens, abas novas **Sol 2.0**, **Marguerite**, **Radar Águia** e **Águia English**, atalho "SOL 2.0 · IA OFFLINE" junto do Sol (computador), dica de rolagem na barra de abas do celular. Escrever "abrir o memorial", "Sol 2.0", "abrir o radar" ou "abrir o inglês" na conversa abre a página ou a aba correspondente. Para voltar ao visual anterior basta remover as duas linhas que carregam esses arquivos no `index.html`.
 
+### ☀ Compartilhar
+No topo do app há um sol realista pulsante. Toque para compartilhar o Portal (menu nativo do aparelho, ou uma folha com WhatsApp, Telegram, X, Facebook, e-mail e copiar o link). Segure cerca de 600 ms para copiar só o link; aparece o aviso "Link copiado ☀". A prévia do link (WhatsApp e outras redes) usa `img/og-conhecimento-solar.jpg` (1200×630, JPEG).
+
 O service worker agora guarda as páginas `sol/` e `marguerite/` com o próprio endereço (antes, qualquer página aberta era guardada no lugar do `index.html`).
 
 ## Instalar no celular

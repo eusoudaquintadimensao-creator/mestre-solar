@@ -59,6 +59,21 @@ try{var sw=navigator.serviceWorker;if(sw&&/^https?:/.test(location.protocol)){va
  D.addEventListener("visibilitychange",function(){if(D.visibilityState==="visible"&&sw.getRegistration)sw.getRegistration().then(function(r){r&&r.update()}).catch(function(){})})}}catch(e){}
 }();</script>
 <meta name="description" content="Conhecimento Solar, o Portal do Conhecimento: mistérios, sabedoria e verdade, com voz.">
+<link rel="canonical" href="https://eusoudaquintadimensao-creator.github.io/mestre-solar/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://eusoudaquintadimensao-creator.github.io/mestre-solar/">
+<meta property="og:title" content="Conhecimento Solar · Portal do Conhecimento">
+<meta property="og:description" content="Entre no Portal do Conhecimento. 374 lições, a IA do Sol 2.0 e a voz da Águia Primordial — mistérios, história e sabedoria, no seu aparelho, de graça.">
+<meta property="og:image" content="https://eusoudaquintadimensao-creator.github.io/mestre-solar/img/og-conhecimento-solar.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sol realista brilhando no universo, com o nome Conhecimento Solar">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Conhecimento Solar · Portal do Conhecimento">
+<meta name="twitter:description" content="Entre no Portal do Conhecimento. 374 lições, a IA do Sol 2.0 e a voz da Águia Primordial.">
+<meta name="twitter:image" content="https://eusoudaquintadimensao-creator.github.io/mestre-solar/img/og-conhecimento-solar.jpg">
 <meta name="theme-color" content="#07050d">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -279,6 +294,7 @@ body.sol-potencia .sol-ondas{opacity:calc(0.4 + var(--sol-p,0)*0.6)}
 @media (max-width:340px){.topo .marca h1{font-size:15px;letter-spacing:.14em}.topo .topo-bts .idiomas button{min-width:26px;padding:5px 4px}}
 </style>
 <link rel="stylesheet" href="conteudo/ms-2088.css">
+<link rel="stylesheet" href="conteudo/ms-share.css">
 </head>
 <body>
 <script>
@@ -338,7 +354,8 @@ W.MSTrat={get:get,set:set,genero:genero,voc:voc,v:v,bem:bem,fix:fix,promptLine:p
   <header class="topo">
     <div class="marca"><h1>CONHECIMENTO SOLAR</h1><p>Portal do Conhecimento</p></div>
     <div class="topo-bts"><button class="instalar" id="b-instalar" type="button" hidden aria-label="Instalar o app Conhecimento Solar na tela inicial"><img src="icons/icon-192.png" alt="" width="30" height="30"><span>Instalar</span></button><button class="icone" id="b-som" type="button" aria-label="Desligar a voz" aria-pressed="false">🔊</button>
-    <button class="icone" id="b-ajustes" type="button" aria-label="Ajustes">⚙️</button></div>
+    <button class="icone" id="b-ajustes" type="button" aria-label="Ajustes">⚙️</button>
+    <button class="ms-share-sol" id="ms-share-sol" type="button" aria-label="Compartilhar o Conhecimento Solar. Segure para copiar o link." title="Toque para compartilhar. Segure para copiar o link."><img src="icons/share-sol.webp" width="40" height="40" alt=""></button></div>
   </header>
   <div class="palco"><button class="sol" id="sol" type="button" aria-label="Sol do Conhecimento Solar: toque para falar comigo"><i class="aura"></i><i class="img"></i></button>
 <button type="button" class="voz-chip" id="voz-chip" aria-label="Escolher voz" title="Escolher voz"><span class="vz-ic" aria-hidden="true">🎙</span><span id="voz-chip-txt">Águia Primordial</span></button></div>
@@ -2313,6 +2330,7 @@ setTimeout(talvez,1800);
 </script>
 <script src="offline.js" defer></script>
 <script src="conteudo/ms-2088.js" defer></script>
+<script src="conteudo/ms-share.js" defer></script>
 <script>/* IA externa bloqueada: desliga os controles nos Ajustes (ver IA_EXTERNA_BLOQUEADA) */
 (function(){if(!msIAExtBloq())return;var D=document;
 function nota(antes,id){if(!antes||D.getElementById(id))return;var p=D.createElement("p");p.id=id;p.className="pequeno ia-ext-bloq";p.setAttribute("role","note");p.style.cssText="color:var(--ouro);font-weight:600";p.textContent="🔒 "+msIAExtNota();antes.parentNode.insertBefore(p,antes)}
