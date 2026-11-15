@@ -95,8 +95,11 @@ As 9 lições do tema **Marguerite Porete e a Inquisição** (PT/EN/ES) estão n
 ### 🦅 Radar Águia Solar (aba no app)
 O [Radar Águia Solar](https://eusoudaquintadimensao-creator.github.io/radar-aguia-solar/) entra no Conhecimento Solar pela aba **Radar Águia** (`#radar`): o app ao vivo em iframe, com o aviso de simulação visível e um botão para abrir em nova aba. Também há um cartão em **Nossas criações** (dentro da aba Rede de App). O Sol 2.0 responde "o que é o Radar Águia Solar" com o que o próprio Radar descreve: IA gratuita da NVIDIA, cenário mundial e simulador com dinheiro fictício (conteúdo educativo, não é recomendação de investimento).
 
+### 🦅 Águia Primordial English (aba no app)
+O [Águia Primordial English](https://eusoudaquintadimensao-creator.github.io/aguia-primordial-english/) entra no Conhecimento Solar pela aba **Águia English** (`#aguia-english`): o site ao vivo em iframe, com o selo "Escola de Inglês Cinza · 100% grátis", um botão para abrir em nova aba e um link para o [aplicativo original](https://zippy-pilot-pine-lotus.grok.me). Também há um cartão em **Nossas criações**. O Sol 2.0 responde "o que é o Águia Primordial English" com o que o próprio site descreve (6.239 palavras, 63 temas, voz em inglês e em português). Na conversa, "abrir o inglês" ou "abrir a águia english" abre a aba.
+
 ### Visual 2.0 (`conteudo/ms-2088.css` e `conteudo/ms-2088.js`)
-Universo realista atrás do céu animado, bordas HUD ciano/ouro nas mensagens, abas novas **Sol 2.0**, **Marguerite** e **Radar Águia**, atalho "SOL 2.0 · IA OFFLINE" junto do Sol (computador), dica de rolagem na barra de abas do celular. Escrever "abrir o memorial", "Sol 2.0" ou "abrir o radar" na conversa abre a página ou a aba correspondente. Para voltar ao visual anterior basta remover as duas linhas que carregam esses arquivos no `index.html`.
+Universo realista atrás do céu animado, bordas HUD ciano/ouro nas mensagens, abas novas **Sol 2.0**, **Marguerite**, **Radar Águia** e **Águia English**, atalho "SOL 2.0 · IA OFFLINE" junto do Sol (computador), dica de rolagem na barra de abas do celular. Escrever "abrir o memorial", "Sol 2.0", "abrir o radar" ou "abrir o inglês" na conversa abre a página ou a aba correspondente. Para voltar ao visual anterior basta remover as duas linhas que carregam esses arquivos no `index.html`.
 
 O service worker agora guarda as páginas `sol/` e `marguerite/` com o próprio endereço (antes, qualquer página aberta era guardada no lugar do `index.html`).
 
