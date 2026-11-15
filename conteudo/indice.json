@@ -101,6 +101,11 @@
       "nome": "Mitos Derrubados",
       "arquivo": "mitos-derrubados.json",
       "n": 13
+    },
+    {
+      "nome": "Marguerite Porete e a Inquisição",
+      "arquivo": "marguerite-porete.json",
+      "n": 9
     }
   ],
   "topicos": [
@@ -6308,6 +6313,220 @@
         "Comprovado"
       ],
       "_arq": "mitos-derrubados.json"
+    },
+    {
+      "grupo": "Marguerite Porete e a Inquisição",
+      "tema": "Marguerite Porete: quem foi",
+      "palavras": [
+        "marguerite porete quem foi",
+        "marguerite porete",
+        "margarida porete",
+        "margarete porete",
+        "marguerite",
+        "porete",
+        "beguina",
+        "beguinas",
+        "beguine",
+        "quem foi marguerite porete",
+        "who was marguerite porete",
+        "quien fue marguerite porete"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "marguerite-porete.json",
+      "parte": "Marguerite Porete"
+    },
+    {
+      "grupo": "Marguerite Porete e a Inquisição",
+      "tema": "O Espelho das Almas Simples",
+      "palavras": [
+        "o espelho das almas simples",
+        "espelho das almas simples",
+        "o espelho das almas simples",
+        "mirror of simple souls",
+        "espejo de las almas simples",
+        "miroir des simples ames",
+        "mirouer",
+        "aniquilacao da alma",
+        "alma aniquilada",
+        "annihilated soul",
+        "alma aniquilada"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Tradição"
+      ],
+      "_arq": "marguerite-porete.json",
+      "parte": "Marguerite Porete"
+    },
+    {
+      "grupo": "Marguerite Porete e a Inquisição",
+      "tema": "O processo de Marguerite Porete",
+      "palavras": [
+        "o processo de marguerite porete",
+        "processo de marguerite porete",
+        "julgamento de marguerite",
+        "inquisidor de marguerite",
+        "guilherme de paris",
+        "william of paris",
+        "guillermo de paris",
+        "herege relapsa",
+        "relapsed heretic",
+        "quinze artigos",
+        "fifteen articles",
+        "quince articulos",
+        "valenciennes"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "marguerite-porete.json",
+      "parte": "Marguerite Porete"
+    },
+    {
+      "grupo": "Marguerite Porete e a Inquisição",
+      "tema": "A fogueira de 1310",
+      "palavras": [
+        "a fogueira de 1310",
+        "fogueira de marguerite",
+        "marguerite na fogueira",
+        "queimada viva",
+        "burned at the stake",
+        "quemada viva",
+        "place de greve",
+        "1 de junho de 1310",
+        "1310",
+        "a mulher que sorriu na fogueira",
+        "sorriu na fogueira",
+        "smiled at the stake",
+        "sonrio en la hoguera",
+        "aquela que sorriu na fogueira"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "marguerite-porete.json",
+      "parte": "Marguerite Porete"
+    },
+    {
+      "grupo": "Marguerite Porete e a Inquisição",
+      "tema": "Depois do fogo: o livro sem nome",
+      "palavras": [
+        "depois do fogo o livro sem nome",
+        "livro sem nome",
+        "romana guarnieri",
+        "guarnieri",
+        "1946",
+        "autora do espelho",
+        "author of the mirror",
+        "autora del espejo"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "marguerite-porete.json",
+      "parte": "Marguerite Porete"
+    },
+    {
+      "grupo": "Marguerite Porete e a Inquisição",
+      "tema": "Vítimas da Inquisição: o memorial",
+      "palavras": [
+        "vitimas da inquisicao o memorial",
+        "vitimas da inquisicao",
+        "victims of the inquisition",
+        "victimas de la inquisicion",
+        "quantos a inquisicao matou",
+        "quantas pessoas a inquisicao matou",
+        "how many did the inquisition kill",
+        "cuantos mato la inquisicion",
+        "inquisicao espanhola",
+        "inquisicao portuguesa",
+        "spanish inquisition",
+        "portuguese inquisition",
+        "inquisicion espanola",
+        "inquisicao no brasil",
+        "antonio jose da silva",
+        "caca as bruxas",
+        "witch hunts",
+        "caza de brujas",
+        "memorial da inquisicao"
+      ],
+      "nivelVerdade": [
+        "Comprovado",
+        "Hipótese"
+      ],
+      "_arq": "marguerite-porete.json",
+      "parte": "Marguerite Porete"
+    },
+    {
+      "grupo": "Marguerite Porete e a Inquisição",
+      "tema": "Se Marguerite pudesse falar",
+      "palavras": [
+        "se marguerite pudesse falar",
+        "se marguerite pudesse falar",
+        "marguerite falando",
+        "if marguerite could speak",
+        "si marguerite pudiera hablar",
+        "monologo de marguerite",
+        "palavras de marguerite",
+        "frases de marguerite",
+        "marguerite quotes",
+        "citas de marguerite",
+        "alma e a aguia",
+        "soul like the eagle"
+      ],
+      "nivelVerdade": [
+        "Tradição"
+      ],
+      "_arq": "marguerite-porete.json",
+      "parte": "Marguerite Porete"
+    },
+    {
+      "grupo": "Marguerite Porete e a Inquisição",
+      "tema": "Baixar o livro de Marguerite Porete",
+      "palavras": [
+        "baixar o livro de marguerite porete",
+        "onde baixo o livro",
+        "baixar o livro",
+        "baixo o livro",
+        "download do livro",
+        "where can i download",
+        "donde descargo",
+        "descargar el libro",
+        "baixar o livro de marguerite",
+        "livro original de marguerite",
+        "download the mirror",
+        "descargar el espejo",
+        "livro da marguerite porete",
+        "manuscrito de chantilly",
+        "chantilly",
+        "pdf do espelho",
+        "kirchberger"
+      ],
+      "nivelVerdade": [
+        "Comprovado"
+      ],
+      "_arq": "marguerite-porete.json",
+      "parte": "Marguerite Porete"
+    },
+    {
+      "grupo": "Marguerite Porete e a Inquisição",
+      "tema": "Liberdade de consciência",
+      "palavras": [
+        "liberdade de consciencia",
+        "liberdade de consciencia",
+        "freedom of conscience",
+        "libertad de conciencia",
+        "quem pode trancar uma consciencia",
+        "dogma e poder",
+        "chama de marguerite"
+      ],
+      "nivelVerdade": [
+        "Tradição"
+      ],
+      "_arq": "marguerite-porete.json",
+      "parte": "Marguerite Porete"
     }
   ],
   "gatilhosGrupo": [
@@ -6480,6 +6699,16 @@
         "temas de mitos derrubados"
       ],
       "grupo": "Mitos Derrubados"
+    },
+    {
+      "gatilhos": [
+        "marguerite porete e a inquisicao",
+        "temas de marguerite porete",
+        "marguerite porete",
+        "memorial marguerite",
+        "inquisicao"
+      ],
+      "grupo": "Marguerite Porete e a Inquisição"
     }
   ],
   "moldura": {
@@ -6499,7 +6728,8 @@
     "Trindade, inferno e o medo": "Aqui se separa o que é história documentada, o que é mito, o que é fé e o que é medo usado para controlar. A Trindade e o inferno são crenças sinceras de milhões de pessoas; o Portal não ataca a fé de ninguém, mostra a história e quem usa o medo como coleira.",
     "Adão e Eva: a história e a realidade": "Aqui Gênesis 1–5 é lido versículo por versículo e conferido com a ciência, sem zombaria. Cada afirmação traz o versículo e a fonte, e no fim há a tabela do que bate e do que não bate.",
     "Quem criou o Deus da Bíblia? A mente por trás do texto": "Aqui a pergunta é quem escreveu a imagem de Deus que aparece na Bíblia, e com que mentalidade. Seguimos a pesquisa histórica, a arqueologia e a psicologia, com os versículos por inteiro e a fonte em cada afirmação, sem zombar de quem crê.",
-    "Gênesis à prova: crença ou verdade?": "Aqui Gênesis é examinado passo a passo: o que o texto diz, o que a ciência e a história mostram, o que é mito e o que continua tendo valor. E também por que a criança aceita a crença da família como verdade absoluta. Versículos por inteiro, fonte em cada afirmação, respeito a quem crê."
+    "Gênesis à prova: crença ou verdade?": "Aqui Gênesis é examinado passo a passo: o que o texto diz, o que a ciência e a história mostram, o que é mito e o que continua tendo valor. E também por que a criança aceita a crença da família como verdade absoluta. Versículos por inteiro, fonte em cada afirmação, respeito a quem crê.",
+    "Marguerite Porete e a Inquisição": "Uma mulher queimada em 1310 por um livro sobre o amor e a liberdade da alma, e um memorial a todas as vozes silenciadas pela Inquisição. Fatos com fonte; o que é homenagem imaginada vem marcado."
   },
   "audio": {
     "Bom dia. Bem-vindo ao Portal do Conhecimento. Conhecimento Solar na escuta. O que você busca?": "a78ca52b7d1c.mp3",
