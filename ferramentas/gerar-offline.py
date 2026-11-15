@@ -21,6 +21,11 @@ for p in sorted(subprocess.check_output(['git','ls-files','-co','--exclude-stand
             g='jervis' if '/audio-sigma/' in p else 'aguia'
         else: g='base'
         G[g].append([p,os.path.getsize(p),h(p)])
+# Sol 2.0 e memorial Marguerite Porete: página, motor, base, imagens, tempos e livro (as vozes .mp3 ficam guardadas quando tocam)
+for p in sorted(subprocess.check_output(['git','ls-files','-co','--exclude-standard','sol','marguerite'],text=True).split('\n')):
+    if not p or not os.path.isfile(p) or p.endswith('.mp3') or p.endswith('.log'): continue
+    if p.startswith('sol/voz/') and not p.endswith('tempos.json'): continue
+    G['base'].append([p,os.path.getsize(p),h(p)])
 out={'versao':ver,'pacotes':{k:{'bytes':sum(x[1] for x in v),'n':len(v),'arquivos':v} for k,v in G.items()}}
 json.dump(out,open('offline.json','w'),separators=(',',':'))
 print(ver,{k:(v['n'],round(v['bytes']/1e6,1)) for k,v in out['pacotes'].items()})

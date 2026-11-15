@@ -1,0 +1,31 @@
+/* Conhecimento Solar · visual 2.0 (nov/2026): HUD solar futurista, leve, sem fontes externas.
+   Só camadas por cima do visual original: dá para remover este arquivo e o app volta ao que era. */
+:root{--ciano:#29f0ff;--hud-borda:linear-gradient(130deg,rgba(41,240,255,.5),rgba(241,199,91,.0) 35%,rgba(241,199,91,0) 65%,rgba(241,199,91,.55))}
+/* universo realista atrás do céu animado */
+.ms2-universo{position:fixed;inset:-3%;z-index:0;pointer-events:none;background:url(../sol/img/universo-m.webp) center/cover no-repeat;mix-blend-mode:screen;opacity:.8;animation:ms2-deriva 90s ease-in-out infinite alternate}
+@media (min-width:761px){.ms2-universo{background-image:url(../sol/img/universo-d.webp)}}
+@keyframes ms2-deriva{from{transform:scale(1.03)}to{transform:scale(1.1) translate3d(1%,-1%,0)}}
+/* marca com brilho e linha HUD */
+.topo .marca h1{text-shadow:0 0 18px rgba(241,199,91,.35)}
+.topo{position:relative}
+.topo::after{content:"";position:absolute;left:8%;right:8%;bottom:-4px;height:1px;background:linear-gradient(90deg,transparent,rgba(41,240,255,.45),rgba(241,199,91,.6),transparent);opacity:.55;pointer-events:none}
+/* mensagens em vidro com borda HUD */
+.msg{position:relative;backdrop-filter:blur(10px) saturate(1.15);-webkit-backdrop-filter:blur(10px) saturate(1.15)}
+.msg::after{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:var(--hud-borda);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.7}
+.entrada input,#texto{box-shadow:0 0 0 1px rgba(41,240,255,.06) inset}
+#texto:focus{border-color:var(--ciano)!important;box-shadow:0 0 0 3px rgba(41,240,255,.16)!important}
+/* barra de abas: dica de rolagem no celular (as abas continuam deslizando para o lado) */
+@media (max-width:760px){.abas{-webkit-mask:linear-gradient(90deg,#000 88%,transparent);mask:linear-gradient(90deg,#000 88%,transparent)}}
+/* abas novas */
+.aba.ms2-aba-sol{flex-direction:row;gap:7px;min-width:96px;color:#1b1000;font-weight:700;background:linear-gradient(180deg,#ffe08a,#e2a93a);border:1px solid rgba(255,230,160,.8);box-shadow:0 0 18px rgba(241,199,91,.35),0 0 0 1px rgba(41,240,255,.15);line-height:1.1;text-align:left;padding:6px 12px 6px 8px}
+.aba.ms2-aba-sol b{width:24px;height:24px;border-radius:50%;background:url(../sol/img/sol-320.webp) center/120% no-repeat;font-size:0;box-shadow:0 0 12px rgba(255,170,40,.8);animation:ms2-gira 40s linear infinite}
+.aba.ms2-aba-sol small{display:block;font-size:9.5px;font-weight:600;letter-spacing:.06em;opacity:.8}
+.aba.ms2-aba-marg{color:#ffd9a8}
+.aba.ms2-aba-marg b{filter:drop-shadow(0 0 6px rgba(255,150,60,.8))}
+@keyframes ms2-gira{to{transform:rotate(360deg)}}
+/* atalho Sol 2.0 junto do Sol */
+.ms2-sol2{display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:7px 14px 7px 8px;border-radius:999px;text-decoration:none;color:#e9fbff;font:600 12.5px/1 system-ui,sans-serif;letter-spacing:.06em;border:1px solid rgba(41,240,255,.45);background:rgba(4,20,30,.55);box-shadow:0 0 18px rgba(41,240,255,.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.ms2-sol2 i{width:8px;height:8px;border-radius:50%;background:#39ff88;box-shadow:0 0 10px #39ff88}
+.ms2-sol2 b{color:#ffde8a}
+@media (max-width:760px){.ms2-sol2{display:none}}
+@media (prefers-reduced-motion:reduce){.ms2-universo,.aba.ms2-aba-sol b{animation:none}}

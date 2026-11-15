@@ -1,0 +1,12 @@
+/* Conhecimento Solar: o memorial com a identidade do app (ouro solar + HUD ciano), mesmo conteúdo do Águia Primordial English */
+:root{--ouro:#f1c75b;--brasa:#ffc46b;--ciano:#29f0ff}
+.cs-sol{display:inline-block;width:22px;height:22px;margin-right:8px;vertical-align:-5px;border-radius:50%;background:radial-gradient(circle at 45% 40%,#fff6c8 0,#ffd34d 30%,#f39a1c 62%,rgba(243,120,20,0) 72%);box-shadow:0 0 14px rgba(255,190,60,.75),0 0 32px rgba(255,150,40,.35);animation:cs-pulsa 3.6s ease-in-out infinite}
+@keyframes cs-pulsa{50%{box-shadow:0 0 20px rgba(255,200,80,.95),0 0 46px rgba(255,150,40,.45)}}
+.voltar{display:inline-flex;align-items:center;letter-spacing:.14em;text-transform:uppercase;font-size:12.5px!important;color:#f8e7b8!important}
+@media (max-width:620px){.voltar span{display:none}.cs-sol{margin-right:0}}
+.barra{border-bottom-color:rgba(241,199,91,.22)!important;box-shadow:0 1px 0 rgba(41,240,255,.08)}
+.barra::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,rgba(41,240,255,.55),rgba(241,199,91,.7),transparent);opacity:.7}
+.b-sol{border-color:rgba(241,199,91,.55)!important;color:#ffe9b0!important;box-shadow:0 0 0 1px rgba(41,240,255,.12) inset,0 0 22px rgba(241,199,91,.18)}
+.kicker{letter-spacing:.22em}
+.fim a{color:#ffd98a}
+@media (prefers-reduced-motion:reduce){.cs-sol{animation:none}}
