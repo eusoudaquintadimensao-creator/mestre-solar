@@ -114,3 +114,7 @@ details.mem summary::-webkit-details-marker{display:none}
 .aviso{font-size:12.5px;color:var(--mu);text-align:center;margin:8px auto 0;max-width:560px}
 @media (prefers-reduced-motion:reduce){#fundo,.anel1,.anel2,.anel3,.astro img{animation:none!important}}
 @media (max-width:420px){.marca small{display:none}.voltar span{display:none}}
+.cartao.karaoke.falando .c-txt .w{color:rgba(243,236,220,.5);transition:color .12s,background .12s}
+.cartao.karaoke.falando .c-txt .w.dito{color:var(--tx)}
+.cartao.karaoke .c-txt .w.agora{color:#fff;background:rgba(241,199,91,.22);border-radius:4px;box-shadow:0 0 0 2px rgba(241,199,91,.22)}
+.cartao.karaoke:not(.falando) .c-txt .w.agora{background:none;box-shadow:none}

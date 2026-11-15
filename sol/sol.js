@@ -153,8 +153,10 @@ chips.addEventListener('click',function(ev){var c=ev.target.closest('.chip');if(
 function addConversa(quem,t){var ol=$('#conversa'),li=D.createElement('li');li.className=quem;li.textContent=t;ol.appendChild(li);while(ol.children.length>30)ol.removeChild(ol.firstChild);ol.scrollTop=ol.scrollHeight}
 /* ---------- legenda ---------- */
 var WS=[];
-function montaLegenda(txt){leg.classList.remove('vazia');var ws=String(txt).split(/\s+/).filter(Boolean);leg.innerHTML=ws.map(function(w,i){return '<span class="w" data-i="'+i+'">'+esc(w)+'</span>'}).join(' ');WS=[].slice.call(leg.children)}
-var ultI=-1;function marca(i){if(i===ultI)return;for(var k=0;k<WS.length;k++){WS[k].classList.toggle('dito',k<=i);WS[k].classList.toggle('agora',k===i)}ultI=i;
+var WS2=[];function montaLegenda(txt){leg.classList.remove('vazia');var ws=String(txt).split(/\s+/).filter(Boolean),h=ws.map(function(w,i){return '<span class="w" data-i="'+i+'">'+esc(w)+'</span>'}).join(' ');leg.innerHTML=h;WS=[].slice.call(leg.children);
+  /* a mesma legenda acende dentro do cartão (no celular o cartão fica à vista enquanto o Sol fala) */
+  WS2=[];var cp=cartao.hidden?null:cartao.querySelector('.c-txt p, p.c-txt');if(cp&&cp.textContent.trim()===String(txt).trim()){cp.innerHTML=h;WS2=[].slice.call(cp.children);cartao.classList.add('karaoke')}else cartao.classList.remove('karaoke')}
+var ultI=-1;function marca(i){if(i===ultI)return;for(var k=0;k<WS.length;k++){WS[k].classList.toggle('dito',k<=i);WS[k].classList.toggle('agora',k===i)}for(var k3=0;k3<WS2.length;k3++){WS2[k3].classList.toggle('dito',k3<=i);WS2[k3].classList.toggle('agora',k3===i)}ultI=i;
   /* janela: no celular mostra só a frase em volta, para a legenda não crescer demais */
   var jan=innerWidth<980?26:44;if(WS.length>jan){var a=Math.max(0,Math.min(i-Math.floor(jan*.35),WS.length-jan));for(var k2=0;k2<WS.length;k2++)WS[k2].style.display=(k2>=a&&k2<a+jan)?'':'none'}}
 function estimaTempos(txt,dur){var ws=String(txt).split(/\s+/).filter(Boolean),pesos=ws.map(function(w){return Math.max(2,w.replace(/[^\wÀ-ÿ]/g,'').length)+(/[.!?;:]$/.test(w)?7:/,$/.test(w)?3:0)}),tot=pesos.reduce(function(a,b){return a+b},0),t=0,out=[];
@@ -167,7 +169,7 @@ function h12(s){/* mesmo hash do gerador: sha1[:12] */return W.crypto&&crypto.su
 function analisador(){try{if(!actx){var AC=W.AudioContext||W.webkitAudioContext;if(!AC)return;actx=new AC();var src=actx.createMediaElementSource(au);anal=actx.createAnalyser();anal.fftSize=256;buf=new Uint8Array(anal.frequencyBinCount);src.connect(anal);anal.connect(actx.destination)}if(actx.state==='suspended')actx.resume()}catch(e){anal=null}}
 var hud=$('#hud'),rootS=D.documentElement.style;
 function nivel(v){rootS.setProperty('--nivel',v.toFixed(3))}
-function estadoFala(on){falando=on;hud.classList.toggle('fala',on);status(on?T().fala:null);if(!on){nivel(0);estrelasVel=1}}
+function estadoFala(on){falando=on;hud.classList.toggle('fala',on);cartao.classList.toggle('falando',on);status(on?T().fala:null);if(!on){nivel(0);estrelasVel=1}}
 function para(){try{au.pause()}catch(e){}try{speechSynthesis.cancel()}catch(e){}cancelAnimationFrame(raf);estadoFala(false)}
 function fala1(txt,h,e,c,vozForcada){para();montaLegenda(txt);ultI=-1;var v=vozForcada||voz();
   var lg=L;
