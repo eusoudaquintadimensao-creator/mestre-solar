@@ -311,7 +311,7 @@
   }
   function abrePainel(secao) {
     if (!PAINEL) montaPainel(); PAINEL.hidden = false; D.body.classList.add("sol1-painel-on"); preenchePerfil(); listaCmd("");
-    var alvo = secao && PAINEL.querySelector('[data-sec="' + secao + '"]'); setTimeout(function () { if (alvo) alvo.scrollIntoView({ block: "start" }); var i = PAINEL.querySelector("#sol1-busca"); if (i && !secao) i.focus(); }, 30);
+    var alvo = secao && PAINEL.querySelector('[data-sec="' + secao + '"]'); setTimeout(function () { if (alvo) alvo.scrollIntoView({ block: "start" }); var i = PAINEL.querySelector("#sol1-busca"); if (i && !secao && !(W.matchMedia && matchMedia("(pointer:coarse)").matches)) i.focus(); }, 30);
     carrega().catch(function () {});
   }
   function fechaPainel() { if (PAINEL) { PAINEL.hidden = true; D.body.classList.remove("sol1-painel-on"); } }
@@ -320,6 +320,7 @@
     var cx2 = el("div", "sol1-caixa"); PAINEL.appendChild(cx2);
     var topo = el("div", "sol1-topo"); topo.appendChild(el("h2", null, tx("☀ Painel do Sol", "☀ Sun panel", "☀ Panel del Sol"))); var x = el("button", "sol1-x", "✕"); x.type = "button"; x.setAttribute("aria-label", tx("Fechar", "Close", "Cerrar")); x.addEventListener("click", fechaPainel); topo.appendChild(x); cx2.appendChild(topo);
     var bu = el("input", "sol1-campo"); bu.id = "sol1-busca"; bu.type = "search"; bu.maxLength = 120; bu.setAttribute("autocomplete", "off"); bu.placeholder = tx("Buscar comando, lição ou app…", "Search a command, lesson or app…", "Buscar comando, lección o app…"); bu.setAttribute("aria-label", bu.placeholder); cx2.appendChild(bu);
+    var atal = el("div", "chips sol1-chips sol1-atalhos"); [["som", tx("🔊 Volume", "🔊 Volume", "🔊 Volumen")], ["perfil", tx("👤 Perfil", "👤 Profile", "👤 Perfil")], ["visual", tx("✨ Visual", "✨ Visuals", "✨ Visual")]].forEach(function (a) { var b = el("button", "chip", a[1]); b.type = "button"; b.addEventListener("click", function () { var s2 = PAINEL.querySelector('[data-sec="' + a[0] + '"]'); if (s2) s2.scrollIntoView({ block: "start", behavior: RM ? "auto" : "smooth" }); }); atal.appendChild(b); }); cx2.appendChild(atal);
     var ul = el("ul", "sol1-lista"); ul.id = "sol1-lista"; ul.setAttribute("role", "listbox"); cx2.appendChild(ul);
     bu.addEventListener("input", function () { listaCmd(bu.value); });
     bu.addEventListener("keydown", function (e) { if (e.key === "Enter") { var f = ul.querySelector("button"); if (f) f.click(); } });

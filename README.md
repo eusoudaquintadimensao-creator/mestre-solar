@@ -106,6 +106,16 @@ No topo do app há um sol realista pulsante. Toque para compartilhar o Portal (m
 
 O service worker agora guarda as páginas `sol/` e `marguerite/` com o próprio endereço (antes, qualquer página aberta era guardada no lugar do `index.html`).
 
+### ☀ Sol da tela principal (Sol 1): Jarvis offline, memória e voz reativa
+Arquivos: `conteudo/sol1/sol1.js`, `conteudo/sol1/sol1.css`, `conteudo/sol1/kb-{pt,en,es}.json` (gerado por `python3 ferramentas/sol1-kb.py`; rode `sol-kb.py` antes; `--baixar` atualiza o texto dos sites em `ferramentas/fontes-sol1/`).
+- **Responde sobre tudo o que está no app e dentro dele**, sem internet: as 374 lições e ~600 trechos reais da Rede de App (21 apps), Solara GPS: Miami Beach, MIAMI DRIVE SOLARA 2088, Homem Cinza, Radar Águia Solar, Águia Primordial English, podcast Sol Nascente (ep. 1–6), memorial de Marguerite Porete e Sol 2.0. Busca BM25 (a mesma do Sol 2.0). Lição encontrada abre pelo caminho normal do app (voz, camadas, "fale mais"); app encontrado responde com o trecho e o botão para abrir. Fora do conteúdo, diz que não está na base e oferece os temas mais próximos e, só se a pessoa tocar, a Wikipédia.
+- **Memória pessoal só no aparelho**: "me chame de Ana" (grava em `ms-sol-nome-v1`, o mesmo do app e do Sol 2.0), "o que você lembra de mim", tom (direto/acolhedor), temas mais explorados e onde parou (`ms-sol1-perfil-v1`); "esquecer tudo sobre mim" ou o botão no painel apaga.
+- **Visual Jarvis**: anel de barras radiais e equalizador ligados à voz real (Web Audio `AnalyserNode` no áudio gravado; na voz do aparelho, pulso pelas palavras), anéis HUD, partículas, estado em texto (OUVINDO / PENSANDO / FALANDO). Qualidade automática pelo FPS, modo leve e `prefers-reduced-motion`.
+- **Painel ☰ (ou Ctrl+K)**: paleta de comandos com busca em lições e apps, volume da voz (até 150%) e da música, "abaixar a música quando o Sol fala", perfil e qualidade do visual.
+- **Segurar o Sol = falar** (push-to-talk); tocar no Sol ou Esc interrompe a fala.
+- A legenda sob o Sol agora fica no fluxo da página (não cobre mais o contador) e não repete o nome ("Jervis: Jervis…").
+- Teste: `node ferramentas/teste-sol1.js`. Segurança: ver `SEGURANCA.md`.
+
 ## Instalar no celular
 
 - **Android (Chrome):** menu ⋮ → *Instalar app* ou *Adicionar à tela inicial*.

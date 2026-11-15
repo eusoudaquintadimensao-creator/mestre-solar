@@ -50,3 +50,4 @@ html[data-sol1="falando"] .sol1-estado{color:#ffe7a8}
 .sol1-perigo{border-color:rgba(255,120,120,.45)!important;color:#ffb3b3!important;margin-top:8px}
 @media (prefers-reduced-motion:reduce){.palco .sol{scale:1}}
 .app>.topo{z-index:4}
+.sol1-atalhos{margin:2px 0 8px}
