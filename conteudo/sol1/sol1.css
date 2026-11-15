@@ -1,0 +1,52 @@
+/* SOL1 — Sol da tela principal: anel de voz, HUD, painel (volume, perfil, comandos) e legenda que nunca cobre nada. */
+.palco{position:relative}
+.sol1-viz{position:absolute;pointer-events:none;z-index:0}
+.palco .sol{z-index:1;scale:calc(1 + var(--sol1-n,0) * .055)}
+.palco .sol .img{filter:drop-shadow(0 0 24px rgba(255,160,40,.45)) brightness(calc(1 + var(--sol1-n,0) * .3)) saturate(calc(1 + var(--sol1-n,0) * .2))}
+.palco .voz-chip{position:relative;z-index:2}
+/* as 7 barrinhas antigas saem: o anel de barras radiais substitui */
+.palco .sol-barras{display:none!important}
+.sol1-estado{position:absolute;left:62%;top:40%;z-index:2;font:600 9px/1 system-ui,sans-serif;letter-spacing:.32em;color:rgba(255,226,160,.7);pointer-events:none;text-shadow:0 0 6px rgba(255,180,60,.6);white-space:nowrap}
+html[data-sol1="pronto"] .sol1-estado,html:not([data-sol1]) .sol1-estado{opacity:0}
+.sol1-estado{transition:opacity .3s}
+html[data-sol1="ouvindo"] .sol1-estado{color:#9fe6ff;text-shadow:0 0 8px rgba(80,200,255,.8)}
+html[data-sol1="falando"] .sol1-estado{color:#ffe7a8}
+.sol1-bt{position:absolute;z-index:3;left:calc(50% - var(--sol,176px)/2 - 54px);top:calc(var(--sol,176px)/2 - 20px);width:40px;height:40px;border-radius:50%;border:1px solid rgba(241,199,91,.35);background:rgba(18,14,26,.72);color:#ffe7a8;font-size:18px;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.sol1-bt:hover,.sol1-bt:focus-visible{border-color:#f1c75b;box-shadow:0 0 14px rgba(241,199,91,.45);outline:none}
+@media (max-width:420px){.sol1-bt{left:12px;top:auto;bottom:6px}}
+/* legenda sob o Sol: no fluxo da página (não flutua mais sobre o contador nem sobre as mensagens) */
+.palco .sol-legenda{position:static!important;transform:none!important;left:auto!important;top:auto!important;width:min(92vw,520px)!important;margin:6px auto 0;display:none;opacity:1;max-height:2.8em;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.palco .sol-legenda:not(.ativa){display:none!important}
+.palco .sol-legenda.ativa{display:-webkit-box!important}
+/* mensagens do Sol 1 */
+.msg.sol1-msg .sol1-chips{margin-top:8px}
+.msg.sol1-recusa{border-color:rgba(120,200,255,.35)!important}
+/* painel */
+.sol1-painel{position:fixed;inset:0;z-index:9000;background:rgba(4,3,10,.62);display:flex;align-items:flex-end;justify-content:center;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.sol1-painel[hidden]{display:none}
+.sol1-caixa{width:100%;max-width:640px;max-height:86vh;overflow-y:auto;background:linear-gradient(180deg,rgba(26,20,36,.97),rgba(12,9,18,.98));border:1px solid rgba(241,199,91,.3);border-bottom:0;border-radius:20px 20px 0 0;padding:14px 16px max(22px,calc(env(safe-area-inset-bottom,0px) + 14px));box-shadow:0 -12px 50px rgba(0,0,0,.65),inset 0 1px 0 rgba(120,220,255,.12);color:#efe8d6}
+@media (min-width:760px){.sol1-painel{align-items:center}.sol1-caixa{border-radius:20px;border-bottom:1px solid rgba(241,199,91,.3)}}
+.sol1-topo{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.sol1-topo h2{margin:0;font-size:17px;letter-spacing:.08em;color:#f1c75b}
+.sol1-x{width:44px;height:44px;border-radius:50%;border:1px solid rgba(241,199,91,.3);background:none;color:#ffe7a8;font-size:18px;cursor:pointer}
+.sol1-campo{width:100%;min-height:44px;margin:8px 0;padding:10px 12px;border-radius:12px;border:1px solid rgba(241,199,91,.28);background:rgba(255,255,255,.05);color:#efe8d6;font:inherit;font-size:16px}
+.sol1-campo:focus{outline:2px solid rgba(120,220,255,.6);outline-offset:1px}
+.sol1-lista{list-style:none;margin:0 0 6px;padding:0;display:grid;gap:6px}
+.sol1-item{width:100%;display:flex;align-items:center;gap:10px;min-height:44px;padding:8px 12px;border-radius:12px;border:1px solid rgba(120,220,255,.16);background:rgba(120,220,255,.04);color:#efe8d6;font:inherit;font-size:15px;text-align:left;cursor:pointer}
+.sol1-item:hover,.sol1-item:focus-visible{border-color:rgba(241,199,91,.55);background:rgba(241,199,91,.08);outline:none}
+.sol1-item small{margin-left:auto;color:#a99f86;font-size:12px;max-width:40%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sol1-ic{width:22px;text-align:center}
+.sol1-t{overflow:hidden;text-overflow:ellipsis}
+.sol1-sec{margin-top:14px;padding-top:12px;border-top:1px solid rgba(241,199,91,.14)}
+.sol1-sec h3{margin:0 0 6px;font-size:15px;color:#f1c75b}
+.sol1-faixa{display:grid;grid-template-columns:96px 1fr 48px;align-items:center;gap:10px;min-height:44px}
+.sol1-faixa input{width:100%;accent-color:#f1c75b;height:32px}
+.sol1-faixa output{text-align:right;color:#ffe7a8;font-variant-numeric:tabular-nums}
+.sol1-chk{display:flex;align-items:center;gap:8px;min-height:40px}
+.sol1-rot{display:block;margin-top:8px;font-size:13px;color:#a99f86}
+.sol1-linha{display:flex;gap:8px;align-items:center}.sol1-linha .sol1-campo{flex:1}
+.sol1-nota{font-size:13px;color:#a99f86;margin:8px 0}
+.sol1-chips{display:flex;flex-wrap:wrap;gap:8px}
+.sol1-perigo{border-color:rgba(255,120,120,.45)!important;color:#ffb3b3!important;margin-top:8px}
+@media (prefers-reduced-motion:reduce){.palco .sol{scale:1}}
+.app>.topo{z-index:4}

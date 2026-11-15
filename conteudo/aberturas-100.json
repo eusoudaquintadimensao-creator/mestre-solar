@@ -1,7 +1,7 @@
 {
   "versao": "2026-10-27-scorer",
   "voz": "Jervis",
-  "total": 100,
+  "total": 98,
   "nota": "Aberturas Jervis com moods para seleção por contexto (offline). EN/ES: texto traduzido + voz do aparelho por enquanto.",
   "itens": [
     {
@@ -932,19 +932,6 @@
       ]
     },
     {
-      "id": "ab-064",
-      "categoria": "ânimo",
-      "texto": "Jervis na escuta. Hoje é dia de avançar sem se agressar.",
-      "condicoes": {},
-      "preset": "entrada",
-      "timbre": "C",
-      "curta": true,
-      "moods": [
-        "energizar",
-        "foco"
-      ]
-    },
-    {
       "id": "ab-065",
       "categoria": "ânimo",
       "texto": "Ânimo calibrado. Três respirações e um verbo: aprender, questionar ou silenciar?",
@@ -1198,19 +1185,6 @@
       "id": "ab-085",
       "categoria": "silêncio",
       "texto": "Entrando no silêncio útil. Trinta segundos olhando para dentro — depois me conta.",
-      "condicoes": {},
-      "preset": "conversa",
-      "timbre": "C",
-      "curta": true,
-      "moods": [
-        "silenciar",
-        "acalmar"
-      ]
-    },
-    {
-      "id": "ab-086",
-      "categoria": "silêncio",
-      "texto": "Jervis recuando o volume. O sagrado que você procura também escuta de dentro.",
       "condicoes": {},
       "preset": "conversa",
       "timbre": "C",

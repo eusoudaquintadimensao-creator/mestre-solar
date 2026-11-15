@@ -46,7 +46,7 @@ def add(app,t,r,p=(),u='',tab='',lg=None,pri=0):
     if u:d['u']=u
     if tab:d['tab']=tab
     if lg:d['lg']=lg
-    if pri:d['pri']=pri
+    if pri:d['pri']=pri;d['c']=1
     APPS.append(d)
 U_APP='https://eusoudaquintadimensao-creator.github.io/mestre-solar/'
 U_ENG='https://eusoudaquintadimensao-creator.github.io/aguia-primordial-english/'
