@@ -1,6 +1,7 @@
 /* Podcast Sol Nascente: player com Baixar e Compartilhar (Web Share API com arquivo/link; senão WhatsApp e copiar link). */
 (function () {
-  var EP = [{ n: 1, titulo: "O mapa do despertar", sub: "Despertar da Matrix: o mapa", arq: "conteudo/podcast/ep01.mp4", poster: "conteudo/podcast/ep01.jpg", nome: "Sol-Nascente-ep01-O-mapa-do-despertar.mp4" },
+  var EP = [{ n: 6, titulo: "Queimaram a mulher. O livro sobreviveu.", sub: "Marguerite Porete: o livro, a fogueira de 1310 e o nome que voltou em 1946 (estúdio na praia)", arq: "conteudo/podcast/ep06.mp4", poster: "conteudo/podcast/ep06.jpg", nome: "Sol-Nascente-ep06-Queimaram-a-mulher-o-livro-sobreviveu.mp4", vertical: true },
+    { n: 1, titulo: "O mapa do despertar", sub: "Despertar da Matrix: o mapa", arq: "conteudo/podcast/ep01.mp4", poster: "conteudo/podcast/ep01.jpg", nome: "Sol-Nascente-ep01-O-mapa-do-despertar.mp4" },
     { n: 3, titulo: "Você não é a voz na sua cabeça", sub: "Eu observador e descentramento", arq: "conteudo/podcast/ep03.mp4", poster: "conteudo/podcast/ep03.jpg", nome: "Sol-Nascente-ep03-Voce-nao-e-a-voz-na-sua-cabeca.mp4", vertical: true },
     { n: 5, titulo: "A mente que a Matrix não programa", sub: "Mente soberana: perceber a isca, conferir a fonte e o filtro das 3 perguntas", arq: "conteudo/podcast/ep05.mp4", poster: "conteudo/podcast/ep05.jpg", nome: "Sol-Nascente-ep05-A-mente-que-a-Matrix-nao-programa.mp4", vertical: true },
     { n: 4, titulo: "Quem viu a Terra do espaço voltou diferente", sub: "Assombro e o efeito visão geral: a caminhada do assombro", arq: "conteudo/podcast/ep04.mp4", poster: "conteudo/podcast/ep04.jpg", nome: "Sol-Nascente-ep04-Quem-viu-a-Terra-do-espaco.mp4", vertical: true },
